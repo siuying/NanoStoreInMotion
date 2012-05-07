@@ -26,6 +26,17 @@ describe NanoStore do
     user.attributes.should.be.equal({name: "Bob", age: 10, created_at: user.created_at})
   end
   
+  it "create new object using short hand should not crash" do
+    error_ptr = Pointer.new(:id)
+    store = NSFNanoStore.createAndOpenStoreWithType(NSFMemoryStoreType, path:nil, error: error_ptr)
+    user = stub_user("Bob", 10, Time.now)
+    user.save(store)
+
+    user.attributes.keys.should.be.equal([:name, :age, :created_at])
+    user.attributes.should.be.equal({name: "Bob", age: 10, created_at: user.created_at})
+  end
+  
+  
   it "search object" do
     @store = NanoStore.store
     
