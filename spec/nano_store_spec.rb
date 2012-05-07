@@ -8,7 +8,7 @@ describe NanoStore do
     attribute :created_at
   end
   
-  def create_user(name, age, created_at)
+  def stub_user(name, age, created_at)
     user = User.new
     user.name = name
     user.age  = age
@@ -19,7 +19,7 @@ describe NanoStore do
   it "create new object" do
     store = NanoStore.store
 
-    user = create_user("Bob", 10, Time.now)
+    user = stub_user("Bob", 10, Time.now)
     user.save(store)
 
     user.attributes.keys.should.be.equal([:name, :age, :created_at])
@@ -29,10 +29,10 @@ describe NanoStore do
   it "search object" do
     @store = NanoStore.store
     
-    user = create_user("Bob", 10, Time.now)
+    user = stub_user("Bob", 10, Time.now)
     user.save(@store)
     
-    user2 = create_user("Amy", 11, Time.now)
+    user2 = stub_user("Amy", 11, Time.now)
     user2.save(@store)
 
     search = NSFNanoSearch.searchWithStore(@store)

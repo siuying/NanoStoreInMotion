@@ -29,7 +29,7 @@ module NanoStore
       object = NSFNanoObject.nanoObject
 
       self.attributes.each do |key, value|
-        object[key] = value
+        object[key.to_s] = value
       end
 
       error_ptr = Pointer.new(:id)
