@@ -1,55 +1,55 @@
-module NanoStore
+module NanoStore  
   class NanoStoreError < StandardError; end
-  
+
   def self.store
     error_ptr = Pointer.new(:id)
-    store = NSFNanoStore.createStoreWithType(NSFMemoryStoreType, path:nil)
-    store.openWithError(error_ptr)
+    store = NSFNanoStore.createAndOpenStoreWithType(NSFMemoryStoreType, path:nil, error: error_ptr)
     raise NanoStoreError, error_ptr[0].description if error_ptr[0]    
     store
   end
 
-  def self.included(base)
-    base.instance_eval do
-      include InstanceMethods
-      extend ClassMethods
-    end
-  end
-  private_class_method :included
-  
   module InstanceMethods
-    def attributes
-      self.class.attributes.inject({}) do |attributes, key|
-        attributes[key] = self.send(key)
-        attributes
-      end
+    def save(store)
+      error_ptr = Pointer.new(:id)
+      store.addObject(self, error:error_ptr)
+      raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+      self
+    end
+  
+    def delete
+      nil
     end
     
-    def save(store)
-      object = NSFNanoObject.nanoObject
-
-      self.attributes.each do |key, value|
-        object[key.to_s] = value
+    def method_missing(method, *args)
+      matched = method.to_s.match(/^([^=]+)(=)?$/)
+      name = matched[1]
+      modifier = matched[2]
+      if self.class.attributes.include?(name.to_sym) || name == "_id"
+        if modifier == "="
+          self.info[name.to_sym] = args[0]
+        else
+          self.info[name.to_sym]
+        end
+      else
+        super
       end
-
-      error_ptr = Pointer.new(:id)
-      store.addObject(object, error:error_ptr)
-      raise NanoStoreError, error_ptr[0].description if error_ptr[0]
-
-      self
     end
   end
 
   module ClassMethods
-    def attributes
-      @attributes
-    end
-
     def attribute(name)
       @attributes ||= []
       @attributes << name
-      attr_accessor name
     end
+    
+    def attributes
+      @attributes ||= []
+    end
+  end
+
+  class Model < NSFNanoObject
+    include InstanceMethods
+    extend ClassMethods
   end
 
 end
