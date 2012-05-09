@@ -52,7 +52,7 @@ end
 ### Create
 
 ````ruby
-user = User.nanoObject
+user = User.new
 user.name = name
 user.age  = age
 user.created_at = created_at

@@ -7,7 +7,7 @@ describe NanoStore::Model do
   end
   
   def stub_user(name, age, created_at)
-    user = User.nanoObject
+    user = User.new
     user.name = name
     user.age  = age
     user.created_at = created_at

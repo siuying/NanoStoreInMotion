@@ -59,5 +59,9 @@ module NanoStore
   class Model < NSFNanoObject
     include ModelInstanceMethods
     extend ModelClassMethods
+
+    def self.new
+      self.nanoObject
+    end
   end
 end
