@@ -58,3 +58,29 @@ user.age  = age
 user.created_at = created_at
 user.save
 ````
+
+### Retrieve
+
+````ruby
+# find all models
+User.all => [<User#1>, <User#2>]
+
+# find model by criteria
+users = User.find(:name, NSFEqualTo, "Bob")
+````
+
+### Update
+
+````ruby
+user = User.find(:name, NSFEqualTo, "Bob").first
+user.name = "Dom"
+user.save
+````
+
+### Delete
+
+````ruby
+user = User.find(:name, NSFEqualTo, "Bob").first
+user.delete
+````
+

@@ -53,10 +53,59 @@ module NanoStore
     def store=(store)
       @store = store
     end
+    
+    def all
+      search = NSFNanoSearch.searchWithStore(self.store)
+      error_ptr = Pointer.new(:id)
+      searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
+      raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+      searchResults.values
+    end
+    
+    # find model by criteria
+    #
+    # Return array of models
+    #
+    # Example:
+    #
+    #   User.find(:name, NSFEqualTo, "Bob") => [<User#1>]
+    #
+    def find(attribute, match, value)
+      search = search_with_store(self.store, attribute, match, value)
+      error_ptr = Pointer.new(:id)
+      searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
+      raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+      searchResults.values
+    end
+    
+    # find model keys by criteria
+    #
+    # Return array of model keys
+    #
+    # Example:
+    #
+    #   User.find(:name, NSFEqualTo, "Bob") => [<User#1>]
+    #
+    def find_keys(attribute, match, value)
+      search = search_with_store(self.store, attribute, match, value)
+      error_ptr = Pointer.new(:id)
+      searchResults = search.searchObjectsWithReturnType(NSFReturnKeys, error:error_ptr)
+      raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+      searchResults
+    end
 
     def inherited(subclass)
       subclass.instance_variable_set(:@attributes, [])
       subclass.instance_variable_set(:@store, nil)
+    end
+    
+    private
+    def search_with_store(store, attribute, match, value)
+      search = NSFNanoSearch.searchWithStore(self.store)
+      search.attribute = attribute.to_s
+      search.match = match
+      search.value = value
+      search
     end
   end
 

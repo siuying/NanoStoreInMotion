@@ -38,32 +38,59 @@ describe NanoStore::Model do
     user.age.should == 10
   end
   
+  it "update objects" do
+    user = stub_user("Bob", 10, Time.now)
+    user.save
+
+    user1 = User.find(:name, NSFEqualTo, "Bob").first
+    user1.name = "Dom"
+    user1.save
+
+    user2 = User.find(:name, NSFEqualTo, "Dom").first
+    user2.key.should == user.key
+  end
+  
+  it "find object" do
+    user = stub_user("Bob", 10, Time.now)
+    user.save
+    
+    users = User.find(:name, NSFEqualTo, "Bob")
+    users.should.not.be.nil
+    users.count.should == 1
+    users.first.name.should == user.name
+    
+    users = User.find_keys(:name, NSFEqualTo, "Bob")
+    users.should.not.be.nil
+    users.count.should == 1
+    users.first.should == user.key
+  end
+  
   it "delete object" do
     user = stub_user("Bob", 10, Time.now)
     user.save
     
-    search = NSFNanoSearch.searchWithStore(NanoStore.shared_store)
-    search.attribute = "name"
-    search.match = NSFEqualTo
-    search.value = "Bob"
-    error_ptr = Pointer.new(:id)
-    searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
-    searchResults.should.not.be.nil
-    searchResults.count.should == 1
+    users = User.find(:name, NSFEqualTo, "Bob")
+    users.should.not.be.nil
+    users.count.should == 1
     
     user.delete
-    search = NSFNanoSearch.searchWithStore(NanoStore.shared_store)
-    search.attribute = "name"
-    search.match = NSFEqualTo
-    search.value = "Bob"
-    error_ptr = Pointer.new(:id)
-    searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
-    searchResults.should.not.be.nil
-    searchResults.count.should == 0
+    users = User.find(:name, NSFEqualTo, "Bob")
+    users.should.not.be.nil
+    users.count.should == 0
   end
   
+  it "find all objects" do
+    user = stub_user("Bob", 10, Time.now)
+    user.save
+    
+    user2 = stub_user("Amy", 11, Time.now)
+    user2.save
+  
+    users = User.all
+    users.size.should == 2
+    users[0].key.should == user.key
+    users[1].key.should == user2.key
+  end
 
   it "search object" do
     user = stub_user("Bob", 10, Time.now)
@@ -72,17 +99,9 @@ describe NanoStore::Model do
     user2 = stub_user("Amy", 11, Time.now)
     user2.save
   
-    search = NSFNanoSearch.searchWithStore(NanoStore.shared_store)
-    search.attribute = "name"
-    search.match = NSFEqualTo
-    search.value = "Bob"
-  
-    error_ptr = Pointer.new(:id)
-    searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
-  
-    searchResults.should.not.be.nil
-    user = searchResults.values.first
+    users = User.find(:name, NSFEqualTo, "Bob")
+    users.should.not.be.nil
+    user = users.first
     user.should.not.be.nil
     user.name.should.be == "Bob"
     user.age.should.be == 10
