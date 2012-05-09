@@ -25,6 +25,13 @@ Now, you can use NanoStore in your app.
 
 ## Usage
 
+### Set default storeage type
+
+````ruby
+NanoStore.shared_store = NanoStore.store(:memory) # this is the default
+NanoStore.shared_store = NanoStore.store(:file, documents_path + "/nano.db") # persist the data
+````
+
 ### Define Model
 
 ````ruby
@@ -38,10 +45,9 @@ end
 ### Create
 
 ````ruby
-store = NanoStore.store
 user = User.nanoObject
 user.name = name
 user.age  = age
 user.created_at = created_at
-user.save(store)
+user.save
 ````

@@ -1,6 +1,9 @@
 module NanoStore
   module ModelInstanceMethods
-    def save(store)
+    def save(store=nil)
+      store ||= self.class.store
+      raise NanoStoreError, 'No store provided' unless store
+
       error_ptr = Pointer.new(:id)
       store.addObject(self, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
@@ -37,7 +40,10 @@ module NanoStore
     end
 
     def store
-      @store || NanoStore.shared_store
+      if @store.nil?
+        return NanoStore.shared_store 
+      end
+      @store
     end
 
     def store=(store)
@@ -46,7 +52,7 @@ module NanoStore
 
     def inherited(subclass)
       subclass.instance_variable_set(:@attributes, [])
-      subclass.instance_variable_set(:@store, [])
+      subclass.instance_variable_set(:@store, nil)
     end
   end
 

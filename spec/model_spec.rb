@@ -13,12 +13,18 @@ describe NanoStore::Model do
     user.created_at = created_at
     user
   end
+  
+  before do
+    NanoStore.shared_store = NanoStore.store
+  end
+  
+  after do
+    NanoStore.shared_store = nil
+  end
 
   it "create new object" do
-    store = NanoStore.store
-
     user = stub_user("Bob", 10, Time.now)
-    user.save(store)
+    user.save
 
     user.info.keys.include?("name").should.be.true
     user.info.keys.include?("age").should.be.true
@@ -33,15 +39,13 @@ describe NanoStore::Model do
   end
 
   it "search object" do
-    store = NanoStore.store
-    
     user = stub_user("Bob", 10, Time.now)
-    user.save(store)
+    user.save
     
     user2 = stub_user("Amy", 11, Time.now)
-    user2.save(store)
+    user2.save
   
-    search = NSFNanoSearch.searchWithStore(store)
+    search = NSFNanoSearch.searchWithStore(NanoStore.shared_store)
     search.attribute = "name"
     search.match = NSFEqualTo
     search.value = "Bob"

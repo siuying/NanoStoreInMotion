@@ -25,4 +25,17 @@ describe NanoStore do
     store.filePath.should == ""
   end
 
+  it "should use shared_store if a model has no store defined" do  
+    class TempModel < NanoStore::Model
+    end
+
+    NanoStore.shared_store = NanoStore.store
+    TempModel.store.should.not.be.nil
+    NanoStore.shared_store.should.not.be.nil
+    TempModel.store.should == NanoStore.shared_store
+
+    TempModel.store = NanoStore.store :temp
+    TempModel.store.should.not == NanoStore.shared_store
+  end
+
 end
