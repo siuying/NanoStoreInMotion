@@ -6,18 +6,25 @@ Status: Work in progress. API subject to change.
 
 ## Installation
 
-Add BubbleWrap and NanoStore as a git submodule of your RubyMotion project:
+Add BubbleWrap, NanoStore and NanoStoreInMotion as a git submodule of your RubyMotion project:
 
     git clone https://github.com/mattetti/BubbleWrap.git vendor/BubbleWrap
+    git clone https://github.com/tciuro/NanoStore.git vendor/NanoStore
     git clone https://github.com/siuying/NanoStoreInMotion.git vendor/NanoStoreInMotion
 
-Add the lib path to your project 'Rakefile'
+Add the lib path and NanoStore pod to your project 'Rakefile'
 
 ```ruby
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project'
+require 'motion-cocoapods'
 Motion::Project::App.setup do |app|
   app.name = 'myapp'
   app.files += Dir.glob(File.join(app.project_dir, 'vendor/BubbleWrap/lib/**/*.rb'))
   app.files += Dir.glob(File.join(app.project_dir, 'vendor/NanoStoreInMotion/lib/**/*.rb'))
+  app.pods do
+    dependency 'NanoStore'
+  end
 end
 ```
 
