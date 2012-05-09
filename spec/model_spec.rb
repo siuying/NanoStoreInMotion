@@ -1,4 +1,4 @@
-describe NanoStore do
+describe NanoStore::Model do
   
   class User < NanoStore::Model
     attribute :name
