@@ -1,6 +1,6 @@
 # NanoStore for RubyMotion
 
-Using NanoStore, a lightweight schema-less key-value document database based on sqlite, in RubyMotion.
+Wrapper for NanoStore, a lightweight schema-less key-value document database based on sqlite, in RubyMotion.
 
 Status: Work in progress. API subject to change.
 
