@@ -1,17 +1,21 @@
 module NanoStore
   module ModelInstanceMethods
-    def save(store=nil)
-      store ||= self.class.store
-      raise NanoStoreError, 'No store provided' unless store
+    def save
+      raise NanoStoreError, 'No store provided' unless self.class.store
 
       error_ptr = Pointer.new(:id)
-      store.addObject(self, error:error_ptr)
+      self.class.store.addObject(self, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
       self
     end
   
     def delete
-      nil
+      raise NanoStoreError, 'No store provided' unless self.class.store
+
+      error_ptr = Pointer.new(:id)
+      self.class.store.removeObject(self, error: error_ptr)
+      raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+      self
     end
     
     def method_missing(method, *args)

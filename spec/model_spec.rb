@@ -22,7 +22,7 @@ describe NanoStore::Model do
     NanoStore.shared_store = nil
   end
 
-  it "create new object" do
+  it "create object" do
     user = stub_user("Bob", 10, Time.now)
     user.save
 
@@ -37,6 +37,33 @@ describe NanoStore::Model do
     user.name.should == "Bob"
     user.age.should == 10
   end
+  
+  it "delete object" do
+    user = stub_user("Bob", 10, Time.now)
+    user.save
+    
+    search = NSFNanoSearch.searchWithStore(NanoStore.shared_store)
+    search.attribute = "name"
+    search.match = NSFEqualTo
+    search.value = "Bob"
+    error_ptr = Pointer.new(:id)
+    searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
+    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    searchResults.should.not.be.nil
+    searchResults.count.should == 1
+    
+    user.delete
+    search = NSFNanoSearch.searchWithStore(NanoStore.shared_store)
+    search.attribute = "name"
+    search.match = NSFEqualTo
+    search.value = "Bob"
+    error_ptr = Pointer.new(:id)
+    searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
+    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    searchResults.should.not.be.nil
+    searchResults.count.should == 0
+  end
+  
 
   it "search object" do
     user = stub_user("Bob", 10, Time.now)
