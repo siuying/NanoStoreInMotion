@@ -38,12 +38,15 @@ module NanoStore
 
   module ClassMethods
     def attribute(name)
-      @attributes ||= []
       @attributes << name
     end
     
     def attributes
-      @attributes ||= []
+      @attributes
+    end
+
+    def inherited(subclass)
+      subclass.instance_variable_set(:@attributes, [])
     end
   end
 
