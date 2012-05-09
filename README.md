@@ -35,7 +35,7 @@ Now, you can use NanoStore in your app.
 ### Set default storeage type
 
 ````ruby
-NanoStore.shared_store = NanoStore.store(:memory) # this is the default
+NanoStore.shared_store = NanoStore.store(:memory) # memory only db
 NanoStore.shared_store = NanoStore.store(:file, documents_path + "/nano.db") # persist the data
 ````
 
