@@ -92,6 +92,26 @@ user = User.find(:name, NSFEqualTo, "Bob").first
 user.delete
 ````
 
+## Using Bags
+
+A bag is a loose collection of objects stored in a document store.
+
+    store = NanoStore.store
+    bag = Bag.bag
+    store << bag
+
+    # add subclass of NanoStore::Model object to bag
+    page = Page.new
+    page.text = "Hello"
+    page.index = 1
+    bag << page 
+    
+    # save the bag
+    bag.save
+  
+    # obtain the bags from document store
+    bags = store.bags
+
 ## Performance Tips
 
 NanoStore by defaults saves every object to disk one by one. To speed up inserts and edited objects, increase NSFNanoStore's ```saveInterval``` property.
