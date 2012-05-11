@@ -38,5 +38,12 @@ describe NanoStore do
     Spaceship.store = NanoStore.store :temp
     Spaceship.store.should.not == NanoStore.shared_store
   end
+  
+  it "should enable and disable debug mode" do
+    NanoStore.debug = true    
+    NanoStore.shared_store = NanoStore.store    
+    NanoStore.debug = false
+    NanoStore.shared_store.should.not.be.nil
+  end
 
 end
