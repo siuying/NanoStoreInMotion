@@ -54,6 +54,10 @@ module NanoStore
       @store = store
     end
     
+    def count
+      self.store.count(self)
+    end
+    
     def all
       search = NSFNanoSearch.searchWithStore(self.store)
       error_ptr = Pointer.new(:id)
