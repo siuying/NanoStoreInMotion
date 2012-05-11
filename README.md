@@ -103,8 +103,11 @@ store.transaction do |the_store|
   Animal.count # => 0
   obj1 = Animal.new
   obj1.name = "Cat"
+  obj1.save
+      
   obj2 = Animal.new
   obj2.name = "Dog"
+  obj2.save
   store.changed? # => should be true at this point
   raise "error"  # => an error happened!
 end
