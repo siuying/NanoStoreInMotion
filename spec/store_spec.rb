@@ -46,4 +46,15 @@ describe NanoStore do
     NanoStore.shared_store.should.not.be.nil
   end
 
+  it "should open and close store" do
+    NanoStore.shared_store = NanoStore.store
+    NanoStore.shared_store.open
+    NanoStore.shared_store.closed?.should.be.false
+
+    NanoStore.shared_store.close
+    NanoStore.shared_store.closed?.should.be.true
+
+    NanoStore.shared_store.open
+    NanoStore.shared_store.closed?.should.be.false    
+  end
 end
