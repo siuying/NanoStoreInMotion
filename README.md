@@ -57,12 +57,28 @@ class User < NanoStore::Model
 end
 ````
 
+A key (UUID) that identifies the object will be added automatically.
+
+Attributes must be serializable, which means that only the following data types are allowed: 
+
+- NSArray
+- NSDictionary
+- NSString
+- NSData (*)
+- NSDate
+- NSNumber
+
+#### Note
+
+(*) The data type NSData is allowed, but it will be excluded from the indexing process.
+
 ### Create
 
 ````ruby
 # Initialize a new object and save it
 user = User.new(:name => "Bob", :age => 16, :created_at => Time.now)
 user.save
+user.key # => "550e8400-e29b-41d4-a716-446655440000" (automatically generated UUID)
 
 # Create a new object directly
 user = User.create(:name => "Bob", :age => 16, :created_at => Time.now)
