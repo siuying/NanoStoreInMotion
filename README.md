@@ -71,7 +71,7 @@ user.save
 
 ````ruby
 # find all models
-User.all => [<User#1>, <User#2>]
+User.all # => [<User#1>, <User#2>]
 
 # find model by criteria
 users = User.find(:name, NSFEqualTo, "Bob")
