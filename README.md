@@ -38,7 +38,7 @@ end
 
 Now, you can use NanoStore in your app.
 
-## Usage
+## Basic Usage
 
 ### Set default storeage type
 
@@ -91,4 +91,34 @@ user.save
 user = User.find(:name, NSFEqualTo, "Bob").first
 user.delete
 ````
+
+## Performance Tips
+
+NanoStore by defaults saves every object to disk one by one. To speed up inserts and edited objects, increase NSFNanoStore's ```saveInterval``` property.
+
+### Example
+
+    # Create a store
+    store = NanoStore.shared_store = NanoStore.store
+    
+    # Increase the save interval
+    store.saveInterval = 1000
+
+    # Do a bunch of inserts and/or edits
+    obj1 = Animal.new
+    obj1.name = "Cat"
+    store << obj1
+
+    obj2 = Animal.new
+    obj2.name = "Dog"
+    store << obj2
+    
+    # Don't forget that some objects could be lingering in memory. Force a save.
+    store.save
+
+Note: If you set the saveInterval value to anything other one, keep in mind that some objects may still be left unsaved after being added or modified. To make sure they're saved properly, call:
+
+    store.save
+
+Choosing a good saveInterval value is more art than science. While testing NanoStore using a medium-sized dictionary (iTunes MP3 dictionary) setting saveInterval to 1000 resulted in the best performance. You may want to test with different numbers and fine-tune it for your data set.
 
