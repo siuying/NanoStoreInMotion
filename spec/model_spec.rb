@@ -88,8 +88,8 @@ describe NanoStore::Model do
   
     users = User.all
     users.size.should == 2
-    users[0].key.should == user.key
-    users[1].key.should == user2.key
+    users.collect(&:key).include?(user.key)
+    users.collect(&:key).include?(user2.key)
   end
 
   it "search object" do
