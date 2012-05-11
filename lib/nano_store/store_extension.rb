@@ -125,5 +125,22 @@ class NSFNanoStore
   def count(clazz)
     self.countOfObjectsOfClassNamed(clazz.to_s)
   end
+  
+  # Create a transaction
+  def transcation
+    error_ptr = Pointer.new(:id)
+    beginTransactionAndReturnError(error_ptr)
+    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+
+    begin
+      yield self
+    rescue e
+      rollbackTransactionAndReturnError(error_ptr)
+      raise e
+    end
+    success = commitTransactionAndReturnError(error_ptr)
+    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    success
+  end
 
 end
