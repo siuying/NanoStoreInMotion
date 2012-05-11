@@ -100,7 +100,7 @@ Use transaction is easy, just wrap your database code in a transaction block.
 store = NanoStore.shared_store = NanoStore.store
       
 store.transaction do |the_store|
-  Animal.count.should == 0
+  Animal.count # => 0
   obj1 = Animal.new
   obj1.name = "Cat"
   obj2 = Animal.new
@@ -109,7 +109,7 @@ store.transaction do |the_store|
   raise "error"  # => an error happened!
 end
 
-store.changed? # => should be false
+Animal.count # => 0
 ```
 
 ## Using Bags

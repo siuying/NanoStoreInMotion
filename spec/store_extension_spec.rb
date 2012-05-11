@@ -80,6 +80,7 @@ describe "StoreExtension" do
       obj2 = Animal.new
       obj2.name = "Dog"
       obj2.save
+      Animal.count.should == 2
     end
     store.save
     Animal.count.should == 2
@@ -97,7 +98,7 @@ describe "StoreExtension" do
         obj2 = Animal.new
         obj2.name = "Dog"
         obj2.save
-
+        Animal.count.should == 2
         raise "error"
       end
     rescue
