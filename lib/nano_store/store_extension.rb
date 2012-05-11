@@ -1,13 +1,3 @@
-class NSFNanoObject
-  def [](key)
-    self.objectForKey(key)
-  end
-
-  def []=(key, val)
-    self.setObject(val, forKey: key)
-  end  
-end
-
 class NSFNanoStore
   def close
     error_ptr = Pointer.new(:id)

@@ -1,6 +1,5 @@
 module NanoStore
   class Bag < NSFNanoBag
-    
     ## Accessors
     alias_method :saved, :savedObjects
     alias_method :unsaved, :unsavedObjects
@@ -9,7 +8,7 @@ module NanoStore
     def changed?
       self.hasUnsavedChanges
     end
-    
+
     ## Adding and Removing Objects
     
     # Add an object to bag
@@ -24,9 +23,22 @@ module NanoStore
     # Clear the bag - remove all objects
     alias_method :clear, :removeAllObjects
 
+    # Add an object or array of objects to bag
+    # Return the bag
+    def +(object_or_array)
+      error_ptr = Pointer.new(:id)
+      if object_or_array.is_a?(Array)
+        self.addObjectsFromArray(object_or_array, error:error_ptr)
+      else
+        self.addObject(object_or_array, error:error_ptr)
+      end
+      raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+      self
+    end
+
     # Remove object from bag
     def delete(object)
-      self.removeObjecy(object)
+      self.removeObject(object)
       self
     end
     
@@ -39,19 +51,6 @@ module NanoStore
       else
         self.removeObjectWithKey(key)
       end
-      self
-    end
-
-    # Add an object or array of objects to bag
-    # Return the bag
-    def +(object_or_array)
-      error_ptr = Pointer.new(:id)
-      if object_or_array.is_a?(Array)
-        self.addObjectsFromArray(object_or_array, error:error_ptr)
-      else
-        self.addObject(object, error_ptr)
-      end
-      raise NanoStoreError, error_ptr[0].description if error_ptr[0]
       self
     end
     
@@ -67,7 +66,6 @@ module NanoStore
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
       self
     end
-    
     
     ## Saving, Reloading and Undoing
     

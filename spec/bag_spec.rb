@@ -18,16 +18,18 @@ describe NanoStore::Bag do
     bag = Bag.bag
     NanoStore.shared_store.addObject(bag, error:nil)
 
+    # use << method to add object to bag
     page = Page.new
     page.text = "Hello"
     page.index = 1
-    bag << page
+    bag << page 
     
+    # use + method to add object to bag
     page = Page.new
     page.text = "World"
     page.index = 2
-    bag << page
-    
+    bag += page
+
     bag.unsaved.count.should.be == 2
     bag.changed?.should.be.true
     bag.save
@@ -36,4 +38,29 @@ describe NanoStore::Bag do
     bag.saved.count.should.be == 2
     bag.changed?.should.be.false
   end
+
+  it "should delete object from bag" do
+    bag = Bag.bag
+    NanoStore.shared_store.addObject(bag, error:nil)
+
+    # use << method to add object to bag
+    page = Page.new
+    page.text = "Hello"
+    page.index = 1
+    bag << page
+
+    page = Page.new
+    page.text = "Foo Bar"
+    page.index = 2
+    bag << page 
+
+    bag.save
+    bag.saved.count.should.be == 2
+    bag.delete(page)
+    bag.changed?.should.be.true
+    bag.removed.count.should.be == 1
+    bag.save
+    bag.saved.count.should.be == 1
+  end
+
 end

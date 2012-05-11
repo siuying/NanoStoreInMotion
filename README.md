@@ -30,7 +30,7 @@ Motion::Project::App.setup do |app|
   app.files_dependencies("app/models/my_model_class.rb" => [
     "vendor/NanoStoreInMotion/lib/nano_store.rb",
     "vendor/NanoStoreInMotion/lib/nano_store/model.rb",
-    "vendor/NanoStoreInMotion/lib/nano_store/object_ext.rb"
+    "vendor/NanoStoreInMotion/lib/nano_store/store_extension.rb"
   ])
   
 end
