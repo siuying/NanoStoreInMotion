@@ -69,21 +69,40 @@ describe "StoreExtension" do
     Animal.count.should == 0    
   end
   
-  it "should create a transaction and rollback when fail" do
-    begin
-      store = NanoStore.shared_store = NanoStore.store
+  it "should create a transaction and commit" do
+    store = NanoStore.shared_store = NanoStore.store
+    store.transaction do |the_store|
+      Animal.count.should == 0
+      obj1 = Animal.new
+      obj1.name = "Cat"
+      obj1.save
       
+      obj2 = Animal.new
+      obj2.name = "Dog"
+      obj2.save
+    end
+    store.save
+    Animal.count.should == 2
+  end
+
+  it "should create a transaction and rollback when fail" do
+    store = NanoStore.shared_store = NanoStore.store
+    begin      
       store.transaction do |the_store|
         Animal.count.should == 0
         obj1 = Animal.new
         obj1.name = "Cat"
+        obj1.save
+      
         obj2 = Animal.new
         obj2.name = "Dog"
-        the_store.changed?.should.be.true
+        obj2.save
+
         raise "error"
       end
     rescue
     end
+    store.save
     Animal.count.should == 0
   end
 

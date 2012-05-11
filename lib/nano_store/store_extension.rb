@@ -127,14 +127,14 @@ class NSFNanoStore
   end
   
   # Create a transaction
-  def transcation
+  def transaction
     error_ptr = Pointer.new(:id)
     beginTransactionAndReturnError(error_ptr)
     raise NanoStoreError, error_ptr[0].description if error_ptr[0]
 
     begin
       yield self
-    rescue e
+    rescue StandardError => e
       rollbackTransactionAndReturnError(error_ptr)
       raise e
     end

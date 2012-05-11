@@ -92,6 +92,26 @@ user = User.find(:name, NSFEqualTo, "Bob").first
 user.delete
 ````
 
+## Using Transaction
+
+Use transaction is easy, just wrap your database code in a transaction block.
+
+```ruby
+store = NanoStore.shared_store = NanoStore.store
+      
+store.transaction do |the_store|
+  Animal.count.should == 0
+  obj1 = Animal.new
+  obj1.name = "Cat"
+  obj2 = Animal.new
+  obj2.name = "Dog"
+  store.changed? # => should be true at this point
+  raise "error"  # => an error happened!
+end
+
+store.changed? # => should be false
+```
+
 ## Using Bags
 
 A bag is a loose collection of objects stored in a document store.
