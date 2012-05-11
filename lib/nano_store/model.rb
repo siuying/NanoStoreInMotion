@@ -117,6 +117,7 @@ module NanoStore
     include ModelInstanceMethods
     extend ModelClassMethods
 
+    # initialize a new object
     def self.new(data={})
       extra_keys = (data.keys - self.attributes)
       if extra_keys.size > 0
@@ -125,6 +126,12 @@ module NanoStore
 
       object = self.nanoObjectWithDictionary(data)
       object
+    end
+    
+    # initialize a new object and save it
+    def self.create(data={})
+      object = self.new(data)
+      object.save
     end
   end
 end

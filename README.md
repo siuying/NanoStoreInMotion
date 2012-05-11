@@ -60,11 +60,12 @@ end
 ### Create
 
 ````ruby
-user = User.new
-user.name = name
-user.age  = age
-user.created_at = created_at
+# Initialize a new object and save it
+user = User.new(:name => "Bob", :age => 16, :created_at => Time.now)
 user.save
+
+# Create a new object directly
+user = User.create(:name => "Bob", :age => 16, :created_at => Time.now)
 ````
 
 ### Retrieve

@@ -40,15 +40,15 @@ describe NanoStore::Model do
   end
 
   it "create object with initializer" do
-    name = "Abby"
-    age  = 10
-    created_at = Time.now
-    user = User.new(:name => name, :age => age, :created_at => created_at)
+    user = User.create(:name => "Abby", :age => 30, :created_at => Time.now)
     user.name.should == name
     user.age.should == age
     user.created_at.should == created_at
+  end
+  
+  it "throw error when invalid parameter on initialize" do
     lambda { 
-      user = User.new(:name => name, :age => age, :created_at => created_at, :gender => "m")
+      user = User.new(:name => "Eddie", :age => 12, :created_at => Time.now, :gender => "m")
     }.should.raise(::NanoStore::NanoStoreError)
   end
 
