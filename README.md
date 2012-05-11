@@ -168,3 +168,10 @@ store.save
 
 Choosing a good saveInterval value is more art than science. While testing NanoStore using a medium-sized dictionary (iTunes MP3 dictionary) setting saveInterval to 1000 resulted in the best performance. You may want to test with different numbers and fine-tune it for your data set.
 
+## Credit
+
+- Based on [NanoStore](https://github.com/tciuro/NanoStore) from Tito Ciuro, Webbo, L.L.C.
+
+## License
+
+BSD License
