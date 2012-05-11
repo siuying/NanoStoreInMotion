@@ -36,6 +36,7 @@ describe NanoStore::Model do
 
     user.name.should == "Bob"
     user.age.should == 10
+    User.count.should == 1
   end
   
   it "update objects" do
@@ -77,6 +78,7 @@ describe NanoStore::Model do
     users = User.find(:name, NSFEqualTo, "Bob")
     users.should.not.be.nil
     users.count.should == 0
+    User.count.should == 0
   end
   
   it "find all objects" do
@@ -85,7 +87,9 @@ describe NanoStore::Model do
     
     user2 = stub_user("Amy", 11, Time.now)
     user2.save
-  
+
+
+    User.count.should == 2  
     users = User.all
     users.size.should == 2
     users.collect(&:key).include?(user.key)
@@ -98,7 +102,8 @@ describe NanoStore::Model do
     
     user2 = stub_user("Amy", 11, Time.now)
     user2.save
-  
+
+    User.count.should == 2
     users = User.find(:name, NSFEqualTo, "Bob")
     users.should.not.be.nil
     user = users.first

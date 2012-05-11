@@ -1,4 +1,12 @@
 class NSFNanoStore
+  def engine
+    self.nanoStoreEngine
+  end
+  
+  def changed?
+    self.hasUnsavedChanges
+  end
+
   ## Open and Close store
 
   def close
@@ -79,9 +87,7 @@ class NSFNanoStore
   end
   
   # Discards the uncommitted changes that were added to the document store. 
-  def reset
-    self.discardUnsavedChanges
-  end
+  alias_method :discard, :discardUnsavedChanges
   
   # Compact the database file size.
   def compact
