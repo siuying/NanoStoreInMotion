@@ -117,8 +117,14 @@ module NanoStore
     include ModelInstanceMethods
     extend ModelClassMethods
 
-    def self.new
-      self.nanoObject
+    def self.new(data={})
+      extra_keys = (data.keys - self.attributes)
+      if extra_keys.size > 0
+        raise NanoStoreError, "fields #{extra_keys.join(', ')} is not a defined fields"
+      end
+
+      object = self.nanoObjectWithDictionary(data)
+      object
     end
   end
 end

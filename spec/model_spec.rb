@@ -38,7 +38,20 @@ describe NanoStore::Model do
     user.age.should == 10
     User.count.should == 1
   end
-  
+
+  it "create object with initializer" do
+    name = "Abby"
+    age  = 10
+    created_at = Time.now
+    user = User.new(:name => name, :age => age, :created_at => created_at)
+    user.name.should == name
+    user.age.should == age
+    user.created_at.should == created_at
+    lambda { 
+      user = User.new(:name => name, :age => age, :created_at => created_at, :gender => "m")
+    }.should.raise(::NanoStore::NanoStoreError)
+  end
+
   it "update objects" do
     user = stub_user("Bob", 10, Time.now)
     user.save
