@@ -40,7 +40,7 @@ Now, you can use NanoStore in your app.
 
 ## Basic Usage
 
-### Set default storeage type
+### Set default storage type
 
 ````ruby
 NanoStore.shared_store = NanoStore.store(:memory) # memory only db
@@ -96,21 +96,23 @@ user.delete
 
 A bag is a loose collection of objects stored in a document store.
 
-    store = NanoStore.store
-    bag = Bag.bag
-    store << bag
+```ruby
+store = NanoStore.store
+bag = Bag.bag
+store << bag
 
-    # add subclass of NanoStore::Model object to bag
-    page = Page.new
-    page.text = "Hello"
-    page.index = 1
-    bag << page 
+# add subclass of NanoStore::Model object to bag
+page = Page.new
+page.text = "Hello"
+page.index = 1
+bag << page 
     
-    # save the bag
-    bag.save
+# save the bag
+bag.save
   
-    # obtain the bags from document store
-    bags = store.bags
+# obtain the bags from document store
+bags = store.bags
+```
 
 ## Performance Tips
 
@@ -118,27 +120,31 @@ NanoStore by defaults saves every object to disk one by one. To speed up inserts
 
 ### Example
 
-    # Create a store
-    store = NanoStore.shared_store = NanoStore.store
+```ruby
+# Create a store
+store = NanoStore.shared_store = NanoStore.store
     
-    # Increase the save interval
-    store.saveInterval = 1000
+# Increase the save interval
+store.saveInterval = 1000
 
-    # Do a bunch of inserts and/or edits
-    obj1 = Animal.new
-    obj1.name = "Cat"
-    store << obj1
+# Do a bunch of inserts and/or edits
+obj1 = Animal.new
+obj1.name = "Cat"
+store << obj1
 
-    obj2 = Animal.new
-    obj2.name = "Dog"
-    store << obj2
-    
-    # Don't forget that some objects could be lingering in memory. Force a save.
-    store.save
+obj2 = Animal.new
+obj2.name = "Dog"
+store << obj2
+
+# Don't forget that some objects could be lingering in memory. Force a save.
+store.save
+```
 
 Note: If you set the saveInterval value to anything other one, keep in mind that some objects may still be left unsaved after being added or modified. To make sure they're saved properly, call:
 
+```ruby
     store.save
+```
 
 Choosing a good saveInterval value is more art than science. While testing NanoStore using a medium-sized dictionary (iTunes MP3 dictionary) setting saveInterval to 1000 resulted in the best performance. You may want to test with different numbers and fine-tune it for your data set.
 
