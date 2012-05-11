@@ -6,6 +6,10 @@ class NSFNanoStore
   def changed?
     self.hasUnsavedChanges
   end
+  
+  def save_interval=(interval)
+    self.setSaveInterval(interval)
+  end
 
   ## Open and Close store
 

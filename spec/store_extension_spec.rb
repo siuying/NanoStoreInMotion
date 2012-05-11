@@ -53,7 +53,7 @@ describe "StoreExtension" do
   
   it "should discard unsave changes" do
     store = NanoStore.shared_store = NanoStore.store
-    store.saveInterval = 1000 # must use setInterval to set auto save interval first
+    store.save_interval = 1000 # must use save_interval= to set auto save interval first
     store.engine.synchronousMode = SynchronousModeFull
 
     Animal.count.should == 0

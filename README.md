@@ -148,7 +148,7 @@ NanoStore by defaults saves every object to disk one by one. To speed up inserts
 store = NanoStore.shared_store = NanoStore.store
     
 # Increase the save interval
-store.saveInterval = 1000
+store.save_interval = 1000
 
 # Do a bunch of inserts and/or edits
 obj1 = Animal.new
