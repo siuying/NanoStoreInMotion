@@ -22,6 +22,7 @@ module NanoStore
       matched = method.to_s.match(/^([^=]+)(=)?$/)
       name = matched[1]
       modifier = matched[2]
+
       if self.class.attributes.include?(name.to_sym) || name == "_id"
         if modifier == "="
           self.info[name.to_sym] = args[0]
@@ -35,6 +36,23 @@ module NanoStore
   end
 
   module ModelClassMethods
+    # initialize a new object
+    def new(data={})
+      extra_keys = (data.keys - self.attributes)
+      if extra_keys.size > 0
+        raise NanoStoreError, "fields #{extra_keys.join(', ')} is not a defined fields"
+      end
+
+      object = self.nanoObjectWithDictionary(data)
+      object
+    end
+    
+    # initialize a new object and save it
+    def create(data={})
+      object = self.new(data)
+      object.save
+    end
+
     def attribute(name)
       @attributes << name
     end
@@ -116,22 +134,5 @@ module NanoStore
   class Model < NSFNanoObject
     include ModelInstanceMethods
     extend ModelClassMethods
-
-    # initialize a new object
-    def self.new(data={})
-      extra_keys = (data.keys - self.attributes)
-      if extra_keys.size > 0
-        raise NanoStoreError, "fields #{extra_keys.join(', ')} is not a defined fields"
-      end
-
-      object = self.nanoObjectWithDictionary(data)
-      object
-    end
-    
-    # initialize a new object and save it
-    def self.create(data={})
-      object = self.new(data)
-      object.save
-    end
   end
 end

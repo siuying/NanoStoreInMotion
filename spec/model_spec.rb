@@ -40,7 +40,10 @@ describe NanoStore::Model do
   end
 
   it "create object with initializer" do
-    user = User.create(:name => "Abby", :age => 30, :created_at => Time.now)
+    name = "Abby"
+    age  = 30
+    created_at = Time.now
+    user = User.create(:name => name, :age => age, :created_at => created_at)
     user.name.should == name
     user.age.should == age
     user.created_at.should == created_at
