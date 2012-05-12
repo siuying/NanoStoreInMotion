@@ -15,10 +15,12 @@ describe NanoStore::Model do
   end
   
   before do
+    NanoStore.debug = true
     NanoStore.shared_store = NanoStore.store
   end
   
   after do
+    NanoStore.debug = false
     NanoStore.shared_store = nil
   end
 
