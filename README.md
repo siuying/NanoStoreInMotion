@@ -25,19 +25,11 @@ require 'motion/project'
 require 'motion-cocoapods'
 Motion::Project::App.setup do |app|
   app.name = 'myapp'
-  app.files += Dir.glob(File.join(app.project_dir, 'vendor/BubbleWrap/lib/**/*.rb'))
-  app.files += Dir.glob(File.join(app.project_dir, 'vendor/NanoStoreInMotion/lib/**/*.rb'))
+  app.files = Dir.glob(File.join(app.project_dir, 'vendor/BubbleWrap/lib/**/*.rb')) + app.files
+  app.files = Dir.glob(File.join(app.project_dir, 'vendor/NanoStoreInMotion/lib/**/*.rb')) + app.files
   app.pods do
     dependency 'NanoStore'
-  end
-  
-  # You may want to make sure nano store is loaded before your models
-  app.files_dependencies("app/models/my_model_class.rb" => [
-    "vendor/NanoStoreInMotion/lib/nano_store.rb",
-    "vendor/NanoStoreInMotion/lib/nano_store/model.rb",
-    "vendor/NanoStoreInMotion/lib/nano_store/store_extension.rb"
-  ])
-  
+  end  
 end
 ```
 
