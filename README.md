@@ -13,9 +13,9 @@ Install the CocoaPods dependency manager if you haven't it already:
 
 Add BubbleWrap, NanoStore and NanoStoreInMotion as a git submodule of your RubyMotion project:
 
-    git clone https://github.com/mattetti/BubbleWrap.git vendor/BubbleWrap
-    git clone https://github.com/tciuro/NanoStore.git vendor/NanoStore
-    git clone https://github.com/siuying/NanoStoreInMotion.git vendor/NanoStoreInMotion
+    git submodule add https://github.com/mattetti/BubbleWrap.git vendor/BubbleWrap
+    git submodule add https://github.com/tciuro/NanoStore.git vendor/NanoStore
+    git submodule add https://github.com/siuying/NanoStoreInMotion.git vendor/NanoStoreInMotion
 
 Add the lib path and NanoStore pod to your project 'Rakefile'
 
