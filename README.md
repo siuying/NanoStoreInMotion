@@ -6,6 +6,11 @@ Status: Work in progress. API subject to change.
 
 ## Installation
 
+Install the CocoaPods dependency manager if you haven't it already:
+
+    gem install motion-cocoapods
+    pod setup
+
 Add BubbleWrap, NanoStore and NanoStoreInMotion as a git submodule of your RubyMotion project:
 
     git clone https://github.com/mattetti/BubbleWrap.git vendor/BubbleWrap
