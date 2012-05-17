@@ -25,7 +25,11 @@ module NanoStore
 
       if self.class.attributes.include?(name.to_sym) || name == "_id"
         if modifier == "="
-          self.info[name.to_sym] = args[0]
+          if args[0].nil?
+            self.info.delete(name.to_sym)
+          else
+            self.info[name.to_sym] = args[0]
+          end
         else
           self.info[name.to_sym]
         end
