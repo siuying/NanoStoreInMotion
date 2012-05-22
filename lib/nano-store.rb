@@ -1,0 +1,1 @@
+require "nano_store"
