@@ -13,5 +13,7 @@ Gem::Specification.new do |gem|
   gem.name          = "nano-store"
   gem.require_paths = ["lib"]
   gem.version       = NanoStore::VERSION
+
   gem.add_dependency 'bubble-wrap', '>= 0.1.1'
+  gem.add_dependency 'motion-cocoapods', '>= 1.0.1'
 end

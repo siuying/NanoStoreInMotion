@@ -25,6 +25,11 @@ require 'nano-store'
 
 Motion::Project::App.setup do |app|
   app.name = 'myapp'
+  
+  # Only needed if you have not already specifying a pods dependency
+  app.pods do
+    dependency 'NanoStore', '~> 2.0.1'
+  end
 end
 ```
 
