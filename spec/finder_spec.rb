@@ -58,6 +58,34 @@ describe "Finder" do
     user = users.first
     user.name.should.be == "Ronald"
   end
+  
+  it "sort search results" do
+    stub_user("Alan", 39, Time.now).save
+    stub_user("Cat", 29, Time.now).save
+    stub_user("Dan", 36, Time.now).save
+    stub_user("Ted", 18, Time.now).save
+    stub_user("Zidd", 59, Time.now).save
+    stub_user("Sarah", 49, Time.now).save
+
+    users = User.find({:age => { NSFGreaterThan => 1 }}, {:sort => {:age => true}})
+    users.size.should == 9
+    user = users.first
+    user.name.should.be == "Carl"
+    user.age.should.be == 4
+    user = users.last
+    user.name.should.be == "Zidd"
+    user.age.should.be == 59
+
+    users = User.find({:age => { NSFGreaterThan => 1 }}, {:sort => {:age => 'DESC'}})
+    users.size.should == 9
+    user = users.last
+    user.name.should.be == "Carl"
+    user.age.should.be == 4
+    user = users.first
+    user.name.should.be == "Zidd"
+    user.age.should.be == 59
+  end
+  
 
   it "find object" do
     user = User.find(:name, NSFEqualTo, "Bob").first
