@@ -1,7 +1,18 @@
 module NanoStore
   module FinderMethods
     def all(*args)
-      find({}, *args)
+      if args[0].is_a?(Hash)
+        sort_options = args[0][:sort] || {}
+      else
+        sort_options = {}
+      end
+      
+      if sort_options.empty?
+        self.store.objectsOfClassNamed(self.to_s)
+      else
+        sort_descriptors = sort_descriptor_with_options(sort_options)
+        self.store.objectsOfClassNamed(self.to_s, usingSortDescriptors:sort_descriptors)
+      end
     end
     
     # find model by criteria
@@ -46,7 +57,9 @@ module NanoStore
       error_ptr = Pointer.new(:id)
       searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
-      searchResults
+      
+      # workaround until we find way to only query specific class
+      searchResults.select {|obj| obj.class == self }
     end
     
     # find model keys by criteria
@@ -90,9 +103,13 @@ module NanoStore
       search.sort = sort_descriptors
 
       error_ptr = Pointer.new(:id)
-      searchResults = search.searchObjectsWithReturnType(NSFReturnKeys, error:error_ptr)
+
+      search.attributesToBeReturned = ["NSFObjectClass", "NSFKey"]
+      searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
-      searchResults
+      
+      # workaround until we find way to only query specific class
+      searchResults.select {|obj| obj.class == self }.collect(&:key)
     end
     
     protected
@@ -101,7 +118,6 @@ module NanoStore
       options.each do |key, val|
         attribute = NSFNanoPredicate.predicateWithColumn(NSFAttributeColumn, matching:NSFEqualTo, value:key.to_s)
         expression = NSFNanoExpression.expressionWithPredicate(attribute)
-
         if val.is_a?(Hash)
           val.each do |operator, sub_val|
             value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:operator, value:sub_val)

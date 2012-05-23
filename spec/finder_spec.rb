@@ -127,11 +127,18 @@ describe "Finder" do
     users.size.should == 9
     users.first.name.should == "Carl"
   end
-  
-  it "find only a class itself" do
+
+  it "#all only return objects of the class" do
     Car.create(:name => "Honda")
     Car.count.should == 1
     Car.all.size.should == 1
+  end
+  
+  it "#find only return objects of the class" do
+    Car.create(:name => "Honda")
+    Car.count.should == 1
+    Car.find({}).size.should == 1
+    Car.find_keys({}).size.should == 1
   end
   
 
