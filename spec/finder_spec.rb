@@ -46,6 +46,7 @@ describe "Finder" do
 
     users.collect(&:name).include?("Carl").should == true
     users.collect(&:name).include?("Amy").should == true
+    users.collect(&:name).include?("Bob").should == false
   end
   
 
