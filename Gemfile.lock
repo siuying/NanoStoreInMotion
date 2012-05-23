@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    nano-store (0.2.4)
+      bubble-wrap (>= 0.1.1)
+      motion-cocoapods (>= 1.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bubble-wrap (0.1.1)
+    cocoapods (0.5.1)
+      xcodeproj (~> 0.1.0)
+    motion-cocoapods (1.0.1)
+      cocoapods (>= 0.5.1)
+    xcodeproj (0.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  nano-store!

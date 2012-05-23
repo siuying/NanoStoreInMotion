@@ -1,3 +1,4 @@
 vendor/*/build-*
+pkg/*
 .repl_history
 build

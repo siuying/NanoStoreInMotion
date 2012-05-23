@@ -1,0 +1,1 @@
+../../NanoStore/Classes/Private/NSFNanoPredicate_Private.h
