@@ -79,14 +79,6 @@ module NanoStore
     def count
       self.store.count(self)
     end
-    
-    def all
-      search = NSFNanoSearch.searchWithStore(self.store)
-      error_ptr = Pointer.new(:id)
-      searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
-      raise NanoStoreError, error_ptr[0].description if error_ptr[0]
-      searchResults.values
-    end
 
     def inherited(subclass)
       subclass.instance_variable_set(:@attributes, [])

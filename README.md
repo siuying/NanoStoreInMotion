@@ -96,7 +96,7 @@ users = User.find(:name => { NSFEqualTo => "Ronald" })
 users = User.find(:name => { NSFEqualTo => "Ronald" }, :age => { NSFGreaterThan => 50 })
 
 # Optionally sort the result with additional hash parameters
-users = User.find({:age => { NSFGreaterThan => 10 }}, {:sort => {:age => 'DESC'}})
+users = User.find({:age => { NSFGreaterThan => 10 }}, {:sort => {:age => :desc}})
 ````
 
 ### Update

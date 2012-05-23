@@ -82,19 +82,4 @@ describe NanoStore::Model do
     User.count.should == 0
   end
   
-  it "find all objects" do
-    user = stub_user("Bob", 10, Time.now)
-    user.save
-    
-    user2 = stub_user("Amy", 11, Time.now)
-    user2.save
-
-
-    User.count.should == 2  
-    users = User.all
-    users.size.should == 2
-    users.collect(&:key).include?(user.key)
-    users.collect(&:key).include?(user2.key)
-  end
-
 end

@@ -27,6 +27,7 @@ describe "Finder" do
   it "search object traditional way: supply key, operator and value" do
     users = User.find(:name, NSFEqualTo, "Bob")
     users.should.not.be.nil
+
     user = users.first
     user.should.not.be.nil
     user.name.should.be == "Bob"
@@ -67,7 +68,7 @@ describe "Finder" do
     stub_user("Zidd", 59, Time.now).save
     stub_user("Sarah", 49, Time.now).save
 
-    users = User.find({:age => { NSFGreaterThan => 1 }}, {:sort => {:age => true}})
+    users = User.find({:age => { NSFGreaterThan => 1 }}, {:sort => {:age => :asc}})
     users.size.should == 9
     user = users.first
     user.name.should.be == "Carl"
@@ -85,11 +86,31 @@ describe "Finder" do
     user.name.should.be == "Zidd"
     user.age.should.be == 59
   end
-  
 
   it "find object" do
     user = User.find(:name, NSFEqualTo, "Bob").first
     user.name.should == "Bob"
   end
   
+  it "find all objects" do
+    User.count.should == 3
+    users = User.all
+    users.size.should == 3
+  end
+  
+  it "find all objects, sorted" do
+    stub_user("Alan", 39, Time.now).save
+    stub_user("Cat", 29, Time.now).save
+    stub_user("Dan", 36, Time.now).save
+    stub_user("Ted", 18, Time.now).save
+    stub_user("Zidd", 59, Time.now).save
+    stub_user("Sarah", 49, Time.now).save
+
+    User.count.should == 9
+    users = User.all({:sort => {:age => :asc}})
+    users.size.should == 9
+    users.first.name.should == "Carl"
+  end
+  
+
 end

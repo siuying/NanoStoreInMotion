@@ -1,5 +1,9 @@
 module NanoStore
-  module FinderMethods    
+  module FinderMethods
+    def all(*args)
+      find({}, *args)
+    end
+    
     # find model by criteria
     #
     # Return array of models
@@ -30,10 +34,15 @@ module NanoStore
         raise "unexpected parameters #{arg}"
       end
       search = NSFNanoSearch.searchWithStore(self.store)
-      expressions = expressions_with_options(options)
+
+      unless options.empty?
+        expressions = expressions_with_options(options)
+        search.expressions = expressions
+      end
+      
       sort_descriptors = sort_descriptor_with_options(sort_options)
-      search.expressions = expressions
       search.sort = sort_descriptors
+      
       error_ptr = Pointer.new(:id)
       searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
@@ -69,11 +78,17 @@ module NanoStore
       else
         raise "unexpected parameters #{arg}"
       end
+      
       search = NSFNanoSearch.searchWithStore(self.store)
-      expressions = expressions_with_options(options)
+
+      unless options.empty?
+        expressions = expressions_with_options(options)
+        search.expressions = expressions
+      end
+
       sort_descriptors = sort_descriptor_with_options(sort_options)
-      search.expressions = expressions
       search.sort = sort_descriptors
+
       error_ptr = Pointer.new(:id)
       searchResults = search.searchObjectsWithReturnType(NSFReturnKeys, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
@@ -105,14 +120,16 @@ module NanoStore
       'ASC' => true,
       'DESC' => false,
       :ASC => true,
-      :DESC => false
+      :DESC => false,      
+      'asc' => true,
+      'desc' => false,
+      :asc => true,
+      :desc => false,
     }
     
     def sort_descriptor_with_options(options)
       sorter = options.collect do |opt_key, opt_val|
-        if opt_val.is_a?(TrueClass) || opt_val.is_a?(FalseClass)
-          NSFNanoSortDescriptor.alloc.initWithAttribute(opt_key.to_s, ascending:opt_val)
-        elsif SORT_MAPPING.keys.include?(opt_val)
+        if SORT_MAPPING.keys.include?(opt_val)
           NSFNanoSortDescriptor.alloc.initWithAttribute(opt_key.to_s, ascending:SORT_MAPPING[opt_val])
         else
           raise "unsupported sort parameters: #{opt_val}"
