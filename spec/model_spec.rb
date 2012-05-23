@@ -67,21 +67,6 @@ describe NanoStore::Model do
     user2.key.should == user.key
   end
   
-  it "find object" do
-    user = stub_user("Bob", 10, Time.now)
-    user.save
-    
-    users = User.find(:name, NSFEqualTo, "Bob")
-    users.should.not.be.nil
-    users.count.should == 1
-    users.first.name.should == user.name
-    
-    users = User.find_keys(:name, NSFEqualTo, "Bob")
-    users.should.not.be.nil
-    users.count.should == 1
-    users.first.should == user.key
-  end
-  
   it "delete object" do
     user = stub_user("Bob", 10, Time.now)
     user.save
@@ -112,19 +97,4 @@ describe NanoStore::Model do
     users.collect(&:key).include?(user2.key)
   end
 
-  it "search object" do
-    user = stub_user("Bob", 10, Time.now)
-    user.save
-    
-    user2 = stub_user("Amy", 11, Time.now)
-    user2.save
-
-    User.count.should == 2
-    users = User.find(:name, NSFEqualTo, "Bob")
-    users.should.not.be.nil
-    user = users.first
-    user.should.not.be.nil
-    user.name.should.be == "Bob"
-    user.age.should.be == 10
-  end
 end
