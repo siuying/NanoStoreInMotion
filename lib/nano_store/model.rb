@@ -23,7 +23,7 @@ module NanoStore
       name = matched[1]
       modifier = matched[2]
 
-      if self.class.attributes.include?(name.to_sym) || name == "_id"
+      if self.class.attributes.include?(name.to_sym)
         if modifier == "="
           if args[0].nil?
             self.info.delete(name.to_sym)
@@ -83,15 +83,6 @@ module NanoStore
     def inherited(subclass)
       subclass.instance_variable_set(:@attributes, [])
       subclass.instance_variable_set(:@store, nil)
-    end
-    
-    private
-    def search_with_store(store, attribute, match, value)
-      search = NSFNanoSearch.searchWithStore(self.store)
-      search.attribute = attribute.to_s
-      search.match = match
-      search.value = value
-      search
     end
   end
 
