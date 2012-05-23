@@ -1,4 +1,5 @@
 vendor/*/build-*
+vendor/Pods/Pods.xcodeproj/project.pbxproj
 pkg/*
 .repl_history
 build
