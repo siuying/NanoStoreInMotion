@@ -115,6 +115,9 @@ user.save
 ````ruby
 user = User.find(:name, NSFEqualTo, "Bob").first
 user.delete
+
+# Bulk delete
+User.delete(:age => {NSFGreaterThan => 20})
 ````
 
 ## Using Transaction
