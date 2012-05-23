@@ -14,7 +14,7 @@ module NanoStore
         self.store.objectsOfClassNamed(self.to_s, usingSortDescriptors:sort_descriptors)
       end
     end
-    
+
     # find model by criteria
     #
     # Return array of models

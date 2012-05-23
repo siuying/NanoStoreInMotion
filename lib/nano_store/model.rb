@@ -79,6 +79,11 @@ module NanoStore
     def count
       self.store.count(self)
     end
+    
+    def delete(*args)
+      keys = find_keys(*args)
+      self.store.delete_keys(keys)
+    end
 
     def inherited(subclass)
       subclass.instance_variable_set(:@attributes, [])

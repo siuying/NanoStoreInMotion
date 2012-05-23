@@ -82,4 +82,21 @@ describe NanoStore::Model do
     User.count.should == 0
   end
   
+  
+  it "bulk delete" do
+    user = stub_user("Bob", 10, Time.now)
+    user.save
+    
+    user = stub_user("Ken", 12, Time.now)
+    user.save
+
+    user = stub_user("Kyu", 14, Time.now)
+    user.save
+
+    User.count.should == 3
+    User.delete({:age => {NSFGreaterThan => 10}})
+    User.count.should == 1
+  end
+  
+  
 end
