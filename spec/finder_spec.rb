@@ -1,4 +1,10 @@
 describe "Finder" do
+  class Car < NanoStore::Model
+    attribute :name
+    attribute :created_at
+  end
+  
+  
   def stub_user(name, age, created_at)
     user = User.new
     user.name = name
@@ -120,6 +126,12 @@ describe "Finder" do
     users = User.all({:sort => {:age => :asc}})
     users.size.should == 9
     users.first.name.should == "Carl"
+  end
+  
+  it "find only a class itself" do
+    Car.create(:name => "Honda")
+    Car.count.should == 1
+    Car.all.size.should == 1
   end
   
 
