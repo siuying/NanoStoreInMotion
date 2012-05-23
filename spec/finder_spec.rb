@@ -38,7 +38,7 @@ describe "Finder" do
     user.name.should.be == "Carl"
     user.age.should.be == 4
   end
-  
+
   it "search object with multiple parameters" do
     stub_user("Ronald", 18, Time.now).save
     stub_user("Ronald", 29, Time.now).save

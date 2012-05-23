@@ -7,7 +7,6 @@ module NanoStore
     # Examples:
     #   User.find(:name, NSFEqualTo, "Bob") # => [<User#1>]
     #   User.find(:name => "Bob") # => [<User#1>]
-    #   User.find(:name => ["Bob", "Ken"]) # => [<User#1>, <User#2>]
     #   User.find(:name => {NSFEqualTo => "Bob"}) # => [<User#1>]
     #
     def find(*arg)
@@ -27,6 +26,15 @@ module NanoStore
       searchResults.values
     end
     
+    # find model keys by criteria
+    #
+    # Return array of keys
+    #
+    # Examples:
+    #   User.find(:name, NSFEqualTo, "Bob") # => [<User#1>]
+    #   User.find(:name => "Bob") # => [<User#1>]
+    #   User.find(:name => {NSFEqualTo => "Bob"}) # => [<User#1>]
+    #
     def find_keys(*arg)
       if arg[0].is_a?(Hash)
         # hash style
@@ -54,17 +62,13 @@ module NanoStore
         if val.is_a?(Hash)
           val.each do |operator, sub_val|
             value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:operator, value:sub_val)
-            expressions << expression.addPredicate(value, withOperator:NSFAnd)
-          end
-        elsif val.is_a?(Array)
-          val.each do |sub_val|
-            value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:NSFEqualTo, value:sub_val)
-            expressions << expression.addPredicate(value, withOperator:NSFAnd)
+            expression.addPredicate(value, withOperator:NSFAnd)
           end
         else
           value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:NSFEqualTo, value:val)
-          expressions << expression.addPredicate(value, withOperator:NSFAnd)
+          expression.addPredicate(value, withOperator:NSFAnd)
         end
+        expressions << expression
       end
       return expressions
     end
