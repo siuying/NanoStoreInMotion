@@ -67,9 +67,9 @@ module NanoStore
     # Return array of keys
     #
     # Examples:
-    #   User.find(:name, NSFEqualTo, "Bob") # => [<User#1>]
-    #   User.find(:name => "Bob") # => [<User#1>]
-    #   User.find(:name => {NSFEqualTo => "Bob"}) # => [<User#1>]
+    #   User.find_keys(:name, NSFEqualTo, "Bob") # => ["1"]
+    #   User.find_keys(:name => "Bob") # => ["1"]
+    #   User.find_keys(:name => {NSFEqualTo => "Bob"}) # => ["1"]
     #
     def find_keys(*arg)
       if arg[0].is_a?(Hash)
@@ -112,7 +112,7 @@ module NanoStore
       searchResults.select {|obj| obj.class == self }.collect(&:key)
     end
     
-    protected
+    private
     def expressions_with_options(options)
       expressions = []
       options.each do |key, val|
