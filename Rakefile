@@ -1,3 +1,4 @@
+require "bundler/gem_tasks"
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
 require 'motion-cocoapods'
@@ -11,11 +12,4 @@ Motion::Project::App.setup do |app|
   app.pods do
     dependency 'NanoStore'
   end
-end
-
-desc "Build the gem"
-task :gem do
-  sh "bundle exec gem build nano-store.gemspec"
-  sh "mkdir -p pkg"
-  sh "mv *.gem pkg/"
 end
