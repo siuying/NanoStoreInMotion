@@ -89,6 +89,11 @@ User.all # => [<User#1>, <User#2>]
 
 # find model by criteria
 users = User.find(:name, NSFEqualTo, "Bob")
+
+# or use hash
+users = User.find(:name => "Bob")
+users = User.find(:name => { NSFEqualTo => "Ronald" })
+users = User.find(:name => { NSFEqualTo => "Ronald" }, :age => { NSFGreaterThan => 50 })
 ````
 
 ### Update

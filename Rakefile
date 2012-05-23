@@ -2,6 +2,7 @@ $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
 require 'motion-cocoapods'
 require 'bubble-wrap'
+require 'motion-redgreen'
 
 Motion::Project::App.setup do |app|
   app.name = 'NanoStoreDemo'
@@ -12,9 +13,9 @@ Motion::Project::App.setup do |app|
   end
 end
 
-# desc "Build the gem"
-# task :gem do
-#   sh "bundle exec gem build nano-store.gemspec"
-#   sh "mkdir -p pkg"
-#   sh "mv *.gem pkg/"
-# end
+desc "Build the gem"
+task :gem do
+  sh "bundle exec gem build nano-store.gemspec"
+  sh "mkdir -p pkg"
+  sh "mv *.gem pkg/"
+end

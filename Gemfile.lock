@@ -13,10 +13,12 @@ GEM
       xcodeproj (~> 0.1.0)
     motion-cocoapods (1.0.1)
       cocoapods (>= 0.5.1)
+    motion-redgreen (0.0.2)
     xcodeproj (0.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  motion-redgreen
   nano-store!
