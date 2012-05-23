@@ -107,6 +107,14 @@ module NanoStore
             value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:operator, value:sub_val)
             expression.addPredicate(value, withOperator:NSFAnd)
           end
+        elsif val.is_a?(Array)
+          value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:NSFEqualTo, value:val.pop)
+          expression.addPredicate(value, withOperator:NSFAnd)
+
+          val.each do |sub_val|
+            value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:NSFEqualTo, value:sub_val)
+            expression.addPredicate(value, withOperator:NSFOr)
+          end
         else
           value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:NSFEqualTo, value:val)
           expression.addPredicate(value, withOperator:NSFAnd)
@@ -117,20 +125,14 @@ module NanoStore
     end
     
     SORT_MAPPING = {
-      'ASC' => true,
-      'DESC' => false,
-      :ASC => true,
-      :DESC => false,      
       'asc' => true,
       'desc' => false,
-      :asc => true,
-      :desc => false,
     }
     
     def sort_descriptor_with_options(options)
       sorter = options.collect do |opt_key, opt_val|
-        if SORT_MAPPING.keys.include?(opt_val)
-          NSFNanoSortDescriptor.alloc.initWithAttribute(opt_key.to_s, ascending:SORT_MAPPING[opt_val])
+        if SORT_MAPPING.keys.include?(opt_val.to_s.downcase)
+          NSFNanoSortDescriptor.alloc.initWithAttribute(opt_key.to_s, ascending:SORT_MAPPING[opt_val.to_s.downcase])
         else
           raise "unsupported sort parameters: #{opt_val}"
         end
