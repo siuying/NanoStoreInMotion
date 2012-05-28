@@ -1,5 +1,5 @@
 PODS:
-  - NanoStore (2.0.1)
+  - NanoStore (2.1.1)
 
 DEPENDENCIES:
-  - NanoStore
+  - NanoStore (~> 2.1.1)

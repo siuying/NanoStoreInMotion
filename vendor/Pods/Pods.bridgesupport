@@ -806,6 +806,9 @@
 <method selector='expressions'>
 <retval declared_type='NSArray*' type='@'/>
 </method>
+<method selector='filterClass'>
+<retval declared_type='NSString*' type='@'/>
+</method>
 <method selector='groupValues'>
 <retval declared_type='BOOL' type='B'/>
 </method>
@@ -851,6 +854,10 @@
 </method>
 <method selector='setExpressions:'>
 <arg name='expressions' declared_type='NSArray*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFilterClass:'>
+<arg name='filterClass' declared_type='NSString*' type='@' index='0'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setGroupValues:'>
@@ -954,7 +961,7 @@
 <arg name='outError' declared_type='NSError**' type='^@' index='0' type_modifier='o'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
-<method selector='_debug' class_method='true'>
+<method selector='_createAndOpenDebugDatabase' class_method='true'>
 <retval declared_type='NSFNanoStore*' type='@'/>
 </method>
 <method selector='_defaultTestData' class_method='true'>

@@ -10,7 +10,7 @@ Motion::Project::App.setup do |app|
 
   app.files += Dir.glob(File.join(app.project_dir, 'lib/nano_store/*.rb'))
   app.pods do
-    dependency 'NanoStore'
+    dependency 'NanoStore', '~> 2.1.1'
   end
 end
 

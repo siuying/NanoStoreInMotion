@@ -45,6 +45,7 @@ module NanoStore
         raise "unexpected parameters #{arg}"
       end
       search = NSFNanoSearch.searchWithStore(self.store)
+      search.filterClass = self.to_s
 
       unless options.empty?
         expressions = expressions_with_options(options)
@@ -57,9 +58,8 @@ module NanoStore
       error_ptr = Pointer.new(:id)
       searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
-      
-      # workaround until we find way to only query specific class
-      searchResults.select {|obj| obj.class == self }
+
+      searchResults
     end
     
     # find model keys by criteria
@@ -93,6 +93,7 @@ module NanoStore
       end
       
       search = NSFNanoSearch.searchWithStore(self.store)
+      search.filterClass = self.to_s
 
       unless options.empty?
         expressions = expressions_with_options(options)
@@ -107,9 +108,8 @@ module NanoStore
       search.attributesToBeReturned = ["NSFObjectClass", "NSFKey"]
       searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
-      
-      # workaround until we find way to only query specific class
-      searchResults.select {|obj| obj.class == self }.collect(&:key)
+
+      searchResults.collect(&:key)
     end
     
     private
