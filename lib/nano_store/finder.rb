@@ -59,7 +59,8 @@ module NanoStore
       searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
 
-      searchResults
+      # workaround to filter class until nanostore implement class filter
+      searchResults.select {|r| r.class.to_s == self.to_s }
     end
     
     # find model keys by criteria
@@ -108,8 +109,9 @@ module NanoStore
       search.attributesToBeReturned = ["NSFObjectClass", "NSFKey"]
       searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
-
-      searchResults
+      
+      # workaround to filter class until nanostore implement class filter
+      searchResults.select {|r| r.class.to_s == self.to_s }.collect(&:key)
     end
     
     def object_class_name
