@@ -45,7 +45,6 @@ module NanoStore
         raise "unexpected parameters #{arg}"
       end
       search = NSFNanoSearch.searchWithStore(self.store)
-      search.filterClass = self.to_s
 
       unless options.empty?
         expressions = expressions_with_options(options)
@@ -54,7 +53,8 @@ module NanoStore
       
       sort_descriptors = sort_descriptor_with_options(sort_options)
       search.sort = sort_descriptors
-      
+      search.filterClass = self.object_class_name
+
       error_ptr = Pointer.new(:id)
       searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
@@ -93,7 +93,6 @@ module NanoStore
       end
       
       search = NSFNanoSearch.searchWithStore(self.store)
-      search.filterClass = self.to_s
 
       unless options.empty?
         expressions = expressions_with_options(options)
@@ -102,6 +101,7 @@ module NanoStore
 
       sort_descriptors = sort_descriptor_with_options(sort_options)
       search.sort = sort_descriptors
+      search.filterClass = self.object_class_name
 
       error_ptr = Pointer.new(:id)
 
@@ -109,7 +109,11 @@ module NanoStore
       searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
 
-      searchResults.collect(&:key)
+      searchResults
+    end
+    
+    def object_class_name
+      "k#{self.to_s.capitalize}"
     end
     
     private
