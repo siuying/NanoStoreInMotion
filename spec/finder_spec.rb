@@ -1,10 +1,11 @@
 describe "Finder" do
-  class Car < NanoStore::Model
+  module CustomModule; end
+  class CustomModule::Car < NanoStore::Model
     attribute :name
     attribute :created_at
   end
-  
-  
+  Car = CustomModule::Car
+
   def stub_user(name, age, created_at)
     user = User.new
     user.name = name

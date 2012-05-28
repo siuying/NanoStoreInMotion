@@ -8,10 +8,10 @@ module NanoStore
       end
       
       if sort_options.empty?
-        self.store.objectsOfClassNamed(self.to_s)
+        self.store.objectsOfClassNamed(self.bare_class_name)
       else
         sort_descriptors = sort_descriptor_with_options(sort_options)
-        self.store.objectsOfClassNamed(self.to_s, usingSortDescriptors:sort_descriptors)
+        self.store.objectsOfClassNamed(self.bare_class_name, usingSortDescriptors:sort_descriptors)
       end
     end
 
@@ -114,8 +114,12 @@ module NanoStore
       searchResults.select {|r| r.class.to_s == self.to_s }.collect(&:key)
     end
     
+    def bare_class_name
+      self.to_s.split("::").last.capitalize
+    end
+
     def object_class_name
-      "k#{self.to_s.capitalize}"
+      "k#{bare_class_name}"
     end
     
     private

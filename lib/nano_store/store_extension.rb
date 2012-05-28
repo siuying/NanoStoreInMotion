@@ -136,7 +136,7 @@ class NSFNanoStore
 
   # Count number of this class objects in store  
   def count(clazz)
-    self.countOfObjectsOfClassNamed(clazz.to_s)
+    self.countOfObjectsOfClassNamed(clazz.bare_class_name)
   end
   
   # Create a transaction
