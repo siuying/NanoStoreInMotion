@@ -41,26 +41,26 @@ module NanoStore
         else
           sort_options = {}
         end
+      elsif arg.empty?
+        options = {}
+        sort_options = {}
       else
         raise "unexpected parameters #{arg}"
       end
       search = NSFNanoSearch.searchWithStore(self.store)
 
-      unless options.empty?
-        expressions = expressions_with_options(options)
-        search.expressions = expressions
-      end
+      expressions = expressions_with_options(options)
+      search.expressions = expressions
       
       sort_descriptors = sort_descriptor_with_options(sort_options)
       search.sort = sort_descriptors
       search.filterClass = self.object_class_name
-
+      puts "sql : #{search.sql}"
       error_ptr = Pointer.new(:id)
       searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
 
-      # workaround to filter class until nanostore implement class filter
-      searchResults.select {|r| r.class.to_s == self.to_s }
+      searchResults
     end
     
     # find model keys by criteria
@@ -95,10 +95,8 @@ module NanoStore
       
       search = NSFNanoSearch.searchWithStore(self.store)
 
-      unless options.empty?
-        expressions = expressions_with_options(options)
-        search.expressions = expressions
-      end
+      expressions = expressions_with_options(options)
+      search.expressions = expressions
 
       sort_descriptors = sort_descriptor_with_options(sort_options)
       search.sort = sort_descriptors
@@ -106,25 +104,24 @@ module NanoStore
 
       error_ptr = Pointer.new(:id)
 
-      search.attributesToBeReturned = ["NSFObjectClass", "NSFKey"]
-      searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
+      searchResults = search.searchObjectsWithReturnType(NSFReturnKeys, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
-      
-      # workaround to filter class until nanostore implement class filter
-      searchResults.select {|r| r.class.to_s == self.to_s }.collect(&:key)
+
+      searchResults
     end
     
     def bare_class_name
-      self.to_s.split("::").last.capitalize
+      self.to_s.split("::").last
     end
 
     def object_class_name
-      "k#{bare_class_name}"
+      "k#{bare_class_name.capitalize}"
     end
     
     private
     def expressions_with_options(options)
       expressions = []
+      
       options.each do |key, val|
         attribute = NSFNanoPredicate.predicateWithColumn(NSFAttributeColumn, matching:NSFEqualTo, value:key.to_s)
         expression = NSFNanoExpression.expressionWithPredicate(attribute)

@@ -46,7 +46,16 @@ describe "Finder" do
     user.name.should.be == "Carl"
     user.age.should.be == 4
   end
-  
+
+  it "search object with simple hash with two class" do
+    Car.create(:name => "Carl")
+    users = User.find(:name => "Carl")
+    users.size.should.be == 1
+    user = users.first
+    user.name.should.be == "Carl"
+    user.age.should.be == 4
+  end
+
   it "search object with array (OR)" do
     users = User.find(:name => ["Carl", "Amy"])
     users.size.should == 2
@@ -105,8 +114,12 @@ describe "Finder" do
   end
 
   it "find object" do
-    user = User.find(:name, NSFEqualTo, "Bob").first
+    users = User.find(:name, NSFEqualTo, "Bob")
+    users.size.should == 1
+
+    user = users.first
     user.name.should == "Bob"
+    user.class.should == User
   end
   
   it "find all objects" do
@@ -137,9 +150,8 @@ describe "Finder" do
   
   it "#find only return objects of the class" do
     Car.create(:name => "Honda")
-    Car.count.should == 1
-    Car.find({}).size.should == 1
-    Car.find_keys({}).size.should == 1
+    Car.find.size.should == 1
+    Car.find_keys.size.should == 1
   end
   
 

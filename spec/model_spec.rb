@@ -5,6 +5,11 @@ describe NanoStore::Model do
     attribute :age
     attribute :created_at
   end
+
+  class Plane < NanoStore::Model
+    attribute :name
+    attribute :age
+  end
   
   def stub_user(name, age, created_at)
     user = User.new
@@ -92,10 +97,15 @@ describe NanoStore::Model do
 
     user = stub_user("Kyu", 14, Time.now)
     user.save
+    
+    plane = Plane.create(:name => "A730", :age => 20)
 
     User.count.should == 3
     User.delete({:age => {NSFGreaterThan => 10}})
     User.count.should == 1
+    User.delete({})
+    User.count.should == 0
+    Plane.count.should == 1
   end
   
   
