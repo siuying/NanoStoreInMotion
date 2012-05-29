@@ -54,8 +54,8 @@ module NanoStore
       
       sort_descriptors = sort_descriptor_with_options(sort_options)
       search.sort = sort_descriptors
-      search.filterClass = self.object_class_name
-      puts "sql : #{search.sql}"
+      search.filterClass = self.bare_class_name
+
       error_ptr = Pointer.new(:id)
       searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
@@ -83,12 +83,15 @@ module NanoStore
         end
       elsif arg[0] && arg[1] && arg[2]
         # standard way to find
-        options = {arg[0] => {arg[1] => arg[2]}}        
+        options = {arg[0] => {arg[1] => arg[2]}}
         if arg[4] && arg[4].is_a?(Hash)
           sort_options = arg[4][:sort] || {}
         else
           sort_options = {}
         end
+      elsif arg.empty?
+        options = {}
+        sort_options = {}
       else
         raise "unexpected parameters #{arg}"
       end
@@ -100,7 +103,7 @@ module NanoStore
 
       sort_descriptors = sort_descriptor_with_options(sort_options)
       search.sort = sort_descriptors
-      search.filterClass = self.object_class_name
+      search.filterClass = self.bare_class_name
 
       error_ptr = Pointer.new(:id)
 
@@ -112,10 +115,6 @@ module NanoStore
     
     def bare_class_name
       self.to_s.split("::").last
-    end
-
-    def object_class_name
-      "k#{bare_class_name.capitalize}"
     end
     
     private
