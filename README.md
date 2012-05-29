@@ -20,6 +20,7 @@ Require nano-store to your project 'Rakefile'
 ```ruby
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
+require 'rubygems'
 require 'motion-cocoapods'
 require 'nano-store'
 
@@ -28,7 +29,7 @@ Motion::Project::App.setup do |app|
   
   # Only needed if you have not already specifying a pods dependency
   app.pods do
-    dependency 'NanoStore', '~> 2.0.1'
+    dependency 'NanoStore', '~> 2.1.4'
   end
 end
 ```
