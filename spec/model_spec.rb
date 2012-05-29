@@ -103,6 +103,7 @@ describe NanoStore::Model do
     User.count.should == 3
     User.delete({:age => {NSFGreaterThan => 10}})
     User.count.should == 1
+
     User.delete({})
     User.count.should == 0
     Plane.count.should == 1

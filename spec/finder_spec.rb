@@ -34,7 +34,6 @@ describe "Finder" do
   it "search object traditional way: supply key, operator and value" do
     users = User.find(:name, NSFEqualTo, "Bob")
     users.should.not.be.nil
-
     user = users.first
     user.should.not.be.nil
     user.name.should.be == "Bob"
@@ -143,16 +142,22 @@ describe "Finder" do
   end
 
   it "#all only return objects of the class" do
-    Car.create(:name => "Honda")
+    car = Car.create(:name => "Honda")
     Car.count.should == 1
     Car.all.size.should == 1
+    Car.all.first.key.should == car.key
   end
   
   it "#find only return objects of the class" do
-    Car.create(:name => "Honda")
+    car = Car.create(:name => "Honda")
     Car.find.size.should == 1
-    Car.find_keys.size.should == 1
+    Car.find.first.key.should == car.key
   end
-  
+
+  it "#find_keys only return objects of the class" do
+    car = Car.create(:name => "Honda")
+    Car.find_keys.size.should == 1
+    Car.find_keys.first.should == car.key
+  end
 
 end
