@@ -7,10 +7,10 @@ require 'motion-redgreen'
 
 Motion::Project::App.setup do |app|
   app.name = 'NanoStoreDemo'
-
+  app.redgreen_style = :full
   app.files += Dir.glob(File.join(app.project_dir, 'lib/nano_store/*.rb'))
   app.pods do
-    dependency 'NanoStore', '~> 2.1.2'
+    dependency 'NanoStore', '~> 2.1.3'
   end
 end
 
