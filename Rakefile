@@ -10,7 +10,7 @@ Motion::Project::App.setup do |app|
   app.redgreen_style = :full
   app.files += Dir.glob(File.join(app.project_dir, 'lib/nano_store/*.rb'))
   app.pods do
-    dependency 'NanoStore', '~> 2.1.3'
+    dependency 'NanoStore', '~> 2.1.4'
   end
 end
 
