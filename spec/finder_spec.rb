@@ -31,6 +31,12 @@ describe "Finder" do
     user3.save
   end
   
+  it "create object in their class" do
+    NanoStore.shared_store.allObjectClasses.should == ["User"]
+    Car.create(:name => "Bob")
+    NanoStore.shared_store.allObjectClasses.sort.should == ["User", "Car"].sort
+  end
+  
   it "search object traditional way: supply key, operator and value" do
     users = User.find(:name, NSFEqualTo, "Bob")
     users.should.not.be.nil

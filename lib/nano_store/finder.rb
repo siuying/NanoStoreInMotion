@@ -106,7 +106,6 @@ module NanoStore
       search.filterClass = self.bare_class_name
 
       error_ptr = Pointer.new(:id)
-
       searchResults = search.searchObjectsWithReturnType(NSFReturnKeys, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
 
