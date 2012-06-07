@@ -15,5 +15,5 @@ Motion::Project::App.setup do |app|
   app.files.unshift(File.join(File.dirname(__FILE__), 'nano_store/finder.rb'))
 
   app.pods ||= Motion::Project::CocoaPods.new(app)
-  app.pods.dependency 'NanoStore', '~> 2.0.1'
+  app.pods.dependency 'NanoStore', '~> 2.1.4'  
 end
