@@ -1,3 +1,4 @@
+Gemfile.lock
 .rake_tasks~
 vendor/*/build-*
 vendor/Pods/Pods.xcodeproj/project.pbxproj
