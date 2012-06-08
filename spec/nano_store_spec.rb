@@ -12,11 +12,11 @@ describe NanoStore do
   end
   
   it "create :persistent store" do
-    path = documents_path + "/nano.db"
+    path = App.documents_path + "/nano.db"
     store = NanoStore.store :persistent, path
     store.filePath.should == path    
 
-    path = documents_path + "/nano.db"
+    path = App.documents_path + "/nano.db"
     store = NanoStore.store :file, path
     store.filePath.should == path
   end
