@@ -16,14 +16,14 @@ class NSFNanoStore
   def close
     error_ptr = Pointer.new(:id)
     closed = self.closeWithError(error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     closed
   end
   
   def open
     error_ptr = Pointer.new(:id)
     opened = self.openWithError(error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     opened
   end
   
@@ -40,14 +40,14 @@ class NSFNanoStore
     else
       self.addObject(objects, error:error_ptr)
     end
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     self
   end
   
   def +(object)
     error_ptr = Pointer.new(:id)
     self.addObject(object, error:error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     self
   end
   
@@ -59,7 +59,7 @@ class NSFNanoStore
     else
       result = self.removeObject(objects, error:error_ptr)
     end
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     result
   end
   
@@ -67,7 +67,7 @@ class NSFNanoStore
   def delete_keys(keys)
     error_ptr = Pointer.new(:id)
     success = self.store.removeObjectsWithKeysInArray(keys, error: error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     result
   end
   
@@ -76,7 +76,7 @@ class NSFNanoStore
   def clear
     error_ptr = Pointer.new(:id)
     result = self.removeAllObjectsFromStoreAndReturnError(error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     result
   end
   
@@ -85,7 +85,7 @@ class NSFNanoStore
   def delete_keys(keys)
     error_ptr = Pointer.new(:id)
     result = self.removeObjectsWithKeysInArray(keys, error:error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     result    
   end
 
@@ -95,7 +95,7 @@ class NSFNanoStore
   def save
     error_ptr = Pointer.new(:id)
     result = saveStoreAndReturnError(error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     result
   end
   
@@ -106,7 +106,7 @@ class NSFNanoStore
   def compact
     error_ptr = Pointer.new(:id)
     result = self.compactStoreAndReturnError(error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     result
   end
   
@@ -114,7 +114,7 @@ class NSFNanoStore
   def clear_index
     error_ptr = Pointer.new(:id)
     result = self.clearIndexesAndReturnError(error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     result
   end
 
@@ -122,7 +122,7 @@ class NSFNanoStore
   def rebuild_index
     error_ptr = Pointer.new(:id)
     result = self.rebuildIndexesAndReturnError(error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     result
   end
   
@@ -130,7 +130,7 @@ class NSFNanoStore
   def save_store(path, compact=true)
     error_ptr = Pointer.new(:id)
     result = self.saveStoreToDirectoryAtPath(path, compactDatabase:compact, error:error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     result
   end
 
@@ -143,7 +143,7 @@ class NSFNanoStore
   def transaction
     error_ptr = Pointer.new(:id)
     beginTransactionAndReturnError(error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
 
     begin
       yield self
@@ -152,8 +152,8 @@ class NSFNanoStore
       raise e
     end
     success = commitTransactionAndReturnError(error_ptr)
-    raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+    raise NanoStore::NanoStoreError, error_ptr[0].description if error_ptr[0]
     success
   end
 
-end
+end 
