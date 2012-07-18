@@ -1,4 +1,4 @@
-PODS_ROOT = $(SRCROOT)/Pods
-HEADER_SEARCH_PATHS = "$(PODS_ROOT)/Headers" "$(PODS_ROOT)/Headers/NanoStore"
+PODS_ROOT = ${SRCROOT}/Pods
 ALWAYS_SEARCH_USER_PATHS = YES
-OTHER_LDFLAGS = -ObjC -all_load -lsqlite3
+OTHER_LDFLAGS = -ObjC -lsqlite3
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/NanoStore"

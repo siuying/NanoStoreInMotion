@@ -29,7 +29,7 @@ Motion::Project::App.setup do |app|
   
   # Only needed if you have not already specifying a pods dependency
   app.pods do
-    dependency 'NanoStore', '~> 2.1.4'
+    pod 'NanoStore', '~> 2.1.4'
   end
 end
 ```
