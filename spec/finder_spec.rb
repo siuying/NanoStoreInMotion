@@ -138,8 +138,6 @@ describe "Finder" do
     user2.key.should == user.key
     user2.name.should == user.name
     user2.age.should == user.age
-    #user2.created_at.should == created_at
-    #user2.should == user
   end
 
   it "should not find object by key" do
