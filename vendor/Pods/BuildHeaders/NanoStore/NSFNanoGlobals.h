@@ -1,0 +1,1 @@
+../../NanoStore/Classes/Public/NSFNanoGlobals.h
