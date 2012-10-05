@@ -6,7 +6,7 @@ module NanoStore
       else
         sort_options = {}
       end
-      
+
       if sort_options.empty?
         self.store.objectsOfClassNamed(self.bare_class_name)
       else
@@ -51,7 +51,7 @@ module NanoStore
 
       expressions = expressions_with_options(options)
       search.expressions = expressions
-      
+
       sort_descriptors = sort_descriptor_with_options(sort_options)
       search.sort = sort_descriptors
       search.filterClass = self.bare_class_name
@@ -62,7 +62,7 @@ module NanoStore
 
       searchResults
     end
-    
+
     # find model keys by criteria
     #
     # Return array of keys
@@ -95,7 +95,7 @@ module NanoStore
       else
         raise "unexpected parameters #{arg}"
       end
-      
+
       search = NSFNanoSearch.searchWithStore(self.store)
 
       expressions = expressions_with_options(options)
@@ -111,15 +111,32 @@ module NanoStore
 
       searchResults
     end
-    
+
+    # find a model by key
+    #
+    # Return an object or nil (if not found)
+    #
+    # Examples:
+    # User.find_by_key(my_key)
+    def find_by_key(key)
+      search = NSFNanoSearch.searchWithStore(self.store)
+      search.key = key
+
+      error_ptr = Pointer.new(:id)
+      searchResult = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr).first
+      raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+
+      searchResult.last if searchResult
+    end
+
     def bare_class_name
       self.to_s.split("::").last
     end
-    
+
     private
     def expressions_with_options(options)
       expressions = []
-      
+
       options.each do |key, val|
         attribute = NSFNanoPredicate.predicateWithColumn(NSFAttributeColumn, matching:NSFEqualTo, value:key.to_s)
         expression = NSFNanoExpression.expressionWithPredicate(attribute)
@@ -144,12 +161,12 @@ module NanoStore
       end
       return expressions
     end
-    
+
     SORT_MAPPING = {
       'asc' => true,
       'desc' => false,
     }
-    
+
     def sort_descriptor_with_options(options)
       sorter = options.collect do |opt_key, opt_val|
         if SORT_MAPPING.keys.include?(opt_val.to_s.downcase)

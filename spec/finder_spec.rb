@@ -17,26 +17,26 @@ describe "Finder" do
   after do
     NanoStore.shared_store = nil
   end
-  
+
   before do
     NanoStore.shared_store = NanoStore.store
 
     user = stub_user("Bob", 10, Time.now)
     user.save
-      
+
     user2 = stub_user("Amy", 11, Time.now)
     user2.save
-    
+
     user3 = stub_user("Carl", 4, Time.now)
     user3.save
   end
-  
+
   it "create object in their class" do
     NanoStore.shared_store.allObjectClasses.should == ["User"]
     Car.create(:name => "Bob")
     NanoStore.shared_store.allObjectClasses.sort.should == ["User", "Car"].sort
   end
-  
+
   it "search object traditional way: supply key, operator and value" do
     users = User.find(:name, NSFEqualTo, "Bob")
     users.should.not.be.nil
@@ -69,7 +69,7 @@ describe "Finder" do
     users.collect(&:name).include?("Amy").should == true
     users.collect(&:name).include?("Bob").should == false
   end
-  
+
 
   it "search object with multiple parameters" do
     stub_user("Ronald", 18, Time.now).save
@@ -84,13 +84,13 @@ describe "Finder" do
     user = users.first
     user.name.should.be == "Ronald"
     user.age.should.be == 59
-    
+
     users = User.find(:name => { NSFEqualTo => "Ronald" }, :age => { NSFLessThan => 30 })
-    users.size.should == 2    
+    users.size.should == 2
     user = users.first
     user.name.should.be == "Ronald"
   end
-  
+
   it "sort search results" do
     stub_user("Alan", 39, Time.now).save
     stub_user("Cat", 29, Time.now).save
@@ -126,13 +126,30 @@ describe "Finder" do
     user.name.should == "Bob"
     user.class.should == User
   end
-  
+
+  it "find object by key" do
+    name = "Julien"
+    age = 32
+    created_at = Time.now
+    user = stub_user("Julien", 32, Time.now)
+    user.save
+    user2 = User.find_by_key(user.key)
+    user2.should.not.be.nil
+    user2.key.should == user.key
+    user2.name.should == user.name
+    user2.age.should == user.age
+  end
+
+  it "should not find object by key" do
+    User.find_by_key("invalid-key").should.be.nil
+  end
+
   it "find all objects" do
     User.count.should == 3
     users = User.all
     users.size.should == 3
   end
-  
+
   it "find all objects, sorted" do
     stub_user("Alan", 39, Time.now).save
     stub_user("Cat", 29, Time.now).save
@@ -153,7 +170,7 @@ describe "Finder" do
     Car.all.size.should == 1
     Car.all.first.key.should == car.key
   end
-  
+
   it "#find only return objects of the class" do
     car = Car.create(:name => "Honda")
     Car.find.size.should == 1
