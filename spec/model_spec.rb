@@ -44,6 +44,12 @@ describe NanoStore::Model do
     User.count.should == 1
   end
 
+  it "create object with nil field" do
+    user = stub_user("Bob", 10, nil)
+    user.save
+    user.key.should.not.be.nil
+  end
+
   it "create object with initializer" do
     name = "Abby"
     age  = 30
