@@ -17,26 +17,6 @@ module NanoStore
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
       self
     end
-    
-    def method_missing(method, *args)
-      matched = method.to_s.match(/^([^=]+)(=)?$/)
-      name = matched[1]
-      modifier = matched[2]
-
-      if self.class.attributes.include?(name.to_sym)
-        if modifier == "="
-          if args[0].nil?
-            self.info.delete(name.to_sym)
-          else
-            self.info[name.to_sym] = args[0]
-          end
-        else
-          self.info[name.to_sym]
-        end
-      else
-        super
-      end
-    end
   end
 
   module ModelClassMethods
@@ -59,6 +39,14 @@ module NanoStore
 
     def attribute(name)
       @attributes << name
+
+      define_method(name) do |*args, &block|
+        self.info[name]
+      end
+
+      define_method((name + "=").to_sym) do |*args, &block|
+        self.info[name] = args[0]
+      end
     end
     
     def attributes
