@@ -107,4 +107,22 @@ describe "StoreExtension" do
     Animal.count.should == 0
   end
 
+  it "should save in batch" do
+    store = NanoStore.shared_store = NanoStore.store
+
+    store.save_interval = 1000
+
+    Animal.count.should == 0
+    obj1 = Animal.new
+    obj1.name = "Cat"
+    store << obj1
+  
+    obj2 = Animal.new
+    obj2.name = "Dog"
+    store << obj2
+    store.save
+
+    Animal.count.should == 2    
+  end
+
 end
