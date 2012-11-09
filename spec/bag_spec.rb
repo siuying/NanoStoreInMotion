@@ -63,4 +63,19 @@ describe NanoStore::Bag do
     bag.saved.count.should.be == 1
   end
 
+  it "should add bag to store" do
+    before_count = NanoStore.shared_store.bags.count
+
+    bag = Bag.bag
+    NanoStore.shared_store.addObject(bag, error:nil)
+
+    # use << method to add object to bag
+    page = Page.new
+    page.text = "Hello"
+    page.index = 1
+    bag << page 
+
+    bag.save
+    NanoStore.shared_store.bags.count.should.be == before_count + 1
+  end
 end

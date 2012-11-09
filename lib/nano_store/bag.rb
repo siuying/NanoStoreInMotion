@@ -4,6 +4,10 @@ module NanoStore
     alias_method :saved, :savedObjects
     alias_method :unsaved, :unsavedObjects
     alias_method :removed, :removedObjects
+
+    def originalClassString
+      'NSFNanoBag'
+    end
     
     def changed?
       self.hasUnsavedChanges
