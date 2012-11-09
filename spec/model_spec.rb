@@ -10,6 +10,10 @@ describe NanoStore::Model do
     attribute :name
     attribute :age
   end
+
+  class Listing < NanoStore::Model
+    attribute :name
+  end
   
   def stub_user(name, age, created_at)
     user = User.new
@@ -115,5 +119,15 @@ describe NanoStore::Model do
     Plane.count.should == 1
   end
   
+  # see github issue #15 
+  # https://github.com/siuying/NanoStoreInMotion/issues/15
+  it "should handle some class name with conflicts" do
+    listing = Listing.new
+    listing.name = "A"
+    listing.save
+
+    Listing.count.should == 1
+    Listing.all.size.should == 1
+  end
   
 end
