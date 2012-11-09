@@ -22,10 +22,11 @@ module NanoStore
   module ModelClassMethods
     # initialize a new object
     def new(data={})
-      extra_keys = (data.keys - self.attributes)
-      if extra_keys.size > 0
-        raise NanoStoreError, "fields #{extra_keys.join(', ')} is not a defined fields"
-      end
+      data.keys.each { |k|
+        unless self.attributes.member? k.to_sym
+          raise NanoStoreError, "'#{k}' is not a defined attribute for this model"
+        end
+      }
 
       object = self.nanoObjectWithDictionary(data)
       object
