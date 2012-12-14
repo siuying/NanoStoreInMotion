@@ -3,6 +3,10 @@ describe NanoStore do
     attribute :name
   end
 
+  def documents_path
+    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0]
+  end
+
   it "create :memory store" do
     store = NanoStore.store
     store.filePath.should == ":memory:"
@@ -12,11 +16,11 @@ describe NanoStore do
   end
   
   it "create :persistent store" do
-    path = App.documents_path + "/nano.db"
+    path = documents_path + "/nano.db"
     store = NanoStore.store :persistent, path
     store.filePath.should == path    
 
-    path = App.documents_path + "/nano.db"
+    path = documents_path + "/nano.db"
     store = NanoStore.store :file, path
     store.filePath.should == path
   end

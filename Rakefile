@@ -2,7 +2,6 @@ require "bundler/gem_tasks"
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
 require 'motion-cocoapods'
-require 'bubble-wrap'
 require 'motion-redgreen'
 
 Motion::Project::App.setup do |app|
