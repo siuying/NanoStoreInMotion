@@ -4,6 +4,8 @@ module NanoStore
     alias_method :saved, :savedObjects
     alias_method :unsaved, :unsavedObjects
     alias_method :removed, :removedObjects
+    alias_method :clear, :removeAllObjects
+    alias_method :size, :count
 
     def originalClassString
       'NSFNanoBag'
@@ -58,7 +60,7 @@ module NanoStore
       self
     end
     
-    # Add an object or array of objects to bag
+    # Remove an object or array of objects from bag
     # Return the bag
     def -(object_or_array)
       error_ptr = Pointer.new(:id)

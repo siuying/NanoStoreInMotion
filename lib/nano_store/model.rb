@@ -88,5 +88,9 @@ module NanoStore
     include ModelInstanceMethods
     extend ModelClassMethods
     extend ::NanoStore::FinderMethods
+
+    include AssociationInstanceMethods
+    extend AssociationClassMethods
   end
+
 end
