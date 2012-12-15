@@ -38,9 +38,6 @@ module NanoStore
         bag
       end
     end
-
-    def belongs_to(name, options={})
-    end
   end
 
   module AssociationInstanceMethods
