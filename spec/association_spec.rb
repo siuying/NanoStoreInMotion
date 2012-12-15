@@ -1,13 +1,12 @@
 describe "Associations" do
   class Todo < NanoStore::Model
     attribute :title
-    has_many :items, :class_name => "TodoItem"
+    has_many :items
   end
 
   class TodoItem < NanoStore::Model
     attribute :completed
     attribute :text
-    belongs_to :todo
   end
   
   before do
