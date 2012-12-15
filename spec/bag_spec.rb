@@ -75,4 +75,19 @@ describe NanoStore::Bag do
     bag.save
     NanoStore.shared_store.bags.count.should.be == before_count + 1
   end
+
+  describe "#to_a" do
+    it "convert a bag to array" do
+      bag = Bag.bag
+      bag << Page.new(:text => "1", :index => 1) 
+      bag << Page.new(:text => "2", :index => 2) 
+
+      bag.to_a.is_a?(Array).should.be.true
+      bag.to_a.size.should == 2
+      bag.to_a[0].text.should == "1"
+      bag.to_a[1].text.should == "2"
+      bag.save
+      bag.to_a.size.should == 2
+    end
+  end
 end

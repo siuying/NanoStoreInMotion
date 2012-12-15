@@ -21,7 +21,7 @@ module NanoStore
     end
 
     def to_a
-      self.savedObjects.values
+      self.savedObjects.values + self.unsavedObjects.values
     end
 
     ## Adding and Removing Objects
