@@ -1,12 +1,14 @@
 module NanoStore
   module AssociationClassMethods
+    def has_many_options
+      @has_many_options ||= {}
+    end
+
     def has_many(name, options={})
-      @association_has_many ||= []
-      @association_has_many << name
+      has_many_options[name] = options
 
       define_method(name) do |*args, &block|
-        @association_bags ||= {}
-        return @association_bags[name] if @association_bags[name]
+        return has_many_bags[name] if has_many_bags[name]
 
         bag_key = self.info[name]
         if bag_key.nil?
@@ -16,7 +18,7 @@ module NanoStore
           bag = self.class.store.bagsWithKeysInArray([bag_key]).first
         end
 
-        @association_bags[name] = bag
+        has_many_bags[name] = bag
 
         bag
       end
@@ -39,14 +41,12 @@ module NanoStore
 
     def belongs_to(name, options={})
     end
-
-    # TODO figure out why inherited here would break inherited in model.rb
-    # def inherited(subclass)
-    #   subclass.instance_variable_set(:@association_has_many, [])
-    # end
   end
 
   module AssociationInstanceMethods
+    def has_many_bags
+      @has_many_bags ||= {}
+    end
   end
   
 end

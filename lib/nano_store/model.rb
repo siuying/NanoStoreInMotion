@@ -39,7 +39,7 @@ module NanoStore
     end
 
     def attribute(name)
-      @attributes << name
+      attributes << name
 
       define_method(name) do |*args, &block|
         self.info[name]
@@ -55,7 +55,7 @@ module NanoStore
     end
     
     def attributes
-      @attributes
+      @attributes ||= []
     end
 
     def store
@@ -76,11 +76,6 @@ module NanoStore
     def delete(*args)
       keys = find_keys(*args)
       self.store.delete_keys(keys)
-    end
-
-    def inherited(subclass)
-      subclass.instance_variable_set(:@attributes, [])
-      subclass.instance_variable_set(:@store, nil)
     end
   end
 
