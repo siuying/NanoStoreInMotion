@@ -172,7 +172,7 @@ bags = store.bags
 
 ### Association
 
-Use has_many to declare a Bag that associated with a field in Model. 
+Use ```bag``` to declare a Bag that associated with a Model. 
 
 ````ruby
 
@@ -180,7 +180,7 @@ class User < NanoStore::Model
   attribute :name
   attribute :age
   attribute :created_at
-  has_many :cars
+  bag :cars
 end
 
 class Car < NanoStore::Model
