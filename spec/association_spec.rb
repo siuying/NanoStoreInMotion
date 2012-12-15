@@ -40,4 +40,22 @@ describe "Associations" do
     end
   end
 
+  describe "#save" do
+    it "save a model also save associated fields" do
+      todo = Todo.create(:title => "Today Tasks")
+      todo.items = [TodoItem.new(:text => "Hi"), TodoItem.new(:text => "Foo"), TodoItem.new(:text => "Bar")]
+      todo.items.is_a?(NanoStore::Bag).should == true
+      todo.save
+
+      todo2 = Todo.find(:title => "Today Tasks").first
+      todo2.should.not.be.nil
+      todo2.items.is_a?(NSFNanoBag).should == true
+      todo2.items.key.should == todo.items.key
+      todo2.items.size.should == 3
+      todo2.items.to_a.each do |item|
+        item.is_a?(TodoItem).should.be.true
+      end
+    end
+  end
+
 end

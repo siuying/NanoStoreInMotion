@@ -28,10 +28,10 @@ module NanoStore
         case args[0]
         when Bag
           bag.clear
-          bag = bag + args[0].saved.values
+          bag += args[0].saved.values
         when Array
           bag.clear
-          bag = bag + args[0]
+          bag += args[0]
         else
           raise NanoStoreError, "Unexpected type assigned to bags, must be an Array or NanoStore::Bag, now: #{args[0].class}"
         end
@@ -46,6 +46,14 @@ module NanoStore
   module AssociationInstanceMethods
     def has_many_bags
       @has_many_bags ||= {}
+    end
+
+    def save
+      has_many_bags.values.each do |bag|
+        bag.store = self.class.store
+        bag.save
+      end
+      super
     end
   end
   

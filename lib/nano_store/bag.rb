@@ -1,11 +1,16 @@
 module NanoStore
-  class Bag < NSFNanoBag
-    ## Accessors
-    alias_method :saved, :savedObjects
-    alias_method :unsaved, :unsavedObjects
-    alias_method :removed, :removedObjects
-    alias_method :clear, :removeAllObjects
-    alias_method :size, :count
+  module BagInstanceMethods
+    def self.included(base)
+      base.class_eval do
+        alias_method :saved, :savedObjects
+        alias_method :unsaved, :unsavedObjects
+        alias_method :removed, :removedObjects
+        alias_method :size, :count
+        alias_method :clear, :removeAllObjects
+        alias_method :inflate, :inflateBag
+        alias_method :deflate, :deflateBag
+      end
+    end
 
     def originalClassString
       'NSFNanoBag'
@@ -13,6 +18,10 @@ module NanoStore
     
     def changed?
       self.hasUnsavedChanges
+    end
+
+    def to_a
+      self.savedObjects.values
     end
 
     ## Adding and Removing Objects
@@ -25,9 +34,6 @@ module NanoStore
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
       self
     end
-
-    # Clear the bag - remove all objects
-    alias_method :clear, :removeAllObjects
 
     # Add an object or array of objects to bag
     # Return the bag
@@ -74,8 +80,13 @@ module NanoStore
     end
     
     ## Saving, Reloading and Undoing
-    
+
+    def store=(store)
+      store.addObject(self, error:nil)
+    end
+
     def save
+      self.store = NanoStore.shared_store unless self.store
       error_ptr = Pointer.new(:id)
       result = self.saveAndReturnError(error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
@@ -95,10 +106,11 @@ module NanoStore
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
       result
     end
-    
-    ## Inflating and Deflating
-
-    alias_method :inflate, :inflateBag
-    alias_method :deflate, :deflateBag
   end
+
+  Bag = ::NSFNanoBag
+end
+
+class NSFNanoBag
+  include NanoStore::BagInstanceMethods
 end

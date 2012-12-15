@@ -16,7 +16,6 @@ describe NanoStore::Bag do
 
   it "should add objects to bag" do
     bag = Bag.bag
-    NanoStore.shared_store.addObject(bag, error:nil)
 
     # use << method to add object to bag
     page = Page.new
@@ -41,7 +40,6 @@ describe NanoStore::Bag do
 
   it "should delete object from bag" do
     bag = Bag.bag
-    NanoStore.shared_store.addObject(bag, error:nil)
 
     # use << method to add object to bag
     page = Page.new
@@ -67,7 +65,6 @@ describe NanoStore::Bag do
     before_count = NanoStore.shared_store.bags.count
 
     bag = Bag.bag
-    NanoStore.shared_store.addObject(bag, error:nil)
 
     # use << method to add object to bag
     page = Page.new
