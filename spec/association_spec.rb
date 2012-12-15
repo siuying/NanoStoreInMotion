@@ -38,12 +38,6 @@ describe "Associations" do
       todo.items.is_a?(NanoStore::Bag).should == true
       todo.items.size.should == 0
     end
-
-    it "allow using << to add objects into association" do
-      todo = Todo.create(:title => "Today Tasks")
-      todo.items << TodoItem.new(:text => "Hello world!")
-      todo.items.size.should == 1
-    end
   end
 
 end
