@@ -170,6 +170,31 @@ bag.save
 bags = store.bags
 ```
 
+### Association
+
+Use has_many to declare a Bag that associated with a field in Model. 
+
+````ruby
+
+class User < NanoStore::Model
+  attribute :name
+  attribute :age
+  attribute :created_at
+  has_many :cars
+end
+
+class Car < NanoStore::Model
+  attribute :name
+  attribute :age
+end
+
+user = User.new(:name => "Peter", :age => 20, :created_at => Time.now)
+user.cars << Car.new(:name => "Mini", :age => 0)
+user.save
+
+user.cars # => #<NanoStore::Bag:0x7411410> 
+````
+
 ## Performance Tips
 
 NanoStore by defaults saves every object to disk one by one. To speed up inserts and edited objects, increase NSFNanoStore's ```saveInterval``` property.
