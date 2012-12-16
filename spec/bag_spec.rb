@@ -14,66 +14,68 @@ describe NanoStore::Bag do
     NanoStore.shared_store = nil
   end
 
-  it "should add objects to bag" do
-    bag = Bag.bag
+  describe "#<<" do
+    it "should add objects to bag" do
+      bag = Bag.bag
 
-    # use << method to add object to bag
-    page = Page.new
-    page.text = "Hello"
-    page.index = 1
-    bag << page 
-    
-    # use + method to add object to bag
-    page = Page.new
-    page.text = "World"
-    page.index = 2
-    bag += page
+      # use << method to add object to bag
+      bag << Page.new(:text => "Hello", :index => 1) 
 
-    bag.unsaved.count.should.be == 2
-    bag.changed?.should.be.true
-    bag.save
-     
-    bag.unsaved.count.should.be == 0
-    bag.saved.count.should.be == 2
-    bag.changed?.should.be.false
+      bag.unsaved.count.should.be == 1
+      bag.changed?.should.be.true
+      bag.save
+       
+      bag.unsaved.count.should.be == 0
+      bag.saved.count.should.be == 1
+      bag.changed?.should.be.false
+    end
+  end
+  
+  describe "#+" do
+    it "should add objects to bag" do
+      bag = Bag.bag
+
+      # use + method to add object to bag
+      bag += Page.new(:text => "World", :index => 2)
+
+      bag.unsaved.count.should.be == 1
+      bag.changed?.should.be.true
+      bag.save
+       
+      bag.unsaved.count.should.be == 0
+      bag.saved.count.should.be == 1
+      bag.changed?.should.be.false
+    end
   end
 
-  it "should delete object from bag" do
-    bag = Bag.bag
+  describe "#delete" do
+    it "should delete object from bag" do
+      bag = Bag.bag
 
-    # use << method to add object to bag
-    page = Page.new
-    page.text = "Hello"
-    page.index = 1
-    bag << page
+      page = Page.new(:text => "Hello", :index => 1) 
+      bag << page
+      bag << Page.new(:text => "World", :index => 2)
+      bag.save
+      bag.saved.count.should.be == 2
 
-    page = Page.new
-    page.text = "Foo Bar"
-    page.index = 2
-    bag << page 
-
-    bag.save
-    bag.saved.count.should.be == 2
-    bag.delete(page)
-    bag.changed?.should.be.true
-    bag.removed.count.should.be == 1
-    bag.save
-    bag.saved.count.should.be == 1
+      bag.delete(page)
+      bag.changed?.should.be.true
+      bag.removed.count.should.be == 1
+      bag.save
+      bag.saved.count.should.be == 1
+    end
   end
 
-  it "should add bag to store" do
-    before_count = NanoStore.shared_store.bags.count
-
-    bag = Bag.bag
-
-    # use << method to add object to bag
-    page = Page.new
-    page.text = "Hello"
-    page.index = 1
-    bag << page 
-
-    bag.save
-    NanoStore.shared_store.bags.count.should.be == before_count + 1
+  describe "#store=" do
+    it "should store bag in a NanoStore" do
+      store = NanoStore.store
+      bag = Bag.bag
+      bag.store = store
+      bag << Page.new(:text => "1")
+      bag.save
+      store.bags.size.should == 1
+      store.bags.first.to_a.first.text.should == "1"
+    end
   end
 
   describe "#to_a" do
