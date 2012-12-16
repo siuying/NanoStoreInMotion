@@ -31,103 +31,115 @@ describe NanoStore::Model do
     NanoStore.shared_store = nil
   end
 
-  it "create object" do
-    user = stub_user("Bob", 10, Time.now)
-    user.save
+  describe "::new" do
+    it "create new object" do
+      user = stub_user("Bob", 10, Time.now)
+      user.save
 
-    user.info.keys.include?("name").should.be.true
-    user.info.keys.include?("age").should.be.true
-    user.info.keys.include?("created_at").should.be.true
+      user.info.keys.include?("name").should.be.true
+      user.info.keys.include?("age").should.be.true
+      user.info.keys.include?("created_at").should.be.true
 
-    user.info["name"].should == "Bob"
-    user.info["age"].should == 10
-    user.info["created_at"].should == user.created_at
+      user.info["name"].should == "Bob"
+      user.info["age"].should == 10
+      user.info["created_at"].should == user.created_at
 
-    user.name.should == "Bob"
-    user.age.should == 10
-    User.count.should == 1
+      user.name.should == "Bob"
+      user.age.should == 10
+      User.count.should == 1
+    end
+
+    it "create object with nil field" do
+      user = stub_user("Bob", 10, nil)
+      user.save
+      user.key.should.not.be.nil
+    end
+
+    it "throw error when invalid parameter" do
+      lambda { 
+        user = User.new(:name => "Eddie", :age => 12, :created_at => Time.now, :gender => "m")
+      }.should.raise(::NanoStore::NanoStoreError)
+    end
+
   end
 
-  it "create object with nil field" do
-    user = stub_user("Bob", 10, nil)
-    user.save
-    user.key.should.not.be.nil
+  describe "::create" do
+    it "create object with hash" do
+      name = "Abby"
+      age  = 30
+      created_at = Time.now
+      user = User.create(:name => name, :age => age, :created_at => created_at)
+      user.name.should == name
+      user.age.should == age
+      user.created_at.should == created_at
+    end
   end
 
-  it "create object with initializer" do
-    name = "Abby"
-    age  = 30
-    created_at = Time.now
-    user = User.create(:name => name, :age => age, :created_at => created_at)
-    user.name.should == name
-    user.age.should == age
-    user.created_at.should == created_at
-  end
-  
-  it "throw error when invalid parameter on initialize" do
-    lambda { 
-      user = User.new(:name => "Eddie", :age => 12, :created_at => Time.now, :gender => "m")
-    }.should.raise(::NanoStore::NanoStoreError)
-  end
+  describe "#save" do
+    it "update objects" do
+      user = stub_user("Bob", 10, Time.now)
+      user.save
 
-  it "update objects" do
-    user = stub_user("Bob", 10, Time.now)
-    user.save
+      user1 = User.find(:name, NSFEqualTo, "Bob").first
+      user1.name = "Dom"
+      user1.save
 
-    user1 = User.find(:name, NSFEqualTo, "Bob").first
-    user1.name = "Dom"
-    user1.save
-
-    user2 = User.find(:name, NSFEqualTo, "Dom").first
-    user2.key.should == user.key
-  end
-  
-  it "delete object" do
-    user = stub_user("Bob", 10, Time.now)
-    user.save
-    
-    users = User.find(:name, NSFEqualTo, "Bob")
-    users.should.not.be.nil
-    users.count.should == 1
-    
-    user.delete
-    users = User.find(:name, NSFEqualTo, "Bob")
-    users.should.not.be.nil
-    users.count.should == 0
-    User.count.should == 0
+      user2 = User.find(:name, NSFEqualTo, "Dom").first
+      user2.key.should == user.key
+    end
   end
   
-  
-  it "bulk delete" do
-    user = stub_user("Bob", 10, Time.now)
-    user.save
-    
-    user = stub_user("Ken", 12, Time.now)
-    user.save
+  describe "#delete" do
+    it "delete object" do
+      user = stub_user("Bob", 10, Time.now)
+      user.save
+      
+      users = User.find(:name, NSFEqualTo, "Bob")
+      users.should.not.be.nil
+      users.count.should == 1
+      
+      user.delete
+      users = User.find(:name, NSFEqualTo, "Bob")
+      users.should.not.be.nil
+      users.count.should == 0
+      User.count.should == 0
+    end
+  end
 
-    user = stub_user("Kyu", 14, Time.now)
-    user.save
-    
-    plane = Plane.create(:name => "A730", :age => 20)
+  describe "::delete" do
+    it "bulk delete" do
+      user = stub_user("Bob", 10, Time.now)
+      user.save
+      
+      user = stub_user("Ken", 12, Time.now)
+      user.save
 
-    User.count.should == 3
-    User.delete({:age => {NSFGreaterThan => 10}})
-    User.count.should == 1
+      user = stub_user("Kyu", 14, Time.now)
+      user.save
+      
+      plane = Plane.create(:name => "A730", :age => 20)
 
-    User.delete({})
-    User.count.should == 0
-    Plane.count.should == 1
+      User.count.should == 3
+      User.delete({:age => {NSFGreaterThan => 10}})
+      User.count.should == 1
+
+      User.delete({})
+      User.count.should == 0
+      Plane.count.should == 1
+    end
   end
   
-  # see github issue #15 
-  # https://github.com/siuying/NanoStoreInMotion/issues/15
-  it "should handle some class name with conflicts" do
-    listing = Listing.new
-    listing.name = "A"
-    listing.save
+  describe "Issues" do
+    # see github issue #15 
+    # https://github.com/siuying/NanoStoreInMotion/issues/15
+    it "should handle some class name with conflicts" do
+      listing = Listing.new
+      listing.name = "A"
+      listing.save
 
-    Listing.count.should == 1
-    Listing.all.size.should == 1
+      Listing.count.should == 1
+      Listing.all.size.should == 1
+    end
   end
   
 end
