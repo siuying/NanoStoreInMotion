@@ -86,8 +86,10 @@ describe NanoStore::Bag do
 
       bag.to_a.is_a?(Array).should.be.true
       bag.to_a.size.should == 2
-      bag.to_a[0].text.should == "1"
-      bag.to_a[1].text.should == "2"
+
+      # #to_a is not ordered!
+      ["1", "2"].include?(bag.to_a[0].text).should.be.true
+      ["1", "2"].include?(bag.to_a[1].text).should.be.true
       bag.save
       bag.to_a.size.should == 2
     end
