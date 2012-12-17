@@ -1,11 +1,11 @@
 
 PODS:
-- NanoStore (2.1.5)
+- NanoStore (2.1.8)
 
 DEPENDENCIES:
-- NanoStore (~> 2.1.5)
+- NanoStore (~> 2.1.8)
 
 SPEC CHECKSUMS:
-  NanoStore: 440272829dfe13db7f1c68de74fc3562475463fe
+  NanoStore: 648b6b984d4df8ad52a1c0d049ad91b8a12a27d0
 
 COCOAPODS: 0.16.0
