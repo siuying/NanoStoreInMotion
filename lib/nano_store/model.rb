@@ -82,7 +82,7 @@ module NanoStore
   class Model < NSFNanoObject
     include ModelInstanceMethods
     extend ModelClassMethods
-    extend ::NanoStore::FinderMethods
+    extend FinderMethods
 
     include AssociationInstanceMethods
     extend AssociationClassMethods
