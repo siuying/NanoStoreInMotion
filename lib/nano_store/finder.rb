@@ -142,7 +142,7 @@ module NanoStore
         expression = NSFNanoExpression.expressionWithPredicate(attribute)
         if val.is_a?(Hash)
           val.each do |operator, sub_val|
-            value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:operator, value:sub_val)
+            value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:operator, value:sub_val.to_s)
             expression.addPredicate(value, withOperator:NSFAnd)
           end
         elsif val.is_a?(Array)
@@ -150,11 +150,11 @@ module NanoStore
           expression.addPredicate(value, withOperator:NSFAnd)
 
           val.each do |sub_val|
-            value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:NSFEqualTo, value:sub_val)
+            value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:NSFEqualTo, value:sub_val.to_s)
             expression.addPredicate(value, withOperator:NSFOr)
           end
         else
-          value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:NSFEqualTo, value:val)
+          value = NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:NSFEqualTo, value:val.to_s)
           expression.addPredicate(value, withOperator:NSFAnd)
         end
         expressions << expression
