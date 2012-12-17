@@ -6,11 +6,11 @@ module NanoStore
 
     case type
     when :memory
-      store = NSFNanoStore.createAndOpenStoreWithType(::NSFMemoryStoreType, path:nil, error: error_ptr)
+      store = NSFNanoStore.createAndOpenStoreWithType(NSFMemoryStoreType, path:nil, error: error_ptr)
     when :temporary, :temp
-      store = NSFNanoStore.createAndOpenStoreWithType(::NSFTemporaryStoreType, path:nil, error: error_ptr)
+      store = NSFNanoStore.createAndOpenStoreWithType(NSFTemporaryStoreType, path:nil, error: error_ptr)
     when :persistent, :file
-      store = NSFNanoStore.createAndOpenStoreWithType(::NSFPersistentStoreType, path:path, error: error_ptr)
+      store = NSFNanoStore.createAndOpenStoreWithType(NSFPersistentStoreType, path:path, error: error_ptr)
     else
       raise NanoStoreError.new("unexpected store type (#{type}), must be one of: :memory, :temporary or :persistent")
     end
