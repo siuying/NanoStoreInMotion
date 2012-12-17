@@ -129,6 +129,17 @@ describe "Finder" do
       user.class.should == User
     end
 
+    it "find object with quote" do
+      stub_user("Bob'd", 49, Time.now).save
+
+      users = User.find(:name, NSFEqualTo, "Bob'd")
+      users.size.should == 1
+
+      user = users.first
+      user.name.should == "Bob'd"
+      user.class.should == User
+    end
+
     it "only return objects of the class" do
       car = Car.create(:name => "Honda")
       Car.find.size.should == 1
