@@ -36,6 +36,10 @@ end
 
 Now, you can use NanoStore in your app.
 
+## Upgrade Notes
+
+If you are upgrading from an older version of nano-store gem, make sure you run rake clean and remove vendor/Pods/build* folders before building your project. Otherwise you may still using the old binaries!
+
 ## Basic Usage
 
 ### Set default storage type
