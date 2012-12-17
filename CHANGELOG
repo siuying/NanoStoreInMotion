@@ -1,3 +1,11 @@
+# [0.5.1](https://github.com/siuying/NanoStoreInMotion/compare/v0.5.0%E2%80%A6v0.5.1)
+
+- Update to NanoStore 2.1.6
+
+# [0.5.0](https://github.com/siuying/NanoStoreInMotion/compare/v0.4.3%E2%80%A6v0.5.0)
+
+- Add bag support in Model
+
 # [0.4.3](https://github.com/siuying/NanoStoreInMotion/compare/v0.4.2%E2%80%A6v0.4.3)
 
 - Fix bug saving bag to store
