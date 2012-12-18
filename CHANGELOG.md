@@ -5,6 +5,7 @@
 # [0.5.1](https://github.com/siuying/NanoStoreInMotion/compare/v0.5.0%E2%80%A6v0.5.1)
 
 - Update to NanoStore 2.1.6
+- Convert predicate value to string, to fix type error that happen if attriutes are values other than string
 
 # [0.5.0](https://github.com/siuying/NanoStoreInMotion/compare/v0.4.3%E2%80%A6v0.5.0)
 
