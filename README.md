@@ -4,6 +4,10 @@ Wrapper for NanoStore, a lightweight schema-less key-value document database bas
 
 Status: Work in progress. API subject to change.
 
+Find a sample application using NanoStore [here](https://github.com/ankit8898/NanoStoreInMotion-example)
+
+How to use Blog [here](http://ankitinstinct.blogspot.in/2012/12/rubymotion-application-with.html)
+
 ## Installation
 
 Install the CocoaPods dependency manager if you haven't it already:
