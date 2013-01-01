@@ -26,6 +26,7 @@
 
 #import "NSFNanoExpression.h"
 #import "NanoStore_Private.h"
+#import "NSFOrderedDictionary.h"
 
 @implementation NSFNanoExpression
 {
@@ -46,7 +47,7 @@
 {
     if (nil == aPredicate) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the predicate is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the predicate is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
@@ -71,7 +72,7 @@
 {
     if (nil == aPredicate)
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the predicate is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the predicate is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     
     [predicates addObject:aPredicate];
@@ -80,20 +81,35 @@
 
 - (NSString *)description
 {
+    NSArray *values = [self arrayDescription];
+    
+    return [values componentsJoinedByString:@""];
+}
+
+- (NSArray *)arrayDescription
+{
     NSUInteger i, count = [predicates count];
     NSMutableArray *values = [NSMutableArray new];
     
     // We always have one predicate, so make sure add it
     [values addObject:[[predicates objectAtIndex:0]description]];
-
+    
     for (i = 1; i < count; i++) {
         NSString *compound = [[NSString alloc]initWithFormat:@" %@ %@", ([[operators objectAtIndex:i]intValue] == NSFAnd) ? @"AND" : @"OR", [[predicates objectAtIndex:i]description]];
         [values addObject:compound];
     }
     
-    NSString *value = [values componentsJoinedByString:@""];
+    return values;
+}
+
+- (NSString *)JSONDescription
+{
+    NSArray *values = [self arrayDescription];
     
-    return value;
+    NSError *outError = nil;
+    NSString *description = [NSFNanoObject _NSObjectToJSONString:values error:&outError];
+    
+    return description;
 }
 
 @end

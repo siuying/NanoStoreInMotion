@@ -71,7 +71,11 @@ typedef enum {
     /** * Used to store NSDate elements in the format <i>yyyy-MM-dd HH:mm:ss:SSS</i>. Its string equivalent is <b>TEXT</b>. */
     NSFNanoTypeDate,
     /** * Used to store NSNumber elements. Its string equivalent is <b>REAL</b>. */
-    NSFNanoTypeNumber
+    NSFNanoTypeNumber,
+    /** * Used to store NSNull elements. Its string equivalent is <b>NULL</b>. */
+    NSFNanoTypeNULL,
+    /** * Used to store NSURL elements. Its string equivalent is <b>URL</b>. */
+    NSFNanoTypeURL
 } NSFNanoDatatype;
 
 /** * Returns the name of a NSFNanoDatatype datatype as a string. */

@@ -30,6 +30,8 @@
 #import "NSFNanoGlobals_Private.h"
 #import "NSFNanoStore_Private.h"
 #import "NSFNanoSearch_Private.h"
+#import "NSFOrderedDictionary.h"
+#import "NSFNanoObject_Private.h"
 
 @implementation NSFNanoBag
 {
@@ -67,7 +69,7 @@
 {
     if (nil == someObjects) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: 'someObjects' cannot be nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: 'someObjects' cannot be nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
@@ -86,6 +88,7 @@
 - (id)init
 {
     if ((self = [super init])) {
+        store = nil;
         key = [NSFNanoEngine stringWithUUID];
         savedObjects = [NSMutableDictionary new];
         unsavedObjects = [NSMutableDictionary new];
@@ -129,20 +132,57 @@
     return savedObjects.count + unsavedObjects.count;
 }
 
-- (NSString*)description
+- (NSString *)description
 {
-    NSMutableString *description = [NSMutableString string];
-    
-    [description appendString:@"\n"];
-    [description appendString:[NSString stringWithFormat:@"NanoBag address      : 0x%x\n", self]];
-    [description appendString:[NSString stringWithFormat:@"Name                 : %@\n", (nil != name) ? name : @"<untitled>"]];
-    [description appendString:[NSString stringWithFormat:@"Document store       : 0x%x\n", store]];
-    [description appendString:[NSString stringWithFormat:@"Has unsaved changes? : %@\n", (hasUnsavedChanges ? @"YES" : @"NO")]];
-    [description appendString:[NSString stringWithFormat:@"Saved objects        : %ld key/value pairs\n", [savedObjects count]]];
-    [description appendString:[NSString stringWithFormat:@"Unsaved objects      : %ld key/value pairs\n", [unsavedObjects count]]];
-    [description appendString:[NSString stringWithFormat:@"Removed objects      : %ld key/value pairs\n", [removedObjects count]]];
+    return [self JSONDescription];
+}
 
+- (NSDictionary *)dictionaryDescription
+{
+    NSFOrderedDictionary *values = [NSFOrderedDictionary new];
+    
+    values[@"NanoBag address"] = [NSString stringWithFormat:@"%p", self];
+    values[@"Key"] = key;
+    values[@"Name"] = (nil != name) ? name : @"<untitled>";
+    values[@"Document store"] = ([store dictionaryDescription] ? [store dictionaryDescription] : @"<nil>");
+    values[@"Has unsaved changes?"] = (hasUnsavedChanges ? @"YES" : @"NO");
+    values[@"Saved objects"] = @([savedObjects count]);
+    values[@"Unsaved objects"] = @([unsavedObjects count]);
+    values[@"Removed objects"] = @([removedObjects count]);
+    
+    return values;
+}
+
+- (NSString *)JSONDescription
+{
+    NSDictionary *values = [self dictionaryDescription];
+    
+    NSError *outError = nil;
+    NSString *description = [NSFNanoObject _NSObjectToJSONString:values error:&outError];
+    
     return description;
+}
+
+- (NSDictionary *)dictionaryRepresentation
+{
+    // Iterate the objects collecting the object keys
+    NSMutableArray *objectKeys = [NSMutableArray new];
+    for (NSString *objectKey in self.savedObjects) {
+        [objectKeys addObject:objectKey];
+    }
+    for (NSString *objectKey in self.unsavedObjects) {
+        [objectKeys addObject:objectKey];
+    }
+    
+    NSMutableDictionary *info = [NSMutableDictionary dictionary];
+    
+    if (nil != name) {
+        [info setObject:name forKey:NSF_Private_NSFNanoBag_Name];
+    }
+    [info setObject:self.key forKey:NSF_Private_NSFNanoBag_NSFKey];
+    [info setObject:objectKeys forKey:NSF_Private_NSFNanoBag_NSFObjectKeys];
+    
+    return info;
 }
 
 - (BOOL)isEqualToNanoBag:(NSFNanoBag *)otherNanoBag
@@ -174,35 +214,13 @@
     return success;
 }
 
-- (NSDictionary *)dictionaryRepresentation
-{
-    // Iterate the objects collecting the object keys
-    NSMutableArray *objectKeys = [NSMutableArray new];
-    for (NSString *objectKey in self.savedObjects) {
-        [objectKeys addObject:objectKey];
-    }
-    for (NSString *objectKey in self.unsavedObjects) {
-        [objectKeys addObject:objectKey];
-    }
-    
-    NSMutableDictionary *info = [NSMutableDictionary dictionary];
-    
-    if (nil != name) {
-        [info setObject:name forKey:NSF_Private_NSFNanoBag_Name];
-    }
-    [info setObject:self.key forKey:NSF_Private_NSFNanoBag_NSFKey];
-    [info setObject:objectKeys forKey:NSF_Private_NSFNanoBag_NSFObjectKeys];
-    
-    return info;
-}
-
 #pragma mark -
 
 - (BOOL)addObject:(id <NSFNanoObjectProtocol>)object error:(out NSError **)outError
 {
     if (NO == [(id)object conformsToProtocol:@protocol(NSFNanoObjectProtocol)]) {
         [[NSException exceptionWithName:NSFNonConformingNanoObjectProtocolException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the object does not conform to NSFNanoObjectProtocol.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the object does not conform to NSFNanoObjectProtocol.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];            
     }
     
@@ -217,9 +235,9 @@
     } else {
         NSString *message = nil;
         if (nil == objectKey)
-            message = [NSString stringWithFormat:@"*** -[%@ %s]: unexpected NSFNanoObject behavior. Reason: the object's key is nil.", [self class], _cmd];
+            message = [NSString stringWithFormat:@"*** -[%@ %@]: unexpected NSFNanoObject behavior. Reason: the object's key is nil.", [self class], NSStringFromSelector(_cmd)];
         else
-            message = [NSString stringWithFormat:@"*** -[%@ %s]: unexpected NSFNanoObject behavior. Reason: the object's dictionary is nil.", [self class], _cmd];  
+            message = [NSString stringWithFormat:@"*** -[%@ %@]: unexpected NSFNanoObject behavior. Reason: the object's dictionary is nil.", [self class], NSStringFromSelector(_cmd)];  
         
         [[NSException exceptionWithName:NSFNanoObjectBehaviorException reason:message userInfo:nil]raise];  
     }
@@ -233,7 +251,7 @@
         if (nil != outError) {
             *outError = [NSError errorWithDomain:NSFDomainKey
                                             code:NSFNanoStoreErrorKey
-                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %s]: the object cannot be added because the list provided is nil.", [self class], _cmd]
+                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: the object cannot be added because the list provided is nil.", [self class], NSStringFromSelector(_cmd)]
                                                                              forKey:NSLocalizedFailureReasonErrorKey]];
         }
         return NO;
@@ -254,7 +272,7 @@
 {
     if (NO == [(id)object conformsToProtocol:@protocol(NSFNanoObjectProtocol)]) {
         [[NSException exceptionWithName:NSFNonConformingNanoObjectProtocolException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the object does not conform to NSFNanoObjectProtocol.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the object does not conform to NSFNanoObjectProtocol.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];    
     }
     
@@ -291,7 +309,7 @@
 {
     if (nil == objectKey) {
         [[NSException exceptionWithName:NSFNanoObjectBehaviorException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: unexpected NSFNanoObject behavior. Reason: the object's key is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: unexpected NSFNanoObject behavior. Reason: the object's key is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise]; 
     }
     
@@ -332,7 +350,7 @@
         if (nil != outError) {
             *outError = [NSError errorWithDomain:NSFDomainKey
                                             code:NSFNanoStoreErrorKey
-                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %s]: unable to save the bag. Reason: the store has not been set.", [self class], _cmd]
+                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: unable to save the bag. Reason: the store has not been set.", [self class], NSStringFromSelector(_cmd)]
                                                                              forKey:NSLocalizedFailureReasonErrorKey]];
         }
         return NO;
@@ -379,7 +397,7 @@
         if (nil != outError) {
             *outError = [NSError errorWithDomain:NSFDomainKey
                                             code:NSFNanoStoreErrorKey
-                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %s]: the bag could not be refreshed.", [self class], _cmd]
+                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: the bag could not be refreshed.", [self class], NSStringFromSelector(_cmd)]
                                                                              forKey:NSLocalizedFailureReasonErrorKey]];
         }
         return NO;
@@ -473,7 +491,7 @@
     if ([someKeys count] != 0) {
         NSFNanoSearch *search = [NSFNanoSearch searchWithStore:store];
         NSString *quotedString = [NSFNanoSearch _quoteStrings:someKeys joiningWithDelimiter:@","];
-        NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFPlist, NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@)", quotedString];
+        NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFKeyedArchive, NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@)", quotedString];
         
         NSDictionary *results = [search executeSQL:theSQLStatement returnType:NSFReturnObjects error:nil];
         

@@ -27,6 +27,7 @@
 #import "NanoStore.h"
 #import "NanoStore_Private.h"
 #import "NSFNanoSearch_Private.h"
+#import "NSFNanoExpression_Private.h"
 
 @implementation NSFNanoSearch
 {
@@ -37,7 +38,7 @@
 }
 
 
-@synthesize nanoStore, attributesToBeReturned, key, attribute, value, match, expressions, groupValues, sql, sort, filterClass;
+@synthesize nanoStore, attributesToBeReturned, key, attribute, value, match, expressions, groupValues, sql, sort, filterClass, offset, limit;
 
 // ----------------------------------------------
 // Initialization / Cleanup
@@ -52,7 +53,7 @@
 {
     if (nil == store) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: store is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: store is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
@@ -83,39 +84,19 @@
     return sql;
 }
 
-- (NSString *)description
-{
-    NSMutableString *description = [NSMutableString string];
-    
-    [description appendString:@"\n"];
-    [description appendString:[NSString stringWithFormat:@"NanoSearch address        : 0x%x\n", self]];
-    [description appendString:[NSString stringWithFormat:@"Document store            : 0x%x\n", nanoStore]];
-    [description appendString:[NSString stringWithFormat:@"Attributes to be returned : %@\n", (attributesToBeReturned ? [attributesToBeReturned componentsJoinedByString:@","] : @"All")]];
-    [description appendString:[NSString stringWithFormat:@"Key                       : %@\n", key]];
-    [description appendString:[NSString stringWithFormat:@"Attribute                 : %@\n", attribute]];
-    [description appendString:[NSString stringWithFormat:@"Value                     : %@\n", value]];
-    [description appendString:[NSString stringWithFormat:@"Match                     : %@\n", NSFStringFromMatchType(match)]];
-    [description appendString:[NSString stringWithFormat:@"Expressions               : %@\n", expressions]];
-    [description appendString:[NSString stringWithFormat:@"Group values?             : %@\n", (groupValues ? @"YES" : @"NO")]];
-    [description appendString:[NSString stringWithFormat:@"Sort                      : %@\n", sort]];
-    [description appendString:[NSString stringWithFormat:@"Filter class              : %@\n", filterClass]];
-
-    return description;
-}
-
 #pragma mark -
 
 - (id)executeSQL:(NSString *)theSQLStatement returnType:(NSFReturnType)theReturnType error:(out NSError **)outError
 {
     if (nil == theSQLStatement) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the SQL statement is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the SQL statement is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
     if (0 == [theSQLStatement length]) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the SQL statement is empty.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the SQL statement is empty.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
@@ -136,13 +117,13 @@
 {
     if (nil == theSQLStatement) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the SQL statement is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the SQL statement is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
     if (0 == [theSQLStatement length]) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the SQL statement is empty.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the SQL statement is empty.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
@@ -158,13 +139,13 @@
 {
     if (nil == theSQLStatement) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the SQL statement is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the SQL statement is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
     if (0 == [theSQLStatement length]) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the SQL statement is empty.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the SQL statement is empty.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
@@ -173,16 +154,17 @@
 
 - (void)reset
 {
-     attributesToBeReturned= nil;
-     key = nil;
-     attribute = nil;
-     value = nil;
+    attributesToBeReturned= nil;
+    key = nil;
+    attribute = nil;
+    value = nil;
     match = NSFContains;
     groupValues = NO;
-     sql = nil;
-     sort = nil;
-
-     returnedObjectType = NSFReturnObjects;
+    sql = nil;
+    sort = nil;
+    offset = 0;
+    limit = 0;
+    returnedObjectType = NSFReturnObjects;
 }
 
 #pragma mark -
@@ -287,7 +269,7 @@
                 aSQLQuery = [NSString stringWithFormat:@"SELECT NSFKey %@", subStatement];
                 break;
             case NSFReturnObjects:
-                aSQLQuery = [NSString stringWithFormat:@"SELECT NSFKey, NSFPlist, NSFObjectClass %@", subStatement];
+                aSQLQuery = [NSString stringWithFormat:@"SELECT NSFKey, NSFKeyedArchive, NSFObjectClass %@", subStatement];
                 break;
         }
     } else {
@@ -322,21 +304,20 @@
             default:
                 while (SQLITE_ROW == sqlite3_step (theSQLiteStatement)) {
                     char *keyUTF8 = (char *)sqlite3_column_text (theSQLiteStatement, 0);
-                    char *dictXMLUTF8 = (char *)sqlite3_column_text (theSQLiteStatement, 1);
+                    NSData *dictBinData = [[NSData alloc] initWithBytes:sqlite3_column_blob(theSQLiteStatement, 1) length: sqlite3_column_bytes(theSQLiteStatement, 1)];
                     char *objectClassUTF8 = (char *)sqlite3_column_text (theSQLiteStatement, 2);
                     
                     // Sanity check: some queries return NULL, which would a crash below.
                     // Since these are values that are NanoStore's resposibility, they should *never* be NULL. Log it for posterity.
-                    if ((NULL == keyUTF8) || (NULL == dictXMLUTF8) || (NULL == objectClassUTF8)) {
-                        NSLog(@"*** Warning! These values are NanoStore's resposibility and should *never* be NULL: keyUTF8 (%s) - dictXMLUTF8 (%s) - objectClassUTF8 (%s)", keyUTF8, dictXMLUTF8, objectClassUTF8);
+
+                    if ((NULL == keyUTF8) || (dictBinData == nil) || (NULL == objectClassUTF8)) {
+                        NSLog(@"*** Warning! These values are NanoStore's resposibility and should *never* be NULL: keyUTF8 (%s) - binArchinve (%@) - objectClassUTF8 (%s)", keyUTF8, [dictBinData debugDescription], objectClassUTF8);
                         continue;
                     }
-                    
+                    NSDictionary *info = [NSKeyedUnarchiver unarchiveObjectWithData:dictBinData];
                     NSString *keyValue = [[NSString alloc]initWithUTF8String:keyUTF8];
-                    NSString *dictXML = [[NSString alloc]initWithUTF8String:dictXMLUTF8];
                     NSString *objectClass = [[NSString alloc]initWithUTF8String:objectClassUTF8];
                     
-                    NSDictionary *info = [NSFNanoEngine _plistToDictionary:dictXML];
                     if (nil == info) {
                         continue;
                     }
@@ -396,10 +377,10 @@
         
     } else {
         if (nil != outError) {
-            NSString *msg = [NSString stringWithFormat:@"SQLite error ID: %ld", status];
+            NSString *msg = [NSString stringWithFormat:@"SQLite error ID: %d", status];
             *outError = [NSError errorWithDomain:NSFDomainKey
                                             code:NSFNanoStoreErrorKey
-                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %s]: %@", [self class], _cmd, msg]
+                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), msg]
                                                                              forKey:NSLocalizedFailureReasonErrorKey]];
         }
         searchResults = nil;
@@ -420,23 +401,23 @@
     switch (aDateMatch) {
         case NSFBeforeDate:
             if (self.filterClass.length > 0) {
-                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE (NSFObjectClass = '%@') AND %@ < '%@'", NSFKey, NSFPlist, NSFObjectClass, NSFKeys, self.filterClass, NSFCalendarDate, normalizedDateString];
+                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE (NSFObjectClass = '%@') AND %@ < '%@'", NSFKey, NSFKeyedArchive, NSFObjectClass, NSFKeys, self.filterClass, NSFCalendarDate, normalizedDateString];
             } else {
-                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE %@ < '%@'", NSFKey, NSFPlist, NSFObjectClass, NSFKeys, NSFCalendarDate, normalizedDateString];
+                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE %@ < '%@'", NSFKey, NSFKeyedArchive, NSFObjectClass, NSFKeys, NSFCalendarDate, normalizedDateString];
             }
             break;
         case NSFOnDate:
             if (self.filterClass.length > 0) {
-                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE (NSFObjectClass = '%@') AND %@ = '%@'", NSFKey, NSFPlist, NSFObjectClass, NSFKeys, self.filterClass, NSFCalendarDate, normalizedDateString];
+                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE (NSFObjectClass = '%@') AND %@ = '%@'", NSFKey, NSFKeyedArchive, NSFObjectClass, NSFKeys, self.filterClass, NSFCalendarDate, normalizedDateString];
             } else {
-                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE %@ = '%@'", NSFKey, NSFPlist, NSFObjectClass, NSFKeys, NSFCalendarDate, normalizedDateString];
+                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE %@ = '%@'", NSFKey, NSFKeyedArchive, NSFObjectClass, NSFKeys, NSFCalendarDate, normalizedDateString];
             }
             break;
         case NSFAfterDate:
             if (self.filterClass.length > 0) {
-                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE (NSFObjectClass = '%@') AND %@ > '%@'", NSFKey, NSFPlist, NSFObjectClass, NSFKeys, self.filterClass, NSFCalendarDate, normalizedDateString];
+                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE (NSFObjectClass = '%@') AND %@ > '%@'", NSFKey, NSFKeyedArchive, NSFObjectClass, NSFKeys, self.filterClass, NSFCalendarDate, normalizedDateString];
             } else {
-                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE %@ > '%@'", NSFKey, NSFPlist, NSFObjectClass, NSFKeys, NSFCalendarDate, normalizedDateString];
+                theSQLStatement = [[NSString alloc]initWithFormat:@"SELECT %@, %@, %@ FROM %@ WHERE %@ > '%@'", NSFKey, NSFKeyedArchive, NSFObjectClass, NSFKeys, NSFCalendarDate, normalizedDateString];
             }
             break;
     }
@@ -453,13 +434,13 @@
             return searchResults;
         } else {
                 NSArray *resultsObjectClass = [result valuesForColumn:[NSString stringWithFormat:@"%@.%@", NSFKeys, NSFObjectClass]];
-                NSArray *resultsObjects = [result valuesForColumn:[NSString stringWithFormat:@"%@.%@", NSFKeys, NSFPlist]];
+                NSArray *resultsObjects = [result valuesForColumn:[NSString stringWithFormat:@"%@.%@", NSFKeys, NSFKeyedArchive]];
                 NSArray *resultsKeys = [result valuesForColumn:[NSString stringWithFormat:@"%@.%@", NSFKeys, NSFKey]];
                 NSUInteger i, count = [resultsKeys count];
                 
             for (i = 0; i < count; i++) {
                 @autoreleasepool {
-                    NSDictionary *info = [NSFNanoEngine _plistToDictionary:[resultsObjects objectAtIndex:i]];
+                    NSDictionary *info = [NSKeyedUnarchiver unarchiveObjectWithData:[resultsObjects objectAtIndex:i]];
                     if (nil != info) {
                         NSString *keyValue = [resultsKeys objectAtIndex:i];
                         
@@ -499,6 +480,16 @@
         aSQLQuery = [self _prepareSQLQueryStringWithExpressions:expressions];
     }
     
+    // Add the limit clause if required
+    if (limit > 0) {
+        aSQLQuery = [NSString stringWithFormat:@"%@ LIMIT %li", aSQLQuery, limit];
+    }
+    
+    // Add the offset clause if required
+    if (offset > 0) {
+        aSQLQuery = [NSString stringWithFormat:@"%@ OFFSET %li", aSQLQuery, offset];
+    }
+    
     return aSQLQuery;
 }
 
@@ -532,7 +523,7 @@
                 return @"SELECT NSFKEY FROM NSFKeys";
                 break;
             default:
-                return @"SELECT NSFKey, NSFPlist, NSFObjectClass FROM NSFKeys";
+                return @"SELECT NSFKey, NSFKeyedArchive, NSFObjectClass FROM NSFKeys";
                 break;
         }
     } else {
@@ -573,10 +564,14 @@
         if (NSNotFound == [anAttribute rangeOfString:@"."].location) {
             segment = [NSFNanoSearch _querySegmentForAttributeColumnWithValue:anAttribute matching:aMatch valueColumnWithValue:aValue];
         } else {
-             if (nil == aValue)
+            if (nil == aValue) {
                 segment = [NSFNanoSearch _querySegmentForColumn:NSFAttribute value:anAttribute matching:aMatch];
-            else
+            } else {
                 segment = [NSFNanoSearch _querySegmentForColumn:NSFAttribute value:anAttribute matching:NSFEqualTo];
+                [theSQLStatement appendString:segment];
+                [theSQLStatement appendString:@" AND "];
+                segment = [NSFNanoSearch _querySegmentForColumn:NSFValue value:aValue matching:NSFEqualTo];
+            }
         }
         
         [theSQLStatement appendString:segment];
@@ -589,15 +584,19 @@
         }
     }
     
+    if ((limit > 0) || (offset > 0)) {
+        [theSQLStatement appendString:@" ORDER BY ROWID"];
+    }
+    
     if (YES == groupValues) {
         [theSQLStatement appendString:@" GROUP BY NSFValue"];
     }
     
     if (NSFReturnObjects == returnType) {
         if (self.filterClass.length > 0) {
-            theSQLStatement = [NSString stringWithFormat:@"SELECT DISTINCT (NSFKey),NSFPlist,NSFObjectClass FROM NSFKeys WHERE (NSFObjectClass = '%@') AND NSFKey IN (%@)", self.filterClass, theSQLStatement];
+            theSQLStatement = [NSString stringWithFormat:@"SELECT DISTINCT (NSFKey),NSFKeyedArchive,NSFObjectClass FROM NSFKeys WHERE (NSFObjectClass = '%@') AND NSFKey IN (%@)", self.filterClass, theSQLStatement];
         } else {
-            theSQLStatement = [NSString stringWithFormat:@"SELECT DISTINCT (NSFKey),NSFPlist,NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@)", theSQLStatement];
+            theSQLStatement = [NSString stringWithFormat:@"SELECT DISTINCT (NSFKey),NSFKeyedArchive,NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@)", theSQLStatement];
         }
     } else {
         if (self.filterClass.length > 0) {
@@ -648,9 +647,9 @@
     
     if (NSFReturnObjects == returnType) {
         if (self.filterClass.length > 0) {
-            theValue = [NSString stringWithFormat:@"SELECT DISTINCT (NSFKey),NSFPlist,NSFObjectClass FROM NSFKeys WHERE (NSFObjectClass = '%@') AND NSFKey IN (%@)", self.filterClass, theValue];
+            theValue = [NSString stringWithFormat:@"SELECT DISTINCT (NSFKey),NSFKeyedArchive,NSFObjectClass FROM NSFKeys WHERE (NSFObjectClass = '%@') AND NSFKey IN (%@)", self.filterClass, theValue];
         } else {
-            theValue = [NSString stringWithFormat:@"SELECT DISTINCT (NSFKey),NSFPlist,NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@)", theValue];   
+            theValue = [NSString stringWithFormat:@"SELECT DISTINCT (NSFKey),NSFKeyedArchive,NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@)", theValue];
         }
     } else {
         if (self.filterClass.length > 0) {
@@ -674,7 +673,7 @@
     [theSQLStatement appendString:[preparedKeys componentsJoinedByString:@","]];
     [theSQLStatement appendString:@")"];
     
-    theSQLStatement = [NSString stringWithFormat:@"SELECT DISTINCT (NSFKey),NSFPlist,NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@)", theSQLStatement];
+    theSQLStatement = [NSString stringWithFormat:@"SELECT DISTINCT (NSFKey),NSFKeyedArchive,NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@)", theSQLStatement];
     
     return theSQLStatement;
 }
@@ -873,7 +872,7 @@
 {
     id theResults = results;
     
-    if (nil != sort) {
+    if ([sort count] > 0) {
         NSMutableArray *cocoaSortDescriptors = [NSMutableArray new];
         
         for (NSFNanoSortDescriptor *descriptor in sort) {
@@ -887,13 +886,56 @@
         } else {
             theResults = [results allKeys];
         }
-    }
-    else if (NSFReturnKeys == theReturnType)
-    {
+    } else if (NSFReturnKeys == theReturnType) {
         theResults = [results allKeys];
     }
     
     return theResults;
+}
+
+- (NSString *)description
+{
+    return [self JSONDescription];
+}
+
+- (NSFOrderedDictionary *)dictionaryDescription
+{
+    NSFOrderedDictionary *values = [NSFOrderedDictionary new];
+    
+    values[@"NanoSearch address"] = [NSString stringWithFormat:@"%p", self];
+    values[@"Document store"] = [nanoStore dictionaryDescription];
+    values[@"Attributes to be returned"] = (attributesToBeReturned ? [attributesToBeReturned componentsJoinedByString:@","] : @"All");
+    values[@"Key"] = (key ? key : @"<nil>");
+    values[@"Attribute"] = (attribute ? attribute : @"<nil>");
+    values[@"Value"] = (value ? value : @"<nil>");
+    values[@"Match"] = NSFStringFromMatchType(match);
+    
+    NSMutableArray *tempExpressions = [NSMutableArray new];
+    for (NSFNanoExpression *expression in expressions) {
+        [tempExpressions addObject:[expression description]];
+    }
+    values[@"Expressions"] = ([tempExpressions count] > 0 ? tempExpressions : @"<nil>");
+    
+    values[@"Group values?"] = (groupValues ? @"YES" : @"NO");
+    
+    NSString *tempSQL = [self sql];
+    values[@"SQL"] = (tempSQL ? tempSQL : @"<nil>");
+    values[@"Sort"] = (sort ? sort : @"<nil>");
+    values[@"Filter class"] = (filterClass ? filterClass : @"<nil>");
+    values[@"Offset"] = @(offset);
+    values[@"Limit"] = @(limit);
+    
+    return values;
+}
+
+- (NSString *)JSONDescription
+{
+    NSFOrderedDictionary *values = [self dictionaryDescription];
+    
+    NSError *outError = nil;
+    NSString *description = [NSFNanoObject _NSObjectToJSONString:values error:&outError];
+    
+    return description;
 }
 
 /** \endcond */

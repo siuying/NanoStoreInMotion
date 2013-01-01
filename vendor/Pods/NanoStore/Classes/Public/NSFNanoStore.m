@@ -28,6 +28,8 @@
 #import "NSFNanoObjectProtocol.h"
 #import "NanoStore_Private.h"
 #import "NSFNanoStore_Private.h"
+#import "NSFNanoEngine_Private.h"
+#import "NSFOrderedDictionary.h"
 
 #include <stdlib.h>
 
@@ -82,14 +84,14 @@
     
     if (nil == thePath) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the path cannot be nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the path cannot be nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
     if ((self = [super init])) {
         nanoStoreEngine = [[NSFNanoEngine alloc]initWithPath:[thePath stringByExpandingTildeInPath]];
         if (nil == nanoStoreEngine) {
-            _NSFLog([NSString stringWithFormat:@"*** -[%@ %s]: [NSFNanoEngine initWithPath:] failed: %@", [self class], _cmd, thePath]);
+            _NSFLog([NSString stringWithFormat:@"*** -[%@ %@]: [NSFNanoEngine initWithPath:] failed: %@", [self class], NSStringFromSelector(_cmd), thePath]);
             [self closeWithError:nil];
             return nil;
         }
@@ -126,7 +128,7 @@
         return YES;
     
     if ([nanoStoreEngine openWithCacheMethod:CacheAllData useFastMode:(NSFEngineProcessingFastMode == nanoEngineProcessingMode)] == NO) {
-        NSString *message = [NSString stringWithFormat:@"*** -[%@ %s]: open database failed: %@", [self class], _cmd, [self filePath]];
+        NSString *message = [NSString stringWithFormat:@"*** -[%@ %@]: open database failed: %@", [self class], NSStringFromSelector(_cmd), [self filePath]];
         _NSFLog(message);
         if (nil != outError)
             *outError = [NSError errorWithDomain:NSFDomainKey
@@ -138,7 +140,7 @@
     }
     
     if ([self _setupCachingSchema] == NO) {
-        NSString *message = [NSString stringWithFormat:@"*** -[%@ %s]: the schema could not be created when opening database: %@", [self class], _cmd, [self filePath]];
+        NSString *message = [NSString stringWithFormat:@"*** -[%@ %@]: the schema could not be created when opening database: %@", [self class], NSStringFromSelector(_cmd), [self filePath]];
         _NSFLog(message);
         if (nil != outError)
             *outError = [NSError errorWithDomain:NSFDomainKey
@@ -150,7 +152,7 @@
     }
     
     if ([self _initializePreparedStatementsWithError:outError] == NO) {
-        NSString *message = [NSString stringWithFormat:@"*** -[%@ %s]: the SQL statements could not be prepared when opening database: %@", [self class], _cmd, [self filePath]];
+        NSString *message = [NSString stringWithFormat:@"*** -[%@ %@]: the SQL statements could not be prepared when opening database: %@", [self class], NSStringFromSelector(_cmd), [self filePath]];
         _NSFLog(message);
         [self closeWithError:nil];
         return NO;
@@ -173,9 +175,31 @@
     return ([nanoStoreEngine isDatabaseOpen] == NO);
 }
 
-- (NSString*)description
+- (NSString *)description
 {
-    return [self _nestedDescriptionWithPrefixedSpace:@""];
+    return [self JSONDescription];
+}
+
+- (NSFOrderedDictionary *)dictionaryDescription
+{
+    NSFOrderedDictionary *values = [NSFOrderedDictionary new];
+    
+    values[@"NanoStore address"] = [NSString stringWithFormat:@"%p", self];
+    values[@"Is our transaction?"] = (_isOurTransaction ? @"YES" : @"NO");
+    values[@"Save interval"] = (saveInterval ? @(saveInterval) : @(1));
+    values[@"Engine"] = [nanoStoreEngine dictionaryDescription];
+    
+    return values;
+}
+
+- (NSString *)JSONDescription
+{
+    NSFOrderedDictionary *values = [self dictionaryDescription];
+    
+    NSError *outError = nil;
+    NSString *description = [NSFNanoObject _NSObjectToJSONString:values error:&outError];
+    
+    return description;
 }
 
 - (BOOL)hasUnsavedChanges
@@ -196,7 +220,7 @@
 {
     if (nil == someObjects) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: someObjects is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: someObjects is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
@@ -204,7 +228,7 @@
         if (nil != outError)
             *outError = [NSError errorWithDomain:NSFDomainKey
                                             code:NSFNanoStoreErrorKey
-                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %s]: ([someObjects count] == 0)", [self class], _cmd]
+                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: ([someObjects count] == 0)", [self class], NSStringFromSelector(_cmd)]
                                                                              forKey:NSLocalizedFailureReasonErrorKey]];
         return NO;
     }
@@ -223,7 +247,7 @@
                     if (nil != outError) {
                         *outError = [NSError errorWithDomain:NSFDomainKey
                                                         code:NSFNanoStoreErrorKey
-                                                    userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %s]: a bag named '%@' already exists.", [self class], _cmd, bagName]
+                                                    userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: a bag named '%@' already exists.", [self class], NSStringFromSelector(_cmd), bagName]
                                                                                          forKey:NSLocalizedFailureReasonErrorKey]];
                         
                         return NO;
@@ -243,20 +267,20 @@
                 
                 if (NO == [object _saveInStore:self error:&error]) {
                     [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
-                                             reason:[NSString stringWithFormat:@"*** -[%@ %s]: %@", [self class], _cmd, [error localizedDescription]]
+                                             reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), [error localizedDescription]]
                                            userInfo:nil]raise];
                 }
             }
         } else {
             if (NO == [(id)object conformsToProtocol:@protocol(NSFNanoObjectProtocol)]) {
                 [[NSException exceptionWithName:NSFNonConformingNanoObjectProtocolException
-                                         reason:[NSString stringWithFormat:@"*** -[%@ %s]: the object does not conform to NSFNanoObjectProtocol.", [self class], _cmd]
+                                         reason:[NSString stringWithFormat:@"*** -[%@ %@]: the object does not conform to NSFNanoObjectProtocol.", [self class], NSStringFromSelector(_cmd)]
                                        userInfo:nil]raise];            
             }
             
             if (nil == [object nanoObjectKey]) {
                 [[NSException exceptionWithName:NSFNanoObjectBehaviorException
-                                         reason:[NSString stringWithFormat:@"*** -[%@ %s]: unexpected NSFNanoObject behavior. Reason: the object's key is nil.", [self class], _cmd]
+                                         reason:[NSString stringWithFormat:@"*** -[%@ %@]: unexpected NSFNanoObject behavior. Reason: the object's key is nil.", [self class], NSStringFromSelector(_cmd)]
                                        userInfo:nil]raise]; 
             }
             
@@ -284,7 +308,7 @@
     
     if (nil == someKeys)
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: someKeys is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: someKeys is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     
     NSUInteger count = [someKeys count];
@@ -351,13 +375,13 @@
     for (id object in someObjects) {
         if (NO == [(id)object conformsToProtocol:@protocol(NSFNanoObjectProtocol)]) {
             [[NSException exceptionWithName:NSFNonConformingNanoObjectProtocolException
-                                     reason:[NSString stringWithFormat:@"*** -[%@ %s]: the object does not conform to NSFNanoObjectProtocol.", [self class], _cmd]
+                                     reason:[NSString stringWithFormat:@"*** -[%@ %@]: the object does not conform to NSFNanoObjectProtocol.", [self class], NSStringFromSelector(_cmd)]
                                    userInfo:nil]raise];  
         } else {
             NSString *objectKey = [(id)object nanoObjectKey];
             if (nil == objectKey) {
                 [[NSException exceptionWithName:NSFNanoObjectBehaviorException
-                                         reason:[NSString stringWithFormat:@"*** -[%@ %s]: unexpected NSFNanoObject behavior. Reason: the object's key is nil.", [self class], _cmd]
+                                         reason:[NSString stringWithFormat:@"*** -[%@ %@]: unexpected NSFNanoObject behavior. Reason: the object's key is nil.", [self class], NSStringFromSelector(_cmd)]
                                        userInfo:nil]raise]; 
             }
             [someKeys addObject:objectKey];
@@ -374,7 +398,7 @@
 - (NSArray *)bags
 {
     NSFNanoSearch *search = [NSFNanoSearch searchWithStore:self];
-    NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFPlist, NSFObjectClass FROM NSFKeys WHERE NSFObjectClass = \"%@\"", NSStringFromClass([NSFNanoBag class])];
+    NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFKeyedArchive, NSFObjectClass FROM NSFKeys WHERE NSFObjectClass = \"%@\"", NSStringFromClass([NSFNanoBag class])];
     
     return [[search executeSQL:theSQLStatement returnType:NSFReturnObjects error:nil]allValues];
 
@@ -388,8 +412,18 @@
     search.match = NSFEqualTo;
     search.value = theName;
     
-    // Returns a dictionary with the UUID of the object (key) and the NanoObject (value).
     return [[[search searchObjectsWithReturnType:NSFReturnObjects error:nil]allObjects]lastObject];
+}
+
+- (NSArray *)bagsWithName:(NSString *)theName
+{
+    NSFNanoSearch *search = [NSFNanoSearch searchWithStore:self];
+    
+    search.attribute = NSF_Private_NSFNanoBag_Name;
+    search.match = NSFEqualTo;
+    search.value = theName;
+    
+    return [[search searchObjectsWithReturnType:NSFReturnObjects error:nil]allObjects];
 }
 
 - (NSArray *)bagsWithKeysInArray:(NSArray *)someKeys
@@ -400,7 +434,7 @@
     
     NSFNanoSearch *search = [NSFNanoSearch searchWithStore:self];
     NSString *quotedString = [NSFNanoSearch _quoteStrings:someKeys joiningWithDelimiter:@","];
-    NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFPlist, NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@) AND NSFObjectClass = \"%@\"", quotedString, NSStringFromClass([NSFNanoBag class])];
+    NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFKeyedArchive, NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@) AND NSFObjectClass = \"%@\"", quotedString, NSStringFromClass([NSFNanoBag class])];
     
     return [[search executeSQL:theSQLStatement returnType:NSFReturnObjects error:nil]allValues];
 }
@@ -412,7 +446,7 @@
     }
     
     NSFNanoSearch *search = [NSFNanoSearch searchWithStore:self];
-    NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFPlist, NSFObjectClass FROM NSFKeys WHERE NSFKey IN (SELECT DISTINCT (NSFKEY) FROM NSFValues WHERE NSFValue = \"%@\") AND NSFObjectClass = \"%@\"", aKey, NSStringFromClass([NSFNanoBag class])];
+    NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFKeyedArchive, NSFObjectClass FROM NSFKeys WHERE NSFKey IN (SELECT DISTINCT (NSFKEY) FROM NSFValues WHERE NSFValue = \"%@\") AND NSFObjectClass = \"%@\"", aKey, NSStringFromClass([NSFNanoBag class])];
     
     return [[search executeSQL:theSQLStatement returnType:NSFReturnObjects error:nil]allValues];
 }
@@ -425,7 +459,7 @@
     
     NSFNanoSearch *search = [NSFNanoSearch searchWithStore:self];
     NSString *quotedString = [NSFNanoSearch _quoteStrings:someKeys joiningWithDelimiter:@","];
-    NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFPlist, NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@)", quotedString];
+    NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFKeyedArchive, NSFObjectClass FROM NSFKeys WHERE NSFKey IN (%@)", quotedString];
     
     return [[search executeSQL:theSQLStatement returnType:NSFReturnObjects error:nil]allValues];
 }
@@ -446,14 +480,14 @@
 {
     if (nil == theClassName) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the class name cannot be nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the class name cannot be nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
     NSFNanoSearch *search = [NSFNanoSearch searchWithStore:self];
     search.sort = theSortDescriptors;
     
-    NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFPlist, NSFObjectClass FROM NSFKeys WHERE NSFObjectClass = \"%@\"", theClassName];
+    NSString *theSQLStatement = [NSString stringWithFormat:@"SELECT NSFKey, NSFKeyedArchive, NSFObjectClass FROM NSFKeys WHERE NSFObjectClass = \"%@\"", theClassName];
     
     if (nil == theSortDescriptors) 
         return [[search executeSQL:theSQLStatement returnType:NSFReturnObjects error:nil] allValues];
@@ -465,7 +499,7 @@
 {
     if (nil == theClassName) {
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: the class name cannot be nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: the class name cannot be nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     }
     
@@ -633,7 +667,7 @@
 {
     if (nil == path)
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: path is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: path is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     
     // Make sure we've expanded the tilde
@@ -667,12 +701,12 @@
 
 + (NSFNanoStore *)_createAndOpenDebugDatabase
 {
-    NSFNanoStore *db =  [NSFNanoStore createStoreWithType:NSFPersistentStoreType path:[@"~/Desktop/NanoStoreDebug.db" stringByExpandingTildeInPath]];
+    NSFNanoStore *db =  [NSFNanoStore createStoreWithType:NSFPersistentStoreType path:[@"~/Desktop/NanoStoreDebug.sqlite" stringByExpandingTildeInPath]];
     NSError *outError = nil;
     
     if (NO == [db openWithError:&outError]) {
         [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: could not open the database. Reason: %@", [self class], _cmd, [outError localizedDescription]]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: could not open the database. Reason: %@", [self class], NSStringFromSelector(_cmd), [outError localizedDescription]]
                                userInfo:nil]raise];
     }
     
@@ -698,19 +732,19 @@
         if ((nil != outError) && (NO == hasInitializationSucceeded)) {
             *outError = [NSError errorWithDomain:NSFDomainKey
                                             code:NSFNanoStoreErrorKey
-                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %s]: failed to prepare _storeValuesStatement.", [self class], _cmd]
+                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: failed to prepare _storeValuesStatement.", [self class], NSStringFromSelector(_cmd)]
                                                                              forKey:NSLocalizedFailureReasonErrorKey]];
         }
     }
     
     if ((NULL == _storeKeysStatement) && (YES == hasInitializationSucceeded)) {
-        NSString *theSQLStatement = [[NSString alloc]initWithFormat:@"INSERT INTO %@(%@, %@, %@, %@) VALUES (?,?,?,?);", NSFKeys, NSFKey, NSFPlist, NSFCalendarDate, NSFObjectClass];
+        NSString *theSQLStatement = [[NSString alloc]initWithFormat:@"INSERT INTO %@(%@, %@, %@, %@) VALUES (?,?,?,?);", NSFKeys, NSFKey, NSFKeyedArchive, NSFCalendarDate, NSFObjectClass];
         hasInitializationSucceeded = [self _prepareSQLite3Statement:&_storeKeysStatement theSQLStatement:theSQLStatement];
         
         if ((nil != outError) && (NO == hasInitializationSucceeded)) {
             *outError = [NSError errorWithDomain:NSFDomainKey
                                             code:NSFNanoStoreErrorKey
-                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %s]: failed to prepare _storeKeysStatement.", [self class], _cmd]
+                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: failed to prepare _storeKeysStatement.", [self class], NSStringFromSelector(_cmd)]
                                                                              forKey:NSLocalizedFailureReasonErrorKey]];
         }
     }
@@ -736,29 +770,13 @@
     return _isOurTransaction;
 }
 
-- (NSString*)_nestedDescriptionWithPrefixedSpace:(NSString *)prefixedSpace
-{
-    if (nil == prefixedSpace) {
-        prefixedSpace = @"";
-    }
-    
-    NSMutableString *description = [NSMutableString string];
-    [description appendString:@"\n"];
-    [description appendString:[NSString stringWithFormat:@"%@NanoStore address      : 0x%x\n", prefixedSpace, self]];
-    [description appendString:[NSString stringWithFormat:@"%@Is our transaction?    : %@\n", prefixedSpace, (_isOurTransaction ? @"Yes" : @"No")]];
-    [description appendString:[NSString stringWithFormat:@"%@Save interval           : %ld\n", prefixedSpace, (saveInterval == 0 ? 1 : saveInterval)]];
-    [description appendString:[NSString stringWithFormat:@"%@Engine                 : %@\n", prefixedSpace, [nanoStoreEngine NSFP_nestedDescriptionWithPrefixedSpace:@"          "]]];
-    
-    return description;
-}
-
 - (BOOL)_checkNanoStoreIsReadyAndReturnError:(out NSError **)outError
 {
     if (nil == [self nanoStoreEngine]) {
         if (nil != outError)
             *outError = [NSError errorWithDomain:NSFDomainKey
                                             code:NSFNanoStoreErrorKey
-                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %s]: the NSF store has not been set.", [self class], _cmd]
+                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: the NSF store has not been set.", [self class], NSStringFromSelector(_cmd)]
                                                                              forKey:NSLocalizedFailureReasonErrorKey]];
         return NO;
     }
@@ -767,7 +785,7 @@
         if (nil != outError)
             *outError = [NSError errorWithDomain:NSFDomainKey
                                             code:NSFNanoStoreErrorKey
-                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %s]: the store is not open.", [self class], _cmd]
+                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: the store is not open.", [self class], NSStringFromSelector(_cmd)]
                                                                              forKey:NSLocalizedFailureReasonErrorKey]];
         return NO;
     }
@@ -800,14 +818,15 @@
     
     // Setup the Plist table
     if ([tables containsObject:NSFKeys] == NO) {
-        theSQLStatement = [NSString stringWithFormat:@"CREATE TABLE %@(ROWID INTEGER PRIMARY KEY, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT);", NSFKeys, NSFKey, NSFPlist, NSFCalendarDate, NSFObjectClass];
+        theSQLStatement = [NSString stringWithFormat:@"CREATE TABLE %@(ROWID INTEGER PRIMARY KEY, %@ TEXT, %@ BLOB, %@ TEXT, %@ TEXT);", NSFKeys, NSFKey, NSFKeyedArchive, NSFCalendarDate, NSFObjectClass];
+
         success = (nil == [[[self nanoStoreEngine]executeSQL:theSQLStatement]error]);
         if (NO == success)
             return NO;
         
         [[self nanoStoreEngine]NSFP_insertStringValues:[NSArray arrayWithObjects:NSFKeys, NSFRowIDColumnName, rowUIDDatatype, nil] forColumns:[NSArray arrayWithObjects:NSFP_TableIdentifier, NSFP_ColumnIdentifier, NSFP_DatatypeIdentifier, nil]table:NSFP_SchemaTable];
         [[self nanoStoreEngine]NSFP_insertStringValues:[NSArray arrayWithObjects:NSFKeys, NSFKey, stringDatatype, nil] forColumns:[NSArray arrayWithObjects:NSFP_TableIdentifier, NSFP_ColumnIdentifier, NSFP_DatatypeIdentifier, nil]table:NSFP_SchemaTable];
-        [[self nanoStoreEngine]NSFP_insertStringValues:[NSArray arrayWithObjects:NSFKeys, NSFPlist, stringDatatype, nil] forColumns:[NSArray arrayWithObjects:NSFP_TableIdentifier, NSFP_ColumnIdentifier, NSFP_DatatypeIdentifier, nil]table:NSFP_SchemaTable];
+        [[self nanoStoreEngine]NSFP_insertStringValues:[NSArray arrayWithObjects:NSFKeys, NSFKeyedArchive, stringDatatype, nil] forColumns:[NSArray arrayWithObjects:NSFP_TableIdentifier, NSFP_ColumnIdentifier, NSFP_DatatypeIdentifier, nil]table:NSFP_SchemaTable];
         [[self nanoStoreEngine]NSFP_insertStringValues:[NSArray arrayWithObjects:NSFKeys, dateDatatype, dateDatatype, nil] forColumns:[NSArray arrayWithObjects:NSFP_TableIdentifier, NSFP_ColumnIdentifier, NSFP_DatatypeIdentifier, nil]table:NSFP_SchemaTable];        
         [[self nanoStoreEngine]NSFP_insertStringValues:[NSArray arrayWithObjects:NSFKeys, NSFObjectClass, stringDatatype, nil] forColumns:[NSArray arrayWithObjects:NSFP_TableIdentifier, NSFP_ColumnIdentifier, NSFP_DatatypeIdentifier, nil]table:NSFP_SchemaTable];
     }
@@ -815,27 +834,27 @@
     return YES;
 }
 
-- (BOOL)_storeDictionary:(NSDictionary *)someInfo forKey:(NSString *)aKey forClassNamed:(NSString *)className usingSQLite3Statement:(sqlite3_stmt *)storeValuesStatement error:(out NSError **)outError
+- (BOOL)_storeDictionary:(NSDictionary *)someInfo forKey:(NSString *)aKey forClassNamed:(NSString *)classType error:(out NSError **)outError
 {
     if (nil == someInfo)
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: someInfo is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: someInfo is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     
     if (nil == aKey)
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: aKey is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: aKey is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     
-    if (nil == storeValuesStatement)
+    if (NULL == _storeValuesStatement)
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: aStatement is NULL.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: aStatement is NULL.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     
     NSRange range = [aKey rangeOfString:@"."];
     if (NSNotFound != range.location)
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: aKey cannot contain a period ('.')", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: aKey cannot contain a period ('.')", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     
     NSArray *keys = [someInfo allKeys];
@@ -843,7 +862,7 @@
         range = [key rangeOfString:@"."];
         if (NSNotFound != range.location)
             [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                     reason:[NSString stringWithFormat:@"*** -[%@ %s]: the keys of the dictionary cannot contain a period ('.')", [self class], _cmd]
+                                     reason:[NSString stringWithFormat:@"*** -[%@ %@]: the keys of the dictionary cannot contain a period ('.')", [self class], NSStringFromSelector(_cmd)]
                                    userInfo:nil]raise];
     }
     
@@ -867,7 +886,7 @@
                 id value = [flattenedValues objectAtIndex:i];
                 
                 // Reset, as required by SQLite...
-                int status = sqlite3_reset (storeValuesStatement);
+                int status = sqlite3_reset (_storeValuesStatement);
                 
                 // Since we're operating with extended result code support, extract the bits
                 // and obtain the regular result code
@@ -878,8 +897,8 @@
                 if (SQLITE_OK == status) {
                     
                     // Bind and execute the statement...
-                    BOOL resultBindKey = (sqlite3_bind_text (storeValuesStatement, 1, aKeyUTF8, -1, SQLITE_STATIC) == SQLITE_OK);
-                    BOOL resultBindAttribute = (sqlite3_bind_text (storeValuesStatement, 2, [attribute UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
+                    BOOL resultBindKey = (sqlite3_bind_text (_storeValuesStatement, 1, aKeyUTF8, -1, SQLITE_STATIC) == SQLITE_OK);
+                    BOOL resultBindAttribute = (sqlite3_bind_text (_storeValuesStatement, 2, [attribute UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
                     
                     // Take advantage of manifest typing
                     // Branch the type of bind based on the type to be stored: NSString, NSData, NSDate or NSNumber
@@ -888,30 +907,36 @@
                     
                     switch (valueDataType) {
                         case NSFNanoTypeData:
-                            resultBindValue = (sqlite3_bind_blob(storeValuesStatement, 3, [value bytes], [value length], NULL) == SQLITE_OK);
+                            resultBindValue = (sqlite3_bind_blob(_storeValuesStatement, 3, [value bytes], (int)[value length], NULL) == SQLITE_OK);
                             break;
                         case NSFNanoTypeString:
                         case NSFNanoTypeDate:
-                            resultBindValue = (sqlite3_bind_text (storeValuesStatement, 3, [[self _stringFromValue:value]UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
+                            resultBindValue = (sqlite3_bind_text (_storeValuesStatement, 3, [[self _stringFromValue:value]UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
                             break;
                             break;
                         case NSFNanoTypeNumber:
-                            resultBindValue = (sqlite3_bind_double (storeValuesStatement, 3, [value doubleValue]) == SQLITE_OK);
+                            resultBindValue = (sqlite3_bind_double (_storeValuesStatement, 3, [value doubleValue]) == SQLITE_OK);
+                            break;
+                        case NSFNanoTypeNULL:
+                            resultBindValue = (sqlite3_bind_null(_storeValuesStatement, 3) == SQLITE_OK);
+                            break;
+                        case NSFNanoTypeURL:
+                            resultBindValue = (sqlite3_bind_text (_storeValuesStatement, 3, [[self _stringFromValue:value]UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
                             break;
                         default:
                             [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                                     reason:[NSString stringWithFormat:@"*** -[%@ %s]: datatype %@ cannot be stored because its class type is unknown.", [self class], _cmd, [value class]]
+                                                     reason:[NSString stringWithFormat:@"*** -[%@ %@]: datatype %@ cannot be stored because its class type is unknown.", [self class], NSStringFromSelector(_cmd), [value class]]
                                                    userInfo:nil]raise];
                             break;
                     }
                     
                     // Store the element's datatype so we can recreate it later on when we read it back from the store...
                     NSString *valueDatatypeString = NSFStringFromNanoDataType(valueDataType);
-                    BOOL resultBindDatatype = (sqlite3_bind_text (storeValuesStatement, 4, [valueDatatypeString UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
+                    BOOL resultBindDatatype = (sqlite3_bind_text (_storeValuesStatement, 4, [valueDatatypeString UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
                     
                     success = (resultBindKey && resultBindAttribute && resultBindValue && resultBindDatatype);
                     if (success) {
-                        [self _executeSQLite3StepUsingSQLite3Statement:storeValuesStatement];
+                        [self _executeSQLite3StepUsingSQLite3Statement:_storeValuesStatement];
                     }
                 }
             }
@@ -920,51 +945,27 @@
     }
     
     if (YES == success) {
-        // Save the Key and its Plist (if it applies)
-        NSString *dictXML = nil;
-        NSString *errorString = nil;
-        
-        NSData *dictData = [NSPropertyListSerialization dataFromPropertyList:someInfo format:NSPropertyListXMLFormat_v1_0 errorDescription:&errorString];
-        if (nil != errorString) {
-            NSLog(@"     Dictionary: %@", someInfo);
-            NSLog(@"*** -[%@ %@]: [NSPropertyListSerialization dataFromPropertyList] failure. %@", [self class], NSStringFromSelector(_cmd), errorString);
-            NSLog(@"     Dictionary info: %@", someInfo);
-            success = NO;
-        } else {
-            if ([dictData length] > 0)
-                dictXML = [[NSString alloc]initWithBytes:[dictData bytes]length:[dictData length]encoding:NSUTF8StringEncoding];
-            else
-                dictXML = @"";
+        NSData *dictBinData = [NSKeyedArchiver archivedDataWithRootObject:someInfo];
+        {
+            int status = sqlite3_reset (_storeKeysStatement);
             
-            if (nil == dictXML) {
-                if (nil != outError)
-                    *outError = [NSError errorWithDomain:NSFDomainKey
-                                                    code:NSF_Private_InvalidParameterDataCodeKey
-                                                userInfo:[NSDictionary dictionaryWithObject:@"Couldn't serialize the object: %@"
-                                                                                     forKey:NSLocalizedDescriptionKey]];
-                success = NO;
-            } else {
-                // Reset, as required by SQLite...
-                int status = sqlite3_reset (_storeKeysStatement);
+            // Since we're operating with extended result code support, extract the bits
+            // and obtain the regular result code
+            // For more info check: http://www.sqlite.org/c3ref/c_ioerr_access.html
+            
+            status = [NSFNanoEngine NSFP_stripBitsFromExtendedResultCode:status];
+            
+            // Bind and execute the statement...
+            if (SQLITE_OK == status) {
                 
-                // Since we're operating with extended result code support, extract the bits
-                // and obtain the regular result code
-                // For more info check: http://www.sqlite.org/c3ref/c_ioerr_access.html
+                BOOL resultBindKey = (sqlite3_bind_text (_storeKeysStatement, 1, aKeyUTF8, -1, SQLITE_STATIC) == SQLITE_OK);
+                BOOL resultBindData = (sqlite3_bind_blob(_storeKeysStatement, 2, [dictBinData bytes], (int)[dictBinData length], SQLITE_STATIC) == SQLITE_OK);
+                BOOL resultBindCalendarDate = (sqlite3_bind_text (_storeKeysStatement, 3, [[NSFNanoStore _calendarDateToString:[NSDate date]]UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
+                BOOL resultBindClass = (sqlite3_bind_text (_storeKeysStatement, 4, [classType UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
                 
-                status = [NSFNanoEngine NSFP_stripBitsFromExtendedResultCode:status];
-                
-                // Bind and execute the statement...
-                if (SQLITE_OK == status) {
-                    
-                    BOOL resultBindKey = (sqlite3_bind_text (_storeKeysStatement, 1, aKeyUTF8, -1, SQLITE_STATIC) == SQLITE_OK);
-                    BOOL resultBindPlist = (sqlite3_bind_text (_storeKeysStatement, 2, [dictXML UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
-                    BOOL resultBindCalendarDate = (sqlite3_bind_text (_storeKeysStatement, 3, [[NSFNanoStore _calendarDateToString:[NSDate date]]UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
-                    BOOL resultBindClass = (sqlite3_bind_text (_storeKeysStatement, 4, [className UTF8String], -1, SQLITE_STATIC) == SQLITE_OK);
-                    
-                    success = (resultBindKey && resultBindPlist && resultBindCalendarDate && resultBindClass);
-                    if (success) {
-                        [self _executeSQLite3StepUsingSQLite3Statement:_storeKeysStatement];
-                    }
+                success = (resultBindKey && resultBindData && resultBindCalendarDate && resultBindClass);
+                if (success) {
+                    [self _executeSQLite3StepUsingSQLite3Statement:_storeKeysStatement];
                 }
             }
         }
@@ -985,6 +986,10 @@
         return NSFNanoTypeDate;
     else if ([value isKindOfClass:[NSData class]])
         return NSFNanoTypeData;
+    else if ([value isKindOfClass:[NSNull class]])
+        return NSFNanoTypeNULL;
+    else if ([value isKindOfClass:[NSURL class]])
+        return NSFNanoTypeURL;
     
     return type;
 }
@@ -1002,7 +1007,7 @@
             return [aValue description];
         } else {
             [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                     reason:[NSString stringWithFormat:@"*** -[%@ %s]: datatype %@ doesn't respond to selector 'stringValue' or 'description'.", [self class], _cmd, [aValue class]]
+                                     reason:[NSString stringWithFormat:@"*** -[%@ %@]: datatype %@ doesn't respond to selector 'stringValue' or 'description'.", [self class], NSStringFromSelector(_cmd), [aValue class]]
                                    userInfo:nil]raise];
         }
     }
@@ -1022,7 +1027,7 @@
     
     if (nil == aDate)
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: aDate is nil.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: aDate is nil.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     
     return [__sNSFNanoStoreDateFormatter stringFromDate:aDate];
@@ -1143,7 +1148,7 @@
             NSString *objectKey = [(id)object nanoObjectKey];
             if (nil == objectKey) {
                 [[NSException exceptionWithName:NSFNanoObjectBehaviorException
-                                         reason:[NSString stringWithFormat:@"*** -[%@ %s]: unexpected NSFNanoObject behavior. Reason: the object's key is nil.", [self class], _cmd]
+                                         reason:[NSString stringWithFormat:@"*** -[%@ %@]: unexpected NSFNanoObject behavior. Reason: the object's key is nil.", [self class], NSStringFromSelector(_cmd)]
                                        userInfo:nil]raise]; 
             }
             [keys addObject:objectKey];
@@ -1156,7 +1161,7 @@
             NSError *localOutError = nil;
             if (NO == [self removeObjectsWithKeysInArray:[keys allObjects] error:&localOutError]) {
                 [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
-                                         reason:[NSString stringWithFormat:@"*** -[%@ %s]: %@", [self class], _cmd, [localOutError localizedDescription]]
+                                         reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), [localOutError localizedDescription]]
                                        userInfo:nil]raise];
             }
         }
@@ -1187,10 +1192,18 @@
                     className = NSStringFromClass([object class]);
                 }
                 
-                if (NO == [self _storeDictionary:[object nanoObjectDictionaryRepresentation] forKey:[(id)object nanoObjectKey] forClassNamed:className usingSQLite3Statement:_storeValuesStatement error:outError]) {
+                if (NO == [self _storeDictionary:[object nanoObjectDictionaryRepresentation] forKey:[(id)object nanoObjectKey] forClassNamed:className error:outError]) {
                     [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
-                                             reason:[NSString stringWithFormat:@"*** -[%@ %s]: %@", [self class], _cmd, [*outError localizedDescription]]
+                                             reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), [*outError localizedDescription]]
                                            userInfo:nil]raise];
+                } else {
+                    SEL setStoreSelector = @selector(setStore:);
+                    if (YES == [object respondsToSelector:setStoreSelector]) {
+                        #pragma clang diagnostic push
+                        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                        [object performSelector:setStoreSelector withObject:self];
+                        #pragma clang diagnostic pop
+                    }
                 }
                 
                 i++;
@@ -1199,7 +1212,7 @@
                 if ((0 == i % self.saveInterval) && transactionStartedHere) {
                     if (NO == [self commitTransactionAndReturnError:outError]) {
                         [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
-                                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: %@", [self class], _cmd, [*outError localizedDescription]]
+                                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), [*outError localizedDescription]]
                                                userInfo:nil]raise];
                     }
                     
@@ -1207,7 +1220,7 @@
                         transactionStartedHere = [self beginTransactionAndReturnError:outError];
                         if (NO == transactionStartedHere) {
                             [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
-                                                     reason:[NSString stringWithFormat:@"*** -[%@ %s]: %@", [self class], _cmd, [*outError localizedDescription]]
+                                                     reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), [*outError localizedDescription]]
                                                    userInfo:nil]raise];
                         }
                     }
@@ -1219,7 +1232,7 @@
         if (transactionStartedHere) {
             if (NO == [self commitTransactionAndReturnError:outError]) {
                 [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
-                                         reason:[NSString stringWithFormat:@"*** -[%@ %s]: %@", [self class], _cmd, [*outError localizedDescription]]
+                                         reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), [*outError localizedDescription]]
                                        userInfo:nil]raise];
             }
         }

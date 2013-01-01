@@ -26,6 +26,8 @@
 
 #import "NSFNanoSortDescriptor.h"
 #import "NSFNanoGlobals.h"
+#import "NSFOrderedDictionary.h"
+#import "NSFNanoObject_Private.h"
 
 @implementation NSFNanoSortDescriptor
 {
@@ -46,7 +48,7 @@
 {
     if (theAttribute.length == 0)
         [[NSException exceptionWithName:NSFUnexpectedParameterException
-                                 reason:[NSString stringWithFormat:@"*** -[%@ %s]: theAttribute is invalid.", [self class], _cmd]
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: theAttribute is invalid.", [self class], NSStringFromSelector(_cmd)]
                                userInfo:nil]raise];
     
     if ((self = [super init])) {
@@ -64,14 +66,28 @@
 
 #pragma mark -
 
-- (NSString*)description
+- (NSString *)description
 {
-    NSMutableString *description = [NSMutableString string];
+    return [self JSONDescription];
+}
+
+- (NSFOrderedDictionary *)dictionaryDescription
+{
+    NSFOrderedDictionary *values = [NSFOrderedDictionary new];
     
-    [description appendString:@"\n"];
-    [description appendString:[NSString stringWithFormat:@"Sort descriptor address  : 0x%x\n", self]];
-    [description appendString:[NSString stringWithFormat:@"Attribute                : %@\n", attribute]];
-    [description appendString:[NSString stringWithFormat:@"Is ascending?            : %@\n", (isAscending ? @"YES" : @"NO")]];
+    values[@"Sort descriptor address"] = [NSString stringWithFormat:@"%p", self];
+    values[@"Attribute"] = attribute;
+    values[@"Is ascending?"] = (isAscending ? @"YES" : @"NO");
+    
+    return values;
+}
+
+- (NSString *)JSONDescription
+{
+    NSFOrderedDictionary *values = [self dictionaryDescription];
+    
+    NSError *outError = nil;
+    NSString *description = [NSFNanoObject _NSObjectToJSONString:values error:&outError];
     
     return description;
 }

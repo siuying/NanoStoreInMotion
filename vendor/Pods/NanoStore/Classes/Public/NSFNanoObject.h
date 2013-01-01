@@ -181,6 +181,8 @@
 
 @interface NSFNanoObject : NSObject <NSFNanoObjectProtocol, NSCopying>
 
+/** * The store where the object is saved.  */
+@property (nonatomic, weak, readonly) NSFNanoStore *store;
 /** * The UUID of the NanoObject.  */
 @property (nonatomic, copy, readonly) NSString *key;
 /** * The user-supplied information of the NanoObject.  */
@@ -304,6 +306,13 @@
 
 - (BOOL)isEqualToNanoObject:(NSFNanoObject *)otherNanoObject;
 
+/** * Saves the uncommitted changes to the document store.
+ * @param outError is used if an error occurs. May be NULL.
+ * @return YES upon success, NO otherwise.
+ */
+
+- (BOOL)saveStoreAndReturnError:(out NSError **)outError;
+
 /** * Returns a dictionary that contains the information stored in the object.
  * @note Check properties info and key to find out the current state of the object.
  * @see \link description - (NSString *)description \endlink
@@ -311,12 +320,15 @@
 
 - (NSDictionary *)dictionaryRepresentation;
 
-/** * Returns a string representation of the bag.
- * @note Check properties info and key to find out the current state of the object.
- * @see \link dictionaryRepresentation - (NSString *)dictionaryRepresentation \endlink
+/** * Returns a string representation of the nano object.
  */
 
 - (NSString *)description;
+
+/** Returns a JSON representation of the nano object.
+ */
+
+- (NSString *)JSONDescription;
 
 //@}
 
