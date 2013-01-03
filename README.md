@@ -73,6 +73,8 @@ Attributes must be serializable, which means that only the following data types 
 - NSData (*)
 - NSDate
 - NSNumber
+- NSNull
+- NSURL
 
 #### Note
 
