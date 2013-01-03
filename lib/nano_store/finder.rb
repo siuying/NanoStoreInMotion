@@ -60,7 +60,11 @@ module NanoStore
       searchResults = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
 
-      searchResults
+      if searchResults.is_a?(NSDictionary)
+        searchResults.values
+      else
+        searchResults
+      end
     end
 
     # find model keys by criteria
@@ -109,7 +113,11 @@ module NanoStore
       searchResults = search.searchObjectsWithReturnType(NSFReturnKeys, error:error_ptr)
       raise NanoStoreError, error_ptr[0].description if error_ptr[0]
 
-      searchResults
+      if searchResults.is_a?(NSDictionary)
+        searchResults.values
+      else
+        searchResults
+      end
     end
 
     # find a model by key

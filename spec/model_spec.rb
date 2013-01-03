@@ -1,5 +1,4 @@
 describe NanoStore::Model do
-  
   class User < NanoStore::Model
     attribute :name
     attribute :age
@@ -14,7 +13,7 @@ describe NanoStore::Model do
   class Listing < NanoStore::Model
     attribute :name
   end
-  
+
   def stub_user(name, age, created_at)
     user = User.new
     user.name = name
@@ -76,7 +75,29 @@ describe NanoStore::Model do
   end
 
   describe "#save" do
-    it "update objects" do
+    it "if no store set, create objects using shared store" do
+      user = stub_user("Bob", 10, Time.now)
+      user.save
+      NanoStore.shared_store.count(User).should == 1
+    end
+
+    # per object store since NanoStore 2.5.1
+    it "user per instance store to save" do 
+      store1 = NanoStore.store
+      user = stub_user("Bob", 10, Time.now)
+      user.store = store1
+      user.save
+      store1.count(User).should == 1
+
+      store2 = NanoStore.store
+      user2 = stub_user("Lee", 10, Time.now)
+      user2.store = store2
+      user2.save
+      store2.count(User).should == 1
+      store1.count(User).should == 1
+    end
+
+    it "update existing objects" do
       user = stub_user("Bob", 10, Time.now)
       user.save
 
@@ -87,6 +108,7 @@ describe NanoStore::Model do
       user2 = User.find(:name, NSFEqualTo, "Dom").first
       user2.key.should == user.key
     end
+
   end
   
   describe "#delete" do

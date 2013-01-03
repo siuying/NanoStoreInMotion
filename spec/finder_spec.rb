@@ -43,6 +43,8 @@ describe "Finder" do
     it "search object traditional way: supply key, operator and value" do
       users = User.find(:name, NSFEqualTo, "Bob")
       users.should.not.be.nil
+      users.is_a?(Array).should.be.true
+
       user = users.first
       user.should.not.be.nil
       user.name.should.be == "Bob"

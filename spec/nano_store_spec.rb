@@ -7,6 +7,11 @@ describe NanoStore do
     NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0]
   end
 
+  after do
+    path = documents_path + "/nano.db"
+    File.delete(path) rescue nil
+  end
+
   it "create :memory store" do
     store = NanoStore.store
     store.filePath.should == ":memory:"

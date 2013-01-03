@@ -46,12 +46,12 @@ describe "Associations" do
       todo.items.is_a?(NanoStore::Bag).should == true
       todo.save
 
-      todo2 = Todo.find(:title => "Today Tasks").first
-      todo2.should.not.be.nil
-      todo2.items.is_a?(NSFNanoBag).should == true
-      todo2.items.key.should == todo.items.key
-      todo2.items.size.should == 3
-      todo2.items.to_a.each do |item|
+      todo = Todo.find(:title => "Today Tasks").first
+      todo.should.not.be.nil
+      todo.items.is_a?(NanoStore::Bag).should == true
+      todo.items.key.should == todo.items.key
+      todo.items.size.should == 3
+      todo.items.to_a.each do |item|
         item.is_a?(TodoItem).should.be.true
       end
     end
