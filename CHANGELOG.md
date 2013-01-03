@@ -1,3 +1,9 @@
+# [0.6.0](https://github.com/siuying/NanoStoreInMotion/compare/v0.5.2%E2%80%A6v0.6.0)
+
+- Update for NanoStore 2.5.3, some notable changes:
+  - accept nil and NSURL fields in model
+  - can set store per instance
+
 # [0.5.2](https://github.com/siuying/NanoStoreInMotion/compare/v0.5.1%E2%80%A6v0.5.2)
 
 - Fix load error on older version of RubyMotion (or that disabled detect_dependencies)

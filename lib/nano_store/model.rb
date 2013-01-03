@@ -50,11 +50,7 @@ module NanoStore
       end
 
       define_method((name + "=").to_sym) do |*args, &block|
-        if args[0].nil?
-          self.info.delete(name.to_sym)
-        else
-          self.info[name] = args[0]
-        end
+        self.info[name] = args[0]
       end
     end
     

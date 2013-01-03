@@ -109,6 +109,14 @@ describe NanoStore::Model do
       user2.key.should == user.key
     end
 
+    it "create with nil field" do
+      user = stub_user("Bob", 10, nil)
+      user.save
+
+      user1 = User.find(:name, NSFEqualTo, "Bob").first
+      user1.name.should == "Bob"
+      user1.created_at.should.be.nil
+    end
   end
   
   describe "#delete" do
