@@ -54,8 +54,12 @@ module NanoStore
       end
     end
     
-    def attributes
-      @attributes ||= []
+    def attributes(*attrs)
+      if attrs.size > 0
+        attrs.each{|attr| attribute attr}
+      else
+        @attributes ||= []
+      end
     end
 
     def store
