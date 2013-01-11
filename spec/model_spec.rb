@@ -1,13 +1,10 @@
 describe NanoStore::Model do
   class User < NanoStore::Model
-    attribute :name
-    attribute :age
-    attribute :created_at
+    attributes :name, :age, :created_at
   end
 
   class Plane < NanoStore::Model
-    attribute :name
-    attribute :age
+    attributes :name, :age
   end
 
   class Listing < NanoStore::Model
