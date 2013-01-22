@@ -27,17 +27,16 @@
 #import "NSFNanoResult.h"
 #import "NanoStore_Private.h"
 
-@interface NSFNanoResult ()
-
-/** \cond */
-@property (nonatomic, assign, readwrite) NSUInteger numberOfRows;
-@property (nonatomic, strong, readwrite) NSError *error;
-@property (nonatomic) NSDictionary *results;
-/** \endcond */
-
-@end
-
 @implementation NSFNanoResult
+{
+@protected
+    /** \cond */
+    NSDictionary    *results;
+    /** \endcond */
+}
+
+@synthesize numberOfRows;
+@synthesize error;
 
 /** \cond */
 
@@ -58,24 +57,24 @@
 
 - (NSString *)description
 {
-    NSUInteger numberOfColumns = [[_results allKeys]count];
+    NSUInteger numberOfColumns = [[results allKeys]count];
     
     NSMutableString *description = [NSMutableString string];
     [description appendString:@"\n"];
     [description appendString:[NSString stringWithFormat:@"Result address     : %p\n", self]];
     [description appendString:[NSString stringWithFormat:@"Number of columns  : %ld\n", numberOfColumns]];
-    if (nil == _error)
+    if (nil == error)
         if ([[self columns]count] > 0)
             [description appendString:[NSString stringWithFormat:@"Columns            : %@\n", [[self columns]componentsJoinedByString:@", "]]];
         else
             [description appendString:[NSString stringWithFormat:@"Columns            : %@\n", @"()"]];
         else
             [description appendString:[NSString stringWithFormat:@"Columns            : %@\n", @"<column info not available>"]];
-    [description appendString:[NSString stringWithFormat:@"Number of rows     : %ld\n", _numberOfRows]];
-    if (nil == _error)
+    [description appendString:[NSString stringWithFormat:@"Number of rows     : %ld\n", numberOfRows]];
+    if (nil == error)
         [description appendString:[NSString stringWithFormat:@"Error              : %@\n", @"<no error>"]];
     else
-        [description appendString:[NSString stringWithFormat:@"Error              : %@\n", [_error localizedDescription]]];
+        [description appendString:[NSString stringWithFormat:@"Error              : %@\n", [error localizedDescription]]];
     
     // Print up to the first ten rows to help visualize the cursor
     if (0 != numberOfColumns) {
@@ -106,11 +105,11 @@
         }
         
         // Print the preview of the contents
-        if (_numberOfRows > 0) {
-            NSInteger numberOfRowsToPrint = _numberOfRows;
+        if (numberOfRows > 0) {
+            NSInteger numberOfRowsToPrint = numberOfRows;
             NSUInteger j;
             
-            if (_numberOfRows > 100) {
+            if (numberOfRows > 100) {
                 numberOfRowsToPrint = 100;
             }
             
@@ -142,13 +141,13 @@
 
 - (NSFOrderedDictionary *)dictionaryDescription
 {
-    NSUInteger numberOfColumns = [[_results allKeys]count];
+    NSUInteger numberOfColumns = [[results allKeys]count];
 
     NSFOrderedDictionary *values = [NSFOrderedDictionary new];
     
     values[@"Result address"] = [NSString stringWithFormat:@"%p", self];
     values[@"Number of columns"] = @(numberOfColumns);
-    if (nil == _error) {
+    if (nil == error) {
         if ([[self columns]count] > 0) {
             values[@"Columns"] = [[self columns]componentsJoinedByString:@", "];
         } else {
@@ -157,11 +156,11 @@
     } else {
         values[@"Columns"] = @"<column info not available>";
     }
-    values[@"Number of rows"] = @(_numberOfRows);
-    if (nil == _error) {
+    values[@"Number of rows"] = @(numberOfRows);
+    if (nil == error) {
         values[@"Error"] = @"<nil>";
     } else {
-        values[@"Error"] = [NSString stringWithFormat:@"%@", [_error localizedDescription]];
+        values[@"Error"] = [NSString stringWithFormat:@"%@", [error localizedDescription]];
     }
     
     // Print up to the first ten rows to help visualize the cursor
@@ -197,11 +196,11 @@
         [printedContent addObject:[contentString copy]];
 
         // Print the preview of the contents
-        if (_numberOfRows > 0) {
-            NSInteger numberOfRowsToPrint = _numberOfRows;
+        if (numberOfRows > 0) {
+            NSInteger numberOfRowsToPrint = numberOfRows;
             NSUInteger j;
             
-            if (_numberOfRows > 100) {
+            if (numberOfRows > 100) {
                 numberOfRowsToPrint = 100;
             }
             
@@ -252,17 +251,17 @@
 
 - (NSArray *)columns
 {
-    return [_results allKeys];
+    return [results allKeys];
 }
 
 - (NSString *)valueAtIndex:(NSUInteger)index forColumn:(NSString *)column
 {
-    return [[_results objectForKey:column]objectAtIndex:index];
+    return [[results objectForKey:column]objectAtIndex:index];
 }
 
 - (NSArray *)valuesForColumn:(NSString *)column
 {
-    NSArray *values = [_results objectForKey:column];
+    NSArray *values = [results objectForKey:column];
     
     if (nil == values)
         values = [NSArray array];
@@ -272,17 +271,22 @@
 
 - (NSString *)firstValue
 {
-    NSArray *columns = [_results allKeys];
-    if (([columns count] > 0) && (_numberOfRows > 0)) {
-        return [[_results objectForKey:[columns objectAtIndex:0]]objectAtIndex:0];
+    NSArray *columns = [results allKeys];
+    if (([columns count] > 0) && (numberOfRows > 0)) {
+        return [[results objectForKey:[columns objectAtIndex:0]]objectAtIndex:0];
     }
     
     return nil;
 }
 
+- (NSError *)error
+{
+    return [error copy];
+}
+
 - (void)writeToFile:(NSString *)path;
 {
-    [_results writeToFile:[path stringByExpandingTildeInPath] atomically:YES];
+    [results writeToFile:[path stringByExpandingTildeInPath] atomically:YES];
 }
 
 #pragma mark - Private Methods
@@ -312,7 +316,7 @@
                                userInfo:nil]raise];
     
     if ((self = [self init])) {
-        _results = theResults;
+        results = theResults;
         [self _calculateNumberOfRows];
     }
     
@@ -332,29 +336,36 @@
                                userInfo:nil]raise];
     
     if ((self = [self init])) {
-        _error = theError;
+        error = theError;
         [self _calculateNumberOfRows];
     }
     
     return self;
 }
 
+- (void)_setError:(NSError *)theError
+{
+    if (error != theError) {
+        error = theError;
+    }
+}
+
 - (void)_reset
 {
-    _numberOfRows = -1;
-    _results = nil;
-    _error = nil;
+    numberOfRows = -1;
+    results = nil;
+    error = nil;
 }
 
 - (void)_calculateNumberOfRows
 {
     // We cache the value once, for performance reasons
-    if (-1 == _numberOfRows) {
-        NSArray *allKeys = [_results allKeys];
+    if (-1 == numberOfRows) {
+        NSArray *allKeys = [results allKeys];
         if ([allKeys count] == 0)
-            _numberOfRows = 0;
+            numberOfRows = 0;
         else
-            _numberOfRows = [[_results objectForKey:[allKeys lastObject]]count];
+            numberOfRows = [[results objectForKey:[allKeys lastObject]]count];
     }
 }
 /** \endcond */

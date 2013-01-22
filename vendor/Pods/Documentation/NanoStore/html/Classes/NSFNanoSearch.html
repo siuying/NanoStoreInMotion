@@ -12,7 +12,7 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">NanoStore 2.5.7 </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">NanoStore 2.5.2 </a></h1>
 				<a id="developerHome" href="../index.html">Tito Ciuro</a>
 			</div>
 			
@@ -43,8 +43,6 @@
 	<option value="//api/name/attribute">&nbsp;&nbsp;&nbsp;&nbsp;attribute</option>
 	
 	<option value="//api/name/attributesToBeReturned">&nbsp;&nbsp;&nbsp;&nbsp;attributesToBeReturned</option>
-	
-	<option value="//api/name/bag">&nbsp;&nbsp;&nbsp;&nbsp;bag</option>
 	
 	<option value="//api/name/expressions">&nbsp;&nbsp;&nbsp;&nbsp;expressions</option>
 	
@@ -163,8 +161,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/attribute">attribute</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/attributesToBeReturned">attributesToBeReturned</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bag">bag</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expressions">expressions</a></span></li>
 	
@@ -556,16 +552,6 @@ NSDictionary *searchResults = [search searchObjectsWithReturnType:NSFReturnObjec
 	</span>
 	<span class="task-item-suffix">property</span>
 	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/bag">&nbsp;&nbsp;bag</a></code>
-		<span class="tooltip"><ul>
-<li><a href="#//api/name/limit">limit</a> a Search to a particular bag.</li>
-</ul>
-</span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
 </li>
 						</ul>
 						
@@ -909,53 +895,6 @@ NSDictionary *searchResults = [search searchObjectsWithReturnType:NSFReturnObjec
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/bag" title="bag"></a>
-	<h3 class="subsubtitle method-title">bag</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<ul>
-<li><a href="#//api/name/limit">limit</a> a Search to a particular bag.</li>
-</ul>
-
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) NSFNanoBag *bag</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<ul>
-<li><a href="#//api/name/limit">limit</a> a Search to a particular bag.</li>
-</ul>
-
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/expressions" title="expressions"></a>
 	<h3 class="subsubtitle method-title">expressions</h3>
 	
@@ -1017,7 +956,7 @@ NSDictionary *searchResults = [search searchObjectsWithReturnType:NSFReturnObjec
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readwrite) NSString *filterClass</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSString *filterClass</code></div>
 
     
 	
@@ -2332,7 +2271,7 @@ When invoked, it sets the values of search to its initial state. Resetting and p
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Performs a search using the values of the properties before, on or after a given date.</p><div class="note"><p><strong>Note:</strong> The <a href="#//api/name/sort">sort</a> descriptor will be ignored when the return type is NSFReturnKeys.</p></div>
+		<p>Performs a search using the values of the properties before, on or after a given date.</p><div class="note"><p><strong>Note:</strong> The <a href="#//api/name/sort">sort</a> descriptor will be ignored when returning requesting NSFReturnKeys.</p></div>
 	</div>
 	
 	
@@ -2402,7 +2341,7 @@ When invoked, it sets the values of search to its initial state. Resetting and p
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Performs a search using the values of the properties.</p><div class="note"><p><strong>Note:</strong> The <a href="#//api/name/sort">sort</a> descriptor will be ignored when the return type is NSFReturnKeys.</p></div>
+		<p>Performs a search using the values of the properties.</p><div class="note"><p><strong>Note:</strong> The <a href="#//api/name/sort">sort</a> descriptor will be ignored when returning requesting NSFReturnKeys.</p></div>
 	</div>
 	
 	

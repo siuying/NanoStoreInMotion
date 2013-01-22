@@ -12,7 +12,7 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">NanoStore 2.5.7 </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">NanoStore 2.5.2 </a></h1>
 				<a id="developerHome" href="../index.html">Tito Ciuro</a>
 			</div>
 			
@@ -404,7 +404,7 @@ NSDictionary *searchResults = [search searchObjectsWithReturnType:NSFReturnObjec
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) id value</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *value</code></div>
 
     
 	
@@ -456,7 +456,7 @@ NSDictionary *searchResults = [search searchObjectsWithReturnType:NSFReturnObjec
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSFNanoPredicate *)predicateWithColumn:(NSFTableColumnType)<em>theType</em> matching:(NSFMatchType)<em>theMatch</em> value:(id)<em>theValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoPredicate *)predicateWithColumn:(NSFTableColumnType)<em>theType</em> matching:(NSFMatchType)<em>theMatch</em> value:(NSString *)<em>theValue</em></code></div>
 
     
 	
@@ -475,7 +475,7 @@ NSDictionary *searchResults = [search searchObjectsWithReturnType:NSFReturnObjec
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>theValue</em></dt>
-			<dd><p>can be an NSString or [NSNull null]</p></dd>
+			<dd><p>is the <a href="#//api/name/value">value</a>.</p></dd>
 		</dl>
 		
 	</div>
@@ -621,7 +621,7 @@ NSDictionary *searchResults = [search searchObjectsWithReturnType:NSFReturnObjec
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithColumn:(NSFTableColumnType)<em>theType</em> matching:(NSFMatchType)<em>theMatch</em> value:(id)<em>theValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)initWithColumn:(NSFTableColumnType)<em>theType</em> matching:(NSFMatchType)<em>theMatch</em> value:(NSString *)<em>theValue</em></code></div>
 
     
 	
@@ -640,7 +640,7 @@ NSDictionary *searchResults = [search searchObjectsWithReturnType:NSFReturnObjec
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>theValue</em></dt>
-			<dd><p>can be an NSString or [NSNull null]</p></dd>
+			<dd><p>is the <a href="#//api/name/value">value</a>.</p></dd>
 		</dl>
 		
 	</div>

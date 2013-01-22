@@ -28,36 +28,35 @@
 #import "NanoStore_Private.h"
 #import "NSFOrderedDictionary.h"
 
-@interface NSFNanoPredicate ()
-
-    /** \cond */
-    @property (nonatomic, assign, readwrite) NSFTableColumnType column;
-    @property (nonatomic, assign, readwrite) NSFMatchType match;
-    @property (nonatomic, readwrite) id value;
-    /** \endcond */
-
-@end
-
 @implementation NSFNanoPredicate
+
+@synthesize column, match, value;
 
 // ----------------------------------------------
 // Initialization / Cleanup
 // ----------------------------------------------
 
-+ (NSFNanoPredicate*)predicateWithColumn:(NSFTableColumnType)type matching:(NSFMatchType)matching value:(id)aValue
++ (NSFNanoPredicate*)predicateWithColumn:(NSFTableColumnType)type matching:(NSFMatchType)matching value:(NSString *)aValue
 {
+    if (nil == aValue)
+        [[NSException exceptionWithName:NSFUnexpectedParameterException
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: value is nil.", [self class], NSStringFromSelector(_cmd)]
+                               userInfo:nil]raise];
+    
     return [[self alloc]initWithColumn:type matching:matching value:aValue];
 }
 
-- (id)initWithColumn:(NSFTableColumnType)type matching:(NSFMatchType)matching value:(id)aValue
+- (id)initWithColumn:(NSFTableColumnType)type matching:(NSFMatchType)matching value:(NSString *)aValue
 {
-    NSAssert(nil != aValue, @"*** -[%@ %@]: value is nil.", [self class], NSStringFromSelector(_cmd));
-    NSAssert([aValue isKindOfClass:[NSString class]] || [aValue isKindOfClass:[NSNull class]], @"*** -[%@ %@]: value must be of type NSString or NSNull.", [self class], NSStringFromSelector(_cmd));
-
+    if (nil == aValue)
+        [[NSException exceptionWithName:NSFUnexpectedParameterException
+                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: value is nil.", [self class], NSStringFromSelector(_cmd)]
+                               userInfo:nil]raise];
+    
     if ((self = [super init])) {
-        _column = type;
-        _match = matching;
-        _value = aValue;
+        column = type;
+        match = matching;
+        value = aValue;
     }
     
     return self;
@@ -76,7 +75,7 @@
     NSMutableString *mutatedString = nil;
     NSInteger mutatedStringLength = 0;
     
-    switch (_column) {
+    switch (column) {
         case NSFKeyColumn:
             columnValue = NSFKey;
             break;
@@ -89,52 +88,44 @@
     }
     
     // Make sure we escape quotes if present and the value is a string
-    if (YES == [_value isKindOfClass:[NSString class]]) {
-        _value = [_value stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
-    } else {
-        _value = NSFStringFromNanoDataType(NSFNanoTypeNULL);
-        columnValue = NSFDatatype;
-    }
+    value = [value stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
     
-    switch (_match) {
+    switch (match) {
         case NSFEqualTo:
-            [values addObject:[NSString stringWithFormat:@"%@ = '%@'", columnValue, _value]];
+            [values addObject:[NSString stringWithFormat:@"%@ = '%@'", columnValue, value]];
             break;
         case NSFBeginsWith:
-            mutatedString = [NSMutableString stringWithString:_value];
-            mutatedStringLength = [_value length];
+            mutatedString = [NSMutableString stringWithString:value];
+            mutatedStringLength = [value length];
             [mutatedString replaceCharactersInRange:NSMakeRange(mutatedStringLength - 1, 1) withString:[NSString stringWithFormat:@"%c", [mutatedString characterAtIndex:mutatedStringLength - 1]+1]];
-            [values addObject:[NSString stringWithFormat:@"(%@ >= '%@' AND %@ < '%@')", columnValue, _value, columnValue, mutatedString]];
+            [values addObject:[NSString stringWithFormat:@"(%@ >= '%@' AND %@ < '%@')", columnValue, value, columnValue, mutatedString]];
             break;
         case NSFContains:
-            [values addObject:[NSString stringWithFormat:@"%@ GLOB '*%@*'", columnValue, _value]];
+            [values addObject:[NSString stringWithFormat:@"%@ GLOB '*%@*'", columnValue, value]];
             break;
         case NSFEndsWith:
-            [values addObject:[NSString stringWithFormat:@"%@ GLOB '*%@'", columnValue, _value]];
+            [values addObject:[NSString stringWithFormat:@"%@ GLOB '*%@'", columnValue, value]];
             break;
         case NSFInsensitiveEqualTo:
-            [values addObject:[NSString stringWithFormat:@"upper(%@) = '%@'", columnValue, [_value uppercaseString]]];
+            [values addObject:[NSString stringWithFormat:@"upper(%@) = '%@'", columnValue, [value uppercaseString]]];
             break;
         case NSFInsensitiveBeginsWith:
-            mutatedString = [NSMutableString stringWithString:_value];
-            mutatedStringLength = [_value length];
+            mutatedString = [NSMutableString stringWithString:value];
+            mutatedStringLength = [value length];
             [mutatedString replaceCharactersInRange:NSMakeRange(mutatedStringLength - 1, 1) withString:[NSString stringWithFormat:@"%c", [mutatedString characterAtIndex:mutatedStringLength - 1]+1]];
-            [values addObject:[NSString stringWithFormat:@"(upper(%@) >= '%@' AND upper(%@) < '%@')", columnValue, [_value uppercaseString], columnValue, [mutatedString uppercaseString]]];
+            [values addObject:[NSString stringWithFormat:@"(upper(%@) >= '%@' AND upper(%@) < '%@')", columnValue, [value uppercaseString], columnValue, [mutatedString uppercaseString]]];
             break;
         case NSFInsensitiveContains:
-            [values addObject:[NSString stringWithFormat:@"%@ LIKE '%@%@%@'", columnValue, @"%", _value, @"%"]];
+            [values addObject:[NSString stringWithFormat:@"%@ LIKE '%@%@%@'", columnValue, @"%", value, @"%"]];
             break;
         case NSFInsensitiveEndsWith:
-            [values addObject:[NSString stringWithFormat:@"%@ LIKE '%@%@'", columnValue, @"%", _value]];
+            [values addObject:[NSString stringWithFormat:@"%@ LIKE '%@%@'", columnValue, @"%", value]];
             break;
         case NSFGreaterThan:
-            [values addObject:[NSString stringWithFormat:@"%@ > '%@'", columnValue, _value]];
+            [values addObject:[NSString stringWithFormat:@"%@ > '%@'", columnValue, value]];
             break;
         case NSFLessThan:
-            [values addObject:[NSString stringWithFormat:@"%@ < '%@'", columnValue, _value]];
-            break;
-        case NSFNotEqualTo:
-            [values addObject:[NSString stringWithFormat:@"%@ <> '%@'", columnValue, _value]];
+            [values addObject:[NSString stringWithFormat:@"%@ < '%@'", columnValue, value]];
             break;
     }
     

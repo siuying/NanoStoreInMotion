@@ -1,3 +1,7 @@
+# [0.6.2](https://github.com/siuying/NanoStoreInMotion/compare/v0.6.1%E2%80%A6v0.6.2)
+
+- Revert to NanoStore 2.5.3
+
 # [0.6.1](https://github.com/siuying/NanoStoreInMotion/compare/v0.6.0%E2%80%A6v0.6.1)
 
 - ```attributes``` method to add multiple attributes in one line (thanks @gouravtiwari)

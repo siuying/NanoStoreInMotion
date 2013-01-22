@@ -269,7 +269,7 @@
 			<Abstract type="html">* The filterClass allows to filter the results based on a specific object class.</Abstract>
 			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, copy, readwrite) NSString *filterClass</Declaration>
+			<Declaration>@property (nonatomic, strong, readwrite) NSString *filterClass</Declaration>
 			
 			
 			<Anchor>//api/name/filterClass</Anchor>
@@ -280,7 +280,7 @@
 			<Abstract type="html">* The filterClass allows to filter the results based on a specific object class.</Abstract>
 			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, copy, readwrite) NSString *filterClass</Declaration>
+			<Declaration>@property (nonatomic, strong, readwrite) NSString *filterClass</Declaration>
 			
 			
 			<Anchor>//api/name/filterClass</Anchor>
@@ -328,28 +328,6 @@
 			
 			
 			<Anchor>//api/name/limit</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setBag:</TokenIdentifier>
-			<Abstract type="html">* limit a Search to a particular bag.</Abstract>
-			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, assign, readwrite) NSFNanoBag *bag</Declaration>
-			
-			
-			<Anchor>//api/name/bag</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/bag</TokenIdentifier>
-			<Abstract type="html">* limit a Search to a particular bag.</Abstract>
-			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, assign, readwrite) NSFNanoBag *bag</Declaration>
-			
-			
-			<Anchor>//api/name/bag</Anchor>
 		</Token>
 		
 		<Token>

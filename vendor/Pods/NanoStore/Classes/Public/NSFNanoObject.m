@@ -30,17 +30,12 @@
 #import "NSFNanoGlobals_Private.h"
 #import "NSFOrderedDictionary.h"
 
-@interface NSFNanoObject ()
-/** \cond */
-@property (nonatomic, weak, readwrite) NSFNanoStore *store;
-@property (nonatomic, copy, readwrite) NSString *key;
-/** \endcond */
-@end
-
 @implementation NSFNanoObject
 {
-    NSMutableDictionary *_info;
+    NSMutableDictionary *info;
 }
+
+@synthesize info, key, originalClassString;
 
 + (NSFNanoObject *)nanoObject
 {
@@ -74,13 +69,13 @@
     if ((self = [self init])) {
         // If we have supplied a key, honor it and overwrite the original one
         if (nil != aKey) {
-            _key = aKey;
+            key = [aKey copy];
         }
         
         // Keep the dictionary if needed
         if (nil != aDictionary) {
-            _info = [NSMutableDictionary new];
-            [_info addEntriesFromDictionary:aDictionary];
+            info = [NSMutableDictionary new];
+            [info addEntriesFromDictionary:aDictionary];
         }
         
         _store = aStore;
@@ -104,10 +99,10 @@
     NSFOrderedDictionary *values = [NSFOrderedDictionary new];
     
     values[@"NanoObject address"] = [NSString stringWithFormat:@"%p", self];
-    values[@"Original class"] = (nil != _originalClassString) ? _originalClassString : NSStringFromClass ([self class]);
-    values[@"Key"] = _key;
-    values[@"Property count"] = @([_info count]);
-    values[@"Contents"] = _info;
+    values[@"Original class"] = (nil != originalClassString) ? originalClassString : NSStringFromClass ([self class]);
+    values[@"Key"] = key;
+    values[@"Property count"] = @([info count]);
+    values[@"Contents"] = info;
     
     return values;
 }
@@ -125,41 +120,41 @@
 - (void)addEntriesFromDictionary:(NSDictionary *)otherDictionary
 {
     // Allocate the dictionary if needed
-    if (nil == _info) {
-        _info = [NSMutableDictionary new];
+    if (nil == info) {
+        info = [NSMutableDictionary new];
     }
     
-    [_info addEntriesFromDictionary:otherDictionary];
+    [info addEntriesFromDictionary:otherDictionary];
 }
 
 - (void)setObject:(id)anObject forKey:(NSString *)aKey
 {
     // Allocate the dictionary if needed
-    if (nil == _info) {
-        _info = [NSMutableDictionary new];
+    if (nil == info) {
+        info = [NSMutableDictionary new];
     }
     
-    [_info setObject:anObject forKey:aKey];
+    [info setObject:anObject forKey:aKey];
 }
 
 - (id)objectForKey:(NSString *)aKey
 {
-    return [_info objectForKey:aKey];
+    return [info objectForKey:aKey];
 }
 
 - (void)removeObjectForKey:(NSString *)aKey
 {
-    [_info removeObjectForKey:aKey];
+    [info removeObjectForKey:aKey];
 }
 
 - (void)removeAllObjects
 {
-    [_info removeAllObjects];
+    [info removeAllObjects];
 }
 
 - (void)removeObjectsForKeys:(NSArray *)keyArray
 {
-    [_info removeObjectsForKeys:keyArray];
+    [info removeObjectsForKeys:keyArray];
 }
 
 - (BOOL)isEqualToNanoObject:(NSFNanoObject *)otherNanoObject
@@ -170,14 +165,14 @@
     
     BOOL success = YES;
     
-    if (_originalClassString != otherNanoObject.originalClassString) {
-        if (NO == [_originalClassString isEqualToString:otherNanoObject.originalClassString]) {
+    if (originalClassString != otherNanoObject.originalClassString) {
+        if (NO == [originalClassString isEqualToString:otherNanoObject.originalClassString]) {
             success = NO;
         }
     }
     
     if (YES == success) {
-        success = [_info isEqualToDictionary:otherNanoObject.info];
+        success = [info isEqualToDictionary:otherNanoObject.info];
     }
     
     return success;
@@ -200,9 +195,9 @@
 - (id)init
 {
     if ((self = [super init])) {
-        _key = [NSFNanoEngine stringWithUUID];
-        _info = nil;
-        _originalClassString = nil;
+        key = [[NSFNanoEngine stringWithUUID]copy];
+        info = nil;
+        originalClassString = nil;
         _store = nil;
     }
     
@@ -230,7 +225,7 @@
 
 - (id)rootObject
 {
-    return _info;
+    return info;
 }
 
 #pragma mark -
@@ -239,8 +234,8 @@
 
 - (void)_setOriginalClassString:(NSString *)theClassString
 {
-    if (_originalClassString != theClassString) {
-        _originalClassString = theClassString;
+    if (originalClassString != theClassString) {
+        originalClassString = theClassString;
     }
 }
 
