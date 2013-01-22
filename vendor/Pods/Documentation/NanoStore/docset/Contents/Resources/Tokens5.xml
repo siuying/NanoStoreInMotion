@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NSFNanoPredicate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NSFNanoPredicate</TokenIdentifier>
+			<Abstract type="html">@class NSFNanoPredicate
+* A predicate is an element of an expression used to perform complex queries.
+*
+* @note
+* A predicate must be added to a NSFNanoExpression.
+*
+* @details &lt;b&gt;Example:&lt;/b&gt;
+@code
+// Instantiate a NanoStore and open it
+NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];</Abstract>
+			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoPredicate/setColumn:</TokenIdentifier>
+			<Abstract type="html">* The type of column being referenced.</Abstract>
+			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) NSFTableColumnType column</Declaration>
+			
+			
+			<Anchor>//api/name/column</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoPredicate/column</TokenIdentifier>
+			<Abstract type="html">* The type of column being referenced.</Abstract>
+			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) NSFTableColumnType column</Declaration>
+			
+			
+			<Anchor>//api/name/column</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoPredicate/setMatch:</TokenIdentifier>
+			<Abstract type="html">* The comparison operator to be used.</Abstract>
+			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) NSFMatchType match</Declaration>
+			
+			
+			<Anchor>//api/name/match</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoPredicate/match</TokenIdentifier>
+			<Abstract type="html">* The comparison operator to be used.</Abstract>
+			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) NSFMatchType match</Declaration>
+			
+			
+			<Anchor>//api/name/match</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoPredicate/setValue:</TokenIdentifier>
+			<Abstract type="html">* The value to be used for comparison.</Abstract>
+			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoPredicate/value</TokenIdentifier>
+			<Abstract type="html">* The value to be used for comparison.</Abstract>
+			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoPredicate/predicateWithColumn:matching:value:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a predicate.</Abstract>
+			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoPredicate/initWithColumn:matching:value:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSFNanoPredicate *)predicateWithColumn:(NSFTableColumnType)theType matching:(NSFMatchType)theMatch value:(id)theValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theType</Name>
+					<Abstract type="html">is the column type. Can be \link Globals::NSFKeyColumn NSFKeyColumn \endlink, \link Globals::NSFAttributeColumn NSFAttributeColumn \endlink or \link Globals::NSFValueColumn NSFValueColumn \endlink.</Abstract>
+				</Parameter><Parameter>
+					<Name>theMatch</Name>
+					<Abstract type="html">is the match operator.</Abstract>
+				</Parameter><Parameter>
+					<Name>theValue</Name>
+					<Abstract type="html">can be an NSString or [NSNull null]</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A predicate which can be used in an NSFNanoExpression.</Abstract></ReturnValue>
+			<Anchor>//api/name/predicateWithColumn:matching:value:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoPredicate/initWithColumn:matching:value:</TokenIdentifier>
+			<Abstract type="html">Initializes a newly allocated predicate.</Abstract>
+			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/NSFNanoPredicate/predicateWithColumn:matching:value:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (id)initWithColumn:(NSFTableColumnType)theType matching:(NSFMatchType)theMatch value:(id)theValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theType</Name>
+					<Abstract type="html">is the column type. Can be \link Globals::NSFKeyColumn NSFKeyColumn \endlink, \link Globals::NSFAttributeColumn NSFAttributeColumn \endlink or \link Globals::NSFValueColumn NSFValueColumn \endlink.</Abstract>
+				</Parameter><Parameter>
+					<Name>theMatch</Name>
+					<Abstract type="html">is the match operator.</Abstract>
+				</Parameter><Parameter>
+					<Name>theValue</Name>
+					<Abstract type="html">can be an NSString or [NSNull null]</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A predicate which can be used in an NSFNanoExpression.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithColumn:matching:value:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoPredicate/description</TokenIdentifier>
+			<Abstract type="html">Returns a string representation of the predicate.</Abstract>
+			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoPredicate/JSONDescription</TokenIdentifier>
+			<Abstract type="html">Returns a JSON representation of the predicate.</Abstract>
+			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)JSONDescription</Declaration>
+			
+			
+			<Anchor>//api/name/JSONDescription</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

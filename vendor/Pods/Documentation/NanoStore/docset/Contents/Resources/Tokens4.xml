@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NSFNanoObject.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NSFNanoObject</TokenIdentifier>
+			<Abstract type="html">@class NSFNanoObject
+The basic unit of data in NanoStore is called NanoObject. A NanoObject is any object which conforms to the NSFNanoObjectProtocol protocol.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/NSFNanoObject/nanoObject</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/setStore:</TokenIdentifier>
+			<Abstract type="html">* The store where the object is saved.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readonly) NSFNanoStore *store</Declaration>
+			
+			
+			<Anchor>//api/name/store</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoObject/store</TokenIdentifier>
+			<Abstract type="html">* The store where the object is saved.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readonly) NSFNanoStore *store</Declaration>
+			
+			
+			<Anchor>//api/name/store</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/setKey:</TokenIdentifier>
+			<Abstract type="html">* The UUID of the NanoObject.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoObject/key</TokenIdentifier>
+			<Abstract type="html">* The UUID of the NanoObject.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/setInfo:</TokenIdentifier>
+			<Abstract type="html">* The user-supplied information of the NanoObject.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSDictionary *info</Declaration>
+			
+			
+			<Anchor>//api/name/info</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoObject/info</TokenIdentifier>
+			<Abstract type="html">* The user-supplied information of the NanoObject.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSDictionary *info</Declaration>
+			
+			
+			<Anchor>//api/name/info</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/setOriginalClassString:</TokenIdentifier>
+			<Abstract type="html">* The class name used to store the NanoObject.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *originalClassString</Declaration>
+			
+			
+			<Anchor>//api/name/originalClassString</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoObject/originalClassString</TokenIdentifier>
+			<Abstract type="html">* The class name used to store the NanoObject.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *originalClassString</Declaration>
+			
+			
+			<Anchor>//api/name/originalClassString</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoObject/nanoObject</TokenIdentifier>
+			<Abstract type="html">Creates and returns an empty NanoObject.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>+ (NSFNanoObject *)nanoObject</Declaration>
+			
+			<ReturnValue><Abstract type="html">An empty NanoObject upon success, nil otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/nanoObject</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoObject/nanoObjectWithDictionary:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a NanoObject with the given dictionary.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/initFromDictionaryRepresentation:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSFNanoObject *)nanoObjectWithDictionary:(NSDictionary *)theDictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theDictionary</Name>
+					<Abstract type="html">the information associated with the object. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An initialized object upon success, nil otherwise.
+@attention The dictionary must be serializable. For more information, please read the Property List Programming Guide.</Abstract></ReturnValue>
+			<Anchor>//api/name/nanoObjectWithDictionary:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoObject/nanoObjectWithDictionary:key:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a NanoObject with the given dictionary and key.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/initFromDictionaryRepresentation:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSFNanoObject *)nanoObjectWithDictionary:(NSDictionary *)theDictionary key:(NSString *)theKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theDictionary</Name>
+					<Abstract type="html">the information associated with the object. Must not be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>theKey</Name>
+					<Abstract type="html">the object key associated with the object. If nil, a new key will be assigned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An initialized object upon success, nil otherwise.
+@attention The dictionary must be serializable. For more information, please read the Property List Programming Guide.</Abstract></ReturnValue>
+			<Anchor>//api/name/nanoObjectWithDictionary:key:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/initFromDictionaryRepresentation:</TokenIdentifier>
+			<Abstract type="html">Initializes a newly allocated NanoObject with the given dictionary.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/NSFNanoObject/nanoObjectWithDictionary:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (id)initFromDictionaryRepresentation:(NSDictionary *)theDictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theDictionary</Name>
+					<Abstract type="html">the information associated with the object. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An initialized object upon success, nil otherwise.
+@attention The dictionary must be serializable. For more information, please read the Property List Programming Guide.</Abstract></ReturnValue>
+			<Anchor>//api/name/initFromDictionaryRepresentation:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/initFromDictionaryRepresentation:key:</TokenIdentifier>
+			<Abstract type="html">Initializes a newly allocated NanoObject with the given dictionary and key.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>- (id)initFromDictionaryRepresentation:(NSDictionary *)theDictionary key:(NSString *)theKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theDictionary</Name>
+					<Abstract type="html">the information associated with the object. Must not be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>theKey</Name>
+					<Abstract type="html">the object key associated with the object. If nil, a new key will be assigned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An initialized object upon success, nil otherwise.
+@attention The dictionary must be serializable. For more information, please read the Property List Programming Guide.</Abstract></ReturnValue>
+			<Anchor>//api/name/initFromDictionaryRepresentation:key:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/addEntriesFromDictionary:</TokenIdentifier>
+			<Abstract type="html">Adds the entries from a dictionary to the NanoObject.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>- (void)addEntriesFromDictionary:(NSDictionary *)otherDictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>otherDictionary</Name>
+					<Abstract type="html">The dictionary from which to add entries.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addEntriesFromDictionary:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/setObject:forKey:</TokenIdentifier>
+			<Abstract type="html">Adds a given key-value pair to the NanoObject.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/removeObjectForKey:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)setObject:(id)anObject forKey:(NSString *)aKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anObject</Name>
+					<Abstract type="html">the value for key. Must not be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>aKey</Name>
+					<Abstract type="html">the key for value. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setObject:forKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/objectForKey:</TokenIdentifier>
+			<Abstract type="html">Returns the value associated with a given key.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/setObject:forKey:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (id)objectForKey:(NSString *)aKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aKey</Name>
+					<Abstract type="html">the key for value. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/objectForKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/removeObjectForKey:</TokenIdentifier>
+			<Abstract type="html">Removes a given key and its associated value from the NanoObject.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/setObject:forKey:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)removeObjectForKey:(NSString *)aKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aKey</Name>
+					<Abstract type="html">the key to remove. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeObjectForKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/removeAllObjects</TokenIdentifier>
+			<Abstract type="html">Empties the NanoObject of its entries.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/removeObjectForKey:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/removeObjectsForKeys:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)removeAllObjects</Declaration>
+			
+			
+			<Anchor>//api/name/removeAllObjects</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/removeObjectsForKeys:</TokenIdentifier>
+			<Abstract type="html">Removes from the NanoObject entries specified by elements in a given array.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/removeAllObjects</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/removeObjectForKey:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)removeObjectsForKeys:(NSArray *)keyArray</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>keyArray</Name>
+					<Abstract type="html">An array of objects specifying the keys to remove.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeObjectsForKeys:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/isEqualToNanoObject:</TokenIdentifier>
+			<Abstract type="html">Compares the receiving NanoObject to another NanoObject.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isEqualToNanoObject:(NSFNanoObject *)otherNanoObject</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>otherNanoObject</Name>
+					<Abstract type="html">is a NanoObject.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the contents of otherNanoObject are equal to the contents of the receiving NanoObject, otherwise NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isEqualToNanoObject:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/saveStoreAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Saves the uncommitted changes to the document store.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)saveStoreAndReturnError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/saveStoreAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/dictionaryRepresentation</TokenIdentifier>
+			<Abstract type="html">Returns a dictionary that contains the information stored in the object.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/description</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSDictionary *)dictionaryRepresentation</Declaration>
+			
+			
+			<Anchor>//api/name/dictionaryRepresentation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/description</TokenIdentifier>
+			<Abstract type="html">Returns a string representation of the nano object.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/JSONDescription</TokenIdentifier>
+			<Abstract type="html">Returns a JSON representation of the nano object.</Abstract>
+			<DeclaredIn>NSFNanoObject.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)JSONDescription</Declaration>
+			
+			
+			<Anchor>//api/name/JSONDescription</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoObject/_setOriginalClassString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoObject_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)_setOriginalClassString:(NSString *)theClassString</Declaration>
+			
+			
+			<Anchor>//api/name/_setOriginalClassString:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoObject/_NSObjectToJSONString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoObject_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)_NSObjectToJSONString:(id)object error:(NSError **)error</Declaration>
+			
+			
+			<Anchor>//api/name/_NSObjectToJSONString:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoObject/_safeDictionaryFromDictionary:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoObject_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDictionary *)_safeDictionaryFromDictionary:(NSDictionary *)dictionary</Declaration>
+			
+			
+			<Anchor>//api/name/_safeDictionaryFromDictionary:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoObject/_safeArrayFromArray:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoObject_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSArray *)_safeArrayFromArray:(NSArray *)array</Declaration>
+			
+			
+			<Anchor>//api/name/_safeArrayFromArray:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoObject/_safeObjectFromObject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoObject_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (id)_safeObjectFromObject:(id)object</Declaration>
+			
+			
+			<Anchor>//api/name/_safeObjectFromObject:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

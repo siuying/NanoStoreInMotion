@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NSFNanoExpression.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NSFNanoExpression</TokenIdentifier>
+			<Abstract type="html">@class NSFNanoExpression
+* A unit that describes a series of predicates and its operators.
+* @details &lt;b&gt;Example:&lt;/b&gt;
+@code
+// Instantiate a NanoStore and open it
+NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];</Abstract>
+			<DeclaredIn>NSFNanoExpression.h</DeclaredIn>
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoExpression/setPredicates:</TokenIdentifier>
+			<Abstract type="html">* Array of NSFNanoPredicate</Abstract>
+			<DeclaredIn>NSFNanoExpression.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *predicates</Declaration>
+			
+			
+			<Anchor>//api/name/predicates</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoExpression/predicates</TokenIdentifier>
+			<Abstract type="html">* Array of NSFNanoPredicate</Abstract>
+			<DeclaredIn>NSFNanoExpression.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *predicates</Declaration>
+			
+			
+			<Anchor>//api/name/predicates</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoExpression/setOperators:</TokenIdentifier>
+			<Abstract type="html">* Array of NSNumber wrapping \link NSFGlobals::NSFOperator NSFOperator \endlink</Abstract>
+			<DeclaredIn>NSFNanoExpression.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *operators</Declaration>
+			
+			
+			<Anchor>//api/name/operators</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoExpression/operators</TokenIdentifier>
+			<Abstract type="html">* Array of NSNumber wrapping \link NSFGlobals::NSFOperator NSFOperator \endlink</Abstract>
+			<DeclaredIn>NSFNanoExpression.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *operators</Declaration>
+			
+			
+			<Anchor>//api/name/operators</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoExpression/expressionWithPredicate:</TokenIdentifier>
+			<Abstract type="html">Creates and returns an expression with a given predicate.</Abstract>
+			<DeclaredIn>NSFNanoExpression.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/NSFNanoPredicate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSFNanoExpression *)expressionWithPredicate:(NSFNanoPredicate *)thePredicate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>thePredicate</Name>
+					<Abstract type="html">the predicate used to initialize the expression. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An expression upon success, nil otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/expressionWithPredicate:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoExpression/initWithPredicate:</TokenIdentifier>
+			<Abstract type="html">Initializes a newly allocated expression with a given expression.</Abstract>
+			<DeclaredIn>NSFNanoExpression.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/NSFNanoPredicate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (id)initWithPredicate:(NSFNanoPredicate *)thePredicate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>thePredicate</Name>
+					<Abstract type="html">the predicate used to initialize the expression. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An expression upon success, nil otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithPredicate:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoExpression/addPredicate:withOperator:</TokenIdentifier>
+			<Abstract type="html">Adds a predicate to the expression.</Abstract>
+			<DeclaredIn>NSFNanoExpression.h</DeclaredIn>			
+			
+			<Declaration>- (void)addPredicate:(NSFNanoPredicate *)thePredicate withOperator:(NSFOperator)theOperator</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>thePredicate</Name>
+					<Abstract type="html">is added to the expression.</Abstract>
+				</Parameter><Parameter>
+					<Name>theOperator</Name>
+					<Abstract type="html">specifies the operation (AND/OR) to be applied.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addPredicate:withOperator:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoExpression/description</TokenIdentifier>
+			<Abstract type="html">Returns a string representation of the expression.</Abstract>
+			<DeclaredIn>NSFNanoExpression.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoExpression/JSONDescription</TokenIdentifier>
+			<Abstract type="html">Returns a JSON representation of the expression.</Abstract>
+			<DeclaredIn>NSFNanoExpression.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)JSONDescription</Declaration>
+			
+			
+			<Anchor>//api/name/JSONDescription</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoExpression/arrayDescription</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoExpression_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)arrayDescription</Declaration>
+			
+			
+			<Anchor>//api/name/arrayDescription</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

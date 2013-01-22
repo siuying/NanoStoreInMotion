@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NSFNanoBag.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NSFNanoBag</TokenIdentifier>
+			<Abstract type="html">@class NSFNanoBag
+* A bag is a loose collection of objects stored in a document store.
+*
+* @note
+* The objects must conform to the \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink. For your convenience, NanoStore provides you with NSFNanoObject, which is the standard
+* way of storing and retrieving objects from/to a bag.
+*
+* @par
+* It&apos;s more efficient to make your storage objects \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant, thus eliminating the need to convert your objects to/from
+* objects of type NSFNanoObject.
+*
+* @details &lt;b&gt;Example:&lt;/b&gt;
+@code
+// Instantiate a NanoStore and open it
+NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];
+[nanoStore removeAllObjectsFromStoreAndReturnError:nil];</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/setStore:</TokenIdentifier>
+			<Abstract type="html">* The store where the bag is located.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readonly) NSFNanoStore *store</Declaration>
+			
+			
+			<Anchor>//api/name/store</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoBag/store</TokenIdentifier>
+			<Abstract type="html">* The store where the bag is located.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readonly) NSFNanoStore *store</Declaration>
+			
+			
+			<Anchor>//api/name/store</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/setName:</TokenIdentifier>
+			<Abstract type="html">* The name of the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readwrite) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoBag/name</TokenIdentifier>
+			<Abstract type="html">* The name of the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readwrite) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/setKey:</TokenIdentifier>
+			<Abstract type="html">* The UUID of the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoBag/key</TokenIdentifier>
+			<Abstract type="html">* The UUID of the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/setSavedObjects:</TokenIdentifier>
+			<Abstract type="html">* Dictionary of NSString (key and idNSFNanoObjectProtocol (value).</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *savedObjects</Declaration>
+			
+			
+			<Anchor>//api/name/savedObjects</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoBag/savedObjects</TokenIdentifier>
+			<Abstract type="html">* Dictionary of NSString (key and idNSFNanoObjectProtocol (value).</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *savedObjects</Declaration>
+			
+			
+			<Anchor>//api/name/savedObjects</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/setUnsavedObjects:</TokenIdentifier>
+			<Abstract type="html">* Dictionary of NSString (key and idNSFNanoObjectProtocol (value).</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *unsavedObjects</Declaration>
+			
+			
+			<Anchor>//api/name/unsavedObjects</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoBag/unsavedObjects</TokenIdentifier>
+			<Abstract type="html">* Dictionary of NSString (key and idNSFNanoObjectProtocol (value).</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *unsavedObjects</Declaration>
+			
+			
+			<Anchor>//api/name/unsavedObjects</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/setRemovedObjects:</TokenIdentifier>
+			<Abstract type="html">* Dictionary of NSString (key and idNSFNanoObjectProtocol (value).</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *removedObjects</Declaration>
+			
+			
+			<Anchor>//api/name/removedObjects</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoBag/removedObjects</TokenIdentifier>
+			<Abstract type="html">* Dictionary of NSString (key and idNSFNanoObjectProtocol (value).</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *removedObjects</Declaration>
+			
+			
+			<Anchor>//api/name/removedObjects</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/setHasUnsavedChanges:</TokenIdentifier>
+			<Abstract type="html">* To determine whether the bag has uncommited changes.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) BOOL hasUnsavedChanges</Declaration>
+			
+			
+			<Anchor>//api/name/hasUnsavedChanges</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoBag/hasUnsavedChanges</TokenIdentifier>
+			<Abstract type="html">* To determine whether the bag has uncommited changes.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) BOOL hasUnsavedChanges</Declaration>
+			
+			
+			<Anchor>//api/name/hasUnsavedChanges</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoBag/bag</TokenIdentifier>
+			<Abstract type="html">Creates and returns an empty bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>+ (NSFNanoBag *)bag</Declaration>
+			
+			<ReturnValue><Abstract type="html">An empty bag upon success, nil otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/bag</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoBag/bagWithObjects:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a bag adding to it the objects contained in the given array.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>+ (NSFNanoBag *)bagWithObjects:(NSArray *)theObjects</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theObjects</Name>
+					<Abstract type="html">an array of objects conforming to the \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A bag only containing the objects with conform to the \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink upon success, nil otherwise.
+@throws NSFUnexpectedParameterException is thrown if theObjects is nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/bagWithObjects:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/initBagWithName:andObjects:</TokenIdentifier>
+			<Abstract type="html">Initializes a newly allocated bag with the specified name adding to it the objects contained in the given array.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/NSFNanoBag/bagWithObjects:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (id)initBagWithName:(NSString *)theName andObjects:(NSArray *)someObjects</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theName</Name>
+					<Abstract type="html">the name of the bag. Can be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>theObjects</Name>
+					<Abstract type="html">is a required array of objects conforming to the \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A bag only containing the objects with conform to the \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink upon success, nil otherwise.
+@throws NSFUnexpectedParameterException is thrown if theObjects is nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/initBagWithName:andObjects:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/addObject:error:</TokenIdentifier>
+			<Abstract type="html">Adds an \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object to the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/addObjectsFromArray:error:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)addObject:(id&lt;NSFNanoObjectProtocol&gt;)theObject error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theObject</Name>
+					<Abstract type="html">is added to the bag.</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/addObject:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/addObjectsFromArray:error:</TokenIdentifier>
+			<Abstract type="html">Adds a series of \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant objects to the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/NSFNanoObjectProtocol</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)addObjectsFromArray:(NSArray *)theObjects error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theObjects</Name>
+					<Abstract type="html">is an array of objects to be added to the bag. The objects must be \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/addObjectsFromArray:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObject:</TokenIdentifier>
+			<Abstract type="html">Removes the specified object from the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectsInArray:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectWithKey:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectsWithKeysInArray:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeAllObjects</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)removeObject:(id&lt;NSFNanoObjectProtocol&gt;)theObject</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theObject</Name>
+					<Abstract type="html">the object to be removed from the bag.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeObject:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeAllObjects</TokenIdentifier>
+			<Abstract type="html">Empties the bag of all its elements.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/NSFNanoObjectProtocol</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectsInArray:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectWithKey:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectsWithKeysInArray:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)removeAllObjects</Declaration>
+			
+			
+			<Anchor>//api/name/removeAllObjects</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectsInArray:</TokenIdentifier>
+			<Abstract type="html">Removes the list of objects from the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/NSFNanoObjectProtocol</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectWithKey:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectsWithKeysInArray:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeAllObjects</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)removeObjectsInArray:(NSArray *)theObjects</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theObjects</Name>
+					<Abstract type="html">the list of objects to be removed from the bag.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeObjectsInArray:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectWithKey:</TokenIdentifier>
+			<Abstract type="html">Removes the object with a given key from the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/NSFNanoObjectProtocol</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectsInArray:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectsWithKeysInArray:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeAllObjects</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)removeObjectWithKey:(NSString *)theObjectKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theObjectKey</Name>
+					<Abstract type="html">the key of the object to be removed from the bag.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeObjectWithKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectsWithKeysInArray:</TokenIdentifier>
+			<Abstract type="html">Removes from the bag the objects specified by elements in a given array.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/NSFNanoObjectProtocol</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectsInArray:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeObjectWithKey:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/removeAllObjects</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)removeObjectsWithKeysInArray:(NSArray *)theKeys</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theKeys</Name>
+					<Abstract type="html">an array of objects specifying the keys to remove from the bag</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeObjectsWithKeysInArray:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/saveAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Saves the bag and its contents. Also, saves all the changes made since the last save.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/reloadBagWithError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/undoChangesWithError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)saveAndReturnError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/saveAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/reloadBagWithError:</TokenIdentifier>
+			<Abstract type="html">Refreshes the bag to match the contents stored in the document store. The unsaved contents are preserved.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/saveAndReturnError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/undoChangesWithError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)reloadBagWithError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/reloadBagWithError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/undoChangesWithError:</TokenIdentifier>
+			<Abstract type="html">Discards the changes made in the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/saveAndReturnError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/reloadBagWithError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)undoChangesWithError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/undoChangesWithError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/inflateBag</TokenIdentifier>
+			<Abstract type="html">Inflates the bag by reconstructing the objects flattened with - (void)deflateBag;</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/deflateBag</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)inflateBag</Declaration>
+			
+			
+			<Anchor>//api/name/inflateBag</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/deflateBag</TokenIdentifier>
+			<Abstract type="html">Releases memory by &quot;flattening&quot; the objects from the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/inflateBag</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)deflateBag</Declaration>
+			
+			
+			<Anchor>//api/name/deflateBag</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/count</TokenIdentifier>
+			<Abstract type="html">Returns the number of objects currently in the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>- (NSUInteger)count</Declaration>
+			
+			<ReturnValue><Abstract type="html">The number of objects currently in the bag.</Abstract></ReturnValue>
+			<Anchor>//api/name/count</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/isEqualToNanoBag:</TokenIdentifier>
+			<Abstract type="html">Compares the receiving bag to another bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isEqualToNanoBag:(NSFNanoBag *)otherNanoBag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>otherNanoBag</Name>
+					<Abstract type="html">is a bag.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the contents of otherNanoBag are equal to the contents of the receiving bag, otherwise NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isEqualToNanoBag:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/dictionaryRepresentation</TokenIdentifier>
+			<Abstract type="html">Returns a dictionary that contains the information stored in the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/description</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSDictionary *)dictionaryRepresentation</Declaration>
+			
+			
+			<Anchor>//api/name/dictionaryRepresentation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/description</TokenIdentifier>
+			<Abstract type="html">Returns a string representation of the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/JSONDescription</TokenIdentifier>
+			<Abstract type="html">Returns a JSON representation of the bag.</Abstract>
+			<DeclaredIn>NSFNanoBag.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)JSONDescription</Declaration>
+			
+			
+			<Anchor>//api/name/JSONDescription</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/_setStore:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoBag_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)_setStore:(NSFNanoStore *)aStore</Declaration>
+			
+			
+			<Anchor>//api/name/_setStore:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/_saveInStore:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoBag_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)_saveInStore:(NSFNanoStore *)someStore error:(out NSError **)outError</Declaration>
+			
+			
+			<Anchor>//api/name/_saveInStore:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoBag/_inflateObjectsWithKeys:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoBag_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)_inflateObjectsWithKeys:(NSArray *)someKeys</Declaration>
+			
+			
+			<Anchor>//api/name/_inflateObjectsWithKeys:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

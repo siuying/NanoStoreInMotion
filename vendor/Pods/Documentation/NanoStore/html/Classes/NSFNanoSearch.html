@@ -1,0 +1,2544 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSFNanoSearch Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">NanoStore 2.5.7 </a></h1>
+				<a id="developerHome" href="../index.html">Tito Ciuro</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSFNanoSearch Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/attribute">&nbsp;&nbsp;&nbsp;&nbsp;attribute</option>
+	
+	<option value="//api/name/attributesToBeReturned">&nbsp;&nbsp;&nbsp;&nbsp;attributesToBeReturned</option>
+	
+	<option value="//api/name/bag">&nbsp;&nbsp;&nbsp;&nbsp;bag</option>
+	
+	<option value="//api/name/expressions">&nbsp;&nbsp;&nbsp;&nbsp;expressions</option>
+	
+	<option value="//api/name/filterClass">&nbsp;&nbsp;&nbsp;&nbsp;filterClass</option>
+	
+	<option value="//api/name/groupValues">&nbsp;&nbsp;&nbsp;&nbsp;groupValues</option>
+	
+	<option value="//api/name/key">&nbsp;&nbsp;&nbsp;&nbsp;key</option>
+	
+	<option value="//api/name/limit">&nbsp;&nbsp;&nbsp;&nbsp;limit</option>
+	
+	<option value="//api/name/match">&nbsp;&nbsp;&nbsp;&nbsp;match</option>
+	
+	<option value="//api/name/nanoStore">&nbsp;&nbsp;&nbsp;&nbsp;nanoStore</option>
+	
+	<option value="//api/name/offset">&nbsp;&nbsp;&nbsp;&nbsp;offset</option>
+	
+	<option value="//api/name/sort">&nbsp;&nbsp;&nbsp;&nbsp;sort</option>
+	
+	<option value="//api/name/sql">&nbsp;&nbsp;&nbsp;&nbsp;sql</option>
+	
+	<option value="//api/name/value">&nbsp;&nbsp;&nbsp;&nbsp;value</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/_prepareSQLQueryStringWithKeys:">&nbsp;&nbsp;&nbsp;&nbsp;+ _prepareSQLQueryStringWithKeys:</option>
+	
+	<option value="//api/name/_querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ _querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:</option>
+	
+	<option value="//api/name/_querySegmentForColumn:value:matching:">&nbsp;&nbsp;&nbsp;&nbsp;+ _querySegmentForColumn:value:matching:</option>
+	
+	<option value="//api/name/_quoteStrings:joiningWithDelimiter:">&nbsp;&nbsp;&nbsp;&nbsp;+ _quoteStrings:joiningWithDelimiter:</option>
+	
+	<option value="//api/name/searchWithStore:">&nbsp;&nbsp;&nbsp;&nbsp;+ searchWithStore:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/JSONDescription">&nbsp;&nbsp;&nbsp;&nbsp;- JSONDescription</option>
+	
+	<option value="//api/name/_dataWithKey:attribute:value:matching:">&nbsp;&nbsp;&nbsp;&nbsp;- _dataWithKey:attribute:value:matching:</option>
+	
+	<option value="//api/name/_dataWithKey:attribute:value:matching:returning:">&nbsp;&nbsp;&nbsp;&nbsp;- _dataWithKey:attribute:value:matching:returning:</option>
+	
+	<option value="//api/name/_dictionaryForKeyPath:value:">&nbsp;&nbsp;&nbsp;&nbsp;- _dictionaryForKeyPath:value:</option>
+	
+	<option value="//api/name/_prepareSQLQueryStringWithExpressions:">&nbsp;&nbsp;&nbsp;&nbsp;- _prepareSQLQueryStringWithExpressions:</option>
+	
+	<option value="//api/name/_prepareSQLQueryStringWithKey:attribute:value:matching:">&nbsp;&nbsp;&nbsp;&nbsp;- _prepareSQLQueryStringWithKey:attribute:value:matching:</option>
+	
+	<option value="//api/name/_preparedSQL">&nbsp;&nbsp;&nbsp;&nbsp;- _preparedSQL</option>
+	
+	<option value="//api/name/_resultsFromSQLQuery:">&nbsp;&nbsp;&nbsp;&nbsp;- _resultsFromSQLQuery:</option>
+	
+	<option value="//api/name/_retrieveDataAdded:calendarDate:error:">&nbsp;&nbsp;&nbsp;&nbsp;- _retrieveDataAdded:calendarDate:error:</option>
+	
+	<option value="//api/name/_retrieveDataWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- _retrieveDataWithError:</option>
+	
+	<option value="//api/name/_sortResultsIfApplicable:returnType:">&nbsp;&nbsp;&nbsp;&nbsp;- _sortResultsIfApplicable:returnType:</option>
+	
+	<option value="//api/name/aggregateOperation:onAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- aggregateOperation:onAttribute:</option>
+	
+	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;- description</option>
+	
+	<option value="//api/name/executeSQL:">&nbsp;&nbsp;&nbsp;&nbsp;- executeSQL:</option>
+	
+	<option value="//api/name/executeSQL:returnType:error:">&nbsp;&nbsp;&nbsp;&nbsp;- executeSQL:returnType:error:</option>
+	
+	<option value="//api/name/explainSQL:">&nbsp;&nbsp;&nbsp;&nbsp;- explainSQL:</option>
+	
+	<option value="//api/name/initWithStore:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithStore:</option>
+	
+	<option value="//api/name/reset">&nbsp;&nbsp;&nbsp;&nbsp;- reset</option>
+	
+	<option value="//api/name/searchObjectsAdded:date:returnType:error:">&nbsp;&nbsp;&nbsp;&nbsp;- searchObjectsAdded:date:returnType:error:</option>
+	
+	<option value="//api/name/searchObjectsWithReturnType:error:">&nbsp;&nbsp;&nbsp;&nbsp;- searchObjectsWithReturnType:error:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating and Initializing a Search">Creating and Initializing a Search</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Searching">Searching</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Resetting Values">Resetting Values</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Private Methods">Private Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/attribute">attribute</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/attributesToBeReturned">attributesToBeReturned</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bag">bag</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expressions">expressions</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/filterClass">filterClass</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groupValues">groupValues</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/key">key</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/limit">limit</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/match">match</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nanoStore">nanoStore</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/offset">offset</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sort">sort</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sql">sql</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/value">value</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_prepareSQLQueryStringWithKeys:">_prepareSQLQueryStringWithKeys:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:">_querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_querySegmentForColumn:value:matching:">_querySegmentForColumn:value:matching:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_quoteStrings:joiningWithDelimiter:">_quoteStrings:joiningWithDelimiter:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchWithStore:">searchWithStore:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/JSONDescription">JSONDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_dataWithKey:attribute:value:matching:">_dataWithKey:attribute:value:matching:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_dataWithKey:attribute:value:matching:returning:">_dataWithKey:attribute:value:matching:returning:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_dictionaryForKeyPath:value:">_dictionaryForKeyPath:value:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_prepareSQLQueryStringWithExpressions:">_prepareSQLQueryStringWithExpressions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_prepareSQLQueryStringWithKey:attribute:value:matching:">_prepareSQLQueryStringWithKey:attribute:value:matching:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_preparedSQL">_preparedSQL</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_resultsFromSQLQuery:">_resultsFromSQLQuery:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_retrieveDataAdded:calendarDate:error:">_retrieveDataAdded:calendarDate:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_retrieveDataWithError:">_retrieveDataWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_sortResultsIfApplicable:returnType:">_sortResultsIfApplicable:returnType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/aggregateOperation:onAttribute:">aggregateOperation:onAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/executeSQL:">executeSQL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/executeSQL:returnType:error:">executeSQL:returnType:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/explainSQL:">explainSQL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithStore:">initWithStore:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reset">reset</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchObjectsAdded:date:returnType:error:">searchObjectsAdded:date:returnType:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchObjectsWithReturnType:error:">searchObjectsWithReturnType:error:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSFNanoSearch Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSFNanoSearch Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSFNanoSearch.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class NSFNanoSearch
+* A unit that provides an API to retrieve data from the document store.
+*
+* The search can be conducted in two ways: programatically via setters or by providing a SQL statement. In both cases,
+* it&rsquo;s necessary to indicate which object type should be returned. The type \link Globals::NSFReturnType NSFReturnType \endlink provides two options: \link Globals::NSFReturnObjects NSFReturnObjects \endlink and \link Globals::NSFReturnKeys NSFReturnKeys \endlink.
+*
+*           &ndash;  \link Globals::NSFReturnObjects NSFReturnObjects \endlink will return a dictionary with the <a href="#//api/name/key">key</a> of the NanoObject (<a href="#//api/name/key">key</a>) and the NanoObject itself (<a href="#//api/name/value">value</a>).
+*           &ndash;  \link Globals::NSFReturnKeys NSFReturnKeys \endlink will return an array of NanoObjects.
+*
+* @par <b>Some observations about retrieving data</b><br>
+*
+* Given the following data set:
+*
+*           &ndash; Number of dictionaries:    3.956
+*           &ndash; Number of attributes:    593.862
+*
+* The table describing different timings to perform a simple <a href="#//api/name/value">value</a> search (i.e. &lsquo;Barcelona&rsquo;) is included below, ordered from fastest to slowest:
+*
+<em><table border="1" cellpadding="5">
+</em><tr>
+<em><th>Match type</th>
+</em><th>Seconds</th>
+<em></tr>
+</em><tr><td>Equal to</td><td>0.295</td></tr>
+<em><tr><td>Begins with</td><td>0.295</td></tr>
+</em><tr><td>Contains</td><td>1.295</td></tr>
+<em><tr><td>Contains (insensitive)</td><td>1.339</td></tr>
+</em><tr><td>Ends with (insensitive)</td><td>1.341</td></tr>
+<em><tr><td>Ends with</td><td>1.351</td></tr>
+</em><tr><td>Equal to (insensitive)</td><td>1.890</td></tr>
+<em><tr><td>Begins with (insensitive)</td><td>2.412</td></tr>
+</em><tr><td>Greater than</td><td>18.246</td></tr>
+<em><tr><td>Less than</td><td>27.677</td></tr>
+</em></table></p>
+
+<p>@section wherearetheobjects_sec Where are my objects?</p>
+
+<p>While <a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> provides some convenience methods to obtain standard objects (such as objects of type <a href="../Classes/NSFNanoBag.html">NSFNanoBag</a>), the bulk of the search mechanism is handled by NSFNanoSearch.
+The steps involved to perform a search are quite simple:</p>
+
+<ul>
+<li>1) Instantiate a search object</li>
+<li>2) Configure the search via its accessors</li>
+<li>3) Obtain the results specifying whether objects or keys should be returned (*)</li>
+</ul>
+
+
+<p>(<em>) Request objects if you&rsquo;re interested in the data. Otherwise, you should request keys if you need to feed the result to another method, such as <a href="../Classes/NSFNanoStore.html">NSFNanoStore</a>
+\link <a href="../Classes/NSFNanoStore.html">NSFNanoStore</a>::removeObjectsWithKeysInArray:error: &ndash;(BOOL)removeObjectsWithKeysInArray:(NSArray </em>)theKeys error:(out NSError **)outError \endlink method.</p>
+
+<p>@details <b>Example: finding all objects with the <a href="#//api/name/attribute">attribute</a> &lsquo;LastName&rsquo; and <a href="#//api/name/value">value</a> &lsquo;Doe&rsquo;.</b>
+@code
+NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];</p>
+
+<p>search.<a href="#//api/name/attribute">attribute</a> = @&ldquo;LastName&rdquo;;
+search.<a href="#//api/name/match">match</a> = NSFEqualTo;
+search.<a href="#//api/name/value">value</a> = @&ldquo;Doe&rdquo;;</p>
+
+<p>// Returns a dictionary with the UUID of the object (<a href="#//api/name/key">key</a>) and the NanoObject (<a href="#//api/name/value">value</a>).
+NSDictionary *searchResults = [search searchObjectsWithReturnType:NSFReturnObjects error:nil];
+@endcode</p>
+
+<p>@details <b>Example: removing all objects with the <a href="#//api/name/attribute">attribute</a> &lsquo;LastName&rsquo; and <a href="#//api/name/value">value</a> &lsquo;Doe&rsquo;.</b>
+@code
+NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];</p>
+
+<p>search.<a href="#//api/name/attribute">attribute</a> = @&ldquo;LastName&rdquo;;
+search.<a href="#//api/name/match">match</a> = NSFEqualTo;
+search.<a href="#//api/name/value">value</a> = @&ldquo;Doe&rdquo;;</p>
+
+<p>// Returns an array of matching UUIDs
+NSArray *matchingKeys = [search searchObjectsWithReturnType:NSFReturnKeys error:nil];</p>
+
+<p>// Remove the NanoObjects matching the selected UUIDs
+NSError *outError = nil;
+if (YES == [nanoStore removeObjectsWithKeysInArray:matchingKeys error:&amp;outError]) {
+NSLog(@&ldquo;The matching objects have been removed.&rdquo;);
+} else {
+NSLog(@&ldquo;An error has occurred while removing the matching objects. Reason: %@&rdquo;, [outError localizedDescription]);
+}
+@endcode</p>
+
+<p>Another cool feature is the possibility to invoke aggregated functions (count, avg, min, max and total) on the search results. Using the search snippet above,
+calculating the average salary of all people with last name equal to &lsquo;Doe&rsquo; is very easy.</p>
+
+<p>@details <b>Example: calculating the average salary of all objects with the <a href="#//api/name/attribute">attribute</a> &lsquo;LastName&rsquo; and <a href="#//api/name/value">value</a> &lsquo;Doe&rsquo;.</b>
+@code
+NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];</p>
+
+<p>search.<a href="#//api/name/attribute">attribute</a> = @&ldquo;LastName&rdquo;;
+search.<a href="#//api/name/match">match</a> = NSFEqualTo;
+search.<a href="#//api/name/value">value</a> = @&ldquo;Doe&rdquo;;</p>
+
+<p>float averageSalary = [[search aggregateOperation:NSFAverage onAttribute:@&ldquo;Salary&rdquo;]floatValue];
+@endcode</p>
+
+<ul>
+<li>@details <b>Example:</b>
+@code
+// Instantiate a NanoStore and open it
+<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> *<a href="#//api/name/nanoStore">nanoStore</a> = [<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];</li>
+</ul>
+
+
+<p>// Generate a NanoObject with a dictionary and a <a href="#//api/name/key">key</a>
+NSString <em><a href="#//api/name/key">key</a> = @&ldquo;ABC-123&rdquo;;
+NSDictionary </em>info = &hellip;;
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> *nanoObject = [NSFNanoObject nanoObjectWithDictionary:info];</p>
+
+<p>// Add it to the document store
+[<a href="#//api/name/nanoStore">nanoStore</a> addObject:nanoObject error:nil];</p>
+
+<p>// Instantiate a search and specify the <a href="#//api/name/attribute">attribute</a>(s) we want to search for
+NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];
+search.<a href="#//api/name/key">key</a> = <a href="#//api/name/key">key</a>;</p>
+
+<p>// Perform the search and obtain the results
+NSDictionary *searchResults = [search searchObjectsWithReturnType:NSFReturnObjects error:nil];</p>
+
+<p>// Close the document store
+[nanoStore closeWithError:nil];
+@endcode</p>
+
+<p>\cond</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nanoStore">&nbsp;&nbsp;nanoStore</a></code>
+		<span class="tooltip"><ul>
+<li>The document store used for searching.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/attributesToBeReturned">&nbsp;&nbsp;attributesToBeReturned</a></code>
+		<span class="tooltip"><ul>
+<li>The set of attributes to be returned on matching objects.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/key">&nbsp;&nbsp;key</a></code>
+		<span class="tooltip"><ul>
+<li>The key used for searching.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/attribute">&nbsp;&nbsp;attribute</a></code>
+		<span class="tooltip"><ul>
+<li>The attribute used for searching.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/value">&nbsp;&nbsp;value</a></code>
+		<span class="tooltip"><ul>
+<li>The value used for searching.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/match">&nbsp;&nbsp;match</a></code>
+		<span class="tooltip"><ul>
+<li>The comparison operator used for searching.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/expressions">&nbsp;&nbsp;expressions</a></code>
+		<span class="tooltip"><ul>
+<li>The list of <a href="../Classes/NSFNanoExpression.html">NSFNanoExpression</a> objects used for searching.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/groupValues">&nbsp;&nbsp;groupValues</a></code>
+		<span class="tooltip"><ul>
+<li>If set to YES, specifying NSFReturnKeys applies the DISTINCT function and groups the values.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sql">&nbsp;&nbsp;sql</a></code>
+		<span class="tooltip"><ul>
+<li>The SQL statement used for searching. Set when <a href="#//api/name/executeSQL:">executeSQL:</a> is invoked.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sort">&nbsp;&nbsp;sort</a></code>
+		<span class="tooltip"><ul>
+<li>The sort holds an array of one or more sort descriptors of type \link <a href="../Classes/NSFNanoSortDescriptor.html">NSFNanoSortDescriptor</a> <a href="../Classes/NSFNanoSortDescriptor.html">NSFNanoSortDescriptor</a> \endlink.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/filterClass">&nbsp;&nbsp;filterClass</a></code>
+		<span class="tooltip"><ul>
+<li>The filterClass allows to filter the results based on a specific object class.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/offset">&nbsp;&nbsp;offset</a></code>
+		<span class="tooltip"><ul>
+<li>If an expression has an offset clause, then the first M rows are omitted from the result set returned by the search operation and the next N rows are returned, where M and N are the values that the offset and <a href="#//api/name/limit">limit</a> clauses evaluate to, respectively. Or, if the search would return less than M+N rows if it did not have a <a href="#//api/name/limit">limit</a> clause, then the first M rows are skipped and the remaining rows (if any) are returned.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/limit">&nbsp;&nbsp;limit</a></code>
+		<span class="tooltip"><ul>
+<li>The limit clause is used to place an upper bound on the number of rows returned by a Search operation.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bag">&nbsp;&nbsp;bag</a></code>
+		<span class="tooltip"><ul>
+<li><a href="#//api/name/limit">limit</a> a Search to a particular bag.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating and Initializing a Search" name="task_Creating and Initializing a Search"></a>
+						<h3 class="subsubtitle task-title">Creating and Initializing a Search</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/searchWithStore:">+&nbsp;searchWithStore:</a></code>
+		<span class="tooltip"><p>Creates and returns a search element for a given document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithStore:">&ndash;&nbsp;initWithStore:</a></code>
+		<span class="tooltip"><p>Initializes a newly allocated search element for a given document store.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Searching" name="task_Searching"></a>
+						<h3 class="subsubtitle task-title">Searching</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/searchObjectsWithReturnType:error:">&ndash;&nbsp;searchObjectsWithReturnType:error:</a></code>
+		<span class="tooltip"><p>Performs a search using the values of the properties.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/searchObjectsAdded:date:returnType:error:">&ndash;&nbsp;searchObjectsAdded:date:returnType:error:</a></code>
+		<span class="tooltip"><p>Performs a search using the values of the properties before, on or after a given date.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/aggregateOperation:onAttribute:">&ndash;&nbsp;aggregateOperation:onAttribute:</a></code>
+		<span class="tooltip"><ul>
+<li>Returns the result of the aggregate function.</li>
+<li>@param theFunctionType is the function type to be applied.</li>
+<li>@param theAttribute is the <a href="#//api/name/attribute">attribute</a> used in the function.</li>
+<li>@returns An NSNumber containing the result of the aggregate function.</li>
+<li>@details <b>Example:</b>
+@code</li>
+<li><a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> *<a href="#//api/name/nanoStore">nanoStore</a> = [<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];
+*</li>
+<li>// Assume we have saved data to the document store</li>
+<li>&hellip;</li>
+<li>&hellip;
+*</li>
+<li>// Get the average for the <a href="#//api/name/attribute">attribute</a> named &lsquo;SomeNumber&rsquo;</li>
+<li>NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];</li>
+<li>NSNumber *result = [search aggregateOperation:NSFAverage onAttribute:@&ldquo;SomeNumber&rdquo;];
+@endcode</li>
+</ul>
+</span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/executeSQL:returnType:error:">&ndash;&nbsp;executeSQL:returnType:error:</a></code>
+		<span class="tooltip"><p>Performs a search with a given SQL statement.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/executeSQL:">&ndash;&nbsp;executeSQL:</a></code>
+		<span class="tooltip"><p>Performs a search with a given SQL statement.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/explainSQL:">&ndash;&nbsp;explainSQL:</a></code>
+		<span class="tooltip"><p>Performs an analysis of the given SQL statement.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Resetting Values" name="task_Resetting Values"></a>
+						<h3 class="subsubtitle task-title">Resetting Values</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reset">&ndash;&nbsp;reset</a></code>
+		<span class="tooltip"><p>Resets the values to a know, default state.
+&ndash; <a href="#//api/name/key">key</a>                 = nil;
+&ndash; <a href="#//api/name/attribute">attribute</a>           = nil;
+&ndash; <a href="#//api/name/value">value</a>               = nil;
+&ndash; <a href="#//api/name/match">match</a>               = NSFContains;
+&ndash; object type         = NSFReturnObjects;
+&ndash; <a href="#//api/name/groupValues">groupValues</a>         = NO;
+&ndash; attributesReturned  = nil;
+&ndash; type returned       = NSFReturnObjects;
+&ndash; <a href="#//api/name/sql">sql</a>                 = nil;
+&ndash; <a href="#//api/name/sort">sort</a>                = nil;</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+		<span class="tooltip"><p>Returns a string representation of the search.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/JSONDescription">&ndash;&nbsp;JSONDescription</a></code>
+		<span class="tooltip"><p>Returns a JSON representation of the search.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Private Methods" name="task_Private Methods"></a>
+						<h3 class="subsubtitle task-title">Private Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_retrieveDataWithError:">&ndash;&nbsp;_retrieveDataWithError:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_dataWithKey:attribute:value:matching:">&ndash;&nbsp;_dataWithKey:attribute:value:matching:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_dataWithKey:attribute:value:matching:returning:">&ndash;&nbsp;_dataWithKey:attribute:value:matching:returning:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_retrieveDataAdded:calendarDate:error:">&ndash;&nbsp;_retrieveDataAdded:calendarDate:error:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_preparedSQL">&ndash;&nbsp;_preparedSQL</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_prepareSQLQueryStringWithKey:attribute:value:matching:">&ndash;&nbsp;_prepareSQLQueryStringWithKey:attribute:value:matching:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_prepareSQLQueryStringWithExpressions:">&ndash;&nbsp;_prepareSQLQueryStringWithExpressions:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_resultsFromSQLQuery:">&ndash;&nbsp;_resultsFromSQLQuery:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_prepareSQLQueryStringWithKeys:">+&nbsp;_prepareSQLQueryStringWithKeys:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_querySegmentForColumn:value:matching:">+&nbsp;_querySegmentForColumn:value:matching:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:">+&nbsp;_querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_dictionaryForKeyPath:value:">&ndash;&nbsp;_dictionaryForKeyPath:value:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_quoteStrings:joiningWithDelimiter:">+&nbsp;_quoteStrings:joiningWithDelimiter:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_sortResultsIfApplicable:returnType:">&ndash;&nbsp;_sortResultsIfApplicable:returnType:</a></code>
+		
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/attribute" title="attribute"></a>
+	<h3 class="subsubtitle method-title">attribute</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The attribute used for searching.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readwrite) NSString *attribute</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The attribute used for searching.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/attributesToBeReturned" title="attributesToBeReturned"></a>
+	<h3 class="subsubtitle method-title">attributesToBeReturned</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The set of attributes to be returned on matching objects.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSArray *attributesToBeReturned</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The set of attributes to be returned on matching objects.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/bag" title="bag"></a>
+	<h3 class="subsubtitle method-title">bag</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li><a href="#//api/name/limit">limit</a> a Search to a particular bag.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) NSFNanoBag *bag</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li><a href="#//api/name/limit">limit</a> a Search to a particular bag.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/expressions" title="expressions"></a>
+	<h3 class="subsubtitle method-title">expressions</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The list of <a href="../Classes/NSFNanoExpression.html">NSFNanoExpression</a> objects used for searching.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSArray *expressions</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The list of <a href="../Classes/NSFNanoExpression.html">NSFNanoExpression</a> objects used for searching.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/filterClass" title="filterClass"></a>
+	<h3 class="subsubtitle method-title">filterClass</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The filterClass allows to filter the results based on a specific object class.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readwrite) NSString *filterClass</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The filterClass allows to filter the results based on a specific object class.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/groupValues" title="groupValues"></a>
+	<h3 class="subsubtitle method-title">groupValues</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>If set to YES, specifying NSFReturnKeys applies the DISTINCT function and groups the values.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) BOOL groupValues</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>If set to YES, specifying NSFReturnKeys applies the DISTINCT function and groups the values.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/key" title="key"></a>
+	<h3 class="subsubtitle method-title">key</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The key used for searching.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readwrite) NSString *key</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The key used for searching.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/limit" title="limit"></a>
+	<h3 class="subsubtitle method-title">limit</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The limit clause is used to place an upper bound on the number of rows returned by a Search operation.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) NSUInteger limit</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The limit clause is used to place an upper bound on the number of rows returned by a Search operation.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/match" title="match"></a>
+	<h3 class="subsubtitle method-title">match</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The comparison operator used for searching.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) NSFMatchType match</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The comparison operator used for searching.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/nanoStore" title="nanoStore"></a>
+	<h3 class="subsubtitle method-title">nanoStore</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The document store used for searching.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak, readonly) NSFNanoStore *nanoStore</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The document store used for searching.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/offset" title="offset"></a>
+	<h3 class="subsubtitle method-title">offset</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>If an expression has an offset clause, then the first M rows are omitted from the result set returned by the search operation and the next N rows are returned, where M and N are the values that the offset and <a href="#//api/name/limit">limit</a> clauses evaluate to, respectively. Or, if the search would return less than M+N rows if it did not have a <a href="#//api/name/limit">limit</a> clause, then the first M rows are skipped and the remaining rows (if any) are returned.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) NSUInteger offset</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>If an expression has an offset clause, then the first M rows are omitted from the result set returned by the search operation and the next N rows are returned, where M and N are the values that the offset and <a href="#//api/name/limit">limit</a> clauses evaluate to, respectively. Or, if the search would return less than M+N rows if it did not have a <a href="#//api/name/limit">limit</a> clause, then the first M rows are skipped and the remaining rows (if any) are returned.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sort" title="sort"></a>
+	<h3 class="subsubtitle method-title">sort</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The sort holds an array of one or more sort descriptors of type \link <a href="../Classes/NSFNanoSortDescriptor.html">NSFNanoSortDescriptor</a> <a href="../Classes/NSFNanoSortDescriptor.html">NSFNanoSortDescriptor</a> \endlink.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSArray *sort</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The sort holds an array of one or more sort descriptors of type \link <a href="../Classes/NSFNanoSortDescriptor.html">NSFNanoSortDescriptor</a> <a href="../Classes/NSFNanoSortDescriptor.html">NSFNanoSortDescriptor</a> \endlink.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sql" title="sql"></a>
+	<h3 class="subsubtitle method-title">sql</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The SQL statement used for searching. Set when <a href="#//api/name/executeSQL:">executeSQL:</a> is invoked.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *sql</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The SQL statement used for searching. Set when <a href="#//api/name/executeSQL:">executeSQL:</a> is invoked.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/value" title="value"></a>
+	<h3 class="subsubtitle method-title">value</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The value used for searching.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readwrite) id value</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The value used for searching.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/_prepareSQLQueryStringWithKeys:" title="_prepareSQLQueryStringWithKeys:"></a>
+	<h3 class="subsubtitle method-title">_prepareSQLQueryStringWithKeys:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)_prepareSQLQueryStringWithKeys:(NSArray *)<em>someKeys</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:" title="_querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:"></a>
+	<h3 class="subsubtitle method-title">_querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)_querySegmentForAttributeColumnWithValue:(id)<em>anAttributeValue</em> matching:(NSFMatchType)<em>match</em> valueColumnWithValue:(id)<em>aValue</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_querySegmentForColumn:value:matching:" title="_querySegmentForColumn:value:matching:"></a>
+	<h3 class="subsubtitle method-title">_querySegmentForColumn:value:matching:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)_querySegmentForColumn:(NSString *)<em>aColumn</em> value:(id)<em>aValue</em> matching:(NSFMatchType)<em>match</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_quoteStrings:joiningWithDelimiter:" title="_quoteStrings:joiningWithDelimiter:"></a>
+	<h3 class="subsubtitle method-title">_quoteStrings:joiningWithDelimiter:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)_quoteStrings:(NSArray *)<em>strings</em> joiningWithDelimiter:(NSString *)<em>delimiter</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/searchWithStore:" title="searchWithStore:"></a>
+	<h3 class="subsubtitle method-title">searchWithStore:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a search element for a given document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoSearch *)searchWithStore:(NSFNanoStore *)<em>theNanoStore</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theNanoStore</em></dt>
+			<dd><p>the document store where the search will be performed. Must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An search element upon success, nil otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a search element for a given document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/initWithStore:">&ndash; initWithStore:</a> &ndash; (id)<a href="#//api/name/initWithStore:">&ndash; initWithStore:</a>(<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> *)theNanoStore \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/JSONDescription" title="JSONDescription"></a>
+	<h3 class="subsubtitle method-title">JSONDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a JSON representation of the search.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)JSONDescription</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a JSON representation of the search.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_dataWithKey:attribute:value:matching:" title="_dataWithKey:attribute:value:matching:"></a>
+	<h3 class="subsubtitle method-title">_dataWithKey:attribute:value:matching:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)_dataWithKey:(NSString *)<em>aKey</em> attribute:(NSString *)<em>anAttribute</em> value:(NSString *)<em>aValue</em> matching:(NSFMatchType)<em>match</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_dataWithKey:attribute:value:matching:returning:" title="_dataWithKey:attribute:value:matching:returning:"></a>
+	<h3 class="subsubtitle method-title">_dataWithKey:attribute:value:matching:returning:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)_dataWithKey:(NSString *)<em>aKey</em> attribute:(NSString *)<em>anAttribute</em> value:(NSString *)<em>aValue</em> matching:(NSFMatchType)<em>match</em> returning:(NSFReturnType)<em>returnedObjectType</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_dictionaryForKeyPath:value:" title="_dictionaryForKeyPath:value:"></a>
+	<h3 class="subsubtitle method-title">_dictionaryForKeyPath:value:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)_dictionaryForKeyPath:(NSString *)<em>keyPath</em> value:(id)<em>value</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_prepareSQLQueryStringWithExpressions:" title="_prepareSQLQueryStringWithExpressions:"></a>
+	<h3 class="subsubtitle method-title">_prepareSQLQueryStringWithExpressions:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)_prepareSQLQueryStringWithExpressions:(NSArray *)<em>someExpressions</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_prepareSQLQueryStringWithKey:attribute:value:matching:" title="_prepareSQLQueryStringWithKey:attribute:value:matching:"></a>
+	<h3 class="subsubtitle method-title">_prepareSQLQueryStringWithKey:attribute:value:matching:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)_prepareSQLQueryStringWithKey:(NSString *)<em>aKey</em> attribute:(NSString *)<em>anAttribute</em> value:(id)<em>aValue</em> matching:(NSFMatchType)<em>match</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_preparedSQL" title="_preparedSQL"></a>
+	<h3 class="subsubtitle method-title">_preparedSQL</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)_preparedSQL</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_resultsFromSQLQuery:" title="_resultsFromSQLQuery:"></a>
+	<h3 class="subsubtitle method-title">_resultsFromSQLQuery:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)_resultsFromSQLQuery:(NSString *)<em>theSQLStatement</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_retrieveDataAdded:calendarDate:error:" title="_retrieveDataAdded:calendarDate:error:"></a>
+	<h3 class="subsubtitle method-title">_retrieveDataAdded:calendarDate:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)_retrieveDataAdded:(NSFDateMatchType)<em>aDateMatch</em> calendarDate:(NSDate *)<em>aDate</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_retrieveDataWithError:" title="_retrieveDataWithError:"></a>
+	<h3 class="subsubtitle method-title">_retrieveDataWithError:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)_retrieveDataWithError:(out NSError **)<em>outError</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_sortResultsIfApplicable:returnType:" title="_sortResultsIfApplicable:returnType:"></a>
+	<h3 class="subsubtitle method-title">_sortResultsIfApplicable:returnType:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (id)_sortResultsIfApplicable:(NSDictionary *)<em>results</em> returnType:(NSFReturnType)<em>theReturnType</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/aggregateOperation:onAttribute:" title="aggregateOperation:onAttribute:"></a>
+	<h3 class="subsubtitle method-title">aggregateOperation:onAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>Returns the result of the aggregate function.</li>
+<li>@param theFunctionType is the function type to be applied.</li>
+<li>@param theAttribute is the <a href="#//api/name/attribute">attribute</a> used in the function.</li>
+<li>@returns An NSNumber containing the result of the aggregate function.</li>
+<li>@details <b>Example:</b>
+@code</li>
+<li><a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> *<a href="#//api/name/nanoStore">nanoStore</a> = [<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];
+*</li>
+<li>// Assume we have saved data to the document store</li>
+<li>&hellip;</li>
+<li>&hellip;
+*</li>
+<li>// Get the average for the <a href="#//api/name/attribute">attribute</a> named &lsquo;SomeNumber&rsquo;</li>
+<li>NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];</li>
+<li>NSNumber *result = [search aggregateOperation:NSFAverage onAttribute:@&ldquo;SomeNumber&rdquo;];
+@endcode</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSNumber *)aggregateOperation:(NSFAggregateFunctionType)<em>theFunctionType</em> onAttribute:(NSString *)<em>theAttribute</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>Returns the result of the aggregate function.</li>
+<li>@param theFunctionType is the function type to be applied.</li>
+<li>@param theAttribute is the <a href="#//api/name/attribute">attribute</a> used in the function.</li>
+<li>@returns An NSNumber containing the result of the aggregate function.</li>
+<li>@details <b>Example:</b>
+@code</li>
+<li><a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> *<a href="#//api/name/nanoStore">nanoStore</a> = [<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];
+*</li>
+<li>// Assume we have saved data to the document store</li>
+<li>&hellip;</li>
+<li>&hellip;
+*</li>
+<li>// Get the average for the <a href="#//api/name/attribute">attribute</a> named &lsquo;SomeNumber&rsquo;</li>
+<li>NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];</li>
+<li>NSNumber *result = [search aggregateOperation:NSFAverage onAttribute:@&ldquo;SomeNumber&rdquo;];
+@endcode</li>
+</ul>
+<div class="note"><p><strong>Note:</strong> The <a href="#//api/name/sort">sort</a> descriptor will be ignored when executing aggregate operations.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/description" title="description"></a>
+	<h3 class="subsubtitle method-title">description</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representation of the search.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a string representation of the search.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/executeSQL:" title="executeSQL:"></a>
+	<h3 class="subsubtitle method-title">executeSQL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Performs a search with a given SQL statement.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSFNanoResult *)executeSQL:(NSString *)<em>theSQLStatement</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theSQLStatement</em></dt>
+			<dd><p>is the SQL statement to be executed. Must not be nil or an empty string.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns a <a href="../Classes/NSFNanoResult.html">NSFNanoResult</a>.
+@note
+Use this method when you need to perform more advanced SQL statements. If you just want to query NanoObjects using your own SQL statement,
+you may want to use \link <a href="#//api/name/executeSQL:returnType:error:">executeSQL:returnType:error:</a> &ndash; (id)executeSQL:(NSString <em>)theSQLStatement returnType:(NSFReturnType)theReturnType error:(out NSError **)outError \endlink instead.
+@par
+The <a href="#//api/name/key">key</a> difference between this method and \link <a href="#//api/name/executeSQL:returnType:error:">executeSQL:returnType:error:</a> &ndash; (id)executeSQL:(NSString </em>)theSQLStatement returnType:(NSFReturnType)theReturnType error:(out NSError <em>*)outError \endlink
+is that this method doesn&rsquo;t perform any check at all. The SQL statement will be sent verbatim to SQLite.
+@details <b>Example:</b>
+@code
+// Prepare a document store
+<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> </em><a href="#//api/name/nanoStore">nanoStore</a> = [<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];</p>
+
+<p>// Prepare some data and wrap it in a NanoObject
+NSString <em><a href="#//api/name/key">key</a> = @&ldquo;ABC-123&rdquo;;
+NSDictionary </em>info = &hellip;;
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> *nanoObject = [NSFNanoObject nanoObjectWithDictionary:info];</p>
+
+<p>// Add it to the document store
+[nanoStore addObjectsFromArray:[NSArray arrayWithObject:nanoObject] error:nil];</p>
+
+<p>// Instantiate a search and specify the <a href="#//api/name/attribute">attribute</a>(s) we want to search for
+NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];</p>
+
+<p>// Perform the search
+<a href="../Classes/NSFNanoResult.html">NSFNanoResult</a> <em>result = [search executeSQL:@&ldquo;SELECT COUNT(</em>) FROM NSFKEYS&rdquo;];
+@endcode</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Performs a search with a given SQL statement.</p><div class="note"><p><strong>Note:</strong> The <a href="#//api/name/sort">sort</a> descriptor will be ignored when executing custom SQL statements.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/executeSQL:returnType:error:">&ndash; executeSQL:returnType:error:</a> &ndash; (id)<a href="#//api/name/executeSQL:">&ndash; executeSQL:</a>(NSString *)theSQLStatement returnType:(NSFReturnType)theReturnType error:(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/executeSQL:returnType:error:" title="executeSQL:returnType:error:"></a>
+	<h3 class="subsubtitle method-title">executeSQL:returnType:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Performs a search with a given SQL statement.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)executeSQL:(NSString *)<em>theSQLStatement</em> returnType:(NSFReturnType)<em>theReturnType</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theSQLStatement</em></dt>
+			<dd><p>is the SQL statement to be executed. Must not be nil or an empty string.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theReturnType</em></dt>
+			<dd><p>the type of object to be returned. Can be \link Globals::NSFReturnObjects NSFReturnObjects \endlink or \link Globals::NSFReturnKeys NSFReturnKeys \endlink.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If theReturnType is \link Globals::NSFReturnObjects NSFReturnObjects \endlink, a dictionary is returned. Otherwise, an array is returned.
+@note
+Use this method when performing search on NanoObjects. If you need to perform more advanced SQL statements, you may want to use
+\link <a href="#//api/name/executeSQL:">executeSQL:</a> &ndash; (<a href="../Classes/NSFNanoResult.html">NSFNanoResult</a> <em>)<a href="#//api/name/executeSQL:">executeSQL:</a>(NSString </em>)theSQLStatement \endlink instead.
+@par
+The <a href="#//api/name/key">key</a> difference between this method and \link <a href="#//api/name/executeSQL:">executeSQL:</a> &ndash; (<a href="../Classes/NSFNanoResult.html">NSFNanoResult</a> <em>)<a href="#//api/name/executeSQL:">executeSQL:</a>(NSString </em>)theSQLStatement \endlink is that this method performs
+a check to make sure the columns specified <a href="#//api/name/match">match</a> the ones required by the \link Globals::NSFReturnType NSFReturnType \endlink type selected. If the column selection is wrong,
+NanoStore rewrites the query by specifying the right set of columns while honoring the rest of the query.
+@details <b>Example:</b>
+@code
+// Prepare a document store
+<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> *<a href="#//api/name/nanoStore">nanoStore</a> = [<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];</p>
+
+<p>// Prepare some data and wrap it in a NanoObject
+NSString <em><a href="#//api/name/key">key</a> = @&ldquo;ABC-123&rdquo;;
+NSDictionary </em>info = &hellip;;
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> *nanoObject = [NSFNanoObject nanoObjectWithDictionary:info];</p>
+
+<p>// Add it to the document store
+[nanoStore addObjectsFromArray:[NSArray arrayWithObject:nanoObject] error:nil];</p>
+
+<p>// Instantiate a search and specify the <a href="#//api/name/attribute">attribute</a>(s) we want to search for
+NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];</p>
+
+<p>// Perform the search
+// The query will be rewritten as @&ldquo;SELECT NSFKey, NSFKeyedArchive, NSFObjectClass FROM NSFKeys&rdquo;
+NSDictionary *results = [search executeSQL:@&ldquo;SELECT foo, bar FROM NSFKeys&rdquo; returnType:NSFReturnObjects error:nil];
+@endcode</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Performs a search with a given SQL statement.</p><div class="note"><p><strong>Note:</strong> The <a href="#//api/name/sort">sort</a> descriptor will be ignored when executing custom SQL statements.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/executeSQL:">&ndash; executeSQL:</a> &ndash; (<a href="../Classes/NSFNanoResult.html">NSFNanoResult</a> <em>)<a href="#//api/name/executeSQL:">&ndash; executeSQL:</a>(NSString </em>)theSQLStatement \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/explainSQL:" title="explainSQL:"></a>
+	<h3 class="subsubtitle method-title">explainSQL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Performs an analysis of the given SQL statement.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSFNanoResult *)explainSQL:(NSString *)<em>theSQLStatement</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theSQLStatement</em></dt>
+			<dd><p>is the SQL statement to be analyzed. Must not be nil or an empty string.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns a NSFNanoResult.
+@note
+Returns the sequence of virtual machine instructions with high-level information about what indices would have been used if the SQL statement had
+been executed.</p>
+
+<p>@warning
+The analysis generated by this method is intended for interactive analysis and troubleshooting only. The details of the output format
+are subject to change from one release of SQLite to the next. Applications should not use this method in production code since the exact behavior
+is undocumented, unspecified, and variable.</p>
+
+<p>For additional information about SQLite&rsquo;s Virtual Machine Opcodes, see <a href="http://www.sqlite.org/opcode.html">http://www.sqlite.org/opcode.html</a></p>
+
+<p>The tutorial Virtual Database Engine of SQLite is available here: <a href="http://www.sqlite.org/vdbe.html">http://www.sqlite.org/vdbe.html</a></p>
+
+<p>@details <b>Example:</b>
+@code
+// Prepare a document store
+<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> *<a href="#//api/name/nanoStore">nanoStore</a> = [<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];</p>
+
+<p>// Instantiate a search object
+NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];</p>
+
+<p>// Perform the analysis
+<a href="../Classes/NSFNanoResult.html">NSFNanoResult</a> *results = [search explainSQL:@&ldquo;SELECT * FROM NSFValues&rdquo;];
+@endcode</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Performs an analysis of the given SQL statement.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/executeSQL:">&ndash; executeSQL:</a> &ndash; (<a href="../Classes/NSFNanoResult.html">NSFNanoResult</a> <em>)<a href="#//api/name/executeSQL:">&ndash; executeSQL:</a>(NSString </em>)theSQLStatement \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/executeSQL:returnType:error:">&ndash; executeSQL:returnType:error:</a> &ndash; (id)<a href="#//api/name/executeSQL:">&ndash; executeSQL:</a>(NSString *)theSQLStatement returnType:(NSFReturnType)theReturnType error:(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithStore:" title="initWithStore:"></a>
+	<h3 class="subsubtitle method-title">initWithStore:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a newly allocated search element for a given document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithStore:(NSFNanoStore *)<em>theNanoStore</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theNanoStore</em></dt>
+			<dd><p>the document store where the search will be performed. Must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An search element upon success, nil otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes a newly allocated search element for a given document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/searchWithStore:">+ searchWithStore:</a> + (NSFNanoSearch <em>)<a href="#//api/name/searchWithStore:">+ searchWithStore:</a>(<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> </em>)theNanoStore \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reset" title="reset"></a>
+	<h3 class="subsubtitle method-title">reset</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Resets the values to a know, default state.
+&ndash; <a href="#//api/name/key">key</a>                 = nil;
+&ndash; <a href="#//api/name/attribute">attribute</a>           = nil;
+&ndash; <a href="#//api/name/value">value</a>               = nil;
+&ndash; <a href="#//api/name/match">match</a>               = NSFContains;
+&ndash; object type         = NSFReturnObjects;
+&ndash; <a href="#//api/name/groupValues">groupValues</a>         = NO;
+&ndash; attributesReturned  = nil;
+&ndash; type returned       = NSFReturnObjects;
+&ndash; <a href="#//api/name/sql">sql</a>                 = nil;
+&ndash; <a href="#//api/name/sort">sort</a>                = nil;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)reset</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Resets the values to a know, default state.
+&ndash; <a href="#//api/name/key">key</a>                 = nil;
+&ndash; <a href="#//api/name/attribute">attribute</a>           = nil;
+&ndash; <a href="#//api/name/value">value</a>               = nil;
+&ndash; <a href="#//api/name/match">match</a>               = NSFContains;
+&ndash; object type         = NSFReturnObjects;
+&ndash; <a href="#//api/name/groupValues">groupValues</a>         = NO;
+&ndash; attributesReturned  = nil;
+&ndash; type returned       = NSFReturnObjects;
+&ndash; <a href="#//api/name/sql">sql</a>                 = nil;
+&ndash; <a href="#//api/name/sort">sort</a>                = nil;</p>
+
+<p>@note
+When invoked, it sets the values of search to its initial state. Resetting and performing a search will select all records.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/searchObjectsAdded:date:returnType:error:" title="searchObjectsAdded:date:returnType:error:"></a>
+	<h3 class="subsubtitle method-title">searchObjectsAdded:date:returnType:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Performs a search using the values of the properties before, on or after a given date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)searchObjectsAdded:(NSFDateMatchType)<em>theDateMatch</em> date:(NSDate *)<em>theDate</em> returnType:(NSFReturnType)<em>theReturnType</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theDateMatch</em></dt>
+			<dd><p>the type of date comparison. Can be \link Globals::NSFBeforeDate NSFBeforeDate \endlink, \link Globals::NSFOnDate NSFOnDate \endlink or \link Globals::NSFAfterDate NSFAfterDate \endlink.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theDate</em></dt>
+			<dd><p>the date to use as a pivot during the search.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theReturnType</em></dt>
+			<dd><p>the type of object to be returned. Can be \link Globals::NSFReturnObjects NSFReturnObjects \endlink or \link Globals::NSFReturnKeys NSFReturnKeys \endlink.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If theReturnType is \link Globals::NSFReturnObjects NSFReturnObjects \endlink, a dictionary is returned. Otherwise, an array is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Performs a search using the values of the properties before, on or after a given date.</p><div class="note"><p><strong>Note:</strong> The <a href="#//api/name/sort">sort</a> descriptor will be ignored when the return type is NSFReturnKeys.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/searchObjectsWithReturnType:error:">&ndash; searchObjectsWithReturnType:error:</a> &ndash; (id)searchObjectsWithReturnType:(NSFReturnType)theReturnType error:(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/searchObjectsWithReturnType:error:" title="searchObjectsWithReturnType:error:"></a>
+	<h3 class="subsubtitle method-title">searchObjectsWithReturnType:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Performs a search using the values of the properties.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)searchObjectsWithReturnType:(NSFReturnType)<em>theReturnType</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theReturnType</em></dt>
+			<dd><p>the type of object to be returned. Can be \link Globals::NSFReturnObjects NSFReturnObjects \endlink or \link Globals::NSFReturnKeys NSFReturnKeys \endlink.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array is returned if: 1) the <a href="#//api/name/sort">sort</a> has been specified or 2) the return type is \link Globals::NSFReturnKeys NSFReturnKeys \endlink. Otherwise, a dictionary is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Performs a search using the values of the properties.</p><div class="note"><p><strong>Note:</strong> The <a href="#//api/name/sort">sort</a> descriptor will be ignored when the return type is NSFReturnKeys.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/searchObjectsAdded:date:returnType:error:">&ndash; searchObjectsAdded:date:returnType:error:</a> &ndash; (id)searchObjectsAdded:(NSFDateMatchType)theDateMatch date:(NSDate *)theDate returnType:(NSFReturnType)theReturnType error:(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSearch.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Tito Ciuro. All rights reserved. (Last updated: 2013-01-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

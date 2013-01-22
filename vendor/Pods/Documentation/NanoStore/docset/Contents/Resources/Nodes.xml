@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocSetNodes version="1.0">
+    <TOC>
+        <Node type="folder">
+            <Name>NanoStore 2.5.7</Name>
+            <Path>index.html</Path>
+			<Subnodes>
+                
+				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						<NodeRef refid="10"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				
+				<Node type="folder">
+					<Name>Protocols</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="11"/>
+						
+					</Subnodes>
+				</Node>
+				
+			</Subnodes>
+        </Node>
+    </TOC>
+	<Library>
+		
+		<Node id="1">
+			<Name>NSFNanoBag</Name>
+			<Path>Classes/NSFNanoBag.html</Path>
+		</Node>
+		<Node id="2">
+			<Name>NSFNanoEngine</Name>
+			<Path>Classes/NSFNanoEngine.html</Path>
+		</Node>
+		<Node id="3">
+			<Name>NSFNanoExpression</Name>
+			<Path>Classes/NSFNanoExpression.html</Path>
+		</Node>
+		<Node id="4">
+			<Name>NSFNanoObject</Name>
+			<Path>Classes/NSFNanoObject.html</Path>
+		</Node>
+		<Node id="5">
+			<Name>NSFNanoPredicate</Name>
+			<Path>Classes/NSFNanoPredicate.html</Path>
+		</Node>
+		<Node id="6">
+			<Name>NSFNanoResult</Name>
+			<Path>Classes/NSFNanoResult.html</Path>
+		</Node>
+		<Node id="7">
+			<Name>NSFNanoSearch</Name>
+			<Path>Classes/NSFNanoSearch.html</Path>
+		</Node>
+		<Node id="8">
+			<Name>NSFNanoSortDescriptor</Name>
+			<Path>Classes/NSFNanoSortDescriptor.html</Path>
+		</Node>
+		<Node id="9">
+			<Name>NSFNanoStore</Name>
+			<Path>Classes/NSFNanoStore.html</Path>
+		</Node>
+		<Node id="10">
+			<Name>NSFOrderedDictionary</Name>
+			<Path>Classes/NSFOrderedDictionary.html</Path>
+		</Node>
+		
+		
+		<Node id="11">
+			<Name>NSFNanoObjectProtocol</Name>
+			<Path>Protocols/NSFNanoObjectProtocol.html</Path>
+		</Node>
+		
+	</Library>
+</DocSetNodes>

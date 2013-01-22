@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NSFOrderedDictionary.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NSFOrderedDictionary</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFOrderedDictionary.h</DeclaredIn>
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFOrderedDictionary/insertObject:forKey:atIndex:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFOrderedDictionary.h</DeclaredIn>			
+			
+			<Declaration>- (void)insertObject:(id)anObject forKey:(id)aKey atIndex:(NSUInteger)anIndex</Declaration>
+			
+			
+			<Anchor>//api/name/insertObject:forKey:atIndex:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFOrderedDictionary/keyAtIndex:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFOrderedDictionary.h</DeclaredIn>			
+			
+			<Declaration>- (id)keyAtIndex:(NSUInteger)anIndex</Declaration>
+			
+			
+			<Anchor>//api/name/keyAtIndex:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFOrderedDictionary/reverseKeyEnumerator</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFOrderedDictionary.h</DeclaredIn>			
+			
+			<Declaration>- (NSEnumerator *)reverseKeyEnumerator</Declaration>
+			
+			
+			<Anchor>//api/name/reverseKeyEnumerator</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

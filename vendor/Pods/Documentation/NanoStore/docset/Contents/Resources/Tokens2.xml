@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NSFNanoEngine.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NSFNanoEngine</TokenIdentifier>
+			<Abstract type="html">@class NSFNanoEngine
+A wrapper around SQLite, it provides convenience methods as well as &quot;raw&quot; access to the database.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setSqlite:</TokenIdentifier>
+			<Abstract type="html">* A reference to the SQLite database.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) sqlite3 *sqlite</Declaration>
+			
+			
+			<Anchor>//api/name/sqlite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoEngine/sqlite</TokenIdentifier>
+			<Abstract type="html">* A reference to the SQLite database.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) sqlite3 *sqlite</Declaration>
+			
+			
+			<Anchor>//api/name/sqlite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setPath:</TokenIdentifier>
+			<Abstract type="html">* The file path where the database is located.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *path</Declaration>
+			
+			
+			<Anchor>//api/name/path</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoEngine/path</TokenIdentifier>
+			<Abstract type="html">* The file path where the database is located.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *path</Declaration>
+			
+			
+			<Anchor>//api/name/path</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setCacheMethod:</TokenIdentifier>
+			<Abstract type="html">* The cache mechanism being used.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSFCacheMethod cacheMethod</Declaration>
+			
+			
+			<Anchor>//api/name/cacheMethod</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoEngine/cacheMethod</TokenIdentifier>
+			<Abstract type="html">* The cache mechanism being used.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSFCacheMethod cacheMethod</Declaration>
+			
+			
+			<Anchor>//api/name/cacheMethod</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/databaseWithPath:</TokenIdentifier>
+			<Abstract type="html">Creates and returns an engine object at a given file path.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/initWithPath:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (id)databaseWithPath:(NSString *)thePath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>thePath</Name>
+					<Abstract type="html">the file path where the document store will be created. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An engine object upon success, nil otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/databaseWithPath:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/initWithPath:</TokenIdentifier>
+			<Abstract type="html">Initializes a newly allocated document store at a given file path.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/databaseWithPath:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (id)initWithPath:(NSString *)thePath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>thePath</Name>
+					<Abstract type="html">the file path where the document store will be created. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An engine object upon success, nil otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithPath:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/openWithCacheMethod:useFastMode:</TokenIdentifier>
+			<Abstract type="html">Opens the engine, making it ready for manipulation.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)openWithCacheMethod:(NSFCacheMethod)theCacheMethod useFastMode:(BOOL)useFastMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theCacheMethod</Name>
+					<Abstract type="html">allows to specify hwo the data will be read from the database:. This setting incurs a tradeoff between speed and memory usage.</Abstract>
+				</Parameter><Parameter>
+					<Name>useFastMode</Name>
+					<Abstract type="html">if set to YES, the document store is opened with all performance turned on (more risky in case of failure). Setting it to NO is slower, but safer. See the note below for more information.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.
+@note
+When FastMode is activated NanoStore continues without pausing as soon as it has handed data off to the operating system.
+If the application running NanoStore crashes, the data will be safe, but the database might become corrupted if the operating system crashes
+or the computer loses power before that data has been written to the disk surface.
+On the other hand, some operations are as much as 50 or more times faster with FastMode activated.
+
+@par
+If FastMode is deactivated, NanoStore will pause at critical moments to make sure that data has actually been written to the disk surface
+before continuing. This ensures that if the operating system crashes or if there is a power failure, the database will be uncorrupted after rebooting.
+Deactivating FastMode is very safe, but it is also slower.</Abstract></ReturnValue>
+			<Anchor>//api/name/openWithCacheMethod:useFastMode:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/close</TokenIdentifier>
+			<Abstract type="html">Closes the database.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)close</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/close</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/isDatabaseOpen</TokenIdentifier>
+			<Abstract type="html">Checks whether the document store is open or closed.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/close</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)isDatabaseOpen</Declaration>
+			
+			
+			<Anchor>//api/name/isDatabaseOpen</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/isTransactionActive</TokenIdentifier>
+			<Abstract type="html">Checks whether a transaction is currently active.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isTransactionActive</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if a transaction is currently active, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/isTransactionActive</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setBusyTimeout:</TokenIdentifier>
+			<Abstract type="html">Sets the busy timeout.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/busyTimeout</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)setBusyTimeout:(unsigned int)theTimeout</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theTimeout</Name>
+					<Abstract type="html">is number of milliseconds that SQLite will wait to retry a busy operation.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setBusyTimeout:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/busyTimeout</TokenIdentifier>
+			<Abstract type="html">Returns the current busy timeout.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setBusyTimeout:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (unsigned int)busyTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/busyTimeout</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/recommendedCacheSize</TokenIdentifier>
+			<Abstract type="html">Returns the recommended cache size based on the system resources available.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>+ (NSUInteger)recommendedCacheSize</Declaration>
+			
+			<ReturnValue><Abstract type="html">The recommended cache size in number of pages.</Abstract></ReturnValue>
+			<Anchor>//api/name/recommendedCacheSize</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setCacheSize:</TokenIdentifier>
+			<Abstract type="html">Sets the cache size.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/recommendedCacheSize</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/cacheSize</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)setCacheSize:(NSUInteger)numberOfPages</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>numberOfPages</Name>
+					<Abstract type="html">is the number of pages.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/setCacheSize:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/cacheSize</TokenIdentifier>
+			<Abstract type="html">Returns the cache size.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/recommendedCacheSize</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setCacheSize:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSUInteger)cacheSize</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current cache size.</Abstract></ReturnValue>
+			<Anchor>//api/name/cacheSize</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/systemPageSize</TokenIdentifier>
+			<Abstract type="html">Returns the system&apos;s page size</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>+ (NSInteger)systemPageSize</Declaration>
+			
+			
+			<Anchor>//api/name/systemPageSize</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setPageSize:</TokenIdentifier>
+			<Abstract type="html">Sets the page size.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/systemPageSize</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/pageSize</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)setPageSize:(NSUInteger)numberOfBytes</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>numberOfBytes</Name>
+					<Abstract type="html">is the size of the page.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/setPageSize:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/pageSize</TokenIdentifier>
+			<Abstract type="html">Returns the page size.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/systemPageSize</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setPageSize:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSUInteger)pageSize</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current page size.</Abstract></ReturnValue>
+			<Anchor>//api/name/pageSize</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setEncodingType:</TokenIdentifier>
+			<Abstract type="html">Sets the text encoding type.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/encoding</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)setEncodingType:(NSFEncodingType)theEncodingType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theEncodingType</Name>
+					<Abstract type="html">is the encoding type. Can be NSFEncodingUTF8 or NSFEncodingUTF16.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/setEncodingType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/encoding</TokenIdentifier>
+			<Abstract type="html">Returns the encoding type.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setEncodingType:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSFEncodingType)encoding</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current encoding type.</Abstract></ReturnValue>
+			<Anchor>//api/name/encoding</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/NSStringToNSFEncodingType:</TokenIdentifier>
+			<Abstract type="html">Returns the encoding type from its string equivalent.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/NSFEncodingTypeToNSString:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSFEncodingType)NSStringToNSFEncodingType:(NSString *)value</Declaration>
+			
+			<ReturnValue><Abstract type="html">The encoding type if successful, NSFEncodingUnknown otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/NSStringToNSFEncodingType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/NSFEncodingTypeToNSString:</TokenIdentifier>
+			<Abstract type="html">Returns the string equivalent of an encoding type.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/NSStringToNSFEncodingType:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSString *)NSFEncodingTypeToNSString:(NSFEncodingType)value</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string equivalent if successful, nil otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/NSFEncodingTypeToNSString:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setSynchronousMode:</TokenIdentifier>
+			<Abstract type="html">Sets the synchronous mode.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/synchronousMode</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)setSynchronousMode:(NSFSynchronousMode)theSynchronousMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theSynchronousMode</Name>
+					<Abstract type="html">is the synchronous mode. Can be SynchronousModeOff, SynchronousModeNormal or SynchronousModeFull.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSynchronousMode:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/synchronousMode</TokenIdentifier>
+			<Abstract type="html">Returns the synchronous mode.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setSynchronousMode:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSFSynchronousMode)synchronousMode</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current synchronous mode.</Abstract></ReturnValue>
+			<Anchor>//api/name/synchronousMode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setTempStoreMode:</TokenIdentifier>
+			<Abstract type="html">Sets the temporary storage mode.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/tempStoreMode</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)setTempStoreMode:(NSFTempStoreMode)theTempStoreMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theTempStoreMode</Name>
+					<Abstract type="html">is the temporary storage mode. Can be TempStoreModeDefault, TempStoreModeFile or TempStoreModeMemory.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setTempStoreMode:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/tempStoreMode</TokenIdentifier>
+			<Abstract type="html">Returns the temporary storage mode.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setTempStoreMode:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSFTempStoreMode)tempStoreMode</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current temporary storage mode.</Abstract></ReturnValue>
+			<Anchor>//api/name/tempStoreMode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/journalModeAndReturnError:</TokenIdentifier>
+			<Abstract type="html">* Journal mode.
+* These values represent the options used by SQLite to the the journal mode for databases associated with the current database connection.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (NSFJournalModeMode)journalModeAndReturnError:(out NSError **)outError</Declaration>
+			
+			
+			<Anchor>//api/name/journalModeAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/setJournalMode:</TokenIdentifier>
+			<Abstract type="html">Returns the journal mode.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/journalModeAndReturnError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)setJournalMode:(NSFJournalModeMode)theMode</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current journal mode.</Abstract></ReturnValue>
+			<Anchor>//api/name/setJournalMode:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/sharedNanoStoreEngineDatatypes</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the datatypes recognized by NanoStore.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>+ (NSSet *)sharedNanoStoreEngineDatatypes</Declaration>
+			
+			<ReturnValue><Abstract type="html">A new array containing the datatypes recognized by NanoStore.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedNanoStoreEngineDatatypes</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/nanoStoreEngineVersion</TokenIdentifier>
+			<Abstract type="html">Returns the NanoStore engine version.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)nanoStoreEngineVersion</Declaration>
+			
+			<ReturnValue><Abstract type="html">The NanoStore engine version.</Abstract></ReturnValue>
+			<Anchor>//api/name/nanoStoreEngineVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/sqliteVersion</TokenIdentifier>
+			<Abstract type="html">Returns the SQLite version.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)sqliteVersion</Declaration>
+			
+			<ReturnValue><Abstract type="html">The SQLite version.</Abstract></ReturnValue>
+			<Anchor>//api/name/sqliteVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/beginTransaction</TokenIdentifier>
+			<Abstract type="html">Starts a transaction.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/beginTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/beginDeferredTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/commitTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/rollbackTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/isTransactionActive</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)beginTransaction</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/beginTransaction</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/beginDeferredTransaction</TokenIdentifier>
+			<Abstract type="html">Starts a deferred transaction.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/beginTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/commitTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/rollbackTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/isTransactionActive</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)beginDeferredTransaction</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/beginDeferredTransaction</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/commitTransaction</TokenIdentifier>
+			<Abstract type="html">Commits a transaction.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/beginTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/beginDeferredTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/rollbackTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/isTransactionActive</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)commitTransaction</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/commitTransaction</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/rollbackTransaction</TokenIdentifier>
+			<Abstract type="html">Rolls back a transaction.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/beginTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/beginDeferredTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/commitTransaction</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/isTransactionActive</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)rollbackTransaction</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/rollbackTransaction</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/createTable:withColumns:datatypes:</TokenIdentifier>
+			<Abstract type="html">Creates a table.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/dropTable:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)createTable:(NSString *)theTable withColumns:(NSArray *)theColumns datatypes:(NSArray *)theDatatypes</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theTable</Name>
+					<Abstract type="html">the name of the table. Must not be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>theColumns</Name>
+					<Abstract type="html">the names of the columns. Must not be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>theDatatypes</Name>
+					<Abstract type="html">the datatypes of the columns. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.
+@note
+Allowed datatypes: NSFNanoTypeRowUID, NSFNanoTypeString, NSFNanoTypeData, NSFNanoTypeDate and NSFNanoTypeNumber.
+@throws NSFUnexpectedParameterException is thrown if any of the parameters are nil.
+@throws NSFUnexpectedParameterException is thrown if the number of columns and datatypes are not equal.</Abstract></ReturnValue>
+			<Anchor>//api/name/createTable:withColumns:datatypes:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/tables</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the tables found in the main document store.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/allTables</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/temporaryTables</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSArray *)tables</Declaration>
+			
+			<ReturnValue><Abstract type="html">A new array containing the tables in the main document store, or an empty array if none is found.</Abstract></ReturnValue>
+			<Anchor>//api/name/tables</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/allTables</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the tables found in the main and attached document stores.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/tables</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/temporaryTables</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSDictionary *)allTables</Declaration>
+			
+			<ReturnValue><Abstract type="html">A new array containing the tables in the main and attached document stores, or an empty array if none is found.
+@note
+The dictionary key is the document store name and its value, an array of the tables associated with that document store.</Abstract></ReturnValue>
+			<Anchor>//api/name/allTables</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/columnsForTable:</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the columns for a given table.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)columnsForTable:(NSString *)theTable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theTable</Name>
+					<Abstract type="html">is the name of the table.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new array containing the columns for a given table, or an empty array if none is found.</Abstract></ReturnValue>
+			<Anchor>//api/name/columnsForTable:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/temporaryTables</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the temporary tables found in the main document store.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/tables</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/allTables</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSArray *)temporaryTables</Declaration>
+			
+			<ReturnValue><Abstract type="html">A new array containing the temporary tables in the main document store, or an empty array if none is found.</Abstract></ReturnValue>
+			<Anchor>//api/name/temporaryTables</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/datatypesForTable:</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the datatypes for a given table.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)datatypesForTable:(NSString *)theTable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theTable</Name>
+					<Abstract type="html">is the name of the table.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new array containing the datatypes for a given table, or an empty array if none is found.</Abstract></ReturnValue>
+			<Anchor>//api/name/datatypesForTable:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/dropTable:</TokenIdentifier>
+			<Abstract type="html">Removes the table from the document store.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)dropTable:(NSString *)theTable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theTable</Name>
+					<Abstract type="html">is the name of the table.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/dropTable:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/createIndexForColumn:table:isUnique:</TokenIdentifier>
+			<Abstract type="html">Creates an index.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/dropIndex:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)createIndexForColumn:(NSString *)theColumn table:(NSString *)theTable isUnique:(BOOL)isUnique</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theColumn</Name>
+					<Abstract type="html">is the name of the column.</Abstract>
+				</Parameter><Parameter>
+					<Name>theTable</Name>
+					<Abstract type="html">is the name of the table.</Abstract>
+				</Parameter><Parameter>
+					<Name>isUnique</Name>
+					<Abstract type="html">whether the index should be unique or allow duplicates.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/createIndexForColumn:table:isUnique:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/indexes</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the indexes found in the main document store.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)indexes</Declaration>
+			
+			<ReturnValue><Abstract type="html">A new array containing the indexes in the main document store, or an empty array if none is found.</Abstract></ReturnValue>
+			<Anchor>//api/name/indexes</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/indexedColumnsForTable:</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the indexes found for a given table.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)indexedColumnsForTable:(NSString *)theTable</Declaration>
+			
+			<ReturnValue><Abstract type="html">A new array containing the indexes for a given table, or an empty array if none is found.</Abstract></ReturnValue>
+			<Anchor>//api/name/indexedColumnsForTable:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/dropIndex:</TokenIdentifier>
+			<Abstract type="html">Removes an index.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (void)dropIndex:(NSString *)theIndex</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theIndex</Name>
+					<Abstract type="html">is the name of the index to be removed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/dropIndex:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/compact</TokenIdentifier>
+			<Abstract type="html">Compacts the database, attempting to reclaim unused space.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)compact</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/compact</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/integrityCheck</TokenIdentifier>
+			<Abstract type="html">Performs an integrity check on the database.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)integrityCheck</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/integrityCheck</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/executeSQL:</TokenIdentifier>
+			<Abstract type="html">Executes a SQL statement.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/NSFNanoSearch</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSFNanoResult *)executeSQL:(NSString *)theSQLStatement</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theSQLStatement</Name>
+					<Abstract type="html">is the SQL statement to be executed. Must not be nil or an empty string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a NSFNanoResult.
+@throws NSFUnexpectedParameterException is thrown if the statement is nil or an empty string.
+@attention Check NSFNanoResult&apos;s error property to find out if there was a problem executing the statement.</Abstract></ReturnValue>
+			<Anchor>//api/name/executeSQL:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/maxRowUIDForTable:</TokenIdentifier>
+			<Abstract type="html">Returns the largest ROWUID for a given table.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (long long)maxRowUIDForTable:(NSString *)theTable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theTable</Name>
+					<Abstract type="html">is the table from which to obtain the largest ROWUID. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The largest ROWUID in use.
+@throws NSFUnexpectedParameterException is thrown if the table is nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/maxRowUIDForTable:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/encodeDataToBase64:</TokenIdentifier>
+			<Abstract type="html">Returns a string containing the base 64 representation of a data element.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)encodeDataToBase64:(NSData *)theData</Declaration>
+			
+			<ReturnValue><Abstract type="html">A string encoded in base 64 format.</Abstract></ReturnValue>
+			<Anchor>//api/name/encodeDataToBase64:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/decodeDataFromBase64:</TokenIdentifier>
+			<Abstract type="html">Returns a data element containing from a base 64 formatted string.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>+ (NSData *)decodeDataFromBase64:(NSString *)theEncodedData</Declaration>
+			
+			<ReturnValue><Abstract type="html">A data element.</Abstract></ReturnValue>
+			<Anchor>//api/name/decodeDataFromBase64:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/stringWithUUID</TokenIdentifier>
+			<Abstract type="html">Returns a UUID string</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)stringWithUUID</Declaration>
+			
+			<ReturnValue><Abstract type="html">A string containing a representation of a UUID.</Abstract></ReturnValue>
+			<Anchor>//api/name/stringWithUUID</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/description</TokenIdentifier>
+			<Abstract type="html">Returns a string representation of the engine.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/JSONDescription</TokenIdentifier>
+			<Abstract type="html">Returns a JSON representation of the engine.</Abstract>
+			<DeclaredIn>NSFNanoEngine.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)JSONDescription</Declaration>
+			
+			
+			<Anchor>//api/name/JSONDescription</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/dictionaryDescription</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSFOrderedDictionary *)dictionaryDescription</Declaration>
+			
+			
+			<Anchor>//api/name/dictionaryDescription</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/NSFP_sharedROWIDKeywords</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSArray *)NSFP_sharedROWIDKeywords</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_sharedROWIDKeywords</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_cacheMethodToString</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)NSFP_cacheMethodToString</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_cacheMethodToString</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_nestedDescriptionWithPrefixedSpace:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)NSFP_nestedDescriptionWithPrefixedSpace:(NSString *)prefixedSpace</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_nestedDescriptionWithPrefixedSpace:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/_plistToDictionary:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDictionary *)_plistToDictionary:(NSString *)aPlist</Declaration>
+			
+			
+			<Anchor>//api/name/_plistToDictionary:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_datatypeForTable:column:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSFNanoDatatype)NSFP_datatypeForTable:(NSString *)table column:(NSString *)column</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_datatypeForTable:column:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/NSFP_decodeQuantum:andSource:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (void)NSFP_decodeQuantum:(unsigned char *)dest andSource:(const char *)src</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_decodeQuantum:andSource:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_setFullColumnNamesEnabled</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)NSFP_setFullColumnNamesEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_setFullColumnNamesEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_flattenAllTables</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)NSFP_flattenAllTables</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_flattenAllTables</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_prepareSQLite3Statement:theSQLStatement:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSInteger)NSFP_prepareSQLite3Statement:(sqlite3_stmt **)aStatement theSQLStatement:(NSString *)aSQLQuery</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_prepareSQLite3Statement:theSQLStatement:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_datatypeForColumn:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSFNanoDatatype)NSFP_datatypeForColumn:(NSString *)tableAndColumn</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_datatypeForColumn:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoEngine/NSFP_stripBitsFromExtendedResultCode:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (int)NSFP_stripBitsFromExtendedResultCode:(int)extendedResult</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_stripBitsFromExtendedResultCode:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_beginTransactionMode:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)NSFP_beginTransactionMode:(NSString *)theSQLStatement</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_beginTransactionMode:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_createTable:withColumns:datatypes:isTemporary:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)NSFP_createTable:(NSString *)table withColumns:(NSArray *)tableColumns datatypes:(NSArray *)tableDatatypes isTemporary:(BOOL)isTemporaryFlag</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_createTable:withColumns:datatypes:isTemporary:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_removeColumn:fromTable:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)NSFP_removeColumn:(NSString *)column fromTable:(NSString *)table</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_removeColumn:fromTable:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_rebuildDatatypeCache</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)NSFP_rebuildDatatypeCache</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_rebuildDatatypeCache</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_insertStringValues:forColumns:table:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)NSFP_insertStringValues:(NSArray *)values forColumns:(NSArray *)columns table:(NSString *)table</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_insertStringValues:forColumns:table:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_sqlString:appendingTags:quoteTags:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)NSFP_sqlString:(NSMutableString *)theSQLStatement appendingTags:(NSArray *)tags quoteTags:(BOOL)flag</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_sqlString:appendingTags:quoteTags:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_sqlString:appendingTags:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)NSFP_sqlString:(NSMutableString *)theSQLStatement appendingTags:(NSArray *)columns</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_sqlString:appendingTags:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_sqlString:forTable:withColumns:datatypes:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)NSFP_sqlString:(NSMutableString *)theSQLStatement forTable:(NSString *)table withColumns:(NSArray *)columns datatypes:(NSArray *)datatypes</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_sqlString:forTable:withColumns:datatypes:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_ROWIDPresenceLocation:datatypes:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSInteger)NSFP_ROWIDPresenceLocation:(NSArray *)tableColumns datatypes:(NSArray *)datatypes</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_ROWIDPresenceLocation:datatypes:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_isColumnROWIDAlias:forTable:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)NSFP_isColumnROWIDAlias:(NSString *)column forTable:(NSString *)table</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_isColumnROWIDAlias:forTable:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_prefixWithDotDelimiter:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)NSFP_prefixWithDotDelimiter:(NSString *)tableAndColumn</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_prefixWithDotDelimiter:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_suffixWithDotDelimiter:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)NSFP_suffixWithDotDelimiter:(NSString *)tableAndColumn</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_suffixWithDotDelimiter:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_installCommitCallback</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)NSFP_installCommitCallback</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_installCommitCallback</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoEngine/NSFP_uninstallCommitCallback</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoEngine_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)NSFP_uninstallCommitCallback</Declaration>
+			
+			
+			<Anchor>//api/name/NSFP_uninstallCommitCallback</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NSFNanoResult.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NSFNanoResult</TokenIdentifier>
+			<Abstract type="html">@class NSFNanoResult
+* A unit that describes the result of a search.
+*
+* @note
+* The NanoResult is the object representation of a SQL result set. From it, you can obtain the number of rows, the column names and their
+* associated values.
+*
+* @par
+* After obtaining a NanoResult, it&apos;s always a good idea to check whether the &lt;i&gt;error&lt;/i&gt; property is nil. If so, the result can be assumed to be
+* correct. Otherwise, &lt;i&gt;error&lt;/i&gt; will point to the main cause of failure.
+*
+* @details &lt;b&gt;Example:&lt;/b&gt;
+@code
+// Instantiate a NanoStore and open it
+NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/setNumberOfRows:</TokenIdentifier>
+			<Abstract type="html">* Number of rows contained in the result set.</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) NSUInteger numberOfRows</Declaration>
+			
+			
+			<Anchor>//api/name/numberOfRows</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoResult/numberOfRows</TokenIdentifier>
+			<Abstract type="html">* Number of rows contained in the result set.</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) NSUInteger numberOfRows</Declaration>
+			
+			
+			<Anchor>//api/name/numberOfRows</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/setError:</TokenIdentifier>
+			<Abstract type="html">* A reference to the error encountered while processing the request, otherwise nil if the request was successful.</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSError *error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoResult/error</TokenIdentifier>
+			<Abstract type="html">* A reference to the error encountered while processing the request, otherwise nil if the request was successful.</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSError *error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/columns</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the columns.</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)columns</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array with the columns retrieved from the result set.</Abstract></ReturnValue>
+			<Anchor>//api/name/columns</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/valueAtIndex:forColumn:</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the values for a given column.</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)valueAtIndex:(NSUInteger)theIndex forColumn:(NSString *)theColumn</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theIndex</Name>
+					<Abstract type="html">is the index of the value in the result set.</Abstract>
+				</Parameter><Parameter>
+					<Name>theColumn</Name>
+					<Abstract type="html">is the name of the column in the result set.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array with the values associated with a given column.
+@throws NSRangeException is thrown if the index is out of bounds.</Abstract></ReturnValue>
+			<Anchor>//api/name/valueAtIndex:forColumn:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/valuesForColumn:</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the values for a given column.</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)valuesForColumn:(NSString *)theColumn</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theColumn</Name>
+					<Abstract type="html">is the name of the column in the result set.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array with the values associated with a given column.</Abstract></ReturnValue>
+			<Anchor>//api/name/valuesForColumn:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/firstValue</TokenIdentifier>
+			<Abstract type="html">Returns the first value.</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)firstValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the first element from the result set.</Abstract></ReturnValue>
+			<Anchor>//api/name/firstValue</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/writeToFile:</TokenIdentifier>
+			<Abstract type="html">Saves the result to a file.</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>			
+			
+			<Declaration>- (void)writeToFile:(NSString *)thePath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>thePath</Name>
+					<Abstract type="html">is the location where the result will be saved to a file.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/writeToFile:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/description</TokenIdentifier>
+			<Abstract type="html">Returns a string representation of the result.</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/JSONDescription</TokenIdentifier>
+			<Abstract type="html">Returns a JSON representation of the result.</Abstract>
+			<DeclaredIn>NSFNanoResult.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)JSONDescription</Declaration>
+			
+			
+			<Anchor>//api/name/JSONDescription</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoResult/_resultWithDictionary:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoResult_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSFNanoResult *)_resultWithDictionary:(NSDictionary *)results</Declaration>
+			
+			
+			<Anchor>//api/name/_resultWithDictionary:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoResult/_resultWithError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoResult_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSFNanoResult *)_resultWithError:(NSError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/_resultWithError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/_initWithDictionary:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoResult_Private.h</DeclaredIn>			
+			
+			<Declaration>- (id)_initWithDictionary:(NSDictionary *)results</Declaration>
+			
+			
+			<Anchor>//api/name/_initWithDictionary:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/_initWithError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoResult_Private.h</DeclaredIn>			
+			
+			<Declaration>- (id)_initWithError:(NSError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/_initWithError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/_setError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoResult_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)_setError:(NSError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/_setError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/_reset</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoResult_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)_reset</Declaration>
+			
+			
+			<Anchor>//api/name/_reset</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoResult/_calculateNumberOfRows</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoResult_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)_calculateNumberOfRows</Declaration>
+			
+			
+			<Anchor>//api/name/_calculateNumberOfRows</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

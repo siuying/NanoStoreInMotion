@@ -33,7 +33,7 @@ Motion::Project::App.setup do |app|
   
   # Add the pod NanoStore to your project
   app.pods do
-    pod 'NanoStore', '~> 2.5.3'
+    pod 'NanoStore', '~> 2.5.7'
   end
 end
 ```

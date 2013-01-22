@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/NSFNanoObjectProtocol.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/NSFNanoObjectProtocol</TokenIdentifier>
+			<Abstract type="html">@protocol NSFNanoObjectProtocol
+A protocol declaring the interface that objects interfacing with NanoStore must implement.</Abstract>
+			<DeclaredIn>NSFNanoObjectProtocol.h</DeclaredIn>
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSFNanoObjectProtocol/initNanoObjectFromDictionaryRepresentation:forKey:store:</TokenIdentifier>
+			<Abstract type="html">* Initializes a newly allocated object containing a given key and value associated with a document store.
+* @param theDictionary the information associated with the object.
+* @param aKey the key associated with the information.
+* @param theStore the document store where the object is stored.
+* @return An initialized object upon success, nil otherwise.
+* @details &lt;b&gt;Example:&lt;/b&gt;
+@code
+- (id)initNanoObjectFromDictionaryRepresentation:(NSDictionary )aDictionary forKey:(NSString )aKey store:(NSFNanoStore *)aStore
+{
+    if (self = [self init]) {
+      info = [aDictionary retain];
+      key = [aKey copy];
+    }</Abstract>
+			<DeclaredIn>NSFNanoObjectProtocol.h</DeclaredIn>			
+			
+			<Declaration>- (id)initNanoObjectFromDictionaryRepresentation:(NSDictionary *)theDictionary forKey:(NSString *)aKey store:(NSFNanoStore *)theStore</Declaration>
+			
+			
+			<Anchor>//api/name/initNanoObjectFromDictionaryRepresentation:forKey:store:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSFNanoObjectProtocol/nanoObjectDictionaryRepresentation</TokenIdentifier>
+			<Abstract type="html">Returns a dictionary that contains the information stored in the object.</Abstract>
+			<DeclaredIn>NSFNanoObjectProtocol.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intfm/NSFNanoObjectProtocol/nanoObjectKey</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSDictionary *)nanoObjectDictionaryRepresentation</Declaration>
+			
+			
+			<Anchor>//api/name/nanoObjectDictionaryRepresentation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSFNanoObjectProtocol/nanoObjectKey</TokenIdentifier>
+			<Abstract type="html">Returns the key associated with the object.
+@note
+The class NSFNanoEngine contains a convenience method for this purpose: \ref NSFNanoEngine::stringWithUUID &quot;+(NSString*)stringWithUUID&quot;</Abstract>
+			<DeclaredIn>NSFNanoObjectProtocol.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intfm/NSFNanoObjectProtocol/nanoObjectDictionaryRepresentation</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSString *)nanoObjectKey</Declaration>
+			
+			
+			<Anchor>//api/name/nanoObjectKey</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSFNanoObjectProtocol/rootObject</TokenIdentifier>
+			<Abstract type="html">* Returns a reference to the object holding the private data or information that will be used for sorting.
+* Most custom objects will return &lt;i&gt;self&lt;/i&gt;, as is the case for NSFNanoBag. Since we can sort a bag by &lt;i&gt;name&lt;/i&gt;, &lt;i&gt;key&lt;/i&gt; or &lt;i&gt;hasUnsavedChanges&lt;/i&gt;,
+* NanoStore requires a hint to find the attribute. This hint is the root object, which KVC uses to perform the sort. Taking NSFNanoBag as an example:
+@code
+@interface NSFNanoBag : NSObject NSFNanoObjectProtocol, NSCopying&gt;
+{
+    NSFNanoStore            *store;
+    NSString                *name;
+    NSString                *key;
+    BOOL                    hasUnsavedChanges;
+}
+@endcode
+* The implementation of &lt;i&gt;rootObject&lt;/i&gt; would look like so:
+@code
+- (id)rootObject
+{
+    return self;
+}
+@endcode
+* Other objects may point directly to the collection that holds the information. NSFNanoObject stores all its data in the &lt;i&gt;info&lt;/i&gt; dictionary, so the
+* implementation looks like this:
+@code
+- (id)rootObject
+{
+    return info;
+}
+@endcode
+* Assuming that &lt;i&gt;info&lt;/i&gt; contains a key named &lt;i&gt;City&lt;/i&gt;, we would specify a NSFNanoSortDescriptor which would sort the cities like so:
+@code
+NSFNanoSortDescriptor *sortedCities = [[NSFNanoSortDescriptor alloc]initWithAttribute:@&quot;City&quot; ascending:YES];
+@endcode
+* If we had returned &lt;i&gt;self&lt;/i&gt; as the root object, the sort descriptor would have to be written like so:
+@code
+NSFNanoSortDescriptor *sortedCities = [[NSFNanoSortDescriptor alloc]initWithAttribute:@&quot;info.City&quot; ascending:YES];
+@endcode</Abstract>
+			<DeclaredIn>NSFNanoObjectProtocol.h</DeclaredIn>			
+			
+			<Declaration>- (id)rootObject</Declaration>
+			
+			
+			<Anchor>//api/name/rootObject</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

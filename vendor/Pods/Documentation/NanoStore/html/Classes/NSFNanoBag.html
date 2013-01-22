@@ -1,0 +1,2266 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSFNanoBag Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">NanoStore 2.5.7 </a></h1>
+				<a id="developerHome" href="../index.html">Tito Ciuro</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSFNanoBag Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/hasUnsavedChanges">&nbsp;&nbsp;&nbsp;&nbsp;hasUnsavedChanges</option>
+	
+	<option value="//api/name/key">&nbsp;&nbsp;&nbsp;&nbsp;key</option>
+	
+	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
+	
+	<option value="//api/name/removedObjects">&nbsp;&nbsp;&nbsp;&nbsp;removedObjects</option>
+	
+	<option value="//api/name/savedObjects">&nbsp;&nbsp;&nbsp;&nbsp;savedObjects</option>
+	
+	<option value="//api/name/store">&nbsp;&nbsp;&nbsp;&nbsp;store</option>
+	
+	<option value="//api/name/unsavedObjects">&nbsp;&nbsp;&nbsp;&nbsp;unsavedObjects</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/bag">&nbsp;&nbsp;&nbsp;&nbsp;+ bag</option>
+	
+	<option value="//api/name/bagWithObjects:">&nbsp;&nbsp;&nbsp;&nbsp;+ bagWithObjects:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/JSONDescription">&nbsp;&nbsp;&nbsp;&nbsp;- JSONDescription</option>
+	
+	<option value="//api/name/_inflateObjectsWithKeys:">&nbsp;&nbsp;&nbsp;&nbsp;- _inflateObjectsWithKeys:</option>
+	
+	<option value="//api/name/_saveInStore:error:">&nbsp;&nbsp;&nbsp;&nbsp;- _saveInStore:error:</option>
+	
+	<option value="//api/name/_setStore:">&nbsp;&nbsp;&nbsp;&nbsp;- _setStore:</option>
+	
+	<option value="//api/name/addObject:error:">&nbsp;&nbsp;&nbsp;&nbsp;- addObject:error:</option>
+	
+	<option value="//api/name/addObjectsFromArray:error:">&nbsp;&nbsp;&nbsp;&nbsp;- addObjectsFromArray:error:</option>
+	
+	<option value="//api/name/count">&nbsp;&nbsp;&nbsp;&nbsp;- count</option>
+	
+	<option value="//api/name/deflateBag">&nbsp;&nbsp;&nbsp;&nbsp;- deflateBag</option>
+	
+	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;- description</option>
+	
+	<option value="//api/name/dictionaryRepresentation">&nbsp;&nbsp;&nbsp;&nbsp;- dictionaryRepresentation</option>
+	
+	<option value="//api/name/inflateBag">&nbsp;&nbsp;&nbsp;&nbsp;- inflateBag</option>
+	
+	<option value="//api/name/initBagWithName:andObjects:">&nbsp;&nbsp;&nbsp;&nbsp;- initBagWithName:andObjects:</option>
+	
+	<option value="//api/name/isEqualToNanoBag:">&nbsp;&nbsp;&nbsp;&nbsp;- isEqualToNanoBag:</option>
+	
+	<option value="//api/name/reloadBagWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- reloadBagWithError:</option>
+	
+	<option value="//api/name/removeAllObjects">&nbsp;&nbsp;&nbsp;&nbsp;- removeAllObjects</option>
+	
+	<option value="//api/name/removeObject:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObject:</option>
+	
+	<option value="//api/name/removeObjectWithKey:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObjectWithKey:</option>
+	
+	<option value="//api/name/removeObjectsInArray:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObjectsInArray:</option>
+	
+	<option value="//api/name/removeObjectsWithKeysInArray:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObjectsWithKeysInArray:</option>
+	
+	<option value="//api/name/saveAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- saveAndReturnError:</option>
+	
+	<option value="//api/name/undoChangesWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- undoChangesWithError:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating and Initializing Bags">Creating and Initializing Bags</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Adding and Removing Objects">Adding and Removing Objects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Saving, Reloading and Undoing">Saving, Reloading and Undoing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Inflating and Deflating">Inflating and Deflating</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Miscellaneous">Miscellaneous</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Private Methods">Private Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasUnsavedChanges">hasUnsavedChanges</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/key">key</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removedObjects">removedObjects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/savedObjects">savedObjects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/store">store</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsavedObjects">unsavedObjects</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bag">bag</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bagWithObjects:">bagWithObjects:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/JSONDescription">JSONDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_inflateObjectsWithKeys:">_inflateObjectsWithKeys:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_saveInStore:error:">_saveInStore:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_setStore:">_setStore:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addObject:error:">addObject:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addObjectsFromArray:error:">addObjectsFromArray:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/count">count</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deflateBag">deflateBag</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dictionaryRepresentation">dictionaryRepresentation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/inflateBag">inflateBag</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initBagWithName:andObjects:">initBagWithName:andObjects:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isEqualToNanoBag:">isEqualToNanoBag:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reloadBagWithError:">reloadBagWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllObjects">removeAllObjects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObject:">removeObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObjectWithKey:">removeObjectWithKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObjectsInArray:">removeObjectsInArray:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObjectsWithKeysInArray:">removeObjectsWithKeysInArray:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveAndReturnError:">saveAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/undoChangesWithError:">undoChangesWithError:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSFNanoBag Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSFNanoBag Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSCopying<br /><a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a></td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSFNanoBag.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class NSFNanoBag
+* A <a href="#//api/name/bag">bag</a> is a loose collection of objects stored in a document <a href="#//api/name/store">store</a>.
+*
+* @note
+* The objects must conform to the \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink. For your convenience, NanoStore provides you with <a href="../Classes/NSFNanoObject.html">NSFNanoObject</a>, which is the standard
+* way of storing and retrieving objects from/to a <a href="#//api/name/bag">bag</a>.
+*
+* @par
+* It&rsquo;s more efficient to make your storage objects \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant, thus eliminating the need to convert your objects to/from
+* objects of type <a href="../Classes/NSFNanoObject.html">NSFNanoObject</a>.
+*
+* @details <b>Example:</b>
+@code
+// Instantiate a NanoStore and open it
+<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];
+[nanoStore removeAllObjectsFromStoreAndReturnError:nil];</p>
+
+<p>// Add some data to a <a href="#//api/name/bag">bag</a>
+NSFNanoBag <em><a href="#//api/name/bag">bag</a> = <a href="#//api/name/bag">[NSFNanoBag bag]</a>;
+NSDictionary </em>info = &hellip;;
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> <em>obj1 = [NSFNanoObject nanoObjectWithDictionary:info];
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> </em>obj2 = [NSFNanoObject nanoObjectWithDictionary:info];
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> *obj3 = [NSFNanoObject nanoObjectWithDictionary:info];
+[<a href="#//api/name/bag">bag</a> addObjectsFromArray:[NSArray arrayWithObjects:obj1, obj2, obj3, nil] error:nil];</p>
+
+<p>// Add the <a href="#//api/name/bag">bag</a> and its objects to the document <a href="#//api/name/store">store</a>
+[nanoStore addObject:<a href="#//api/name/bag">bag</a> error:nil];</p>
+
+<p>// Obtain the bags from the document <a href="#//api/name/store">store</a>
+NSArray *bags = [nanoStore bags];</p>
+
+<p>// Close the document store
+[nanoStore closeWithError:nil];
+@endcode</p>
+
+<p>\cond</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/store">&nbsp;&nbsp;store</a></code>
+		<span class="tooltip"><ul>
+<li>The store where the <a href="#//api/name/bag">bag</a> is located.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+		<span class="tooltip"><ul>
+<li>The name of the <a href="#//api/name/bag">bag</a>.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/key">&nbsp;&nbsp;key</a></code>
+		<span class="tooltip"><ul>
+<li>The UUID of the <a href="#//api/name/bag">bag</a>.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/savedObjects">&nbsp;&nbsp;savedObjects</a></code>
+		<span class="tooltip"><ul>
+<li>Dictionary of NSString (<a href="#//api/name/key">key</a>) and id<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a> (value).</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsavedObjects">&nbsp;&nbsp;unsavedObjects</a></code>
+		<span class="tooltip"><ul>
+<li>Dictionary of NSString (<a href="#//api/name/key">key</a>) and id<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a> (value).</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removedObjects">&nbsp;&nbsp;removedObjects</a></code>
+		<span class="tooltip"><ul>
+<li>Dictionary of NSString (<a href="#//api/name/key">key</a>) and id<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a> (value).</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasUnsavedChanges">&nbsp;&nbsp;hasUnsavedChanges</a></code>
+		<span class="tooltip"><ul>
+<li>To determine whether the <a href="#//api/name/bag">bag</a> has uncommited changes.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating and Initializing Bags" name="task_Creating and Initializing Bags"></a>
+						<h3 class="subsubtitle task-title">Creating and Initializing Bags</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bag">+&nbsp;bag</a></code>
+		<span class="tooltip"><p>Creates and returns an empty bag.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bagWithObjects:">+&nbsp;bagWithObjects:</a></code>
+		<span class="tooltip"><p>Creates and returns a <a href="#//api/name/bag">bag</a> adding to it the objects contained in the given array.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initBagWithName:andObjects:">&ndash;&nbsp;initBagWithName:andObjects:</a></code>
+		<span class="tooltip"><p>Initializes a newly allocated <a href="#//api/name/bag">bag</a> with the specified <a href="#//api/name/name">name</a> adding to it the objects contained in the given array.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Adding and Removing Objects" name="task_Adding and Removing Objects"></a>
+						<h3 class="subsubtitle task-title">Adding and Removing Objects</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addObject:error:">&ndash;&nbsp;addObject:error:</a></code>
+		<span class="tooltip"><p>Adds an \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object to the <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addObjectsFromArray:error:">&ndash;&nbsp;addObjectsFromArray:error:</a></code>
+		<span class="tooltip"><p>Adds a series of \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant objects to the <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObject:">&ndash;&nbsp;removeObject:</a></code>
+		<span class="tooltip"><p>Removes the specified object from the <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAllObjects">&ndash;&nbsp;removeAllObjects</a></code>
+		<span class="tooltip"><p>Empties the <a href="#//api/name/bag">bag</a> of all its elements.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObjectsInArray:">&ndash;&nbsp;removeObjectsInArray:</a></code>
+		<span class="tooltip"><p>Removes the list of objects from the <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObjectWithKey:">&ndash;&nbsp;removeObjectWithKey:</a></code>
+		<span class="tooltip"><p>Removes the object with a given <a href="#//api/name/key">key</a> from the <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObjectsWithKeysInArray:">&ndash;&nbsp;removeObjectsWithKeysInArray:</a></code>
+		<span class="tooltip"><p>Removes from the <a href="#//api/name/bag">bag</a> the objects specified by elements in a given array.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Saving, Reloading and Undoing" name="task_Saving, Reloading and Undoing"></a>
+						<h3 class="subsubtitle task-title">Saving, Reloading and Undoing</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveAndReturnError:">&ndash;&nbsp;saveAndReturnError:</a></code>
+		<span class="tooltip"><p>Saves the <a href="#//api/name/bag">bag</a> and its contents. Also, saves all the changes made since the last save.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reloadBagWithError:">&ndash;&nbsp;reloadBagWithError:</a></code>
+		<span class="tooltip"><p>Refreshes the <a href="#//api/name/bag">bag</a> to match the contents stored in the document <a href="#//api/name/store">store</a>. The unsaved contents are preserved.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/undoChangesWithError:">&ndash;&nbsp;undoChangesWithError:</a></code>
+		<span class="tooltip"><p>Discards the changes made in the <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Inflating and Deflating" name="task_Inflating and Deflating"></a>
+						<h3 class="subsubtitle task-title">Inflating and Deflating</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/inflateBag">&ndash;&nbsp;inflateBag</a></code>
+		<span class="tooltip"><p>Inflates the <a href="#//api/name/bag">bag</a> by reconstructing the objects flattened with &ndash; (void)<a href="#//api/name/deflateBag">deflateBag</a>;</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deflateBag">&ndash;&nbsp;deflateBag</a></code>
+		<span class="tooltip"><p>Releases memory by &ldquo;flattening&rdquo; the objects from the <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Miscellaneous" name="task_Miscellaneous"></a>
+						<h3 class="subsubtitle task-title">Miscellaneous</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/count">&ndash;&nbsp;count</a></code>
+		<span class="tooltip"><p>Returns the number of objects currently in the <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isEqualToNanoBag:">&ndash;&nbsp;isEqualToNanoBag:</a></code>
+		<span class="tooltip"><p>Compares the receiving <a href="#//api/name/bag">bag</a> to another <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dictionaryRepresentation">&ndash;&nbsp;dictionaryRepresentation</a></code>
+		<span class="tooltip"><p>Returns a dictionary that contains the information stored in the <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+		<span class="tooltip"><p>Returns a string representation of the <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/JSONDescription">&ndash;&nbsp;JSONDescription</a></code>
+		<span class="tooltip"><p>Returns a JSON representation of the <a href="#//api/name/bag">bag</a>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Private Methods" name="task_Private Methods"></a>
+						<h3 class="subsubtitle task-title">Private Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_setStore:">&ndash;&nbsp;_setStore:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_saveInStore:error:">&ndash;&nbsp;_saveInStore:error:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_inflateObjectsWithKeys:">&ndash;&nbsp;_inflateObjectsWithKeys:</a></code>
+		
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/hasUnsavedChanges" title="hasUnsavedChanges"></a>
+	<h3 class="subsubtitle method-title">hasUnsavedChanges</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>To determine whether the <a href="#//api/name/bag">bag</a> has uncommited changes.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) BOOL hasUnsavedChanges</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>To determine whether the <a href="#//api/name/bag">bag</a> has uncommited changes.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/key" title="key"></a>
+	<h3 class="subsubtitle method-title">key</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The UUID of the <a href="#//api/name/bag">bag</a>.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *key</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The UUID of the <a href="#//api/name/bag">bag</a>.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="subsubtitle method-title">name</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The name of the <a href="#//api/name/bag">bag</a>.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readwrite) NSString *name</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The name of the <a href="#//api/name/bag">bag</a>.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removedObjects" title="removedObjects"></a>
+	<h3 class="subsubtitle method-title">removedObjects</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>Dictionary of NSString (<a href="#//api/name/key">key</a>) and id<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a> (value).</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *removedObjects</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>Dictionary of NSString (<a href="#//api/name/key">key</a>) and id<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a> (value).</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/savedObjects" title="savedObjects"></a>
+	<h3 class="subsubtitle method-title">savedObjects</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>Dictionary of NSString (<a href="#//api/name/key">key</a>) and id<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a> (value).</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *savedObjects</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>Dictionary of NSString (<a href="#//api/name/key">key</a>) and id<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a> (value).</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/store" title="store"></a>
+	<h3 class="subsubtitle method-title">store</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The store where the <a href="#//api/name/bag">bag</a> is located.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak, readonly) NSFNanoStore *store</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The store where the <a href="#//api/name/bag">bag</a> is located.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsavedObjects" title="unsavedObjects"></a>
+	<h3 class="subsubtitle method-title">unsavedObjects</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>Dictionary of NSString (<a href="#//api/name/key">key</a>) and id<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a> (value).</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *unsavedObjects</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>Dictionary of NSString (<a href="#//api/name/key">key</a>) and id<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a> (value).</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/bag" title="bag"></a>
+	<h3 class="subsubtitle method-title">bag</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns an empty bag.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoBag *)bag</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An empty bag upon success, nil otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns an empty bag.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/bagWithObjects:" title="bagWithObjects:"></a>
+	<h3 class="subsubtitle method-title">bagWithObjects:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a <a href="#//api/name/bag">bag</a> adding to it the objects contained in the given array.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoBag *)bagWithObjects:(NSArray *)<em>theObjects</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjects</em></dt>
+			<dd><p>an array of objects conforming to the \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <a href="#//api/name/bag">bag</a> only containing the objects with conform to the \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink upon success, nil otherwise.
+@throws NSFUnexpectedParameterException is thrown if theObjects is nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a <a href="#//api/name/bag">bag</a> adding to it the objects contained in the given array.</p><div class="warning"><p><strong>Warning:</strong> If theObjects is nil, an NSFUnexpectedParameterException will be thrown. Use + <a href="#//api/name/bag">bag</a>; instead.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/JSONDescription" title="JSONDescription"></a>
+	<h3 class="subsubtitle method-title">JSONDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a JSON representation of the <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)JSONDescription</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a JSON representation of the <a href="#//api/name/bag">bag</a>.</p><div class="note"><p><strong>Note:</strong> Check properties <a href="#//api/name/savedObjects">savedObjects</a>, <a href="#//api/name/unsavedObjects">unsavedObjects</a> and <a href="#//api/name/removedObjects">removedObjects</a> to find out the current state of the <a href="#//api/name/bag">bag</a>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_inflateObjectsWithKeys:" title="_inflateObjectsWithKeys:"></a>
+	<h3 class="subsubtitle method-title">_inflateObjectsWithKeys:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)_inflateObjectsWithKeys:(NSArray *)<em>someKeys</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_saveInStore:error:" title="_saveInStore:error:"></a>
+	<h3 class="subsubtitle method-title">_saveInStore:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)_saveInStore:(NSFNanoStore *)<em>someStore</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_setStore:" title="_setStore:"></a>
+	<h3 class="subsubtitle method-title">_setStore:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)_setStore:(NSFNanoStore *)<em>aStore</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addObject:error:" title="addObject:error:"></a>
+	<h3 class="subsubtitle method-title">addObject:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds an \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object to the <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)addObject:(id&lt;NSFNanoObjectProtocol&gt;)<em>theObject</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObject</em></dt>
+			<dd><p>is added to the <a href="#//api/name/bag">bag</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds an \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object to the <a href="#//api/name/bag">bag</a>.</p><div class="warning"><p><strong>Warning:</strong> This value cannot be nil and it must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.
+@throws NSFNonConformingNanoObjectProtocolException is thrown if the object is non-\link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink compliant.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/addObjectsFromArray:error:">&ndash; addObjectsFromArray:error:</a> &ndash; (BOOL)addObjectsFromArray:(NSArray *)theObjects error:(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addObjectsFromArray:error:" title="addObjectsFromArray:error:"></a>
+	<h3 class="subsubtitle method-title">addObjectsFromArray:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a series of \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant objects to the <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)addObjectsFromArray:(NSArray *)<em>theObjects</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjects</em></dt>
+			<dd><p>is an array of objects to be added to the <a href="#//api/name/bag">bag</a>. The objects must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a series of \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant objects to the <a href="#//api/name/bag">bag</a>.</p><div class="warning"><p><strong>Warning:</strong> The objects of the array must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.
+@throws NSFNonConformingNanoObjectProtocolException is thrown if the object is non-\link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink compliant.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/addObject:error:">&ndash; addObject:error:</a> &ndash; (BOOL)addObject:(id &lt;<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>>)theObject error:(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/count" title="count"></a>
+	<h3 class="subsubtitle method-title">count</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of objects currently in the <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)count</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of objects currently in the <a href="#//api/name/bag">bag</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the number of objects currently in the <a href="#//api/name/bag">bag</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deflateBag" title="deflateBag"></a>
+	<h3 class="subsubtitle method-title">deflateBag</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Releases memory by &ldquo;flattening&rdquo; the objects from the <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deflateBag</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Releases memory by &ldquo;flattening&rdquo; the objects from the <a href="#//api/name/bag">bag</a>.</p><div class="note"><p><strong>Note:</strong> Check properties <a href="#//api/name/savedObjects">savedObjects</a>, <a href="#//api/name/unsavedObjects">unsavedObjects</a> and <a href="#//api/name/removedObjects">removedObjects</a> to find out the current state of the <a href="#//api/name/bag">bag</a>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/inflateBag">&ndash; inflateBag</a> &ndash; (void)<a href="#//api/name/inflateBag">&ndash; inflateBag</a> \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/description" title="description"></a>
+	<h3 class="subsubtitle method-title">description</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representation of the <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a string representation of the <a href="#//api/name/bag">bag</a>.</p><div class="note"><p><strong>Note:</strong> Check properties <a href="#//api/name/savedObjects">savedObjects</a>, <a href="#//api/name/unsavedObjects">unsavedObjects</a> and <a href="#//api/name/removedObjects">removedObjects</a> to find out the current state of the <a href="#//api/name/bag">bag</a>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dictionaryRepresentation" title="dictionaryRepresentation"></a>
+	<h3 class="subsubtitle method-title">dictionaryRepresentation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a dictionary that contains the information stored in the <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)dictionaryRepresentation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a dictionary that contains the information stored in the <a href="#//api/name/bag">bag</a>.</p><div class="note"><p><strong>Note:</strong> Check properties <a href="#//api/name/savedObjects">savedObjects</a>, <a href="#//api/name/unsavedObjects">unsavedObjects</a> and <a href="#//api/name/removedObjects">removedObjects</a> to find out the current state of the <a href="#//api/name/bag">bag</a>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/description">&ndash; description</a> &ndash; (NSString *)<a href="#//api/name/description">&ndash; description</a> \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/inflateBag" title="inflateBag"></a>
+	<h3 class="subsubtitle method-title">inflateBag</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inflates the <a href="#//api/name/bag">bag</a> by reconstructing the objects flattened with &ndash; (void)<a href="#//api/name/deflateBag">deflateBag</a>;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)inflateBag</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inflates the <a href="#//api/name/bag">bag</a> by reconstructing the objects flattened with &ndash; (void)<a href="#//api/name/deflateBag">deflateBag</a>;</p><div class="note"><p><strong>Note:</strong> Check properties <a href="#//api/name/savedObjects">savedObjects</a>, <a href="#//api/name/unsavedObjects">unsavedObjects</a> and <a href="#//api/name/removedObjects">removedObjects</a> to find out the current state of the <a href="#//api/name/bag">bag</a>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/deflateBag">&ndash; deflateBag</a> &ndash; (void)<a href="#//api/name/deflateBag">&ndash; deflateBag</a> \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initBagWithName:andObjects:" title="initBagWithName:andObjects:"></a>
+	<h3 class="subsubtitle method-title">initBagWithName:andObjects:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a newly allocated <a href="#//api/name/bag">bag</a> with the specified <a href="#//api/name/name">name</a> adding to it the objects contained in the given array.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initBagWithName:(NSString *)<em>theName</em> andObjects:(NSArray *)<em>someObjects</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theName</em></dt>
+			<dd><p>the <a href="#//api/name/name">name</a> of the <a href="#//api/name/bag">bag</a>. Can be nil.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjects</em></dt>
+			<dd><p>is a required array of objects conforming to the \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <a href="#//api/name/bag">bag</a> only containing the objects with conform to the \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink upon success, nil otherwise.
+@throws NSFUnexpectedParameterException is thrown if theObjects is nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes a newly allocated <a href="#//api/name/bag">bag</a> with the specified <a href="#//api/name/name">name</a> adding to it the objects contained in the given array.</p><div class="warning"><p><strong>Warning:</strong> If theObjects is nil, an NSFUnexpectedParameterException will be thrown.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/bagWithObjects:">+ bagWithObjects:</a> + (NSFNanoBag<em>)<a href="#//api/name/bagWithObjects:">+ bagWithObjects:</a>(NSArray </em>)theObjects \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isEqualToNanoBag:" title="isEqualToNanoBag:"></a>
+	<h3 class="subsubtitle method-title">isEqualToNanoBag:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Compares the receiving <a href="#//api/name/bag">bag</a> to another <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToNanoBag:(NSFNanoBag *)<em>otherNanoBag</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>otherNanoBag</em></dt>
+			<dd><p>is a <a href="#//api/name/bag">bag</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the contents of otherNanoBag are equal to the contents of the receiving <a href="#//api/name/bag">bag</a>, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Compares the receiving <a href="#//api/name/bag">bag</a> to another <a href="#//api/name/bag">bag</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reloadBagWithError:" title="reloadBagWithError:"></a>
+	<h3 class="subsubtitle method-title">reloadBagWithError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Refreshes the <a href="#//api/name/bag">bag</a> to match the contents stored in the document <a href="#//api/name/store">store</a>. The unsaved contents are preserved.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)reloadBagWithError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Refreshes the <a href="#//api/name/bag">bag</a> to match the contents stored in the document <a href="#//api/name/store">store</a>. The unsaved contents are preserved.</p><div class="note"><p><strong>Note:</strong> Check properties <a href="#//api/name/savedObjects">savedObjects</a>, <a href="#//api/name/unsavedObjects">unsavedObjects</a> and <a href="#//api/name/removedObjects">removedObjects</a> to find out the current state of the <a href="#//api/name/bag">bag</a>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/saveAndReturnError:">&ndash; saveAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/saveAndReturnError:">&ndash; saveAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/undoChangesWithError:">&ndash; undoChangesWithError:</a> &ndash; (BOOL)<a href="#//api/name/undoChangesWithError:">&ndash; undoChangesWithError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeAllObjects" title="removeAllObjects"></a>
+	<h3 class="subsubtitle method-title">removeAllObjects</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Empties the <a href="#//api/name/bag">bag</a> of all its elements.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeAllObjects</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Empties the <a href="#//api/name/bag">bag</a> of all its elements.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeObject:">&ndash; removeObject:</a> &ndash; (void)<a href="#//api/name/removeObject:">&ndash; removeObject:</a>(id &lt;<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>>)theObject \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsInArray:">&ndash; removeObjectsInArray:</a> &ndash; (void)<a href="#//api/name/removeObjectsInArray:">&ndash; removeObjectsInArray:</a>(NSArray *)theObjects \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectWithKey:">&ndash; removeObjectWithKey:</a> &ndash; (void)<a href="#//api/name/removeObjectWithKey:">&ndash; removeObjectWithKey:</a>(NSString *)theObjectKey \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsWithKeysInArray:">&ndash; removeObjectsWithKeysInArray:</a> &ndash; (void)<a href="#//api/name/removeObjectsWithKeysInArray:">&ndash; removeObjectsWithKeysInArray:</a>(NSArray *)theKeys \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObject:" title="removeObject:"></a>
+	<h3 class="subsubtitle method-title">removeObject:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the specified object from the <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeObject:(id&lt;NSFNanoObjectProtocol&gt;)<em>theObject</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObject</em></dt>
+			<dd><p>the object to be removed from the <a href="#//api/name/bag">bag</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes the specified object from the <a href="#//api/name/bag">bag</a>.</p><div class="warning"><p><strong>Warning:</strong> The object must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsInArray:">&ndash; removeObjectsInArray:</a> &ndash; (void)<a href="#//api/name/removeObjectsInArray:">&ndash; removeObjectsInArray:</a>(NSArray *)theObjects \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectWithKey:">&ndash; removeObjectWithKey:</a> &ndash; (void)<a href="#//api/name/removeObjectWithKey:">&ndash; removeObjectWithKey:</a>(NSString *)theObjectKey \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsWithKeysInArray:">&ndash; removeObjectsWithKeysInArray:</a> &ndash; (void)<a href="#//api/name/removeObjectsWithKeysInArray:">&ndash; removeObjectsWithKeysInArray:</a>(NSArray *)theKeys \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeAllObjects">&ndash; removeAllObjects</a> &ndash; (void)<a href="#//api/name/removeAllObjects">&ndash; removeAllObjects</a> \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObjectWithKey:" title="removeObjectWithKey:"></a>
+	<h3 class="subsubtitle method-title">removeObjectWithKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the object with a given <a href="#//api/name/key">key</a> from the <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeObjectWithKey:(NSString *)<em>theObjectKey</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjectKey</em></dt>
+			<dd><p>the <a href="#//api/name/key">key</a> of the object to be removed from the <a href="#//api/name/bag">bag</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes the object with a given <a href="#//api/name/key">key</a> from the <a href="#//api/name/bag">bag</a>.</p><div class="warning"><p><strong>Warning:</strong> The object referenced by theObjectKey must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeObject:">&ndash; removeObject:</a> &ndash; (void)<a href="#//api/name/removeObject:">&ndash; removeObject:</a>(id &lt;<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>>)theObject \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsInArray:">&ndash; removeObjectsInArray:</a> &ndash; (void)<a href="#//api/name/removeObjectsInArray:">&ndash; removeObjectsInArray:</a>(NSArray *)theObjects \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsWithKeysInArray:">&ndash; removeObjectsWithKeysInArray:</a> &ndash; (void)<a href="#//api/name/removeObjectsWithKeysInArray:">&ndash; removeObjectsWithKeysInArray:</a>(NSArray *)theKeys \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeAllObjects">&ndash; removeAllObjects</a> &ndash; (void)<a href="#//api/name/removeAllObjects">&ndash; removeAllObjects</a> \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObjectsInArray:" title="removeObjectsInArray:"></a>
+	<h3 class="subsubtitle method-title">removeObjectsInArray:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the list of objects from the <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeObjectsInArray:(NSArray *)<em>theObjects</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjects</em></dt>
+			<dd><p>the list of objects to be removed from the <a href="#//api/name/bag">bag</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes the list of objects from the <a href="#//api/name/bag">bag</a>.</p><div class="warning"><p><strong>Warning:</strong> The objects of the array must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeObject:">&ndash; removeObject:</a> &ndash; (void)<a href="#//api/name/removeObject:">&ndash; removeObject:</a>(id &lt;<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>>)theObject \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectWithKey:">&ndash; removeObjectWithKey:</a> &ndash; (void)<a href="#//api/name/removeObjectWithKey:">&ndash; removeObjectWithKey:</a>(NSString *)theObjectKey \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsWithKeysInArray:">&ndash; removeObjectsWithKeysInArray:</a> &ndash; (void)<a href="#//api/name/removeObjectsWithKeysInArray:">&ndash; removeObjectsWithKeysInArray:</a>(NSArray *)theKeys \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeAllObjects">&ndash; removeAllObjects</a> &ndash; (void)<a href="#//api/name/removeAllObjects">&ndash; removeAllObjects</a> \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObjectsWithKeysInArray:" title="removeObjectsWithKeysInArray:"></a>
+	<h3 class="subsubtitle method-title">removeObjectsWithKeysInArray:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes from the <a href="#//api/name/bag">bag</a> the objects specified by elements in a given array.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeObjectsWithKeysInArray:(NSArray *)<em>theKeys</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theKeys</em></dt>
+			<dd><p>an array of objects specifying the keys to remove from the <a href="#//api/name/bag">bag</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes from the <a href="#//api/name/bag">bag</a> the objects specified by elements in a given array.</p><div class="warning"><p><strong>Warning:</strong> The objects referenced by theKeys must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeObject:">&ndash; removeObject:</a> &ndash; (void)<a href="#//api/name/removeObject:">&ndash; removeObject:</a>(id &lt;<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>>)theObject \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsInArray:">&ndash; removeObjectsInArray:</a> &ndash; (void)<a href="#//api/name/removeObjectsInArray:">&ndash; removeObjectsInArray:</a>(NSArray *)theObjects \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectWithKey:">&ndash; removeObjectWithKey:</a> &ndash; (void)<a href="#//api/name/removeObjectWithKey:">&ndash; removeObjectWithKey:</a>(NSString *)theObjectKey \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeAllObjects">&ndash; removeAllObjects</a> &ndash; (void)<a href="#//api/name/removeAllObjects">&ndash; removeAllObjects</a> \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveAndReturnError:" title="saveAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">saveAndReturnError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves the <a href="#//api/name/bag">bag</a> and its contents. Also, saves all the changes made since the last save.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)saveAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Saves the <a href="#//api/name/bag">bag</a> and its contents. Also, saves all the changes made since the last save.</p><div class="note"><p><strong>Note:</strong> Check property <a href="#//api/name/hasUnsavedChanges">hasUnsavedChanges</a> to find out whether the <a href="#//api/name/bag">bag</a> has unsaved contents.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/reloadBagWithError:">&ndash; reloadBagWithError:</a> &ndash; (BOOL)<a href="#//api/name/reloadBagWithError:">&ndash; reloadBagWithError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/undoChangesWithError:">&ndash; undoChangesWithError:</a> &ndash; (BOOL)<a href="#//api/name/undoChangesWithError:">&ndash; undoChangesWithError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/undoChangesWithError:" title="undoChangesWithError:"></a>
+	<h3 class="subsubtitle method-title">undoChangesWithError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Discards the changes made in the <a href="#//api/name/bag">bag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)undoChangesWithError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Discards the changes made in the <a href="#//api/name/bag">bag</a>.</p><div class="note"><p><strong>Note:</strong> Check properties <a href="#//api/name/savedObjects">savedObjects</a>, <a href="#//api/name/unsavedObjects">unsavedObjects</a> and <a href="#//api/name/removedObjects">removedObjects</a> to find out the current state of the <a href="#//api/name/bag">bag</a>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/saveAndReturnError:">&ndash; saveAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/saveAndReturnError:">&ndash; saveAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/reloadBagWithError:">&ndash; reloadBagWithError:</a> &ndash; (BOOL)<a href="#//api/name/reloadBagWithError:">&ndash; reloadBagWithError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoBag.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Tito Ciuro. All rights reserved. (Last updated: 2013-01-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

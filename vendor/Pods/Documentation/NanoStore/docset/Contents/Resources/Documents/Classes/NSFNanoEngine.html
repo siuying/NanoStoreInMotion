@@ -1,0 +1,4708 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSFNanoEngine Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">NanoStore 2.5.7 </a></h1>
+				<a id="developerHome" href="../index.html">Tito Ciuro</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSFNanoEngine Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/cacheMethod">&nbsp;&nbsp;&nbsp;&nbsp;cacheMethod</option>
+	
+	<option value="//api/name/path">&nbsp;&nbsp;&nbsp;&nbsp;path</option>
+	
+	<option value="//api/name/sqlite">&nbsp;&nbsp;&nbsp;&nbsp;sqlite</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/NSFEncodingTypeToNSString:">&nbsp;&nbsp;&nbsp;&nbsp;+ NSFEncodingTypeToNSString:</option>
+	
+	<option value="//api/name/NSFP_decodeQuantum:andSource:">&nbsp;&nbsp;&nbsp;&nbsp;+ NSFP_decodeQuantum:andSource:</option>
+	
+	<option value="//api/name/NSFP_sharedROWIDKeywords">&nbsp;&nbsp;&nbsp;&nbsp;+ NSFP_sharedROWIDKeywords</option>
+	
+	<option value="//api/name/NSFP_stripBitsFromExtendedResultCode:">&nbsp;&nbsp;&nbsp;&nbsp;+ NSFP_stripBitsFromExtendedResultCode:</option>
+	
+	<option value="//api/name/NSStringToNSFEncodingType:">&nbsp;&nbsp;&nbsp;&nbsp;+ NSStringToNSFEncodingType:</option>
+	
+	<option value="//api/name/_plistToDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;+ _plistToDictionary:</option>
+	
+	<option value="//api/name/databaseWithPath:">&nbsp;&nbsp;&nbsp;&nbsp;+ databaseWithPath:</option>
+	
+	<option value="//api/name/decodeDataFromBase64:">&nbsp;&nbsp;&nbsp;&nbsp;+ decodeDataFromBase64:</option>
+	
+	<option value="//api/name/encodeDataToBase64:">&nbsp;&nbsp;&nbsp;&nbsp;+ encodeDataToBase64:</option>
+	
+	<option value="//api/name/nanoStoreEngineVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ nanoStoreEngineVersion</option>
+	
+	<option value="//api/name/recommendedCacheSize">&nbsp;&nbsp;&nbsp;&nbsp;+ recommendedCacheSize</option>
+	
+	<option value="//api/name/sharedNanoStoreEngineDatatypes">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedNanoStoreEngineDatatypes</option>
+	
+	<option value="//api/name/sqliteVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ sqliteVersion</option>
+	
+	<option value="//api/name/stringWithUUID">&nbsp;&nbsp;&nbsp;&nbsp;+ stringWithUUID</option>
+	
+	<option value="//api/name/systemPageSize">&nbsp;&nbsp;&nbsp;&nbsp;+ systemPageSize</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/JSONDescription">&nbsp;&nbsp;&nbsp;&nbsp;- JSONDescription</option>
+	
+	<option value="//api/name/NSFP_ROWIDPresenceLocation:datatypes:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_ROWIDPresenceLocation:datatypes:</option>
+	
+	<option value="//api/name/NSFP_beginTransactionMode:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_beginTransactionMode:</option>
+	
+	<option value="//api/name/NSFP_cacheMethodToString">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_cacheMethodToString</option>
+	
+	<option value="//api/name/NSFP_createTable:withColumns:datatypes:isTemporary:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_createTable:withColumns:datatypes:isTemporary:</option>
+	
+	<option value="//api/name/NSFP_datatypeForColumn:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_datatypeForColumn:</option>
+	
+	<option value="//api/name/NSFP_datatypeForTable:column:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_datatypeForTable:column:</option>
+	
+	<option value="//api/name/NSFP_flattenAllTables">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_flattenAllTables</option>
+	
+	<option value="//api/name/NSFP_insertStringValues:forColumns:table:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_insertStringValues:forColumns:table:</option>
+	
+	<option value="//api/name/NSFP_installCommitCallback">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_installCommitCallback</option>
+	
+	<option value="//api/name/NSFP_isColumnROWIDAlias:forTable:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_isColumnROWIDAlias:forTable:</option>
+	
+	<option value="//api/name/NSFP_nestedDescriptionWithPrefixedSpace:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_nestedDescriptionWithPrefixedSpace:</option>
+	
+	<option value="//api/name/NSFP_prefixWithDotDelimiter:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_prefixWithDotDelimiter:</option>
+	
+	<option value="//api/name/NSFP_prepareSQLite3Statement:theSQLStatement:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_prepareSQLite3Statement:theSQLStatement:</option>
+	
+	<option value="//api/name/NSFP_rebuildDatatypeCache">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_rebuildDatatypeCache</option>
+	
+	<option value="//api/name/NSFP_removeColumn:fromTable:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_removeColumn:fromTable:</option>
+	
+	<option value="//api/name/NSFP_setFullColumnNamesEnabled">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_setFullColumnNamesEnabled</option>
+	
+	<option value="//api/name/NSFP_sqlString:appendingTags:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_sqlString:appendingTags:</option>
+	
+	<option value="//api/name/NSFP_sqlString:appendingTags:quoteTags:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_sqlString:appendingTags:quoteTags:</option>
+	
+	<option value="//api/name/NSFP_sqlString:forTable:withColumns:datatypes:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_sqlString:forTable:withColumns:datatypes:</option>
+	
+	<option value="//api/name/NSFP_suffixWithDotDelimiter:">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_suffixWithDotDelimiter:</option>
+	
+	<option value="//api/name/NSFP_uninstallCommitCallback">&nbsp;&nbsp;&nbsp;&nbsp;- NSFP_uninstallCommitCallback</option>
+	
+	<option value="//api/name/allTables">&nbsp;&nbsp;&nbsp;&nbsp;- allTables</option>
+	
+	<option value="//api/name/beginDeferredTransaction">&nbsp;&nbsp;&nbsp;&nbsp;- beginDeferredTransaction</option>
+	
+	<option value="//api/name/beginTransaction">&nbsp;&nbsp;&nbsp;&nbsp;- beginTransaction</option>
+	
+	<option value="//api/name/busyTimeout">&nbsp;&nbsp;&nbsp;&nbsp;- busyTimeout</option>
+	
+	<option value="//api/name/cacheSize">&nbsp;&nbsp;&nbsp;&nbsp;- cacheSize</option>
+	
+	<option value="//api/name/close">&nbsp;&nbsp;&nbsp;&nbsp;- close</option>
+	
+	<option value="//api/name/columnsForTable:">&nbsp;&nbsp;&nbsp;&nbsp;- columnsForTable:</option>
+	
+	<option value="//api/name/commitTransaction">&nbsp;&nbsp;&nbsp;&nbsp;- commitTransaction</option>
+	
+	<option value="//api/name/compact">&nbsp;&nbsp;&nbsp;&nbsp;- compact</option>
+	
+	<option value="//api/name/createIndexForColumn:table:isUnique:">&nbsp;&nbsp;&nbsp;&nbsp;- createIndexForColumn:table:isUnique:</option>
+	
+	<option value="//api/name/createTable:withColumns:datatypes:">&nbsp;&nbsp;&nbsp;&nbsp;- createTable:withColumns:datatypes:</option>
+	
+	<option value="//api/name/datatypesForTable:">&nbsp;&nbsp;&nbsp;&nbsp;- datatypesForTable:</option>
+	
+	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;- description</option>
+	
+	<option value="//api/name/dictionaryDescription">&nbsp;&nbsp;&nbsp;&nbsp;- dictionaryDescription</option>
+	
+	<option value="//api/name/dropIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- dropIndex:</option>
+	
+	<option value="//api/name/dropTable:">&nbsp;&nbsp;&nbsp;&nbsp;- dropTable:</option>
+	
+	<option value="//api/name/encoding">&nbsp;&nbsp;&nbsp;&nbsp;- encoding</option>
+	
+	<option value="//api/name/executeSQL:">&nbsp;&nbsp;&nbsp;&nbsp;- executeSQL:</option>
+	
+	<option value="//api/name/indexedColumnsForTable:">&nbsp;&nbsp;&nbsp;&nbsp;- indexedColumnsForTable:</option>
+	
+	<option value="//api/name/indexes">&nbsp;&nbsp;&nbsp;&nbsp;- indexes</option>
+	
+	<option value="//api/name/initWithPath:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithPath:</option>
+	
+	<option value="//api/name/integrityCheck">&nbsp;&nbsp;&nbsp;&nbsp;- integrityCheck</option>
+	
+	<option value="//api/name/isDatabaseOpen">&nbsp;&nbsp;&nbsp;&nbsp;- isDatabaseOpen</option>
+	
+	<option value="//api/name/isTransactionActive">&nbsp;&nbsp;&nbsp;&nbsp;- isTransactionActive</option>
+	
+	<option value="//api/name/journalModeAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- journalModeAndReturnError:</option>
+	
+	<option value="//api/name/maxRowUIDForTable:">&nbsp;&nbsp;&nbsp;&nbsp;- maxRowUIDForTable:</option>
+	
+	<option value="//api/name/openWithCacheMethod:useFastMode:">&nbsp;&nbsp;&nbsp;&nbsp;- openWithCacheMethod:useFastMode:</option>
+	
+	<option value="//api/name/pageSize">&nbsp;&nbsp;&nbsp;&nbsp;- pageSize</option>
+	
+	<option value="//api/name/rollbackTransaction">&nbsp;&nbsp;&nbsp;&nbsp;- rollbackTransaction</option>
+	
+	<option value="//api/name/setBusyTimeout:">&nbsp;&nbsp;&nbsp;&nbsp;- setBusyTimeout:</option>
+	
+	<option value="//api/name/setCacheSize:">&nbsp;&nbsp;&nbsp;&nbsp;- setCacheSize:</option>
+	
+	<option value="//api/name/setEncodingType:">&nbsp;&nbsp;&nbsp;&nbsp;- setEncodingType:</option>
+	
+	<option value="//api/name/setJournalMode:">&nbsp;&nbsp;&nbsp;&nbsp;- setJournalMode:</option>
+	
+	<option value="//api/name/setPageSize:">&nbsp;&nbsp;&nbsp;&nbsp;- setPageSize:</option>
+	
+	<option value="//api/name/setSynchronousMode:">&nbsp;&nbsp;&nbsp;&nbsp;- setSynchronousMode:</option>
+	
+	<option value="//api/name/setTempStoreMode:">&nbsp;&nbsp;&nbsp;&nbsp;- setTempStoreMode:</option>
+	
+	<option value="//api/name/synchronousMode">&nbsp;&nbsp;&nbsp;&nbsp;- synchronousMode</option>
+	
+	<option value="//api/name/tables">&nbsp;&nbsp;&nbsp;&nbsp;- tables</option>
+	
+	<option value="//api/name/tempStoreMode">&nbsp;&nbsp;&nbsp;&nbsp;- tempStoreMode</option>
+	
+	<option value="//api/name/temporaryTables">&nbsp;&nbsp;&nbsp;&nbsp;- temporaryTables</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating and Initializing NanoEngine">Creating and Initializing NanoEngine</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Opening and Closing">Opening and Closing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessors">Accessors</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Transactions">Transactions</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Everything About Tables">Everything About Tables</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Everything about Indexes">Everything about Indexes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Database Maintenance">Database Maintenance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Searching and Retrieving">Searching and Retrieving</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Miscellaneous">Miscellaneous</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Private Methods">Private Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cacheMethod">cacheMethod</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/path">path</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sqlite">sqlite</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFEncodingTypeToNSString:">NSFEncodingTypeToNSString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_decodeQuantum:andSource:">NSFP_decodeQuantum:andSource:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_sharedROWIDKeywords">NSFP_sharedROWIDKeywords</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_stripBitsFromExtendedResultCode:">NSFP_stripBitsFromExtendedResultCode:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSStringToNSFEncodingType:">NSStringToNSFEncodingType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_plistToDictionary:">_plistToDictionary:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/databaseWithPath:">databaseWithPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/decodeDataFromBase64:">decodeDataFromBase64:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/encodeDataToBase64:">encodeDataToBase64:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nanoStoreEngineVersion">nanoStoreEngineVersion</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/recommendedCacheSize">recommendedCacheSize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedNanoStoreEngineDatatypes">sharedNanoStoreEngineDatatypes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sqliteVersion">sqliteVersion</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringWithUUID">stringWithUUID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/systemPageSize">systemPageSize</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/JSONDescription">JSONDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_ROWIDPresenceLocation:datatypes:">NSFP_ROWIDPresenceLocation:datatypes:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_beginTransactionMode:">NSFP_beginTransactionMode:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_cacheMethodToString">NSFP_cacheMethodToString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_createTable:withColumns:datatypes:isTemporary:">NSFP_createTable:withColumns:datatypes:isTemporary:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_datatypeForColumn:">NSFP_datatypeForColumn:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_datatypeForTable:column:">NSFP_datatypeForTable:column:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_flattenAllTables">NSFP_flattenAllTables</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_insertStringValues:forColumns:table:">NSFP_insertStringValues:forColumns:table:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_installCommitCallback">NSFP_installCommitCallback</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_isColumnROWIDAlias:forTable:">NSFP_isColumnROWIDAlias:forTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_nestedDescriptionWithPrefixedSpace:">NSFP_nestedDescriptionWithPrefixedSpace:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_prefixWithDotDelimiter:">NSFP_prefixWithDotDelimiter:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_prepareSQLite3Statement:theSQLStatement:">NSFP_prepareSQLite3Statement:theSQLStatement:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_rebuildDatatypeCache">NSFP_rebuildDatatypeCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_removeColumn:fromTable:">NSFP_removeColumn:fromTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_setFullColumnNamesEnabled">NSFP_setFullColumnNamesEnabled</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_sqlString:appendingTags:">NSFP_sqlString:appendingTags:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_sqlString:appendingTags:quoteTags:">NSFP_sqlString:appendingTags:quoteTags:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_sqlString:forTable:withColumns:datatypes:">NSFP_sqlString:forTable:withColumns:datatypes:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_suffixWithDotDelimiter:">NSFP_suffixWithDotDelimiter:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NSFP_uninstallCommitCallback">NSFP_uninstallCommitCallback</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allTables">allTables</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/beginDeferredTransaction">beginDeferredTransaction</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/beginTransaction">beginTransaction</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/busyTimeout">busyTimeout</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cacheSize">cacheSize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/close">close</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/columnsForTable:">columnsForTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/commitTransaction">commitTransaction</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/compact">compact</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createIndexForColumn:table:isUnique:">createIndexForColumn:table:isUnique:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createTable:withColumns:datatypes:">createTable:withColumns:datatypes:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/datatypesForTable:">datatypesForTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dictionaryDescription">dictionaryDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dropIndex:">dropIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dropTable:">dropTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/encoding">encoding</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/executeSQL:">executeSQL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/indexedColumnsForTable:">indexedColumnsForTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/indexes">indexes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithPath:">initWithPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/integrityCheck">integrityCheck</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isDatabaseOpen">isDatabaseOpen</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isTransactionActive">isTransactionActive</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/journalModeAndReturnError:">journalModeAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maxRowUIDForTable:">maxRowUIDForTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openWithCacheMethod:useFastMode:">openWithCacheMethod:useFastMode:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pageSize">pageSize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rollbackTransaction">rollbackTransaction</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setBusyTimeout:">setBusyTimeout:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCacheSize:">setCacheSize:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setEncodingType:">setEncodingType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setJournalMode:">setJournalMode:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPageSize:">setPageSize:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSynchronousMode:">setSynchronousMode:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setTempStoreMode:">setTempStoreMode:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/synchronousMode">synchronousMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tables">tables</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tempStoreMode">tempStoreMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/temporaryTables">temporaryTables</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSFNanoEngine Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSFNanoEngine Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSFNanoEngine.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class NSFNanoEngine
+A wrapper around SQLite, it provides convenience methods as well as &ldquo;raw&rdquo; access to the database.</p>
+
+<p>\cond</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sqlite">&nbsp;&nbsp;sqlite</a></code>
+		<span class="tooltip"><ul>
+<li>A reference to the SQLite database.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/path">&nbsp;&nbsp;path</a></code>
+		<span class="tooltip"><ul>
+<li>The file path where the database is located.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cacheMethod">&nbsp;&nbsp;cacheMethod</a></code>
+		<span class="tooltip"><ul>
+<li>The cache mechanism being used.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating and Initializing NanoEngine" name="task_Creating and Initializing NanoEngine"></a>
+						<h3 class="subsubtitle task-title">Creating and Initializing NanoEngine</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/databaseWithPath:">+&nbsp;databaseWithPath:</a></code>
+		<span class="tooltip"><p>Creates and returns an engine object at a given file <a href="#//api/name/path">path</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithPath:">&ndash;&nbsp;initWithPath:</a></code>
+		<span class="tooltip"><p>Initializes a newly allocated document store at a given file <a href="#//api/name/path">path</a>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Opening and Closing" name="task_Opening and Closing"></a>
+						<h3 class="subsubtitle task-title">Opening and Closing</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openWithCacheMethod:useFastMode:">&ndash;&nbsp;openWithCacheMethod:useFastMode:</a></code>
+		<span class="tooltip"><p>Opens the engine, making it ready for manipulation.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/close">&ndash;&nbsp;close</a></code>
+		<span class="tooltip"><p>Closes the database.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Accessors" name="task_Accessors"></a>
+						<h3 class="subsubtitle task-title">Accessors</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isDatabaseOpen">&ndash;&nbsp;isDatabaseOpen</a></code>
+		<span class="tooltip"><p>Checks whether the document store is open or closed.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isTransactionActive">&ndash;&nbsp;isTransactionActive</a></code>
+		<span class="tooltip"><p>Checks whether a transaction is currently active.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setBusyTimeout:">&ndash;&nbsp;setBusyTimeout:</a></code>
+		<span class="tooltip"><p>Sets the busy timeout.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/busyTimeout">&ndash;&nbsp;busyTimeout</a></code>
+		<span class="tooltip"><p>Returns the current busy timeout.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/recommendedCacheSize">+&nbsp;recommendedCacheSize</a></code>
+		<span class="tooltip"><p>Returns the recommended cache size based on the system resources available.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCacheSize:">&ndash;&nbsp;setCacheSize:</a></code>
+		<span class="tooltip"><p>Sets the cache size.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cacheSize">&ndash;&nbsp;cacheSize</a></code>
+		<span class="tooltip"><p>Returns the cache size.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/systemPageSize">+&nbsp;systemPageSize</a></code>
+		<span class="tooltip"><p>Returns the system&rsquo;s page size</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPageSize:">&ndash;&nbsp;setPageSize:</a></code>
+		<span class="tooltip"><p>Sets the page size.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pageSize">&ndash;&nbsp;pageSize</a></code>
+		<span class="tooltip"><p>Returns the page size.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setEncodingType:">&ndash;&nbsp;setEncodingType:</a></code>
+		<span class="tooltip"><p>Sets the text <a href="#//api/name/encoding">encoding</a> type.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/encoding">&ndash;&nbsp;encoding</a></code>
+		<span class="tooltip"><p>Returns the encoding type.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSStringToNSFEncodingType:">+&nbsp;NSStringToNSFEncodingType:</a></code>
+		<span class="tooltip"><p>Returns the <a href="#//api/name/encoding">encoding</a> type from its string equivalent.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFEncodingTypeToNSString:">+&nbsp;NSFEncodingTypeToNSString:</a></code>
+		<span class="tooltip"><p>Returns the string equivalent of an <a href="#//api/name/encoding">encoding</a> type.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setSynchronousMode:">&ndash;&nbsp;setSynchronousMode:</a></code>
+		<span class="tooltip"><p>Sets the synchronous mode.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/synchronousMode">&ndash;&nbsp;synchronousMode</a></code>
+		<span class="tooltip"><p>Returns the synchronous mode.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setTempStoreMode:">&ndash;&nbsp;setTempStoreMode:</a></code>
+		<span class="tooltip"><p>Sets the temporary storage mode.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tempStoreMode">&ndash;&nbsp;tempStoreMode</a></code>
+		<span class="tooltip"><p>Returns the temporary storage mode.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/journalModeAndReturnError:">&ndash;&nbsp;journalModeAndReturnError:</a></code>
+		<span class="tooltip"><ul>
+<li>Journal mode.</li>
+<li>These values represent the options used by SQLite to the the journal mode for databases associated with the current database connection.</li>
+</ul>
+</span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setJournalMode:">&ndash;&nbsp;setJournalMode:</a></code>
+		<span class="tooltip"><p>Returns the journal mode.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedNanoStoreEngineDatatypes">+&nbsp;sharedNanoStoreEngineDatatypes</a></code>
+		<span class="tooltip"><p>Returns a new array containing the datatypes recognized by NanoStore.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nanoStoreEngineVersion">+&nbsp;nanoStoreEngineVersion</a></code>
+		<span class="tooltip"><p>Returns the NanoStore engine version.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sqliteVersion">+&nbsp;sqliteVersion</a></code>
+		<span class="tooltip"><p>Returns the SQLite version.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Transactions" name="task_Transactions"></a>
+						<h3 class="subsubtitle task-title">Transactions</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/beginTransaction">&ndash;&nbsp;beginTransaction</a></code>
+		<span class="tooltip"><p>Starts a transaction.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/beginDeferredTransaction">&ndash;&nbsp;beginDeferredTransaction</a></code>
+		<span class="tooltip"><p>Starts a deferred transaction.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/commitTransaction">&ndash;&nbsp;commitTransaction</a></code>
+		<span class="tooltip"><p>Commits a transaction.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rollbackTransaction">&ndash;&nbsp;rollbackTransaction</a></code>
+		<span class="tooltip"><p>Rolls back a transaction.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Everything About Tables" name="task_Everything About Tables"></a>
+						<h3 class="subsubtitle task-title">Everything About Tables</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createTable:withColumns:datatypes:">&ndash;&nbsp;createTable:withColumns:datatypes:</a></code>
+		<span class="tooltip"><p>Creates a table.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tables">&ndash;&nbsp;tables</a></code>
+		<span class="tooltip"><p>Returns a new array containing the tables found in the main document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allTables">&ndash;&nbsp;allTables</a></code>
+		<span class="tooltip"><p>Returns a new array containing the <a href="#//api/name/tables">tables</a> found in the main and attached document stores.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/columnsForTable:">&ndash;&nbsp;columnsForTable:</a></code>
+		<span class="tooltip"><p>Returns a new array containing the columns for a given table.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/temporaryTables">&ndash;&nbsp;temporaryTables</a></code>
+		<span class="tooltip"><p>Returns a new array containing the temporary <a href="#//api/name/tables">tables</a> found in the main document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/datatypesForTable:">&ndash;&nbsp;datatypesForTable:</a></code>
+		<span class="tooltip"><p>Returns a new array containing the datatypes for a given table.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dropTable:">&ndash;&nbsp;dropTable:</a></code>
+		<span class="tooltip"><p>Removes the table from the document store.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Everything about Indexes" name="task_Everything about Indexes"></a>
+						<h3 class="subsubtitle task-title">Everything about Indexes</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createIndexForColumn:table:isUnique:">&ndash;&nbsp;createIndexForColumn:table:isUnique:</a></code>
+		<span class="tooltip"><p>Creates an index.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/indexes">&ndash;&nbsp;indexes</a></code>
+		<span class="tooltip"><p>Returns a new array containing the indexes found in the main document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/indexedColumnsForTable:">&ndash;&nbsp;indexedColumnsForTable:</a></code>
+		<span class="tooltip"><p>Returns a new array containing the <a href="#//api/name/indexes">indexes</a> found for a given table.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dropIndex:">&ndash;&nbsp;dropIndex:</a></code>
+		<span class="tooltip"><p>Removes an index.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Database Maintenance" name="task_Database Maintenance"></a>
+						<h3 class="subsubtitle task-title">Database Maintenance</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/compact">&ndash;&nbsp;compact</a></code>
+		<span class="tooltip"><p>Compacts the database, attempting to reclaim unused space.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/integrityCheck">&ndash;&nbsp;integrityCheck</a></code>
+		<span class="tooltip"><p>Performs an integrity check on the database.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Searching and Retrieving" name="task_Searching and Retrieving"></a>
+						<h3 class="subsubtitle task-title">Searching and Retrieving</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/executeSQL:">&ndash;&nbsp;executeSQL:</a></code>
+		<span class="tooltip"><p>Executes a SQL statement.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/maxRowUIDForTable:">&ndash;&nbsp;maxRowUIDForTable:</a></code>
+		<span class="tooltip"><p>Returns the largest ROWUID for a given table.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Miscellaneous" name="task_Miscellaneous"></a>
+						<h3 class="subsubtitle task-title">Miscellaneous</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/encodeDataToBase64:">+&nbsp;encodeDataToBase64:</a></code>
+		<span class="tooltip"><p>Returns a string containing the base 64 representation of a data element.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/decodeDataFromBase64:">+&nbsp;decodeDataFromBase64:</a></code>
+		<span class="tooltip"><p>Returns a data element containing from a base 64 formatted string.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringWithUUID">+&nbsp;stringWithUUID</a></code>
+		<span class="tooltip"><p>Returns a UUID string</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+		<span class="tooltip"><p>Returns a string representation of the engine.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/JSONDescription">&ndash;&nbsp;JSONDescription</a></code>
+		<span class="tooltip"><p>Returns a JSON representation of the engine.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Private Methods" name="task_Private Methods"></a>
+						<h3 class="subsubtitle task-title">Private Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dictionaryDescription">&ndash;&nbsp;dictionaryDescription</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_sharedROWIDKeywords">+&nbsp;NSFP_sharedROWIDKeywords</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_cacheMethodToString">&ndash;&nbsp;NSFP_cacheMethodToString</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_nestedDescriptionWithPrefixedSpace:">&ndash;&nbsp;NSFP_nestedDescriptionWithPrefixedSpace:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_plistToDictionary:">+&nbsp;_plistToDictionary:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_datatypeForTable:column:">&ndash;&nbsp;NSFP_datatypeForTable:column:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_decodeQuantum:andSource:">+&nbsp;NSFP_decodeQuantum:andSource:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_setFullColumnNamesEnabled">&ndash;&nbsp;NSFP_setFullColumnNamesEnabled</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_flattenAllTables">&ndash;&nbsp;NSFP_flattenAllTables</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_prepareSQLite3Statement:theSQLStatement:">&ndash;&nbsp;NSFP_prepareSQLite3Statement:theSQLStatement:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_datatypeForColumn:">&ndash;&nbsp;NSFP_datatypeForColumn:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_stripBitsFromExtendedResultCode:">+&nbsp;NSFP_stripBitsFromExtendedResultCode:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_beginTransactionMode:">&ndash;&nbsp;NSFP_beginTransactionMode:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_createTable:withColumns:datatypes:isTemporary:">&ndash;&nbsp;NSFP_createTable:withColumns:datatypes:isTemporary:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_removeColumn:fromTable:">&ndash;&nbsp;NSFP_removeColumn:fromTable:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_rebuildDatatypeCache">&ndash;&nbsp;NSFP_rebuildDatatypeCache</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_insertStringValues:forColumns:table:">&ndash;&nbsp;NSFP_insertStringValues:forColumns:table:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_sqlString:appendingTags:quoteTags:">&ndash;&nbsp;NSFP_sqlString:appendingTags:quoteTags:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_sqlString:appendingTags:">&ndash;&nbsp;NSFP_sqlString:appendingTags:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_sqlString:forTable:withColumns:datatypes:">&ndash;&nbsp;NSFP_sqlString:forTable:withColumns:datatypes:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_ROWIDPresenceLocation:datatypes:">&ndash;&nbsp;NSFP_ROWIDPresenceLocation:datatypes:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_isColumnROWIDAlias:forTable:">&ndash;&nbsp;NSFP_isColumnROWIDAlias:forTable:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_prefixWithDotDelimiter:">&ndash;&nbsp;NSFP_prefixWithDotDelimiter:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_suffixWithDotDelimiter:">&ndash;&nbsp;NSFP_suffixWithDotDelimiter:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_installCommitCallback">&ndash;&nbsp;NSFP_installCommitCallback</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NSFP_uninstallCommitCallback">&ndash;&nbsp;NSFP_uninstallCommitCallback</a></code>
+		
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/cacheMethod" title="cacheMethod"></a>
+	<h3 class="subsubtitle method-title">cacheMethod</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The cache mechanism being used.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) NSFCacheMethod cacheMethod</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The cache mechanism being used.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/path" title="path"></a>
+	<h3 class="subsubtitle method-title">path</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The file path where the database is located.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *path</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The file path where the database is located.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sqlite" title="sqlite"></a>
+	<h3 class="subsubtitle method-title">sqlite</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>A reference to the SQLite database.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) sqlite3 *sqlite</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>A reference to the SQLite database.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFEncodingTypeToNSString:" title="NSFEncodingTypeToNSString:"></a>
+	<h3 class="subsubtitle method-title">NSFEncodingTypeToNSString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the string equivalent of an <a href="#//api/name/encoding">encoding</a> type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)NSFEncodingTypeToNSString:(NSFEncodingType)<em>value</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The string equivalent if successful, nil otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the string equivalent of an <a href="#//api/name/encoding">encoding</a> type.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSFEncodingType)<a href="#//api/name/NSStringToNSFEncodingType:">+ NSStringToNSFEncodingType:</a>(NSString *)value;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_decodeQuantum:andSource:" title="NSFP_decodeQuantum:andSource:"></a>
+	<h3 class="subsubtitle method-title">NSFP_decodeQuantum:andSource:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (void)NSFP_decodeQuantum:(unsigned char *)<em>dest</em> andSource:(const char *)<em>src</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_sharedROWIDKeywords" title="NSFP_sharedROWIDKeywords"></a>
+	<h3 class="subsubtitle method-title">NSFP_sharedROWIDKeywords</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)NSFP_sharedROWIDKeywords</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_stripBitsFromExtendedResultCode:" title="NSFP_stripBitsFromExtendedResultCode:"></a>
+	<h3 class="subsubtitle method-title">NSFP_stripBitsFromExtendedResultCode:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (int)NSFP_stripBitsFromExtendedResultCode:(int)<em>extendedResult</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSStringToNSFEncodingType:" title="NSStringToNSFEncodingType:"></a>
+	<h3 class="subsubtitle method-title">NSStringToNSFEncodingType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <a href="#//api/name/encoding">encoding</a> type from its string equivalent.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFEncodingType)NSStringToNSFEncodingType:(NSString *)<em>value</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <a href="#//api/name/encoding">encoding</a> type if successful, NSFEncodingUnknown otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the <a href="#//api/name/encoding">encoding</a> type from its string equivalent.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSString *)<a href="#//api/name/NSFEncodingTypeToNSString:">+ NSFEncodingTypeToNSString:</a>(NSFEncodingType)value;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_plistToDictionary:" title="_plistToDictionary:"></a>
+	<h3 class="subsubtitle method-title">_plistToDictionary:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)_plistToDictionary:(NSString *)<em>aPlist</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/databaseWithPath:" title="databaseWithPath:"></a>
+	<h3 class="subsubtitle method-title">databaseWithPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns an engine object at a given file <a href="#//api/name/path">path</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)databaseWithPath:(NSString *)<em>thePath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>thePath</em></dt>
+			<dd><p>the file <a href="#//api/name/path">path</a> where the document store will be created. Must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An engine object upon success, nil otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns an engine object at a given file <a href="#//api/name/path">path</a>.</p><div class="note"><p><strong>Note:</strong> To manipulate the document store, you must first open it.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(id)<a href="#//api/name/initWithPath:">&ndash; initWithPath:</a>(NSString *)thePath;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/decodeDataFromBase64:" title="decodeDataFromBase64:"></a>
+	<h3 class="subsubtitle method-title">decodeDataFromBase64:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a data element containing from a base 64 formatted string.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSData *)decodeDataFromBase64:(NSString *)<em>theEncodedData</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A data element.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a data element containing from a base 64 formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/encodeDataToBase64:" title="encodeDataToBase64:"></a>
+	<h3 class="subsubtitle method-title">encodeDataToBase64:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string containing the base 64 representation of a data element.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)encodeDataToBase64:(NSData *)<em>theData</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string encoded in base 64 format.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a string containing the base 64 representation of a data element.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/nanoStoreEngineVersion" title="nanoStoreEngineVersion"></a>
+	<h3 class="subsubtitle method-title">nanoStoreEngineVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the NanoStore engine version.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)nanoStoreEngineVersion</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The NanoStore engine version.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the NanoStore engine version.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/recommendedCacheSize" title="recommendedCacheSize"></a>
+	<h3 class="subsubtitle method-title">recommendedCacheSize</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the recommended cache size based on the system resources available.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)recommendedCacheSize</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The recommended cache size in number of pages.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the recommended cache size based on the system resources available.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedNanoStoreEngineDatatypes" title="sharedNanoStoreEngineDatatypes"></a>
+	<h3 class="subsubtitle method-title">sharedNanoStoreEngineDatatypes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the datatypes recognized by NanoStore.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSSet *)sharedNanoStoreEngineDatatypes</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new array containing the datatypes recognized by NanoStore.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the datatypes recognized by NanoStore.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sqliteVersion" title="sqliteVersion"></a>
+	<h3 class="subsubtitle method-title">sqliteVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the SQLite version.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)sqliteVersion</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The SQLite version.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the SQLite version.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringWithUUID" title="stringWithUUID"></a>
+	<h3 class="subsubtitle method-title">stringWithUUID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a UUID string</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)stringWithUUID</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string containing a representation of a UUID.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a UUID string</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/systemPageSize" title="systemPageSize"></a>
+	<h3 class="subsubtitle method-title">systemPageSize</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the system&rsquo;s page size</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSInteger)systemPageSize</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the system&rsquo;s page size</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/JSONDescription" title="JSONDescription"></a>
+	<h3 class="subsubtitle method-title">JSONDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a JSON representation of the engine.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)JSONDescription</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a JSON representation of the engine.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_ROWIDPresenceLocation:datatypes:" title="NSFP_ROWIDPresenceLocation:datatypes:"></a>
+	<h3 class="subsubtitle method-title">NSFP_ROWIDPresenceLocation:datatypes:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)NSFP_ROWIDPresenceLocation:(NSArray *)<em>tableColumns</em> datatypes:(NSArray *)<em>datatypes</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_beginTransactionMode:" title="NSFP_beginTransactionMode:"></a>
+	<h3 class="subsubtitle method-title">NSFP_beginTransactionMode:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)NSFP_beginTransactionMode:(NSString *)<em>theSQLStatement</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_cacheMethodToString" title="NSFP_cacheMethodToString"></a>
+	<h3 class="subsubtitle method-title">NSFP_cacheMethodToString</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)NSFP_cacheMethodToString</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_createTable:withColumns:datatypes:isTemporary:" title="NSFP_createTable:withColumns:datatypes:isTemporary:"></a>
+	<h3 class="subsubtitle method-title">NSFP_createTable:withColumns:datatypes:isTemporary:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)NSFP_createTable:(NSString *)<em>table</em> withColumns:(NSArray *)<em>tableColumns</em> datatypes:(NSArray *)<em>tableDatatypes</em> isTemporary:(BOOL)<em>isTemporaryFlag</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_datatypeForColumn:" title="NSFP_datatypeForColumn:"></a>
+	<h3 class="subsubtitle method-title">NSFP_datatypeForColumn:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSFNanoDatatype)NSFP_datatypeForColumn:(NSString *)<em>tableAndColumn</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_datatypeForTable:column:" title="NSFP_datatypeForTable:column:"></a>
+	<h3 class="subsubtitle method-title">NSFP_datatypeForTable:column:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSFNanoDatatype)NSFP_datatypeForTable:(NSString *)<em>table</em> column:(NSString *)<em>column</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_flattenAllTables" title="NSFP_flattenAllTables"></a>
+	<h3 class="subsubtitle method-title">NSFP_flattenAllTables</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)NSFP_flattenAllTables</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_insertStringValues:forColumns:table:" title="NSFP_insertStringValues:forColumns:table:"></a>
+	<h3 class="subsubtitle method-title">NSFP_insertStringValues:forColumns:table:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)NSFP_insertStringValues:(NSArray *)<em>values</em> forColumns:(NSArray *)<em>columns</em> table:(NSString *)<em>table</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_installCommitCallback" title="NSFP_installCommitCallback"></a>
+	<h3 class="subsubtitle method-title">NSFP_installCommitCallback</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)NSFP_installCommitCallback</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_isColumnROWIDAlias:forTable:" title="NSFP_isColumnROWIDAlias:forTable:"></a>
+	<h3 class="subsubtitle method-title">NSFP_isColumnROWIDAlias:forTable:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)NSFP_isColumnROWIDAlias:(NSString *)<em>column</em> forTable:(NSString *)<em>table</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_nestedDescriptionWithPrefixedSpace:" title="NSFP_nestedDescriptionWithPrefixedSpace:"></a>
+	<h3 class="subsubtitle method-title">NSFP_nestedDescriptionWithPrefixedSpace:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)NSFP_nestedDescriptionWithPrefixedSpace:(NSString *)<em>prefixedSpace</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_prefixWithDotDelimiter:" title="NSFP_prefixWithDotDelimiter:"></a>
+	<h3 class="subsubtitle method-title">NSFP_prefixWithDotDelimiter:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)NSFP_prefixWithDotDelimiter:(NSString *)<em>tableAndColumn</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_prepareSQLite3Statement:theSQLStatement:" title="NSFP_prepareSQLite3Statement:theSQLStatement:"></a>
+	<h3 class="subsubtitle method-title">NSFP_prepareSQLite3Statement:theSQLStatement:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)NSFP_prepareSQLite3Statement:(sqlite3_stmt **)<em>aStatement</em> theSQLStatement:(NSString *)<em>aSQLQuery</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_rebuildDatatypeCache" title="NSFP_rebuildDatatypeCache"></a>
+	<h3 class="subsubtitle method-title">NSFP_rebuildDatatypeCache</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)NSFP_rebuildDatatypeCache</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_removeColumn:fromTable:" title="NSFP_removeColumn:fromTable:"></a>
+	<h3 class="subsubtitle method-title">NSFP_removeColumn:fromTable:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)NSFP_removeColumn:(NSString *)<em>column</em> fromTable:(NSString *)<em>table</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_setFullColumnNamesEnabled" title="NSFP_setFullColumnNamesEnabled"></a>
+	<h3 class="subsubtitle method-title">NSFP_setFullColumnNamesEnabled</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)NSFP_setFullColumnNamesEnabled</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_sqlString:appendingTags:" title="NSFP_sqlString:appendingTags:"></a>
+	<h3 class="subsubtitle method-title">NSFP_sqlString:appendingTags:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)NSFP_sqlString:(NSMutableString *)<em>theSQLStatement</em> appendingTags:(NSArray *)<em>columns</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_sqlString:appendingTags:quoteTags:" title="NSFP_sqlString:appendingTags:quoteTags:"></a>
+	<h3 class="subsubtitle method-title">NSFP_sqlString:appendingTags:quoteTags:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)NSFP_sqlString:(NSMutableString *)<em>theSQLStatement</em> appendingTags:(NSArray *)<em>tags</em> quoteTags:(BOOL)<em>flag</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_sqlString:forTable:withColumns:datatypes:" title="NSFP_sqlString:forTable:withColumns:datatypes:"></a>
+	<h3 class="subsubtitle method-title">NSFP_sqlString:forTable:withColumns:datatypes:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)NSFP_sqlString:(NSMutableString *)<em>theSQLStatement</em> forTable:(NSString *)<em>table</em> withColumns:(NSArray *)<em>columns</em> datatypes:(NSArray *)<em>datatypes</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_suffixWithDotDelimiter:" title="NSFP_suffixWithDotDelimiter:"></a>
+	<h3 class="subsubtitle method-title">NSFP_suffixWithDotDelimiter:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)NSFP_suffixWithDotDelimiter:(NSString *)<em>tableAndColumn</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/NSFP_uninstallCommitCallback" title="NSFP_uninstallCommitCallback"></a>
+	<h3 class="subsubtitle method-title">NSFP_uninstallCommitCallback</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)NSFP_uninstallCommitCallback</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allTables" title="allTables"></a>
+	<h3 class="subsubtitle method-title">allTables</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the <a href="#//api/name/tables">tables</a> found in the main and attached document stores.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)allTables</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new array containing the <a href="#//api/name/tables">tables</a> in the main and attached document stores, or an empty array if none is found.
+@note
+The dictionary key is the document store name and its value, an array of the <a href="#//api/name/tables">tables</a> associated with that document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the <a href="#//api/name/tables">tables</a> found in the main and attached document stores.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSArray *)<a href="#//api/name/tables">&ndash; tables</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(NSArray *)<a href="#//api/name/temporaryTables">&ndash; temporaryTables</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/beginDeferredTransaction" title="beginDeferredTransaction"></a>
+	<h3 class="subsubtitle method-title">beginDeferredTransaction</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts a deferred transaction.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)beginDeferredTransaction</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Starts a deferred transaction.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/beginTransaction">&ndash; beginTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/commitTransaction">&ndash; commitTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/rollbackTransaction">&ndash; rollbackTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/isTransactionActive">&ndash; isTransactionActive</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/beginTransaction" title="beginTransaction"></a>
+	<h3 class="subsubtitle method-title">beginTransaction</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts a transaction.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)beginTransaction</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Starts a transaction.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/beginTransaction">&ndash; beginTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/beginDeferredTransaction">&ndash; beginDeferredTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/commitTransaction">&ndash; commitTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/rollbackTransaction">&ndash; rollbackTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/isTransactionActive">&ndash; isTransactionActive</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/busyTimeout" title="busyTimeout"></a>
+	<h3 class="subsubtitle method-title">busyTimeout</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current busy timeout.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (unsigned int)busyTimeout</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current busy timeout.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(void)<a href="#//api/name/setBusyTimeout:">&ndash; setBusyTimeout:</a>(unsigned int)theTimeout;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cacheSize" title="cacheSize"></a>
+	<h3 class="subsubtitle method-title">cacheSize</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the cache size.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)cacheSize</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current cache size.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the cache size.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSUInteger)<a href="#//api/name/recommendedCacheSize">+ recommendedCacheSize</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/setCacheSize:">&ndash; setCacheSize:</a>(NSUInteger)numberOfPages;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/close" title="close"></a>
+	<h3 class="subsubtitle method-title">close</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Closes the database.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)close</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Closes the database.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/columnsForTable:" title="columnsForTable:"></a>
+	<h3 class="subsubtitle method-title">columnsForTable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the columns for a given table.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)columnsForTable:(NSString *)<em>theTable</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theTable</em></dt>
+			<dd><p>is the name of the table.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new array containing the columns for a given table, or an empty array if none is found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the columns for a given table.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/commitTransaction" title="commitTransaction"></a>
+	<h3 class="subsubtitle method-title">commitTransaction</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Commits a transaction.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)commitTransaction</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Commits a transaction.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/beginTransaction">&ndash; beginTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/beginDeferredTransaction">&ndash; beginDeferredTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/rollbackTransaction">&ndash; rollbackTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/isTransactionActive">&ndash; isTransactionActive</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/compact" title="compact"></a>
+	<h3 class="subsubtitle method-title">compact</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Compacts the database, attempting to reclaim unused space.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)compact</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Compacts the database, attempting to reclaim unused space.</p><div class="note"><p><strong>Note:</strong> If a transaction is open, the operation will not proceed and NO will be returned instead.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createIndexForColumn:table:isUnique:" title="createIndexForColumn:table:isUnique:"></a>
+	<h3 class="subsubtitle method-title">createIndexForColumn:table:isUnique:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates an index.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)createIndexForColumn:(NSString *)<em>theColumn</em> table:(NSString *)<em>theTable</em> isUnique:(BOOL)<em>isUnique</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theColumn</em></dt>
+			<dd><p>is the name of the column.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theTable</em></dt>
+			<dd><p>is the name of the table.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isUnique</em></dt>
+			<dd><p>whether the index should be unique or allow duplicates.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates an index.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(void)<a href="#//api/name/dropIndex:">&ndash; dropIndex:</a>(NSString *)indexName;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createTable:withColumns:datatypes:" title="createTable:withColumns:datatypes:"></a>
+	<h3 class="subsubtitle method-title">createTable:withColumns:datatypes:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a table.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)createTable:(NSString *)<em>theTable</em> withColumns:(NSArray *)<em>theColumns</em> datatypes:(NSArray *)<em>theDatatypes</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theTable</em></dt>
+			<dd><p>the name of the table. Must not be nil.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theColumns</em></dt>
+			<dd><p>the names of the columns. Must not be nil.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theDatatypes</em></dt>
+			<dd><p>the datatypes of the columns. Must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.
+@note
+Allowed datatypes: NSFNanoTypeRowUID, NSFNanoTypeString, NSFNanoTypeData, NSFNanoTypeDate and NSFNanoTypeNumber.
+@throws NSFUnexpectedParameterException is thrown if any of the parameters are nil.
+@throws NSFUnexpectedParameterException is thrown if the number of columns and datatypes are not equal.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a table.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/dropTable:">&ndash; dropTable:</a>(NSString *)theTable;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/datatypesForTable:" title="datatypesForTable:"></a>
+	<h3 class="subsubtitle method-title">datatypesForTable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the datatypes for a given table.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)datatypesForTable:(NSString *)<em>theTable</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theTable</em></dt>
+			<dd><p>is the name of the table.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new array containing the datatypes for a given table, or an empty array if none is found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the datatypes for a given table.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/description" title="description"></a>
+	<h3 class="subsubtitle method-title">description</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representation of the engine.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a string representation of the engine.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dictionaryDescription" title="dictionaryDescription"></a>
+	<h3 class="subsubtitle method-title">dictionaryDescription</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSFOrderedDictionary *)dictionaryDescription</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dropIndex:" title="dropIndex:"></a>
+	<h3 class="subsubtitle method-title">dropIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes an index.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)dropIndex:(NSString *)<em>theIndex</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theIndex</em></dt>
+			<dd><p>is the name of the index to be removed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes an index.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dropTable:" title="dropTable:"></a>
+	<h3 class="subsubtitle method-title">dropTable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the table from the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)dropTable:(NSString *)<em>theTable</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theTable</em></dt>
+			<dd><p>is the name of the table.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes the table from the document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/encoding" title="encoding"></a>
+	<h3 class="subsubtitle method-title">encoding</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the encoding type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSFEncodingType)encoding</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current encoding type.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the encoding type.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/setEncodingType:">&ndash; setEncodingType:</a>(NSFEncodingType)theEncodingType;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/executeSQL:" title="executeSQL:"></a>
+	<h3 class="subsubtitle method-title">executeSQL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Executes a SQL statement.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSFNanoResult *)executeSQL:(NSString *)<em>theSQLStatement</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theSQLStatement</em></dt>
+			<dd><p>is the SQL statement to be executed. Must not be nil or an empty string.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns a <a href="../Classes/NSFNanoResult.html">NSFNanoResult</a>.
+@throws NSFUnexpectedParameterException is thrown if the statement is nil or an empty string.
+@attention Check NSFNanoResult&rsquo;s error property to find out if there was a problem executing the statement.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Executes a SQL statement.</p><div class="note"><p><strong>Note:</strong> The result set will always contain string values. If you need to obtain NanoObjects instead, use the <a href="../Classes/NSFNanoSearch.html">NSFNanoSearch</a> class.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Classes/NSFNanoSearch.html">NSFNanoSearch</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/indexedColumnsForTable:" title="indexedColumnsForTable:"></a>
+	<h3 class="subsubtitle method-title">indexedColumnsForTable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the <a href="#//api/name/indexes">indexes</a> found for a given table.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)indexedColumnsForTable:(NSString *)<em>theTable</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new array containing the <a href="#//api/name/indexes">indexes</a> for a given table, or an empty array if none is found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the <a href="#//api/name/indexes">indexes</a> found for a given table.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/indexes" title="indexes"></a>
+	<h3 class="subsubtitle method-title">indexes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the indexes found in the main document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)indexes</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new array containing the indexes in the main document store, or an empty array if none is found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the indexes found in the main document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithPath:" title="initWithPath:"></a>
+	<h3 class="subsubtitle method-title">initWithPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a newly allocated document store at a given file <a href="#//api/name/path">path</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithPath:(NSString *)<em>thePath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>thePath</em></dt>
+			<dd><p>the file <a href="#//api/name/path">path</a> where the document store will be created. Must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An engine object upon success, nil otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes a newly allocated document store at a given file <a href="#//api/name/path">path</a>.</p><div class="note"><p><strong>Note:</strong> To manipulate the document store, you must first open it.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(id)<a href="#//api/name/databaseWithPath:">+ databaseWithPath:</a>(NSString *)thePath;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/integrityCheck" title="integrityCheck"></a>
+	<h3 class="subsubtitle method-title">integrityCheck</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Performs an integrity check on the database.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)integrityCheck</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Performs an integrity check on the database.</p><div class="note"><p><strong>Note:</strong> If a transaction is open, the operation will not proceed and NO will be returned instead.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isDatabaseOpen" title="isDatabaseOpen"></a>
+	<h3 class="subsubtitle method-title">isDatabaseOpen</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Checks whether the document store is open or closed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isDatabaseOpen</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Checks whether the document store is open or closed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(void)<a href="#//api/name/close">&ndash; close</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isTransactionActive" title="isTransactionActive"></a>
+	<h3 class="subsubtitle method-title">isTransactionActive</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Checks whether a transaction is currently active.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isTransactionActive</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if a transaction is currently active, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Checks whether a transaction is currently active.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/journalModeAndReturnError:" title="journalModeAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">journalModeAndReturnError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>Journal mode.</li>
+<li>These values represent the options used by SQLite to the the journal mode for databases associated with the current database connection.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSFJournalModeMode)journalModeAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>Journal mode.</li>
+<li>These values represent the options used by SQLite to the the journal mode for databases associated with the current database connection.</li>
+</ul>
+
+
+<p>@par
+The <b>DELETE</b> journaling mode is the normal behavior. In the <b>DELETE</b> mode, the rollback journal is deleted at the conclusion</p>
+
+<pre><code> of each transaction. Indeed, the delete operation is the action that causes the transaction to commit. (See the document titled
+ Atomic Commit In SQLite for additional detail.)
+</code></pre>
+
+<p>@par
+The <b>TRUNCATE</b> journaling mode commits transactions by truncating the rollback journal to zero-length instead of deleting it.</p>
+
+<pre><code> On many systems, truncating a file is much faster than deleting the file since the containing directory does not need to be changed.
+</code></pre>
+
+<p>@par
+The <b>PERSIST</b> journaling mode prevents the rollback journal from being deleted at the end of each transaction. Instead, the header</p>
+
+<pre><code> of the journal is overwritten with zeros. This will prevent other database connections from rolling the journal back. The &lt;b&gt;PERSIST&lt;/b&gt;
+ journaling mode is useful as an optimization on platforms where deleting or truncating a file is much more expensive than overwriting
+ the first block of a file with zeros.
+</code></pre>
+
+<p>@par</p>
+
+<pre><code>The &lt;b&gt;MEMORY&lt;/b&gt; journaling mode stores the rollback journal in volatile RAM. This saves disk I/O but at the expense of database safety
+ and integrity. If the application using SQLite crashes in the middle of a transaction when the &lt;b&gt;MEMORY&lt;/b&gt; journaling mode is set, then
+ the database file will very likely go corrupt.
+</code></pre>
+
+<p>@par</p>
+
+<pre><code>The &lt;b&gt;WAL&lt;/b&gt; journaling mode uses a write-ahead log instead of a rollback journal to implement transactions. The &lt;b&gt;WAL&lt;/b&gt; journaling mode is
+ persistent; after being set it stays in effect across multiple database connections and after closing and reopening the database. A database
+ in &lt;b&gt;WAL&lt;/b&gt; journaling mode can only be accessed by SQLite version 3.7.0 or later.
+</code></pre>
+
+<p>@par</p>
+
+<pre><code>The &lt;b&gt;OFF&lt;/b&gt; journaling mode disables the rollback journal completely. No rollback journal is ever created and hence there is never a
+ rollback journal to delete. The &lt;b&gt;OFF&lt;/b&gt; journaling mode disables the atomic commit and rollback capabilities of SQLite. The &lt;b&gt;ROLLBACK&lt;/b&gt; command
+ no longer works; it behaves in an undefined way. Applications must avoid using the &lt;b&gt;ROLLBACK&lt;/b&gt; command when the journal mode is &lt;b&gt;OFF&lt;/b&gt;.
+ If the application crashes in the middle of a transaction when the &lt;b&gt;OFF&lt;/b&gt; journaling mode is set, then the database file will very likely go corrupt.
+</code></pre>
+
+<p>@note</p>
+
+<pre><code>The journal_mode for an in-memory database is either &lt;b&gt;MEMORY&lt;/b&gt; or &lt;b&gt;OFF&lt;/b&gt; and can not be changed to a different value. An attempt to change
+ the journal_mode of an in-memory database to any setting other than &lt;b&gt;MEMORY&lt;/b&gt; or &lt;b&gt;OFF&lt;/b&gt; is ignored. Note also that the journal_mode cannot be changed
+ while a transaction is active.
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/maxRowUIDForTable:" title="maxRowUIDForTable:"></a>
+	<h3 class="subsubtitle method-title">maxRowUIDForTable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the largest ROWUID for a given table.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (long long)maxRowUIDForTable:(NSString *)<em>theTable</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theTable</em></dt>
+			<dd><p>is the table from which to obtain the largest ROWUID. Must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The largest ROWUID in use.
+@throws NSFUnexpectedParameterException is thrown if the table is nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the largest ROWUID for a given table.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openWithCacheMethod:useFastMode:" title="openWithCacheMethod:useFastMode:"></a>
+	<h3 class="subsubtitle method-title">openWithCacheMethod:useFastMode:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the engine, making it ready for manipulation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)openWithCacheMethod:(NSFCacheMethod)<em>theCacheMethod</em> useFastMode:(BOOL)<em>useFastMode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theCacheMethod</em></dt>
+			<dd><p>allows to specify hwo the data will be read from the database:. This setting incurs a tradeoff between speed and memory usage.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>useFastMode</em></dt>
+			<dd><p>if set to YES, the document store is opened with all performance turned on (more risky in case of failure). Setting it to NO is slower, but safer. See the note below for more information.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.
+@note
+When FastMode is activated NanoStore continues without pausing as soon as it has handed data off to the operating system.
+If the application running NanoStore crashes, the data will be safe, but the database might become corrupted if the operating system crashes
+or the computer loses power before that data has been written to the disk surface.
+On the other hand, some operations are as much as 50 or more times faster with FastMode activated.</p>
+
+<p>@par
+If FastMode is deactivated, NanoStore will pause at critical moments to make sure that data has actually been written to the disk surface
+before continuing. This ensures that if the operating system crashes or if there is a power failure, the database will be uncorrupted after rebooting.
+Deactivating FastMode is very safe, but it is also slower.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Opens the engine, making it ready for manipulation.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pageSize" title="pageSize"></a>
+	<h3 class="subsubtitle method-title">pageSize</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the page size.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)pageSize</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current page size.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the page size.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSInteger)<a href="#//api/name/systemPageSize">+ systemPageSize</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/setPageSize:">&ndash; setPageSize:</a>(NSUInteger)numberOfBytes;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rollbackTransaction" title="rollbackTransaction"></a>
+	<h3 class="subsubtitle method-title">rollbackTransaction</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Rolls back a transaction.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)rollbackTransaction</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Rolls back a transaction.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/beginTransaction">&ndash; beginTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/beginDeferredTransaction">&ndash; beginDeferredTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/commitTransaction">&ndash; commitTransaction</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/isTransactionActive">&ndash; isTransactionActive</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setBusyTimeout:" title="setBusyTimeout:"></a>
+	<h3 class="subsubtitle method-title">setBusyTimeout:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the busy timeout.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setBusyTimeout:(unsigned int)<em>theTimeout</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theTimeout</em></dt>
+			<dd><p>is number of milliseconds that SQLite will wait to retry a busy operation.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the busy timeout.</p><div class="note"><p><strong>Note:</strong> The acceptable range is between 100 and 5000 milliseconds. If the value is out of range, the 250 millisecond default timeout will be set instead.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(unsigned int)<a href="#//api/name/busyTimeout">&ndash; busyTimeout</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCacheSize:" title="setCacheSize:"></a>
+	<h3 class="subsubtitle method-title">setCacheSize:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the cache size.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)setCacheSize:(NSUInteger)<em>numberOfPages</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>numberOfPages</em></dt>
+			<dd><p>is the number of pages.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the cache size.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSUInteger)<a href="#//api/name/recommendedCacheSize">+ recommendedCacheSize</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(NSUInteger)<a href="#//api/name/cacheSize">&ndash; cacheSize</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setEncodingType:" title="setEncodingType:"></a>
+	<h3 class="subsubtitle method-title">setEncodingType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the text <a href="#//api/name/encoding">encoding</a> type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)setEncodingType:(NSFEncodingType)<em>theEncodingType</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theEncodingType</em></dt>
+			<dd><p>is the <a href="#//api/name/encoding">encoding</a> type. Can be NSFEncodingUTF8 or NSFEncodingUTF16.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the text <a href="#//api/name/encoding">encoding</a> type.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSFEncodingType)<a href="#//api/name/encoding">&ndash; encoding</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setJournalMode:" title="setJournalMode:"></a>
+	<h3 class="subsubtitle method-title">setJournalMode:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the journal mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)setJournalMode:(NSFJournalModeMode)<em>theMode</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current journal mode.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the journal mode.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSFJournalModeMode)<a href="#//api/name/journalModeAndReturnError:">&ndash; journalModeAndReturnError:</a>(out NSError **)outError;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setPageSize:" title="setPageSize:"></a>
+	<h3 class="subsubtitle method-title">setPageSize:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the page size.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)setPageSize:(NSUInteger)<em>numberOfBytes</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>numberOfBytes</em></dt>
+			<dd><p>is the size of the page.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the page size.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSInteger)<a href="#//api/name/systemPageSize">+ systemPageSize</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(NSUInteger)<a href="#//api/name/pageSize">&ndash; pageSize</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setSynchronousMode:" title="setSynchronousMode:"></a>
+	<h3 class="subsubtitle method-title">setSynchronousMode:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the synchronous mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setSynchronousMode:(NSFSynchronousMode)<em>theSynchronousMode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theSynchronousMode</em></dt>
+			<dd><p>is the synchronous mode. Can be SynchronousModeOff, SynchronousModeNormal or SynchronousModeFull.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the synchronous mode.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSFSynchronousMode)<a href="#//api/name/synchronousMode">&ndash; synchronousMode</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setTempStoreMode:" title="setTempStoreMode:"></a>
+	<h3 class="subsubtitle method-title">setTempStoreMode:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the temporary storage mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setTempStoreMode:(NSFTempStoreMode)<em>theTempStoreMode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theTempStoreMode</em></dt>
+			<dd><p>is the temporary storage mode. Can be TempStoreModeDefault, TempStoreModeFile or TempStoreModeMemory.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the temporary storage mode.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSFTempStoreMode)<a href="#//api/name/tempStoreMode">&ndash; tempStoreMode</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/synchronousMode" title="synchronousMode"></a>
+	<h3 class="subsubtitle method-title">synchronousMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the synchronous mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSFSynchronousMode)synchronousMode</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current synchronous mode.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the synchronous mode.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(void)<a href="#//api/name/setSynchronousMode:">&ndash; setSynchronousMode:</a>(NSFSynchronousMode)theSynchronousMode;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tables" title="tables"></a>
+	<h3 class="subsubtitle method-title">tables</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the tables found in the main document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)tables</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new array containing the tables in the main document store, or an empty array if none is found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the tables found in the main document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSDictionary *)<a href="#//api/name/allTables">&ndash; allTables</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(NSArray *)<a href="#//api/name/temporaryTables">&ndash; temporaryTables</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tempStoreMode" title="tempStoreMode"></a>
+	<h3 class="subsubtitle method-title">tempStoreMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the temporary storage mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSFTempStoreMode)tempStoreMode</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current temporary storage mode.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the temporary storage mode.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(void)<a href="#//api/name/setTempStoreMode:">&ndash; setTempStoreMode:</a>(NSFTempStoreMode)theTempStoreMode;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/temporaryTables" title="temporaryTables"></a>
+	<h3 class="subsubtitle method-title">temporaryTables</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the temporary <a href="#//api/name/tables">tables</a> found in the main document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)temporaryTables</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new array containing the temporary <a href="#//api/name/tables">tables</a> in the main document store, or an empty array if none is found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the temporary <a href="#//api/name/tables">tables</a> found in the main document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(NSArray *)<a href="#//api/name/tables">&ndash; tables</a>;</li>
+</ul>
+</code></li>
+			
+			<li><code><ul>
+<li>(NSDictionary *)<a href="#//api/name/allTables">&ndash; allTables</a>;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoEngine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Tito Ciuro. All rights reserved. (Last updated: 2013-01-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

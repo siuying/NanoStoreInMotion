@@ -1,0 +1,1054 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSFNanoResult Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">NanoStore 2.5.7 </a></h1>
+				<a id="developerHome" href="../index.html">Tito Ciuro</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSFNanoResult Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/error">&nbsp;&nbsp;&nbsp;&nbsp;error</option>
+	
+	<option value="//api/name/numberOfRows">&nbsp;&nbsp;&nbsp;&nbsp;numberOfRows</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/_resultWithDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;+ _resultWithDictionary:</option>
+	
+	<option value="//api/name/_resultWithError:">&nbsp;&nbsp;&nbsp;&nbsp;+ _resultWithError:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/JSONDescription">&nbsp;&nbsp;&nbsp;&nbsp;- JSONDescription</option>
+	
+	<option value="//api/name/_calculateNumberOfRows">&nbsp;&nbsp;&nbsp;&nbsp;- _calculateNumberOfRows</option>
+	
+	<option value="//api/name/_initWithDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;- _initWithDictionary:</option>
+	
+	<option value="//api/name/_initWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- _initWithError:</option>
+	
+	<option value="//api/name/_reset">&nbsp;&nbsp;&nbsp;&nbsp;- _reset</option>
+	
+	<option value="//api/name/_setError:">&nbsp;&nbsp;&nbsp;&nbsp;- _setError:</option>
+	
+	<option value="//api/name/columns">&nbsp;&nbsp;&nbsp;&nbsp;- columns</option>
+	
+	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;- description</option>
+	
+	<option value="//api/name/firstValue">&nbsp;&nbsp;&nbsp;&nbsp;- firstValue</option>
+	
+	<option value="//api/name/valueAtIndex:forColumn:">&nbsp;&nbsp;&nbsp;&nbsp;- valueAtIndex:forColumn:</option>
+	
+	<option value="//api/name/valuesForColumn:">&nbsp;&nbsp;&nbsp;&nbsp;- valuesForColumn:</option>
+	
+	<option value="//api/name/writeToFile:">&nbsp;&nbsp;&nbsp;&nbsp;- writeToFile:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessors">Accessors</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Exporting the Results to a File">Exporting the Results to a File</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Miscellaneous">Miscellaneous</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Private Methods">Private Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/error">error</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberOfRows">numberOfRows</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_resultWithDictionary:">_resultWithDictionary:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_resultWithError:">_resultWithError:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/JSONDescription">JSONDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_calculateNumberOfRows">_calculateNumberOfRows</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_initWithDictionary:">_initWithDictionary:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_initWithError:">_initWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_reset">_reset</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_setError:">_setError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/columns">columns</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstValue">firstValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/valueAtIndex:forColumn:">valueAtIndex:forColumn:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/valuesForColumn:">valuesForColumn:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/writeToFile:">writeToFile:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSFNanoResult Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSFNanoResult Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSFNanoResult.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class NSFNanoResult
+* A unit that describes the result of a search.
+*
+* @note
+* The NanoResult is the object representation of a SQL result set. From it, you can obtain the number of rows, the column names and their
+* associated values.
+*
+* @par
+* After obtaining a NanoResult, it&rsquo;s always a good idea to check whether the <i>error</i> property is nil. If so, the result can be assumed to be
+* correct. Otherwise, <i>error</i> will point to the main cause of failure.
+*
+* @details <b>Example:</b>
+@code
+// Instantiate a NanoStore and open it
+<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> *nanoStore = [<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];</p>
+
+<p>// Add some data to the document store
+NSDictionary <em>info = &hellip;;
+<a href="../Classes/NSFNanoBag.html">NSFNanoBag</a> </em>bag = <a href="../Classes/NSFNanoBag.html#//api/name/bag">[NSFNanoBag bag]</a>;
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> <em>obj1 = [NSFNanoObject nanoObjectWithDictionary:info];
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> </em>obj2 = [NSFNanoObject nanoObjectWithDictionary:info];
+[nanoStore addObjectsFromArray:[NSArray arrayWithObjects:obj1, obj2, nil] error:nil];</p>
+
+<p>// Instantiate a search and execute the SQL statement
+<a href="../Classes/NSFNanoSearch.html">NSFNanoSearch</a> <em>search = [NSFNanoSearch searchWithStore:nanoStore];
+NSFNanoResult </em>result = [search executeSQL:@&ldquo;SELECT COUNT(*) FROM NSFKEYS&rdquo;];</p>
+
+<p>// Obtain the result (given as an NSString)
+NSString *value = [result firstValue];</p>
+
+<p>// Close the document store
+[nanoStore closeWithError:nil];
+@endcode</p>
+
+<p>\cond</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/numberOfRows">&nbsp;&nbsp;numberOfRows</a></code>
+		<span class="tooltip"><ul>
+<li>Number of rows contained in the result set.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
+		<span class="tooltip"><ul>
+<li>A reference to the error encountered while processing the request, otherwise nil if the request was successful.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Accessors" name="task_Accessors"></a>
+						<h3 class="subsubtitle task-title">Accessors</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/columns">&ndash;&nbsp;columns</a></code>
+		<span class="tooltip"><p>Returns a new array containing the columns.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/valueAtIndex:forColumn:">&ndash;&nbsp;valueAtIndex:forColumn:</a></code>
+		<span class="tooltip"><p>Returns a new array containing the values for a given column.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/valuesForColumn:">&ndash;&nbsp;valuesForColumn:</a></code>
+		<span class="tooltip"><p>Returns a new array containing the values for a given column.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/firstValue">&ndash;&nbsp;firstValue</a></code>
+		<span class="tooltip"><p>Returns the first value.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Exporting the Results to a File" name="task_Exporting the Results to a File"></a>
+						<h3 class="subsubtitle task-title">Exporting the Results to a File</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/writeToFile:">&ndash;&nbsp;writeToFile:</a></code>
+		<span class="tooltip"><p>Saves the result to a file.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Miscellaneous" name="task_Miscellaneous"></a>
+						<h3 class="subsubtitle task-title">Miscellaneous</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+		<span class="tooltip"><p>Returns a string representation of the result.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/JSONDescription">&ndash;&nbsp;JSONDescription</a></code>
+		<span class="tooltip"><p>Returns a JSON representation of the result.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Private Methods" name="task_Private Methods"></a>
+						<h3 class="subsubtitle task-title">Private Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_resultWithDictionary:">+&nbsp;_resultWithDictionary:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_resultWithError:">+&nbsp;_resultWithError:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_initWithDictionary:">&ndash;&nbsp;_initWithDictionary:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_initWithError:">&ndash;&nbsp;_initWithError:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_setError:">&ndash;&nbsp;_setError:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_reset">&ndash;&nbsp;_reset</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_calculateNumberOfRows">&ndash;&nbsp;_calculateNumberOfRows</a></code>
+		
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/error" title="error"></a>
+	<h3 class="subsubtitle method-title">error</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>A reference to the error encountered while processing the request, otherwise nil if the request was successful.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSError *error</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>A reference to the error encountered while processing the request, otherwise nil if the request was successful.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoResult.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/numberOfRows" title="numberOfRows"></a>
+	<h3 class="subsubtitle method-title">numberOfRows</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>Number of rows contained in the result set.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) NSUInteger numberOfRows</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>Number of rows contained in the result set.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoResult.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/_resultWithDictionary:" title="_resultWithDictionary:"></a>
+	<h3 class="subsubtitle method-title">_resultWithDictionary:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoResult *)_resultWithDictionary:(NSDictionary *)<em>results</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_resultWithError:" title="_resultWithError:"></a>
+	<h3 class="subsubtitle method-title">_resultWithError:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoResult *)_resultWithError:(NSError *)<em>error</em></code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/JSONDescription" title="JSONDescription"></a>
+	<h3 class="subsubtitle method-title">JSONDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a JSON representation of the result.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)JSONDescription</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a JSON representation of the result.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoResult.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_calculateNumberOfRows" title="_calculateNumberOfRows"></a>
+	<h3 class="subsubtitle method-title">_calculateNumberOfRows</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)_calculateNumberOfRows</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_initWithDictionary:" title="_initWithDictionary:"></a>
+	<h3 class="subsubtitle method-title">_initWithDictionary:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (id)_initWithDictionary:(NSDictionary *)<em>results</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_initWithError:" title="_initWithError:"></a>
+	<h3 class="subsubtitle method-title">_initWithError:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (id)_initWithError:(NSError *)<em>error</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_reset" title="_reset"></a>
+	<h3 class="subsubtitle method-title">_reset</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)_reset</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_setError:" title="_setError:"></a>
+	<h3 class="subsubtitle method-title">_setError:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)_setError:(NSError *)<em>error</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/columns" title="columns"></a>
+	<h3 class="subsubtitle method-title">columns</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the columns.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)columns</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array with the columns retrieved from the result set.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the columns.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoResult.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/description" title="description"></a>
+	<h3 class="subsubtitle method-title">description</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representation of the result.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a string representation of the result.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoResult.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/firstValue" title="firstValue"></a>
+	<h3 class="subsubtitle method-title">firstValue</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the first value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)firstValue</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The value of the first element from the result set.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the first value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoResult.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/valueAtIndex:forColumn:" title="valueAtIndex:forColumn:"></a>
+	<h3 class="subsubtitle method-title">valueAtIndex:forColumn:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the values for a given column.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)valueAtIndex:(NSUInteger)<em>theIndex</em> forColumn:(NSString *)<em>theColumn</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theIndex</em></dt>
+			<dd><p>is the index of the value in the result set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theColumn</em></dt>
+			<dd><p>is the name of the column in the result set.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array with the values associated with a given column.
+@throws NSRangeException is thrown if the index is out of bounds.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the values for a given column.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoResult.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/valuesForColumn:" title="valuesForColumn:"></a>
+	<h3 class="subsubtitle method-title">valuesForColumn:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the values for a given column.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)valuesForColumn:(NSString *)<em>theColumn</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theColumn</em></dt>
+			<dd><p>is the name of the column in the result set.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array with the values associated with a given column.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the values for a given column.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoResult.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/writeToFile:" title="writeToFile:"></a>
+	<h3 class="subsubtitle method-title">writeToFile:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves the result to a file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)writeToFile:(NSString *)<em>thePath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>thePath</em></dt>
+			<dd><p>is the location where the result will be saved to a file.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Saves the result to a file.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoResult.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Tito Ciuro. All rights reserved. (Last updated: 2013-01-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

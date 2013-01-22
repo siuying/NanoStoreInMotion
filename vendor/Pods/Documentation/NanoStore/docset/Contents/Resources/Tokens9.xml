@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NSFNanoStore.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NSFNanoStore</TokenIdentifier>
+			<Abstract type="html">@class NSFNanoStore
+* The document store is where the objects get saved. It can be file-based (permanent of temporary) or memory-backed.
+*
+* @details &lt;b&gt;Example:&lt;/b&gt;
+@code
+// Instantiate a NanoStore and open it
+NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/setNanoStoreEngine:</TokenIdentifier>
+			<Abstract type="html">* A reference to the engine used by the document store, which contains a reference to the SQLite database.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSFNanoEngine *nanoStoreEngine</Declaration>
+			
+			
+			<Anchor>//api/name/nanoStoreEngine</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoStore/nanoStoreEngine</TokenIdentifier>
+			<Abstract type="html">* A reference to the engine used by the document store, which contains a reference to the SQLite database.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSFNanoEngine *nanoStoreEngine</Declaration>
+			
+			
+			<Anchor>//api/name/nanoStoreEngine</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/setNanoEngineProcessingMode:</TokenIdentifier>
+			<Abstract type="html">* The type of engine mode used by NanoStore to process data in the document store.
+The mode can be one of two options: &lt;i&gt;NSFEngineProcessingDefaultMode&lt;/i&gt; and &lt;i&gt;NSFEngineProcessingFastMode&lt;/i&gt;. See &lt;i&gt;NSFEngineProcessingMode&lt;/i&gt;
+to learn more about how these options affect the engine behavior.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/openWithError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, readwrite) NSFEngineProcessingMode nanoEngineProcessingMode</Declaration>
+			
+			
+			<Anchor>//api/name/nanoEngineProcessingMode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoStore/nanoEngineProcessingMode</TokenIdentifier>
+			<Abstract type="html">* The type of engine mode used by NanoStore to process data in the document store.
+The mode can be one of two options: &lt;i&gt;NSFEngineProcessingDefaultMode&lt;/i&gt; and &lt;i&gt;NSFEngineProcessingFastMode&lt;/i&gt;. See &lt;i&gt;NSFEngineProcessingMode&lt;/i&gt;
+to learn more about how these options affect the engine behavior.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/openWithError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, readwrite) NSFEngineProcessingMode nanoEngineProcessingMode</Declaration>
+			
+			
+			<Anchor>//api/name/nanoEngineProcessingMode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/setSaveInterval:</TokenIdentifier>
+			<Abstract type="html">* Number of iterations that will trigger an automatic save.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSUInteger saveInterval</Declaration>
+			
+			
+			<Anchor>//api/name/saveInterval</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoStore/saveInterval</TokenIdentifier>
+			<Abstract type="html">* Number of iterations that will trigger an automatic save.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSUInteger saveInterval</Declaration>
+			
+			
+			<Anchor>//api/name/saveInterval</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/setHasUnsavedChanges:</TokenIdentifier>
+			<Abstract type="html">* Whether there are objects that haven&apos;t been saved to the store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasUnsavedChanges</Declaration>
+			
+			
+			<Anchor>//api/name/hasUnsavedChanges</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoStore/hasUnsavedChanges</TokenIdentifier>
+			<Abstract type="html">* Whether there are objects that haven&apos;t been saved to the store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasUnsavedChanges</Declaration>
+			
+			
+			<Anchor>//api/name/hasUnsavedChanges</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoStore/createStoreWithType:path:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a document store of a specific type at a given file path.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/openWithError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/NSFNanoStore</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSFNanoStore *)createStoreWithType:(NSFNanoStoreType)theType path:(NSString *)thePath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theType</Name>
+					<Abstract type="html">the type of document store that will be created.</Abstract>
+				</Parameter><Parameter>
+					<Name>thePath</Name>
+					<Abstract type="html">the file path where the document store will be created. Can be nil (see warning for additional info).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A document store upon success, nil otherwise.
+@note
+To manipulate the document store, you must first open it. If you don&apos;t need to configure settings for the document store, you can use
+\link createAndOpenStoreWithType:path:error: + (NSFNanoStore )createAndOpenStoreWithType:(NSFNanoStoreType)theType path:(NSString )thePath error:(out NSError **)outError \endlink instead.
+@warning
+The path is only meaningful for document stores of type \link NSFGlobals::NSFPersistentStoreType NSFPersistentStoreType \endlink. It must not be nil.
+@throws NSFUnexpectedParameterException is thrown if the file path is nil or empty and the type is set to @ref NSFPersistentStoreType &quot;NSFPersistentStoreType&quot;.</Abstract></ReturnValue>
+			<Anchor>//api/name/createStoreWithType:path:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoStore/createAndOpenStoreWithType:path:error:</TokenIdentifier>
+			<Abstract type="html">Creates, opens and returns a document store of a specific type at a given file path.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/openWithError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/NSFNanoStore</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSFNanoStore *)createAndOpenStoreWithType:(NSFNanoStoreType)theType path:(NSString *)thePath error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theType</Name>
+					<Abstract type="html">the type of document store that will be created.</Abstract>
+				</Parameter><Parameter>
+					<Name>thePath</Name>
+					<Abstract type="html">the file path where the document store will be created. Can be nil (see warning for additional info).</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A document store upon success, nil otherwise.
+@note
+If you need to configure settings for the document store, you can use \link createStoreWithType:path: + (NSFNanoStore )createStoreWithType:(NSFNanoStoreType)theType path:(NSString )thePath \endlink instead.
+@warning
+The path is only meaningful for document stores of type @ref NSFPersistentStoreType &quot;NSFPersistentStoreType&quot;. It must not be nil.
+@throws NSFUnexpectedParameterException is thrown if the file path is nil or empty and the type is set to @ref NSFPersistentStoreType &quot;NSFPersistentStoreType&quot;.</Abstract></ReturnValue>
+			<Anchor>//api/name/createAndOpenStoreWithType:path:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/initStoreWithType:path:</TokenIdentifier>
+			<Abstract type="html">Initializes a newly allocated document store of a specific type at a given file path.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/openWithError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/NSFNanoStore</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (id)initStoreWithType:(NSFNanoStoreType)theType path:(NSString *)thePath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theType</Name>
+					<Abstract type="html">the type of document store that will be created.</Abstract>
+				</Parameter><Parameter>
+					<Name>thePath</Name>
+					<Abstract type="html">the file path where the document store will be created. Can be nil (see note for additional info).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A document store upon success, nil otherwise.
+@note
+To manipulate the document store, you must first open it. If you don&apos;t need to configure settings for the document store, you can use
+\link createAndOpenStoreWithType:path:error: + (NSFNanoStore )createAndOpenStoreWithType:(NSFNanoStoreType)theType path:(NSString )thePath error:(out NSError **)outError \endlink instead.
+@warning
+The path is only meaningful for document stores of type @ref NSFPersistentStoreType &quot;NSFPersistentStoreType&quot;. It must not be nil.
+@throws NSFUnexpectedParameterException is thrown if the file path is nil and the type is set to @ref NSFPersistentStoreType &quot;NSFPersistentStoreType&quot;.</Abstract></ReturnValue>
+			<Anchor>//api/name/initStoreWithType:path:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/openWithError:</TokenIdentifier>
+			<Abstract type="html">Opens the document store, making it ready for manipulation.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/NSFNanoStore</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)openWithError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/openWithError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/closeWithError:</TokenIdentifier>
+			<Abstract type="html">Closes the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/isClosed</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)closeWithError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/closeWithError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/filePath</TokenIdentifier>
+			<Abstract type="html">Location where the document store is found.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)filePath</Declaration>
+			
+			
+			<Anchor>//api/name/filePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/isClosed</TokenIdentifier>
+			<Abstract type="html">Checks whether the document store is closed or open.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isClosed</Declaration>
+			
+			
+			<Anchor>//api/name/isClosed</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/addObject:error:</TokenIdentifier>
+			<Abstract type="html">Adds an \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object to the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/addObjectsFromArray:error:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)addObject:(id&lt;NSFNanoObjectProtocol&gt;)theObject error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theObject</Name>
+					<Abstract type="html">is added to the document store.</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/addObject:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/addObjectsFromArray:error:</TokenIdentifier>
+			<Abstract type="html">Adds a series of \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant objects to the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/NSFNanoObjectProtocol</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)addObjectsFromArray:(NSArray *)theObjects error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theObjects</Name>
+					<Abstract type="html">is an array of objects to be added to the document store. The objects must be \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/addObjectsFromArray:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeObject:error:</TokenIdentifier>
+			<Abstract type="html">Removes an object from the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeObjectsWithKeysInArray:error:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeObjectsInArray:error:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeAllObjectsFromStoreAndReturnError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)removeObject:(id&lt;NSFNanoObjectProtocol&gt;)theObject error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theObject</Name>
+					<Abstract type="html">the object to be removed from the document store.</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/removeObject:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeObjectsWithKeysInArray:error:</TokenIdentifier>
+			<Abstract type="html">Removes the list of objects with the specified keys from the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/NSFNanoObjectProtocol</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeObjectsInArray:error:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeAllObjectsFromStoreAndReturnError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)removeObjectsWithKeysInArray:(NSArray *)theKeys error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theKeys</Name>
+					<Abstract type="html">the list of keys to be removed from the document store.</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/removeObjectsWithKeysInArray:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeObjectsInArray:error:</TokenIdentifier>
+			<Abstract type="html">Removes the list of objects from the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/NSFNanoObjectProtocol</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeObjectsWithKeysInArray:error:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeAllObjectsFromStoreAndReturnError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)removeObjectsInArray:(NSArray *)theObjects error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theObjects</Name>
+					<Abstract type="html">the list of objects to be removed from the document store.</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/removeObjectsInArray:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeAllObjectsFromStoreAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Removes all objects from the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/NSFNanoObjectProtocol</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeObjectsWithKeysInArray:error:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/removeObjectsInArray:error:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)removeAllObjectsFromStoreAndReturnError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/removeAllObjectsFromStoreAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/bags</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the bags found in the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/bagsWithKeysInArray:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/bagsContainingObjectWithKey:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSArray *)bags</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array with the bags found in the document store.</Abstract></ReturnValue>
+			<Anchor>//api/name/bags</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/bagWithName:</TokenIdentifier>
+			<Abstract type="html">Retrieves the bag associated with the specified name.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (NSFNanoBag *)bagWithName:(NSString *)theName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theName</Name>
+					<Abstract type="html">the name of the bag.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The bag that matches the specified name, nil otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/bagWithName:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/bagsWithName:</TokenIdentifier>
+			<Abstract type="html">Retrieves all bags associated with the specified name.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)bagsWithName:(NSString *)theName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theName</Name>
+					<Abstract type="html">the name of the bag.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The bags that match the specified name, an empty array otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/bagsWithName:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/bagsWithKeysInArray:</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the bags found in the document store matching the specified list of keys.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/bags</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/bagsContainingObjectWithKey:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSArray *)bagsWithKeysInArray:(NSArray *)theKeys</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theKeys</Name>
+					<Abstract type="html">the list of bag keys.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array with the bags that match the specified list of keys.</Abstract></ReturnValue>
+			<Anchor>//api/name/bagsWithKeysInArray:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/bagsContainingObjectWithKey:</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the bags found in the document store which contain the object specified by the key.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/bags</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/bagsWithKeysInArray:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSArray *)bagsContainingObjectWithKey:(NSString *)theKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theKey</Name>
+					<Abstract type="html">the key of the object.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array with the bags that contain the object matching the specified key.</Abstract></ReturnValue>
+			<Anchor>//api/name/bagsContainingObjectWithKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/objectsWithKeysInArray:</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the objects found in the document store matching the specified list of keys.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)objectsWithKeysInArray:(NSArray *)theKeys</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theKeys</Name>
+					<Abstract type="html">the list of \link NSFNanoObjectProtocol::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object keys.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array with the objects matching the specified list of keys.</Abstract></ReturnValue>
+			<Anchor>//api/name/objectsWithKeysInArray:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/allObjectClasses</TokenIdentifier>
+			<Abstract type="html">Returns a new array containing the objects classes in the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)allObjectClasses</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array of the class names found in the document store.</Abstract></ReturnValue>
+			<Anchor>//api/name/allObjectClasses</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/objectsOfClassNamed:</TokenIdentifier>
+			<Abstract type="html">Returns an array containing the objects in the document store which match a specific class name.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)objectsOfClassNamed:(NSString *)theClassName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theClassName</Name>
+					<Abstract type="html">the name of the class that will be used for searching. Cannot be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of objects of the specified class name.</Abstract></ReturnValue>
+			<Anchor>//api/name/objectsOfClassNamed:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/objectsOfClassNamed:usingSortDescriptors:</TokenIdentifier>
+			<Abstract type="html">Returns a sorted array containing the objects in the document store which match a specific class name.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)objectsOfClassNamed:(NSString *)theClassName usingSortDescriptors:(NSArray *)theSortDescriptors</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theClassName</Name>
+					<Abstract type="html">the name of the class that will be used for searching. Cannot be NULL.</Abstract>
+				</Parameter><Parameter>
+					<Name>theSortDescriptors</Name>
+					<Abstract type="html">the array of descriptors used to sort the array. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of objects of the specified class name sorted if the sort descriptor was specified.</Abstract></ReturnValue>
+			<Anchor>//api/name/objectsOfClassNamed:usingSortDescriptors:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/countOfObjectsOfClassNamed:</TokenIdentifier>
+			<Abstract type="html">Returns the number of objects in the document store which match a specific class name.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (long long)countOfObjectsOfClassNamed:(NSString *)theClassName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theClassName</Name>
+					<Abstract type="html">the name of the class that will be used for searching. Cannot be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The count of objects of the specified class name.</Abstract></ReturnValue>
+			<Anchor>//api/name/countOfObjectsOfClassNamed:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/saveStoreAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Saves the uncommitted changes to the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/discardUnsavedChanges</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)saveStoreAndReturnError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/saveStoreAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/discardUnsavedChanges</TokenIdentifier>
+			<Abstract type="html">Discards the uncommitted changes that were added to the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/saveStoreAndReturnError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)discardUnsavedChanges</Declaration>
+			
+			
+			<Anchor>//api/name/discardUnsavedChanges</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/compactStoreAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Compact the database file size.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)compactStoreAndReturnError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/compactStoreAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/clearIndexesAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Remove all indexes from the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/rebuildIndexesAndReturnError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)clearIndexesAndReturnError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/clearIndexesAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/rebuildIndexesAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Recreate all indexes from the document store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/clearIndexesAndReturnError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)rebuildIndexesAndReturnError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/rebuildIndexesAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/saveStoreToDirectoryAtPath:compactDatabase:error:</TokenIdentifier>
+			<Abstract type="html">Makes a copy of the document store to a different location and optionally compacts it to its minimum size.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/clearIndexesAndReturnError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)saveStoreToDirectoryAtPath:(NSString *)thePath compactDatabase:(BOOL)shouldCompact error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>thePath</Name>
+					<Abstract type="html">is the location where the document store should be copied to.</Abstract>
+				</Parameter><Parameter>
+					<Name>shouldCompact</Name>
+					<Abstract type="html">is used to flag whether the document store should be compacted.</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/saveStoreToDirectoryAtPath:compactDatabase:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/beginTransactionAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Start a transaction.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/clearIndexesAndReturnError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/commitTransactionAndReturnError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/rollbackTransactionAndReturnError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)beginTransactionAndReturnError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.
+@attention Use this method instead of the ones provided by NSFNanoEngine.</Abstract></ReturnValue>
+			<Anchor>//api/name/beginTransactionAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/commitTransactionAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Commit a transaction.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/rebuildIndexesAndReturnError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/beginTransactionAndReturnError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/rollbackTransactionAndReturnError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)commitTransactionAndReturnError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.
+@attention Use this method instead of the ones provided by NSFNanoEngine.</Abstract></ReturnValue>
+			<Anchor>//api/name/commitTransactionAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/rollbackTransactionAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Rollback a transaction.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/rebuildIndexesAndReturnError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/beginTransactionAndReturnError:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/commitTransactionAndReturnError:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)rollbackTransactionAndReturnError:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES upon success, NO otherwise.
+@attention Use this method instead of the ones provided by NSFNanoEngine.</Abstract></ReturnValue>
+			<Anchor>//api/name/rollbackTransactionAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/description</TokenIdentifier>
+			<Abstract type="html">Returns a string representation of the store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/JSONDescription</TokenIdentifier>
+			<Abstract type="html">Returns a JSON representation of the store.</Abstract>
+			<DeclaredIn>NSFNanoStore.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)JSONDescription</Declaration>
+			
+			
+			<Anchor>//api/name/JSONDescription</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/dictionaryDescription</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSFOrderedDictionary *)dictionaryDescription</Declaration>
+			
+			
+			<Anchor>//api/name/dictionaryDescription</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoStore/_createAndOpenDebugDatabase</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSFNanoStore *)_createAndOpenDebugDatabase</Declaration>
+			
+			
+			<Anchor>//api/name/_createAndOpenDebugDatabase</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_executeSQL:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSFNanoResult *)_executeSQL:(NSString *)theSQLStatement</Declaration>
+			
+			
+			<Anchor>//api/name/_executeSQL:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_nestedDescriptionWithPrefixedSpace:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)_nestedDescriptionWithPrefixedSpace:(NSString *)prefixedSpace</Declaration>
+			
+			
+			<Anchor>//api/name/_nestedDescriptionWithPrefixedSpace:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_initializePreparedStatementsWithError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)_initializePreparedStatementsWithError:(out NSError **)outError</Declaration>
+			
+			
+			<Anchor>//api/name/_initializePreparedStatementsWithError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_releasePreparedStatements</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)_releasePreparedStatements</Declaration>
+			
+			
+			<Anchor>//api/name/_releasePreparedStatements</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_setIsOurTransaction:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)_setIsOurTransaction:(BOOL)value</Declaration>
+			
+			
+			<Anchor>//api/name/_setIsOurTransaction:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_isOurTransaction</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)_isOurTransaction</Declaration>
+			
+			
+			<Anchor>//api/name/_isOurTransaction</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_setupCachingSchema</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)_setupCachingSchema</Declaration>
+			
+			
+			<Anchor>//api/name/_setupCachingSchema</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_storeDictionary:forKey:forClassNamed:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)_storeDictionary:(NSDictionary *)someInfo forKey:(NSString *)aKey forClassNamed:(NSString *)classType error:(out NSError **)outError</Declaration>
+			
+			
+			<Anchor>//api/name/_storeDictionary:forKey:forClassNamed:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/__storeDictionaries:forKeys:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)__storeDictionaries:(NSArray *)someObjects forKeys:(NSArray *)someKeys error:(out NSError **)outError</Declaration>
+			
+			
+			<Anchor>//api/name/__storeDictionaries:forKeys:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)_bindValue:(id)aValue forAttribute:(NSString *)anAttribute parameterNumber:(NSInteger)aParamNumber usingSQLite3Statement:(sqlite3_stmt *)aStatement</Declaration>
+			
+			
+			<Anchor>//api/name/_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_checkNanoStoreIsReadyAndReturnError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)_checkNanoStoreIsReadyAndReturnError:(out NSError **)outError</Declaration>
+			
+			
+			<Anchor>//api/name/_checkNanoStoreIsReadyAndReturnError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_NSFDatatypeOfObject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSFNanoDatatype)_NSFDatatypeOfObject:(id)value</Declaration>
+			
+			
+			<Anchor>//api/name/_NSFDatatypeOfObject:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_stringFromValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)_stringFromValue:(id)aValue</Declaration>
+			
+			
+			<Anchor>//api/name/_stringFromValue:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoStore/_calendarDateToString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)_calendarDateToString:(NSDate *)aDate</Declaration>
+			
+			
+			<Anchor>//api/name/_calendarDateToString:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_flattenCollection:keys:values:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)_flattenCollection:(NSDictionary *)info keys:(NSMutableArray **)flattenedKeys values:(NSMutableArray **)flattenedValues</Declaration>
+			
+			
+			<Anchor>//api/name/_flattenCollection:keys:values:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_flattenCollection:keyPath:keys:values:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)_flattenCollection:(id)someObject keyPath:(NSMutableArray **)aKeyPath keys:(NSMutableArray **)someKeys values:(NSMutableArray **)someValues</Declaration>
+			
+			
+			<Anchor>//api/name/_flattenCollection:keyPath:keys:values:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_prepareSQLite3Statement:theSQLStatement:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)_prepareSQLite3Statement:(sqlite3_stmt **)aStatement theSQLStatement:(NSString *)aSQLQuery</Declaration>
+			
+			
+			<Anchor>//api/name/_prepareSQLite3Statement:theSQLStatement:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_executeSQLite3StepUsingSQLite3Statement:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (void)_executeSQLite3StepUsingSQLite3Statement:(sqlite3_stmt *)aStatement</Declaration>
+			
+			
+			<Anchor>//api/name/_executeSQLite3StepUsingSQLite3Statement:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_addObjectsFromArray:forceSave:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)_addObjectsFromArray:(NSArray *)someObjects forceSave:(BOOL)forceSave error:(out NSError **)outError</Declaration>
+			
+			
+			<Anchor>//api/name/_addObjectsFromArray:forceSave:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoStore/_defaultTestData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDictionary *)_defaultTestData</Declaration>
+			
+			
+			<Anchor>//api/name/_defaultTestData</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_backupFileStoreToDirectoryAtPath:extension:compact:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)_backupFileStoreToDirectoryAtPath:(NSString *)aPath extension:(NSString *)anExtension compact:(BOOL)flag error:(out NSError **)outError</Declaration>
+			
+			
+			<Anchor>//api/name/_backupFileStoreToDirectoryAtPath:extension:compact:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoStore/_backupMemoryStoreToDirectoryAtPath:extension:compact:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoStore_Private.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)_backupMemoryStoreToDirectoryAtPath:(NSString *)aPath extension:(NSString *)anExtension compact:(BOOL)flag error:(out NSError **)outError</Declaration>
+			
+			
+			<Anchor>//api/name/_backupMemoryStoreToDirectoryAtPath:extension:compact:error:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

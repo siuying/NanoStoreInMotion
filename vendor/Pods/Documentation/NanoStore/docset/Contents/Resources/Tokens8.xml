@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NSFNanoSortDescriptor.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NSFNanoSortDescriptor</TokenIdentifier>
+			<Abstract type="html">@class NSFNanoSortDescriptor
+* A unit that describes a sort to be used in conjunction with a search operation.
+* @details &lt;b&gt;Example:&lt;/b&gt;
+@code
+// Instantiate a NanoStore and open it
+NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];
+[nanoStore removeAllObjectsFromStoreAndReturnError:nil];</Abstract>
+			<DeclaredIn>NSFNanoSortDescriptor.h</DeclaredIn>
+			
+			<NodeRef refid="8"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSortDescriptor/setAttribute:</TokenIdentifier>
+			<Abstract type="html">* The property key to use when performing a comparison</Abstract>
+			<DeclaredIn>NSFNanoSortDescriptor.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *attribute</Declaration>
+			
+			
+			<Anchor>//api/name/attribute</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSortDescriptor/attribute</TokenIdentifier>
+			<Abstract type="html">* The property key to use when performing a comparison</Abstract>
+			<DeclaredIn>NSFNanoSortDescriptor.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *attribute</Declaration>
+			
+			
+			<Anchor>//api/name/attribute</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSortDescriptor/setIsAscending:</TokenIdentifier>
+			<Abstract type="html">* The property to indicate whether the comparison should be performed in ascending mode</Abstract>
+			<DeclaredIn>NSFNanoSortDescriptor.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isAscending</Declaration>
+			
+			
+			<Anchor>//api/name/isAscending</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSortDescriptor/isAscending</TokenIdentifier>
+			<Abstract type="html">* The property to indicate whether the comparison should be performed in ascending mode</Abstract>
+			<DeclaredIn>NSFNanoSortDescriptor.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isAscending</Declaration>
+			
+			
+			<Anchor>//api/name/isAscending</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoSortDescriptor/sortDescriptorWithAttribute:ascending:</TokenIdentifier>
+			<Abstract type="html">Creates and returns an sort descriptor with the specified key and ordering.</Abstract>
+			<DeclaredIn>NSFNanoSortDescriptor.h</DeclaredIn>			
+			
+			<Declaration>+ (NSFNanoSortDescriptor *)sortDescriptorWithAttribute:(NSString *)theAttribute ascending:(BOOL)ascending</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>ascending</Name>
+					<Abstract type="html">YES if the sort descriptor specifies sorting in ascending order, otherwise NO.</Abstract>
+				</Parameter><Parameter>
+					<Name>theKey</Name>
+					<Abstract type="html">the property key to use when performing a comparison. Must not be nil or empty.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A sort descriptor initialized with the specified key and ordering.</Abstract></ReturnValue>
+			<Anchor>//api/name/sortDescriptorWithAttribute:ascending:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSortDescriptor/initWithAttribute:ascending:</TokenIdentifier>
+			<Abstract type="html">Initializes a newly allocated sort descriptor with the specified key and ordering.</Abstract>
+			<DeclaredIn>NSFNanoSortDescriptor.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithAttribute:(NSString *)theAttribute ascending:(BOOL)ascending</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>ascending</Name>
+					<Abstract type="html">YES if the sort descriptor specifies sorting in ascending order, otherwise NO.</Abstract>
+				</Parameter><Parameter>
+					<Name>theKey</Name>
+					<Abstract type="html">the property key to use when performing a comparison. Must not be nil or empty.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A sort descriptor initialized with the specified key and ordering.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAttribute:ascending:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSortDescriptor/description</TokenIdentifier>
+			<Abstract type="html">Returns a string representation of the sort.</Abstract>
+			<DeclaredIn>NSFNanoSortDescriptor.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSortDescriptor/JSONDescription</TokenIdentifier>
+			<Abstract type="html">Returns a JSON representation of the sort.</Abstract>
+			<DeclaredIn>NSFNanoSortDescriptor.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)JSONDescription</Declaration>
+			
+			
+			<Anchor>//api/name/JSONDescription</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

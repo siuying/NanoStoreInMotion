@@ -1,0 +1,713 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSFNanoSortDescriptor Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">NanoStore 2.5.7 </a></h1>
+				<a id="developerHome" href="../index.html">Tito Ciuro</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSFNanoSortDescriptor Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/attribute">&nbsp;&nbsp;&nbsp;&nbsp;attribute</option>
+	
+	<option value="//api/name/isAscending">&nbsp;&nbsp;&nbsp;&nbsp;isAscending</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sortDescriptorWithAttribute:ascending:">&nbsp;&nbsp;&nbsp;&nbsp;+ sortDescriptorWithAttribute:ascending:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/JSONDescription">&nbsp;&nbsp;&nbsp;&nbsp;- JSONDescription</option>
+	
+	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;- description</option>
+	
+	<option value="//api/name/initWithAttribute:ascending:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAttribute:ascending:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating and Initializing Expressions">Creating and Initializing Expressions</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Miscellaneous">Miscellaneous</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/attribute">attribute</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAscending">isAscending</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sortDescriptorWithAttribute:ascending:">sortDescriptorWithAttribute:ascending:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/JSONDescription">JSONDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAttribute:ascending:">initWithAttribute:ascending:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSFNanoSortDescriptor Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSFNanoSortDescriptor Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSFNanoSortDescriptor.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class NSFNanoSortDescriptor
+* A unit that describes a sort to be used in conjunction with a search operation.
+* @details <b>Example:</b>
+@code
+// Instantiate a NanoStore and open it
+<a href="../Classes/NSFNanoStore.html">NSFNanoStore</a> *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];
+[nanoStore removeAllObjectsFromStoreAndReturnError:nil];</p>
+
+<p><a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> <em>obj1 = [<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> nanoObjectWithDictionary:[NSDictionary dictionaryWithObject:@&ldquo;Madrid&rdquo; forKey:@&ldquo;City&rdquo;]];
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> </em>obj2 = [<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> nanoObjectWithDictionary:[NSDictionary dictionaryWithObject:@&ldquo;Barcelona&rdquo; forKey:@&ldquo;City&rdquo;]];
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> <em>obj3 = [<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> nanoObjectWithDictionary:[NSDictionary dictionaryWithObject:@&ldquo;San Sebastian&rdquo; forKey:@&ldquo;City&rdquo;]];
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> </em>obj4 = [<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> nanoObjectWithDictionary:[NSDictionary dictionaryWithObject:@&ldquo;Zaragoza&rdquo; forKey:@&ldquo;City&rdquo;]];
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> *obj5 = [<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> nanoObjectWithDictionary:[NSDictionary dictionaryWithObject:@&ldquo;Tarragona&rdquo; forKey:@&ldquo;City&rdquo;]];</p>
+
+<p>[nanoStore addObjectsFromArray:[NSArray arrayWithObjects:obj1, obj2, obj3, obj4, obj5, nil] error:nil];</p>
+
+<p>// Prepare the sort descriptor
+NSFNanoSortDescriptor *sortCities = [[NSFNanoSortDescriptor alloc]initWithAttribute:@&ldquo;City&rdquo; ascending:YES];</p>
+
+<p>// Prepare the search
+<a href="../Classes/NSFNanoSearch.html">NSFNanoSearch</a> *search = [NSFNanoSearch searchWithStore:nanoStore];
+search.sort = [NSArray arrayWithObjects: sortCities, nil];</p>
+
+<p>// Perform the search
+NSArray *searchResults = [search searchObjectsWithReturnType:NSFReturnObjects error:nil];
+STAssertTrue ([searchResults count] == 5, @&ldquo;Expected to find five objects.&rdquo;);
+STAssertTrue ([[[[searchResults objectAtIndex:0]info]objectForKey:@&ldquo;City&rdquo;]isEqualToString:@&ldquo;Barcelona&rdquo;], @&ldquo;Expected to find Barcelona.&rdquo;);</p>
+
+<p>for (<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> *object in searchResults) {
+NSLog(@&ldquo;%@&rdquo;, [[object info]objectForKey:@&ldquo;City&rdquo;]);
+}</p>
+
+<p>// Cleanup
+[sortCities release];</p>
+
+<p>// Close the document store
+[nanoStore closeWithError:nil];
+@endcode</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/attribute">&nbsp;&nbsp;attribute</a></code>
+		<span class="tooltip"><ul>
+<li>The property key to use when performing a comparison</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isAscending">&nbsp;&nbsp;isAscending</a></code>
+		<span class="tooltip"><ul>
+<li>The property to indicate whether the comparison should be performed in ascending mode</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating and Initializing Expressions" name="task_Creating and Initializing Expressions"></a>
+						<h3 class="subsubtitle task-title">Creating and Initializing Expressions</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sortDescriptorWithAttribute:ascending:">+&nbsp;sortDescriptorWithAttribute:ascending:</a></code>
+		<span class="tooltip"><p>Creates and returns an sort descriptor with the specified key and ordering.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithAttribute:ascending:">&ndash;&nbsp;initWithAttribute:ascending:</a></code>
+		<span class="tooltip"><p>Initializes a newly allocated sort descriptor with the specified key and ordering.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Miscellaneous" name="task_Miscellaneous"></a>
+						<h3 class="subsubtitle task-title">Miscellaneous</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+		<span class="tooltip"><p>Returns a string representation of the sort.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/JSONDescription">&ndash;&nbsp;JSONDescription</a></code>
+		<span class="tooltip"><p>Returns a JSON representation of the sort.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/attribute" title="attribute"></a>
+	<h3 class="subsubtitle method-title">attribute</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The property key to use when performing a comparison</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *attribute</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The property key to use when performing a comparison</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSortDescriptor.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isAscending" title="isAscending"></a>
+	<h3 class="subsubtitle method-title">isAscending</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The property to indicate whether the comparison should be performed in ascending mode</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isAscending</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The property to indicate whether the comparison should be performed in ascending mode</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSortDescriptor.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sortDescriptorWithAttribute:ascending:" title="sortDescriptorWithAttribute:ascending:"></a>
+	<h3 class="subsubtitle method-title">sortDescriptorWithAttribute:ascending:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns an sort descriptor with the specified key and ordering.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoSortDescriptor *)sortDescriptorWithAttribute:(NSString *)<em>theAttribute</em> ascending:(BOOL)<em>ascending</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ascending</em></dt>
+			<dd><p>YES if the sort descriptor specifies sorting in ascending order, otherwise NO.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theKey</em></dt>
+			<dd><p>the property key to use when performing a comparison. Must not be nil or empty.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A sort descriptor initialized with the specified key and ordering.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns an sort descriptor with the specified key and ordering.</p><div class="warning"><p><strong>Warning:</strong> The parameter theKey must not be nil.
+@throws NSFUnexpectedParameterException is thrown if the key is nil.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSortDescriptor.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/JSONDescription" title="JSONDescription"></a>
+	<h3 class="subsubtitle method-title">JSONDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a JSON representation of the sort.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)JSONDescription</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a JSON representation of the sort.</p><div class="note"><p><strong>Note:</strong> Check properties <a href="#//api/name/attribute">attribute</a> and <a href="#//api/name/isAscending">isAscending</a> to find out the current state of the sort.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSortDescriptor.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/description" title="description"></a>
+	<h3 class="subsubtitle method-title">description</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representation of the sort.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a string representation of the sort.</p><div class="note"><p><strong>Note:</strong> Check properties <a href="#//api/name/attribute">attribute</a> and <a href="#//api/name/isAscending">isAscending</a> to find out the current state of the sort.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSortDescriptor.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithAttribute:ascending:" title="initWithAttribute:ascending:"></a>
+	<h3 class="subsubtitle method-title">initWithAttribute:ascending:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a newly allocated sort descriptor with the specified key and ordering.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithAttribute:(NSString *)<em>theAttribute</em> ascending:(BOOL)<em>ascending</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ascending</em></dt>
+			<dd><p>YES if the sort descriptor specifies sorting in ascending order, otherwise NO.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theKey</em></dt>
+			<dd><p>the property key to use when performing a comparison. Must not be nil or empty.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A sort descriptor initialized with the specified key and ordering.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes a newly allocated sort descriptor with the specified key and ordering.</p><div class="warning"><p><strong>Warning:</strong> The parameter theKey must not be nil.
+@throws NSFUnexpectedParameterException is thrown if the key is nil.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoSortDescriptor.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Tito Ciuro. All rights reserved. (Last updated: 2013-01-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,3723 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSFNanoStore Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">NanoStore 2.5.7 </a></h1>
+				<a id="developerHome" href="../index.html">Tito Ciuro</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSFNanoStore Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/hasUnsavedChanges">&nbsp;&nbsp;&nbsp;&nbsp;hasUnsavedChanges</option>
+	
+	<option value="//api/name/nanoEngineProcessingMode">&nbsp;&nbsp;&nbsp;&nbsp;nanoEngineProcessingMode</option>
+	
+	<option value="//api/name/nanoStoreEngine">&nbsp;&nbsp;&nbsp;&nbsp;nanoStoreEngine</option>
+	
+	<option value="//api/name/saveInterval">&nbsp;&nbsp;&nbsp;&nbsp;saveInterval</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/_calendarDateToString:">&nbsp;&nbsp;&nbsp;&nbsp;+ _calendarDateToString:</option>
+	
+	<option value="//api/name/_createAndOpenDebugDatabase">&nbsp;&nbsp;&nbsp;&nbsp;+ _createAndOpenDebugDatabase</option>
+	
+	<option value="//api/name/_defaultTestData">&nbsp;&nbsp;&nbsp;&nbsp;+ _defaultTestData</option>
+	
+	<option value="//api/name/createAndOpenStoreWithType:path:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ createAndOpenStoreWithType:path:error:</option>
+	
+	<option value="//api/name/createStoreWithType:path:">&nbsp;&nbsp;&nbsp;&nbsp;+ createStoreWithType:path:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/JSONDescription">&nbsp;&nbsp;&nbsp;&nbsp;- JSONDescription</option>
+	
+	<option value="//api/name/_NSFDatatypeOfObject:">&nbsp;&nbsp;&nbsp;&nbsp;- _NSFDatatypeOfObject:</option>
+	
+	<option value="//api/name/__storeDictionaries:forKeys:error:">&nbsp;&nbsp;&nbsp;&nbsp;- __storeDictionaries:forKeys:error:</option>
+	
+	<option value="//api/name/_addObjectsFromArray:forceSave:error:">&nbsp;&nbsp;&nbsp;&nbsp;- _addObjectsFromArray:forceSave:error:</option>
+	
+	<option value="//api/name/_backupFileStoreToDirectoryAtPath:extension:compact:error:">&nbsp;&nbsp;&nbsp;&nbsp;- _backupFileStoreToDirectoryAtPath:extension:compact:error:</option>
+	
+	<option value="//api/name/_backupMemoryStoreToDirectoryAtPath:extension:compact:error:">&nbsp;&nbsp;&nbsp;&nbsp;- _backupMemoryStoreToDirectoryAtPath:extension:compact:error:</option>
+	
+	<option value="//api/name/_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:">&nbsp;&nbsp;&nbsp;&nbsp;- _bindValue:forAttribute:parameterNumber:usingSQLite3Statement:</option>
+	
+	<option value="//api/name/_checkNanoStoreIsReadyAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- _checkNanoStoreIsReadyAndReturnError:</option>
+	
+	<option value="//api/name/_executeSQL:">&nbsp;&nbsp;&nbsp;&nbsp;- _executeSQL:</option>
+	
+	<option value="//api/name/_executeSQLite3StepUsingSQLite3Statement:">&nbsp;&nbsp;&nbsp;&nbsp;- _executeSQLite3StepUsingSQLite3Statement:</option>
+	
+	<option value="//api/name/_flattenCollection:keyPath:keys:values:">&nbsp;&nbsp;&nbsp;&nbsp;- _flattenCollection:keyPath:keys:values:</option>
+	
+	<option value="//api/name/_flattenCollection:keys:values:">&nbsp;&nbsp;&nbsp;&nbsp;- _flattenCollection:keys:values:</option>
+	
+	<option value="//api/name/_initializePreparedStatementsWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- _initializePreparedStatementsWithError:</option>
+	
+	<option value="//api/name/_isOurTransaction">&nbsp;&nbsp;&nbsp;&nbsp;- _isOurTransaction</option>
+	
+	<option value="//api/name/_nestedDescriptionWithPrefixedSpace:">&nbsp;&nbsp;&nbsp;&nbsp;- _nestedDescriptionWithPrefixedSpace:</option>
+	
+	<option value="//api/name/_prepareSQLite3Statement:theSQLStatement:">&nbsp;&nbsp;&nbsp;&nbsp;- _prepareSQLite3Statement:theSQLStatement:</option>
+	
+	<option value="//api/name/_releasePreparedStatements">&nbsp;&nbsp;&nbsp;&nbsp;- _releasePreparedStatements</option>
+	
+	<option value="//api/name/_setIsOurTransaction:">&nbsp;&nbsp;&nbsp;&nbsp;- _setIsOurTransaction:</option>
+	
+	<option value="//api/name/_setupCachingSchema">&nbsp;&nbsp;&nbsp;&nbsp;- _setupCachingSchema</option>
+	
+	<option value="//api/name/_storeDictionary:forKey:forClassNamed:error:">&nbsp;&nbsp;&nbsp;&nbsp;- _storeDictionary:forKey:forClassNamed:error:</option>
+	
+	<option value="//api/name/_stringFromValue:">&nbsp;&nbsp;&nbsp;&nbsp;- _stringFromValue:</option>
+	
+	<option value="//api/name/addObject:error:">&nbsp;&nbsp;&nbsp;&nbsp;- addObject:error:</option>
+	
+	<option value="//api/name/addObjectsFromArray:error:">&nbsp;&nbsp;&nbsp;&nbsp;- addObjectsFromArray:error:</option>
+	
+	<option value="//api/name/allObjectClasses">&nbsp;&nbsp;&nbsp;&nbsp;- allObjectClasses</option>
+	
+	<option value="//api/name/bagWithName:">&nbsp;&nbsp;&nbsp;&nbsp;- bagWithName:</option>
+	
+	<option value="//api/name/bags">&nbsp;&nbsp;&nbsp;&nbsp;- bags</option>
+	
+	<option value="//api/name/bagsContainingObjectWithKey:">&nbsp;&nbsp;&nbsp;&nbsp;- bagsContainingObjectWithKey:</option>
+	
+	<option value="//api/name/bagsWithKeysInArray:">&nbsp;&nbsp;&nbsp;&nbsp;- bagsWithKeysInArray:</option>
+	
+	<option value="//api/name/bagsWithName:">&nbsp;&nbsp;&nbsp;&nbsp;- bagsWithName:</option>
+	
+	<option value="//api/name/beginTransactionAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- beginTransactionAndReturnError:</option>
+	
+	<option value="//api/name/clearIndexesAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- clearIndexesAndReturnError:</option>
+	
+	<option value="//api/name/closeWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- closeWithError:</option>
+	
+	<option value="//api/name/commitTransactionAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- commitTransactionAndReturnError:</option>
+	
+	<option value="//api/name/compactStoreAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- compactStoreAndReturnError:</option>
+	
+	<option value="//api/name/countOfObjectsOfClassNamed:">&nbsp;&nbsp;&nbsp;&nbsp;- countOfObjectsOfClassNamed:</option>
+	
+	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;- description</option>
+	
+	<option value="//api/name/dictionaryDescription">&nbsp;&nbsp;&nbsp;&nbsp;- dictionaryDescription</option>
+	
+	<option value="//api/name/discardUnsavedChanges">&nbsp;&nbsp;&nbsp;&nbsp;- discardUnsavedChanges</option>
+	
+	<option value="//api/name/filePath">&nbsp;&nbsp;&nbsp;&nbsp;- filePath</option>
+	
+	<option value="//api/name/initStoreWithType:path:">&nbsp;&nbsp;&nbsp;&nbsp;- initStoreWithType:path:</option>
+	
+	<option value="//api/name/isClosed">&nbsp;&nbsp;&nbsp;&nbsp;- isClosed</option>
+	
+	<option value="//api/name/objectsOfClassNamed:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsOfClassNamed:</option>
+	
+	<option value="//api/name/objectsOfClassNamed:usingSortDescriptors:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsOfClassNamed:usingSortDescriptors:</option>
+	
+	<option value="//api/name/objectsWithKeysInArray:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsWithKeysInArray:</option>
+	
+	<option value="//api/name/openWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- openWithError:</option>
+	
+	<option value="//api/name/rebuildIndexesAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- rebuildIndexesAndReturnError:</option>
+	
+	<option value="//api/name/removeAllObjectsFromStoreAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- removeAllObjectsFromStoreAndReturnError:</option>
+	
+	<option value="//api/name/removeObject:error:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObject:error:</option>
+	
+	<option value="//api/name/removeObjectsInArray:error:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObjectsInArray:error:</option>
+	
+	<option value="//api/name/removeObjectsWithKeysInArray:error:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObjectsWithKeysInArray:error:</option>
+	
+	<option value="//api/name/rollbackTransactionAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- rollbackTransactionAndReturnError:</option>
+	
+	<option value="//api/name/saveStoreAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- saveStoreAndReturnError:</option>
+	
+	<option value="//api/name/saveStoreToDirectoryAtPath:compactDatabase:error:">&nbsp;&nbsp;&nbsp;&nbsp;- saveStoreToDirectoryAtPath:compactDatabase:error:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating and Initializing NanoStore">Creating and Initializing NanoStore</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Opening and Closing">Opening and Closing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessors">Accessors</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Adding and Removing Objects">Adding and Removing Objects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Searching and Gathering Data">Searching and Gathering Data</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Saving and Maintenance">Saving and Maintenance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Transactions">Transactions</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Miscellaneous">Miscellaneous</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Private Methods">Private Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasUnsavedChanges">hasUnsavedChanges</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nanoEngineProcessingMode">nanoEngineProcessingMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nanoStoreEngine">nanoStoreEngine</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveInterval">saveInterval</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_calendarDateToString:">_calendarDateToString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_createAndOpenDebugDatabase">_createAndOpenDebugDatabase</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_defaultTestData">_defaultTestData</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createAndOpenStoreWithType:path:error:">createAndOpenStoreWithType:path:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createStoreWithType:path:">createStoreWithType:path:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/JSONDescription">JSONDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_NSFDatatypeOfObject:">_NSFDatatypeOfObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/__storeDictionaries:forKeys:error:">__storeDictionaries:forKeys:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_addObjectsFromArray:forceSave:error:">_addObjectsFromArray:forceSave:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_backupFileStoreToDirectoryAtPath:extension:compact:error:">_backupFileStoreToDirectoryAtPath:extension:compact:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_backupMemoryStoreToDirectoryAtPath:extension:compact:error:">_backupMemoryStoreToDirectoryAtPath:extension:compact:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:">_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_checkNanoStoreIsReadyAndReturnError:">_checkNanoStoreIsReadyAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_executeSQL:">_executeSQL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_executeSQLite3StepUsingSQLite3Statement:">_executeSQLite3StepUsingSQLite3Statement:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_flattenCollection:keyPath:keys:values:">_flattenCollection:keyPath:keys:values:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_flattenCollection:keys:values:">_flattenCollection:keys:values:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_initializePreparedStatementsWithError:">_initializePreparedStatementsWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_isOurTransaction">_isOurTransaction</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_nestedDescriptionWithPrefixedSpace:">_nestedDescriptionWithPrefixedSpace:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_prepareSQLite3Statement:theSQLStatement:">_prepareSQLite3Statement:theSQLStatement:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_releasePreparedStatements">_releasePreparedStatements</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_setIsOurTransaction:">_setIsOurTransaction:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_setupCachingSchema">_setupCachingSchema</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_storeDictionary:forKey:forClassNamed:error:">_storeDictionary:forKey:forClassNamed:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_stringFromValue:">_stringFromValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addObject:error:">addObject:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addObjectsFromArray:error:">addObjectsFromArray:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allObjectClasses">allObjectClasses</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bagWithName:">bagWithName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bags">bags</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bagsContainingObjectWithKey:">bagsContainingObjectWithKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bagsWithKeysInArray:">bagsWithKeysInArray:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bagsWithName:">bagsWithName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/beginTransactionAndReturnError:">beginTransactionAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearIndexesAndReturnError:">clearIndexesAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/closeWithError:">closeWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/commitTransactionAndReturnError:">commitTransactionAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/compactStoreAndReturnError:">compactStoreAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/countOfObjectsOfClassNamed:">countOfObjectsOfClassNamed:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dictionaryDescription">dictionaryDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/discardUnsavedChanges">discardUnsavedChanges</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/filePath">filePath</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initStoreWithType:path:">initStoreWithType:path:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isClosed">isClosed</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsOfClassNamed:">objectsOfClassNamed:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsOfClassNamed:usingSortDescriptors:">objectsOfClassNamed:usingSortDescriptors:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsWithKeysInArray:">objectsWithKeysInArray:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openWithError:">openWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rebuildIndexesAndReturnError:">rebuildIndexesAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllObjectsFromStoreAndReturnError:">removeAllObjectsFromStoreAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObject:error:">removeObject:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObjectsInArray:error:">removeObjectsInArray:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObjectsWithKeysInArray:error:">removeObjectsWithKeysInArray:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rollbackTransactionAndReturnError:">rollbackTransactionAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveStoreAndReturnError:">saveStoreAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveStoreToDirectoryAtPath:compactDatabase:error:">saveStoreToDirectoryAtPath:compactDatabase:error:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSFNanoStore Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSFNanoStore Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSFNanoStore.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class NSFNanoStore
+* The document store is where the objects get saved. It can be file-based (permanent of temporary) or memory-backed.
+*
+* @details <b>Example:</b>
+@code
+// Instantiate a NanoStore and open it
+NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];</p>
+
+<p>// Add some data to the document store
+NSDictionary <em>info = &hellip;;
+<a href="../Classes/NSFNanoObject.html">NSFNanoObject</a> </em>object = [NSFNanoObject nanoObjectWithDictionary:info];
+[nanoStore addObject:object error:nil];</p>
+
+<p>// Return all objects via <a href="../Classes/NSFNanoSearch.html">NSFNanoSearch</a>
+<a href="../Classes/NSFNanoSearch.html">NSFNanoSearch</a> <em>search = [NSFNanoSearch searchWithStore:nanoStore];
+NSDictionary </em>searchResults = [search searchObjectsWithReturnType:NSFReturnObjects error:nil];</p>
+
+<p>// Return the keys of all objects
+NSArray *keys = [search searchObjectsWithReturnType:NSFReturnKeys error:nil];</p>
+
+<p>// Search one or more objects with a series of keys via NSFNanoStore
+NSArray *objects = [nanoStore objectsWithKeysInArray:[NSArray arrayWithObject:@&ldquo;ABC-123&rdquo;]];</p>
+
+<p>// Search an object with a given key via NSFNanoSearch
+[search setKey:@&ldquo;ABC-123&rdquo;];
+objects = [search searchObjectsWithReturnType:NSFReturnObjects error:nil];</p>
+
+<p>// Remove an object from the document store
+[nanoStore removeObject:object error:nil];</p>
+
+<p>// Close the document store
+[nanoStore closeWithError:nil];
+@endcode</p>
+
+<p>\cond</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nanoStoreEngine">&nbsp;&nbsp;nanoStoreEngine</a></code>
+		<span class="tooltip"><ul>
+<li>A reference to the engine used by the document store, which contains a reference to the SQLite database.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nanoEngineProcessingMode">&nbsp;&nbsp;nanoEngineProcessingMode</a></code>
+		<span class="tooltip"><ul>
+<li>The type of engine mode used by NanoStore to process data in the document store.
+The mode can be one of two options: <i>NSFEngineProcessingDefaultMode</i> and <i>NSFEngineProcessingFastMode</i>. See <i>NSFEngineProcessingMode</i>
+to learn more about how these options affect the engine behavior.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveInterval">&nbsp;&nbsp;saveInterval</a></code>
+		<span class="tooltip"><ul>
+<li>Number of iterations that will trigger an automatic save.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasUnsavedChanges">&nbsp;&nbsp;hasUnsavedChanges</a></code>
+		<span class="tooltip"><ul>
+<li>Whether there are objects that haven&rsquo;t been saved to the store.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating and Initializing NanoStore" name="task_Creating and Initializing NanoStore"></a>
+						<h3 class="subsubtitle task-title">Creating and Initializing NanoStore</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createStoreWithType:path:">+&nbsp;createStoreWithType:path:</a></code>
+		<span class="tooltip"><p>Creates and returns a document store of a specific type at a given file path.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createAndOpenStoreWithType:path:error:">+&nbsp;createAndOpenStoreWithType:path:error:</a></code>
+		<span class="tooltip"><p>Creates, opens and returns a document store of a specific type at a given file path.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initStoreWithType:path:">&ndash;&nbsp;initStoreWithType:path:</a></code>
+		<span class="tooltip"><p>Initializes a newly allocated document store of a specific type at a given file path.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Opening and Closing" name="task_Opening and Closing"></a>
+						<h3 class="subsubtitle task-title">Opening and Closing</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openWithError:">&ndash;&nbsp;openWithError:</a></code>
+		<span class="tooltip"><p>Opens the document store, making it ready for manipulation.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/closeWithError:">&ndash;&nbsp;closeWithError:</a></code>
+		<span class="tooltip"><p>Closes the document store.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Accessors" name="task_Accessors"></a>
+						<h3 class="subsubtitle task-title">Accessors</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/filePath">&ndash;&nbsp;filePath</a></code>
+		<span class="tooltip"><p>Location where the document store is found.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isClosed">&ndash;&nbsp;isClosed</a></code>
+		<span class="tooltip"><p>Checks whether the document store is closed or open.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Adding and Removing Objects" name="task_Adding and Removing Objects"></a>
+						<h3 class="subsubtitle task-title">Adding and Removing Objects</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addObject:error:">&ndash;&nbsp;addObject:error:</a></code>
+		<span class="tooltip"><p>Adds an \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object to the document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addObjectsFromArray:error:">&ndash;&nbsp;addObjectsFromArray:error:</a></code>
+		<span class="tooltip"><p>Adds a series of \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant objects to the document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObject:error:">&ndash;&nbsp;removeObject:error:</a></code>
+		<span class="tooltip"><p>Removes an object from the document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObjectsWithKeysInArray:error:">&ndash;&nbsp;removeObjectsWithKeysInArray:error:</a></code>
+		<span class="tooltip"><p>Removes the list of objects with the specified keys from the document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObjectsInArray:error:">&ndash;&nbsp;removeObjectsInArray:error:</a></code>
+		<span class="tooltip"><p>Removes the list of objects from the document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAllObjectsFromStoreAndReturnError:">&ndash;&nbsp;removeAllObjectsFromStoreAndReturnError:</a></code>
+		<span class="tooltip"><p>Removes all objects from the document store.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Searching and Gathering Data" name="task_Searching and Gathering Data"></a>
+						<h3 class="subsubtitle task-title">Searching and Gathering Data</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bags">&ndash;&nbsp;bags</a></code>
+		<span class="tooltip"><p>Returns a new array containing the bags found in the document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bagWithName:">&ndash;&nbsp;bagWithName:</a></code>
+		<span class="tooltip"><p>Retrieves the bag associated with the specified name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bagsWithName:">&ndash;&nbsp;bagsWithName:</a></code>
+		<span class="tooltip"><p>Retrieves all <a href="#//api/name/bags">bags</a> associated with the specified name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bagsWithKeysInArray:">&ndash;&nbsp;bagsWithKeysInArray:</a></code>
+		<span class="tooltip"><p>Returns a new array containing the <a href="#//api/name/bags">bags</a> found in the document store matching the specified list of keys.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bagsContainingObjectWithKey:">&ndash;&nbsp;bagsContainingObjectWithKey:</a></code>
+		<span class="tooltip"><p>Returns a new array containing the <a href="#//api/name/bags">bags</a> found in the document store which contain the object specified by the key.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsWithKeysInArray:">&ndash;&nbsp;objectsWithKeysInArray:</a></code>
+		<span class="tooltip"><p>Returns a new array containing the objects found in the document store matching the specified list of keys.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allObjectClasses">&ndash;&nbsp;allObjectClasses</a></code>
+		<span class="tooltip"><p>Returns a new array containing the objects classes in the document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsOfClassNamed:">&ndash;&nbsp;objectsOfClassNamed:</a></code>
+		<span class="tooltip"><p>Returns an array containing the objects in the document store which match a specific class name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsOfClassNamed:usingSortDescriptors:">&ndash;&nbsp;objectsOfClassNamed:usingSortDescriptors:</a></code>
+		<span class="tooltip"><p>Returns a sorted array containing the objects in the document store which match a specific class name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/countOfObjectsOfClassNamed:">&ndash;&nbsp;countOfObjectsOfClassNamed:</a></code>
+		<span class="tooltip"><p>Returns the number of objects in the document store which match a specific class name.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Saving and Maintenance" name="task_Saving and Maintenance"></a>
+						<h3 class="subsubtitle task-title">Saving and Maintenance</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveStoreAndReturnError:">&ndash;&nbsp;saveStoreAndReturnError:</a></code>
+		<span class="tooltip"><p>Saves the uncommitted changes to the document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/discardUnsavedChanges">&ndash;&nbsp;discardUnsavedChanges</a></code>
+		<span class="tooltip"><p>Discards the uncommitted changes that were added to the document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/compactStoreAndReturnError:">&ndash;&nbsp;compactStoreAndReturnError:</a></code>
+		<span class="tooltip"><p>Compact the database file size.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearIndexesAndReturnError:">&ndash;&nbsp;clearIndexesAndReturnError:</a></code>
+		<span class="tooltip"><p>Remove all indexes from the document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rebuildIndexesAndReturnError:">&ndash;&nbsp;rebuildIndexesAndReturnError:</a></code>
+		<span class="tooltip"><p>Recreate all indexes from the document store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveStoreToDirectoryAtPath:compactDatabase:error:">&ndash;&nbsp;saveStoreToDirectoryAtPath:compactDatabase:error:</a></code>
+		<span class="tooltip"><p>Makes a copy of the document store to a different location and optionally compacts it to its minimum size.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Transactions" name="task_Transactions"></a>
+						<h3 class="subsubtitle task-title">Transactions</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/beginTransactionAndReturnError:">&ndash;&nbsp;beginTransactionAndReturnError:</a></code>
+		<span class="tooltip"><p>Start a transaction.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/commitTransactionAndReturnError:">&ndash;&nbsp;commitTransactionAndReturnError:</a></code>
+		<span class="tooltip"><p>Commit a transaction.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rollbackTransactionAndReturnError:">&ndash;&nbsp;rollbackTransactionAndReturnError:</a></code>
+		<span class="tooltip"><p>Rollback a transaction.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Miscellaneous" name="task_Miscellaneous"></a>
+						<h3 class="subsubtitle task-title">Miscellaneous</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+		<span class="tooltip"><p>Returns a string representation of the store.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/JSONDescription">&ndash;&nbsp;JSONDescription</a></code>
+		<span class="tooltip"><p>Returns a JSON representation of the store.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Private Methods" name="task_Private Methods"></a>
+						<h3 class="subsubtitle task-title">Private Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dictionaryDescription">&ndash;&nbsp;dictionaryDescription</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_createAndOpenDebugDatabase">+&nbsp;_createAndOpenDebugDatabase</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_executeSQL:">&ndash;&nbsp;_executeSQL:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_nestedDescriptionWithPrefixedSpace:">&ndash;&nbsp;_nestedDescriptionWithPrefixedSpace:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_initializePreparedStatementsWithError:">&ndash;&nbsp;_initializePreparedStatementsWithError:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_releasePreparedStatements">&ndash;&nbsp;_releasePreparedStatements</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_setIsOurTransaction:">&ndash;&nbsp;_setIsOurTransaction:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_isOurTransaction">&ndash;&nbsp;_isOurTransaction</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_setupCachingSchema">&ndash;&nbsp;_setupCachingSchema</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_storeDictionary:forKey:forClassNamed:error:">&ndash;&nbsp;_storeDictionary:forKey:forClassNamed:error:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/__storeDictionaries:forKeys:error:">&ndash;&nbsp;__storeDictionaries:forKeys:error:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:">&ndash;&nbsp;_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_checkNanoStoreIsReadyAndReturnError:">&ndash;&nbsp;_checkNanoStoreIsReadyAndReturnError:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_NSFDatatypeOfObject:">&ndash;&nbsp;_NSFDatatypeOfObject:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_stringFromValue:">&ndash;&nbsp;_stringFromValue:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_calendarDateToString:">+&nbsp;_calendarDateToString:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_flattenCollection:keys:values:">&ndash;&nbsp;_flattenCollection:keys:values:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_flattenCollection:keyPath:keys:values:">&ndash;&nbsp;_flattenCollection:keyPath:keys:values:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_prepareSQLite3Statement:theSQLStatement:">&ndash;&nbsp;_prepareSQLite3Statement:theSQLStatement:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_executeSQLite3StepUsingSQLite3Statement:">&ndash;&nbsp;_executeSQLite3StepUsingSQLite3Statement:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_addObjectsFromArray:forceSave:error:">&ndash;&nbsp;_addObjectsFromArray:forceSave:error:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_defaultTestData">+&nbsp;_defaultTestData</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_backupFileStoreToDirectoryAtPath:extension:compact:error:">&ndash;&nbsp;_backupFileStoreToDirectoryAtPath:extension:compact:error:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_backupMemoryStoreToDirectoryAtPath:extension:compact:error:">&ndash;&nbsp;_backupMemoryStoreToDirectoryAtPath:extension:compact:error:</a></code>
+		
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/hasUnsavedChanges" title="hasUnsavedChanges"></a>
+	<h3 class="subsubtitle method-title">hasUnsavedChanges</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>Whether there are objects that haven&rsquo;t been saved to the store.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL hasUnsavedChanges</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>Whether there are objects that haven&rsquo;t been saved to the store.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/nanoEngineProcessingMode" title="nanoEngineProcessingMode"></a>
+	<h3 class="subsubtitle method-title">nanoEngineProcessingMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The type of engine mode used by NanoStore to process data in the document store.
+The mode can be one of two options: <i>NSFEngineProcessingDefaultMode</i> and <i>NSFEngineProcessingFastMode</i>. See <i>NSFEngineProcessingMode</i>
+to learn more about how these options affect the engine behavior.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) NSFEngineProcessingMode nanoEngineProcessingMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The type of engine mode used by NanoStore to process data in the document store.
+The mode can be one of two options: <i>NSFEngineProcessingDefaultMode</i> and <i>NSFEngineProcessingFastMode</i>. See <i>NSFEngineProcessingMode</i>
+to learn more about how these options affect the engine behavior.</li>
+</ul>
+
+
+<p>In default mode, the pragmas are set as follows:</p>
+
+<ul>
+<li>PRAGMA fullfsync = OFF;</li>
+<li>PRAGMA synchronous = FULL;</li>
+<li>PRAGMA journal_mode = DELETE;</li>
+<li>PRAGMA temp_store = DEFAULT;</li>
+</ul>
+
+
+<p>In fast mode, the pragmas are set to:</p>
+
+<ul>
+<li>PRAGMA fullfsync = OFF;</li>
+<li>PRAGMA synchronous = OFF;</li>
+<li>PRAGMA journal_mode = MEMORY;</li>
+<li>PRAGMA temp_store = MEMORY;</li>
+</ul>
+<div class="note"><p><strong>Note:</strong> Set this property before you open the document store.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><ul>
+<li>(BOOL)<a href="#//api/name/openWithError:">&ndash; openWithError:</a>(out NSError **)outError;</li>
+</ul>
+</code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/nanoStoreEngine" title="nanoStoreEngine"></a>
+	<h3 class="subsubtitle method-title">nanoStoreEngine</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>A reference to the engine used by the document store, which contains a reference to the SQLite database.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSFNanoEngine *nanoStoreEngine</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>A reference to the engine used by the document store, which contains a reference to the SQLite database.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveInterval" title="saveInterval"></a>
+	<h3 class="subsubtitle method-title">saveInterval</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>Number of iterations that will trigger an automatic save.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) NSUInteger saveInterval</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>Number of iterations that will trigger an automatic save.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/_calendarDateToString:" title="_calendarDateToString:"></a>
+	<h3 class="subsubtitle method-title">_calendarDateToString:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)_calendarDateToString:(NSDate *)<em>aDate</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_createAndOpenDebugDatabase" title="_createAndOpenDebugDatabase"></a>
+	<h3 class="subsubtitle method-title">_createAndOpenDebugDatabase</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoStore *)_createAndOpenDebugDatabase</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_defaultTestData" title="_defaultTestData"></a>
+	<h3 class="subsubtitle method-title">_defaultTestData</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)_defaultTestData</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createAndOpenStoreWithType:path:error:" title="createAndOpenStoreWithType:path:error:"></a>
+	<h3 class="subsubtitle method-title">createAndOpenStoreWithType:path:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates, opens and returns a document store of a specific type at a given file path.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoStore *)createAndOpenStoreWithType:(NSFNanoStoreType)<em>theType</em> path:(NSString *)<em>thePath</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theType</em></dt>
+			<dd><p>the type of document store that will be created.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>thePath</em></dt>
+			<dd><p>the file path where the document store will be created. Can be nil (see warning for additional info).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A document store upon success, nil otherwise.
+@note
+If you need to configure settings for the document store, you can use \link <a href="#//api/name/createStoreWithType:path:">createStoreWithType:path:</a> + (NSFNanoStore <em>)createStoreWithType:(NSFNanoStoreType)theType path:(NSString </em>)thePath \endlink instead.
+@warning
+The path is only meaningful for document stores of type @ref NSFPersistentStoreType &ldquo;NSFPersistentStoreType&rdquo;. It must not be nil.
+@throws NSFUnexpectedParameterException is thrown if the file path is nil or empty and the type is set to @ref NSFPersistentStoreType &ldquo;NSFPersistentStoreType&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates, opens and returns a document store of a specific type at a given file path.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/openWithError:">&ndash; openWithError:</a> &ndash; (BOOL)<a href="#//api/name/openWithError:">&ndash; openWithError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/createStoreWithType:path:">+ createStoreWithType:path:</a> + (NSFNanoStore <em>)createStoreWithType:(NSFNanoStoreType)theType path:(NSString </em>)thePath \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createStoreWithType:path:" title="createStoreWithType:path:"></a>
+	<h3 class="subsubtitle method-title">createStoreWithType:path:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a document store of a specific type at a given file path.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoStore *)createStoreWithType:(NSFNanoStoreType)<em>theType</em> path:(NSString *)<em>thePath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theType</em></dt>
+			<dd><p>the type of document store that will be created.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>thePath</em></dt>
+			<dd><p>the file path where the document store will be created. Can be nil (see warning for additional info).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A document store upon success, nil otherwise.
+@note
+To manipulate the document store, you must first open it. If you don&rsquo;t need to configure settings for the document store, you can use
+\link <a href="#//api/name/createAndOpenStoreWithType:path:error:">createAndOpenStoreWithType:path:error:</a> + (NSFNanoStore <em>)createAndOpenStoreWithType:(NSFNanoStoreType)theType path:(NSString </em>)thePath error:(out NSError **)outError \endlink instead.
+@warning
+The path is only meaningful for document stores of type \link NSFGlobals::NSFPersistentStoreType NSFPersistentStoreType \endlink. It must not be nil.
+@throws NSFUnexpectedParameterException is thrown if the file path is nil or empty and the type is set to @ref NSFPersistentStoreType &ldquo;NSFPersistentStoreType&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a document store of a specific type at a given file path.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/openWithError:">&ndash; openWithError:</a> &ndash; (BOOL)<a href="#//api/name/openWithError:">&ndash; openWithError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/createAndOpenStoreWithType:path:error:">+ createAndOpenStoreWithType:path:error:</a> + (NSFNanoStore <em>)createAndOpenStoreWithType:(NSFNanoStoreType)theType path:(NSString </em>)thePath error:(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/JSONDescription" title="JSONDescription"></a>
+	<h3 class="subsubtitle method-title">JSONDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a JSON representation of the store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)JSONDescription</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a JSON representation of the store.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_NSFDatatypeOfObject:" title="_NSFDatatypeOfObject:"></a>
+	<h3 class="subsubtitle method-title">_NSFDatatypeOfObject:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSFNanoDatatype)_NSFDatatypeOfObject:(id)<em>value</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/__storeDictionaries:forKeys:error:" title="__storeDictionaries:forKeys:error:"></a>
+	<h3 class="subsubtitle method-title">__storeDictionaries:forKeys:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)__storeDictionaries:(NSArray *)<em>someObjects</em> forKeys:(NSArray *)<em>someKeys</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_addObjectsFromArray:forceSave:error:" title="_addObjectsFromArray:forceSave:error:"></a>
+	<h3 class="subsubtitle method-title">_addObjectsFromArray:forceSave:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)_addObjectsFromArray:(NSArray *)<em>someObjects</em> forceSave:(BOOL)<em>forceSave</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_backupFileStoreToDirectoryAtPath:extension:compact:error:" title="_backupFileStoreToDirectoryAtPath:extension:compact:error:"></a>
+	<h3 class="subsubtitle method-title">_backupFileStoreToDirectoryAtPath:extension:compact:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)_backupFileStoreToDirectoryAtPath:(NSString *)<em>aPath</em> extension:(NSString *)<em>anExtension</em> compact:(BOOL)<em>flag</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_backupMemoryStoreToDirectoryAtPath:extension:compact:error:" title="_backupMemoryStoreToDirectoryAtPath:extension:compact:error:"></a>
+	<h3 class="subsubtitle method-title">_backupMemoryStoreToDirectoryAtPath:extension:compact:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)_backupMemoryStoreToDirectoryAtPath:(NSString *)<em>aPath</em> extension:(NSString *)<em>anExtension</em> compact:(BOOL)<em>flag</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:" title="_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:"></a>
+	<h3 class="subsubtitle method-title">_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)_bindValue:(id)<em>aValue</em> forAttribute:(NSString *)<em>anAttribute</em> parameterNumber:(NSInteger)<em>aParamNumber</em> usingSQLite3Statement:(sqlite3_stmt *)<em>aStatement</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_checkNanoStoreIsReadyAndReturnError:" title="_checkNanoStoreIsReadyAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">_checkNanoStoreIsReadyAndReturnError:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)_checkNanoStoreIsReadyAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_executeSQL:" title="_executeSQL:"></a>
+	<h3 class="subsubtitle method-title">_executeSQL:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSFNanoResult *)_executeSQL:(NSString *)<em>theSQLStatement</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_executeSQLite3StepUsingSQLite3Statement:" title="_executeSQLite3StepUsingSQLite3Statement:"></a>
+	<h3 class="subsubtitle method-title">_executeSQLite3StepUsingSQLite3Statement:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)_executeSQLite3StepUsingSQLite3Statement:(sqlite3_stmt *)<em>aStatement</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_flattenCollection:keyPath:keys:values:" title="_flattenCollection:keyPath:keys:values:"></a>
+	<h3 class="subsubtitle method-title">_flattenCollection:keyPath:keys:values:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)_flattenCollection:(id)<em>someObject</em> keyPath:(NSMutableArray **)<em>aKeyPath</em> keys:(NSMutableArray **)<em>someKeys</em> values:(NSMutableArray **)<em>someValues</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_flattenCollection:keys:values:" title="_flattenCollection:keys:values:"></a>
+	<h3 class="subsubtitle method-title">_flattenCollection:keys:values:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)_flattenCollection:(NSDictionary *)<em>info</em> keys:(NSMutableArray **)<em>flattenedKeys</em> values:(NSMutableArray **)<em>flattenedValues</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_initializePreparedStatementsWithError:" title="_initializePreparedStatementsWithError:"></a>
+	<h3 class="subsubtitle method-title">_initializePreparedStatementsWithError:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)_initializePreparedStatementsWithError:(out NSError **)<em>outError</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_isOurTransaction" title="_isOurTransaction"></a>
+	<h3 class="subsubtitle method-title">_isOurTransaction</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)_isOurTransaction</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_nestedDescriptionWithPrefixedSpace:" title="_nestedDescriptionWithPrefixedSpace:"></a>
+	<h3 class="subsubtitle method-title">_nestedDescriptionWithPrefixedSpace:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)_nestedDescriptionWithPrefixedSpace:(NSString *)<em>prefixedSpace</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_prepareSQLite3Statement:theSQLStatement:" title="_prepareSQLite3Statement:theSQLStatement:"></a>
+	<h3 class="subsubtitle method-title">_prepareSQLite3Statement:theSQLStatement:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)_prepareSQLite3Statement:(sqlite3_stmt **)<em>aStatement</em> theSQLStatement:(NSString *)<em>aSQLQuery</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_releasePreparedStatements" title="_releasePreparedStatements"></a>
+	<h3 class="subsubtitle method-title">_releasePreparedStatements</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)_releasePreparedStatements</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_setIsOurTransaction:" title="_setIsOurTransaction:"></a>
+	<h3 class="subsubtitle method-title">_setIsOurTransaction:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)_setIsOurTransaction:(BOOL)<em>value</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_setupCachingSchema" title="_setupCachingSchema"></a>
+	<h3 class="subsubtitle method-title">_setupCachingSchema</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)_setupCachingSchema</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_storeDictionary:forKey:forClassNamed:error:" title="_storeDictionary:forKey:forClassNamed:error:"></a>
+	<h3 class="subsubtitle method-title">_storeDictionary:forKey:forClassNamed:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)_storeDictionary:(NSDictionary *)<em>someInfo</em> forKey:(NSString *)<em>aKey</em> forClassNamed:(NSString *)<em>classType</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_stringFromValue:" title="_stringFromValue:"></a>
+	<h3 class="subsubtitle method-title">_stringFromValue:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)_stringFromValue:(id)<em>aValue</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addObject:error:" title="addObject:error:"></a>
+	<h3 class="subsubtitle method-title">addObject:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds an \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object to the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)addObject:(id&lt;NSFNanoObjectProtocol&gt;)<em>theObject</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObject</em></dt>
+			<dd><p>is added to the document store.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds an \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object to the document store.</p><div class="warning"><p><strong>Warning:</strong> This value cannot be nil and it must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.
+@throws NSFNonConformingNanoObjectProtocolException is thrown if the object is non-\link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink compliant.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/addObjectsFromArray:error:">&ndash; addObjectsFromArray:error:</a> &ndash; (BOOL)addObjectsFromArray:(NSArray *)theObjects error:(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addObjectsFromArray:error:" title="addObjectsFromArray:error:"></a>
+	<h3 class="subsubtitle method-title">addObjectsFromArray:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a series of \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant objects to the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)addObjectsFromArray:(NSArray *)<em>theObjects</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjects</em></dt>
+			<dd><p>is an array of objects to be added to the document store. The objects must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a series of \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant objects to the document store.</p><div class="warning"><p><strong>Warning:</strong> The objects of the array must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.
+@throws NSFNonConformingNanoObjectProtocolException is thrown if the object is non-\link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink compliant.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/addObject:error:">&ndash; addObject:error:</a> &ndash; (BOOL)addObject:(id &lt;<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>>)theObject error:(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allObjectClasses" title="allObjectClasses"></a>
+	<h3 class="subsubtitle method-title">allObjectClasses</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the objects classes in the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)allObjectClasses</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of the class names found in the document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the objects classes in the document store.</p><div class="note"><p><strong>Note:</strong> The classes can be <a href="../Classes/NSFNanoObject.html">NSFNanoObject</a>, <a href="../Classes/NSFNanoBag.html">NSFNanoBag</a> or any \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/bagWithName:" title="bagWithName:"></a>
+	<h3 class="subsubtitle method-title">bagWithName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves the bag associated with the specified name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSFNanoBag *)bagWithName:(NSString *)<em>theName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theName</em></dt>
+			<dd><p>the name of the bag.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The bag that matches the specified name, nil otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Retrieves the bag associated with the specified name.</p><div class="note"><p><strong>Note:</strong> Check properties savedObjects, unsavedObjects and removedObjects to find out the current state of the bag.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/bags" title="bags"></a>
+	<h3 class="subsubtitle method-title">bags</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the bags found in the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)bags</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array with the bags found in the document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the bags found in the document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/bagsWithKeysInArray:">&ndash; bagsWithKeysInArray:</a> &ndash; (NSArray <em>)<a href="#//api/name/bagsWithKeysInArray:">&ndash; bagsWithKeysInArray:</a>(NSArray </em>)theKeys \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/bagsContainingObjectWithKey:">&ndash; bagsContainingObjectWithKey:</a> &ndash; (NSArray <em>)<a href="#//api/name/bagsContainingObjectWithKey:">&ndash; bagsContainingObjectWithKey:</a>(NSString </em>)theKey \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/bagsContainingObjectWithKey:" title="bagsContainingObjectWithKey:"></a>
+	<h3 class="subsubtitle method-title">bagsContainingObjectWithKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the <a href="#//api/name/bags">bags</a> found in the document store which contain the object specified by the key.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)bagsContainingObjectWithKey:(NSString *)<em>theKey</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theKey</em></dt>
+			<dd><p>the key of the object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array with the <a href="#//api/name/bags">bags</a> that contain the object matching the specified key.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the <a href="#//api/name/bags">bags</a> found in the document store which contain the object specified by the key.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/bags">&ndash; bags</a> &ndash; (NSArray *)<a href="#//api/name/bags">&ndash; bags</a> \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/bagsWithKeysInArray:">&ndash; bagsWithKeysInArray:</a> &ndash; (NSArray <em>)<a href="#//api/name/bagsWithKeysInArray:">&ndash; bagsWithKeysInArray:</a>(NSArray </em>)theKeys \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/bagsWithKeysInArray:" title="bagsWithKeysInArray:"></a>
+	<h3 class="subsubtitle method-title">bagsWithKeysInArray:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the <a href="#//api/name/bags">bags</a> found in the document store matching the specified list of keys.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)bagsWithKeysInArray:(NSArray *)<em>theKeys</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theKeys</em></dt>
+			<dd><p>the list of bag keys.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array with the <a href="#//api/name/bags">bags</a> that match the specified list of keys.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the <a href="#//api/name/bags">bags</a> found in the document store matching the specified list of keys.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/bags">&ndash; bags</a> &ndash; (NSArray *)<a href="#//api/name/bags">&ndash; bags</a> \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/bagsContainingObjectWithKey:">&ndash; bagsContainingObjectWithKey:</a> &ndash; (NSArray <em>)<a href="#//api/name/bagsContainingObjectWithKey:">&ndash; bagsContainingObjectWithKey:</a>(NSString </em>)theKey \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/bagsWithName:" title="bagsWithName:"></a>
+	<h3 class="subsubtitle method-title">bagsWithName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves all <a href="#//api/name/bags">bags</a> associated with the specified name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)bagsWithName:(NSString *)<em>theName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theName</em></dt>
+			<dd><p>the name of the bag.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <a href="#//api/name/bags">bags</a> that match the specified name, an empty array otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Retrieves all <a href="#//api/name/bags">bags</a> associated with the specified name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/beginTransactionAndReturnError:" title="beginTransactionAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">beginTransactionAndReturnError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Start a transaction.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)beginTransactionAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.
+@attention Use this method instead of the ones provided by <a href="../Classes/NSFNanoEngine.html">NSFNanoEngine</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Start a transaction.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/clearIndexesAndReturnError:">&ndash; clearIndexesAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/clearIndexesAndReturnError:">&ndash; clearIndexesAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/commitTransactionAndReturnError:">&ndash; commitTransactionAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/commitTransactionAndReturnError:">&ndash; commitTransactionAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/rollbackTransactionAndReturnError:">&ndash; rollbackTransactionAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/rollbackTransactionAndReturnError:">&ndash; rollbackTransactionAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/clearIndexesAndReturnError:" title="clearIndexesAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">clearIndexesAndReturnError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Remove all indexes from the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)clearIndexesAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Remove all indexes from the document store.</p><div class="note"><p><strong>Note:</strong> Clearing the indexes could speed up document store manipulations (insertions, updates and deletions).</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/rebuildIndexesAndReturnError:">&ndash; rebuildIndexesAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/rebuildIndexesAndReturnError:">&ndash; rebuildIndexesAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/closeWithError:" title="closeWithError:"></a>
+	<h3 class="subsubtitle method-title">closeWithError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Closes the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)closeWithError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Closes the document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/isClosed">&ndash; isClosed</a> &ndash; (BOOL)<a href="#//api/name/isClosed">&ndash; isClosed</a> \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/commitTransactionAndReturnError:" title="commitTransactionAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">commitTransactionAndReturnError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Commit a transaction.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)commitTransactionAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.
+@attention Use this method instead of the ones provided by <a href="../Classes/NSFNanoEngine.html">NSFNanoEngine</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Commit a transaction.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/rebuildIndexesAndReturnError:">&ndash; rebuildIndexesAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/rebuildIndexesAndReturnError:">&ndash; rebuildIndexesAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/beginTransactionAndReturnError:">&ndash; beginTransactionAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/beginTransactionAndReturnError:">&ndash; beginTransactionAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/rollbackTransactionAndReturnError:">&ndash; rollbackTransactionAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/rollbackTransactionAndReturnError:">&ndash; rollbackTransactionAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/compactStoreAndReturnError:" title="compactStoreAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">compactStoreAndReturnError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Compact the database file size.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)compactStoreAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Compact the database file size.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/countOfObjectsOfClassNamed:" title="countOfObjectsOfClassNamed:"></a>
+	<h3 class="subsubtitle method-title">countOfObjectsOfClassNamed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of objects in the document store which match a specific class name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (long long)countOfObjectsOfClassNamed:(NSString *)<em>theClassName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theClassName</em></dt>
+			<dd><p>the name of the class that will be used for searching. Cannot be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The count of objects of the specified class name.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the number of objects in the document store which match a specific class name.</p><div class="note"><p><strong>Note:</strong> The classes can be <a href="../Classes/NSFNanoObject.html">NSFNanoObject</a>, <a href="../Classes/NSFNanoBag.html">NSFNanoBag</a> or any \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object.
+@throws NSFUnexpectedParameterException is thrown if the class name is nil or empty.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/description" title="description"></a>
+	<h3 class="subsubtitle method-title">description</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representation of the store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a string representation of the store.</p><div class="note"><p><strong>Note:</strong> Check properties <a href="#//api/name/nanoEngineProcessingMode">nanoEngineProcessingMode</a> and <a href="#//api/name/saveInterval">saveInterval</a> to find out the current state of the object.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dictionaryDescription" title="dictionaryDescription"></a>
+	<h3 class="subsubtitle method-title">dictionaryDescription</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSFOrderedDictionary *)dictionaryDescription</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/discardUnsavedChanges" title="discardUnsavedChanges"></a>
+	<h3 class="subsubtitle method-title">discardUnsavedChanges</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Discards the uncommitted changes that were added to the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)discardUnsavedChanges</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Discards the uncommitted changes that were added to the document store.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/saveStoreAndReturnError:">&ndash; saveStoreAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/saveStoreAndReturnError:">&ndash; saveStoreAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/filePath" title="filePath"></a>
+	<h3 class="subsubtitle method-title">filePath</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Location where the document store is found.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)filePath</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Location where the document store is found.</p><div class="note"><p><strong>Note:</strong> If the document store is file-based, its path will be returned. If it&rsquo;s a memory-backed document store, \link :Globals::NSFMemoryDatabase NSFMemoryDatabase \endlink will be returned instead.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initStoreWithType:path:" title="initStoreWithType:path:"></a>
+	<h3 class="subsubtitle method-title">initStoreWithType:path:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a newly allocated document store of a specific type at a given file path.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initStoreWithType:(NSFNanoStoreType)<em>theType</em> path:(NSString *)<em>thePath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theType</em></dt>
+			<dd><p>the type of document store that will be created.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>thePath</em></dt>
+			<dd><p>the file path where the document store will be created. Can be nil (see note for additional info).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A document store upon success, nil otherwise.
+@note
+To manipulate the document store, you must first open it. If you don&rsquo;t need to configure settings for the document store, you can use
+\link <a href="#//api/name/createAndOpenStoreWithType:path:error:">createAndOpenStoreWithType:path:error:</a> + (NSFNanoStore <em>)createAndOpenStoreWithType:(NSFNanoStoreType)theType path:(NSString </em>)thePath error:(out NSError **)outError \endlink instead.
+@warning
+The path is only meaningful for document stores of type @ref NSFPersistentStoreType &ldquo;NSFPersistentStoreType&rdquo;. It must not be nil.
+@throws NSFUnexpectedParameterException is thrown if the file path is nil and the type is set to @ref NSFPersistentStoreType &ldquo;NSFPersistentStoreType&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes a newly allocated document store of a specific type at a given file path.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/openWithError:">&ndash; openWithError:</a> &ndash; (BOOL)<a href="#//api/name/openWithError:">&ndash; openWithError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/createAndOpenStoreWithType:path:error:">+ createAndOpenStoreWithType:path:error:</a> + (NSFNanoStore <em>)createAndOpenStoreWithType:(NSFNanoStoreType)theType path:(NSString </em>)thePath error:(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isClosed" title="isClosed"></a>
+	<h3 class="subsubtitle method-title">isClosed</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Checks whether the document store is closed or open.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isClosed</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Checks whether the document store is closed or open.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsOfClassNamed:" title="objectsOfClassNamed:"></a>
+	<h3 class="subsubtitle method-title">objectsOfClassNamed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array containing the objects in the document store which match a specific class name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsOfClassNamed:(NSString *)<em>theClassName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theClassName</em></dt>
+			<dd><p>the name of the class that will be used for searching. Cannot be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of objects of the specified class name.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an array containing the objects in the document store which match a specific class name.</p><div class="note"><p><strong>Note:</strong> The classes can be <a href="../Classes/NSFNanoObject.html">NSFNanoObject</a>, <a href="../Classes/NSFNanoBag.html">NSFNanoBag</a> or any \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object.
+@throws NSFUnexpectedParameterException is thrown if the class name is nil or empty.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsOfClassNamed:usingSortDescriptors:" title="objectsOfClassNamed:usingSortDescriptors:"></a>
+	<h3 class="subsubtitle method-title">objectsOfClassNamed:usingSortDescriptors:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a sorted array containing the objects in the document store which match a specific class name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsOfClassNamed:(NSString *)<em>theClassName</em> usingSortDescriptors:(NSArray *)<em>theSortDescriptors</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theClassName</em></dt>
+			<dd><p>the name of the class that will be used for searching. Cannot be NULL.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theSortDescriptors</em></dt>
+			<dd><p>the array of descriptors used to sort the array. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of objects of the specified class name sorted if the sort descriptor was specified.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a sorted array containing the objects in the document store which match a specific class name.</p><div class="note"><p><strong>Note:</strong> The classes can be <a href="../Classes/NSFNanoObject.html">NSFNanoObject</a>, <a href="../Classes/NSFNanoBag.html">NSFNanoBag</a> or any \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object.
+@throws NSFUnexpectedParameterException is thrown if the class name is nil or empty.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsWithKeysInArray:" title="objectsWithKeysInArray:"></a>
+	<h3 class="subsubtitle method-title">objectsWithKeysInArray:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new array containing the objects found in the document store matching the specified list of keys.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsWithKeysInArray:(NSArray *)<em>theKeys</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theKeys</em></dt>
+			<dd><p>the list of \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object keys.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array with the objects matching the specified list of keys.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new array containing the objects found in the document store matching the specified list of keys.</p><div class="note"><p><strong>Note:</strong> The keys can belong to any object class: <a href="../Classes/NSFNanoObject.html">NSFNanoObject</a>, <a href="../Classes/NSFNanoBag.html">NSFNanoBag</a> or any \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant object.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openWithError:" title="openWithError:"></a>
+	<h3 class="subsubtitle method-title">openWithError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the document store, making it ready for manipulation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)openWithError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Opens the document store, making it ready for manipulation.</p><div class="note"><p><strong>Note:</strong> The document store needs to be opened only after opening a document store via
+\link <a href="#//api/name/createStoreWithType:path:">createStoreWithType:path:</a> + (NSFNanoStore <em>)createStoreWithType:(NSFNanoStoreType)theType path:(NSString </em>)thePath\endlink.
+The property <a href="#//api/name/nanoEngineProcessingMode">nanoEngineProcessingMode</a> allows to set the type of engine mode used by NanoStore to process data in the document store. Set this property before you open the document store.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/createStoreWithType:path:">+ createStoreWithType:path:</a> + (NSFNanoStore <em>)createStoreWithType:(NSFNanoStoreType)theType path:(NSString </em>)thePath \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rebuildIndexesAndReturnError:" title="rebuildIndexesAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">rebuildIndexesAndReturnError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Recreate all indexes from the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)rebuildIndexesAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Recreate all indexes from the document store.</p><div class="note"><p><strong>Note:</strong> Rebuilding the indexes recreates the indexes previously removed with \link <a href="#//api/name/clearIndexesAndReturnError:">clearIndexesAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/clearIndexesAndReturnError:">clearIndexesAndReturnError:</a>(out NSError **)outError \endlink.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/clearIndexesAndReturnError:">&ndash; clearIndexesAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/clearIndexesAndReturnError:">&ndash; clearIndexesAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeAllObjectsFromStoreAndReturnError:" title="removeAllObjectsFromStoreAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">removeAllObjectsFromStoreAndReturnError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes all objects from the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)removeAllObjectsFromStoreAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes all objects from the document store.</p><div class="note"><p><strong>Note:</strong> Please note that the unoccupied space will not be reclaimed, so after clearing the cache use \link <a href="#//api/name/compactStoreAndReturnError:">compactStoreAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/compactStoreAndReturnError:">compactStoreAndReturnError:</a>(out NSError **)outError \endlink
+if you want to decrease the database file size.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeObject:error:">&ndash; removeObject:error:</a> &ndash; (BOOL)removeObject:(id &lt;<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>>)theObject error:(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsWithKeysInArray:error:">&ndash; removeObjectsWithKeysInArray:error:</a> &ndash; (BOOL)removeObjectsWithKeysInArray:(NSArray *)theKeys error:(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsInArray:error:">&ndash; removeObjectsInArray:error:</a> &ndash; (BOOL)removeObjectsInArray:(NSArray *)theObjects error:(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObject:error:" title="removeObject:error:"></a>
+	<h3 class="subsubtitle method-title">removeObject:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes an object from the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)removeObject:(id&lt;NSFNanoObjectProtocol&gt;)<em>theObject</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObject</em></dt>
+			<dd><p>the object to be removed from the document store.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes an object from the document store.</p><div class="warning"><p><strong>Warning:</strong> The objects of the array must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsWithKeysInArray:error:">&ndash; removeObjectsWithKeysInArray:error:</a> &ndash; (BOOL)removeObjectsWithKeysInArray:(NSArray *)theKeys error:(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsInArray:error:">&ndash; removeObjectsInArray:error:</a> &ndash; (BOOL)removeObjectsInArray:(NSArray *)theObjects error:(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeAllObjectsFromStoreAndReturnError:">&ndash; removeAllObjectsFromStoreAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/removeAllObjectsFromStoreAndReturnError:">&ndash; removeAllObjectsFromStoreAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObjectsInArray:error:" title="removeObjectsInArray:error:"></a>
+	<h3 class="subsubtitle method-title">removeObjectsInArray:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the list of objects from the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)removeObjectsInArray:(NSArray *)<em>theObjects</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjects</em></dt>
+			<dd><p>the list of objects to be removed from the document store.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes the list of objects from the document store.</p><div class="warning"><p><strong>Warning:</strong> The objects of the array must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeObject:error:">&ndash; removeObject:error:</a> &ndash; (BOOL)removeObject:(id &lt;<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>>)theObject error:(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsWithKeysInArray:error:">&ndash; removeObjectsWithKeysInArray:error:</a> &ndash; (BOOL)removeObjectsWithKeysInArray:(NSArray *)theKeys error:(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeAllObjectsFromStoreAndReturnError:">&ndash; removeAllObjectsFromStoreAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/removeAllObjectsFromStoreAndReturnError:">&ndash; removeAllObjectsFromStoreAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObjectsWithKeysInArray:error:" title="removeObjectsWithKeysInArray:error:"></a>
+	<h3 class="subsubtitle method-title">removeObjectsWithKeysInArray:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the list of objects with the specified keys from the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)removeObjectsWithKeysInArray:(NSArray *)<em>theKeys</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theKeys</em></dt>
+			<dd><p>the list of keys to be removed from the document store.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes the list of objects with the specified keys from the document store.</p><div class="warning"><p><strong>Warning:</strong> The objects of the array must be \link <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>::initNanoObjectFromDictionaryRepresentation:forKey:store: NSFNanoObjectProtocol\endlink-compliant.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeObject:error:">&ndash; removeObject:error:</a> &ndash; (BOOL)removeObject:(id &lt;<a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>>)theObject error:(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsInArray:error:">&ndash; removeObjectsInArray:error:</a> &ndash; (BOOL)removeObjectsInArray:(NSArray *)theObjects error:(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeAllObjectsFromStoreAndReturnError:">&ndash; removeAllObjectsFromStoreAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/removeAllObjectsFromStoreAndReturnError:">&ndash; removeAllObjectsFromStoreAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rollbackTransactionAndReturnError:" title="rollbackTransactionAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">rollbackTransactionAndReturnError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Rollback a transaction.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)rollbackTransactionAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.
+@attention Use this method instead of the ones provided by <a href="../Classes/NSFNanoEngine.html">NSFNanoEngine</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Rollback a transaction.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/rebuildIndexesAndReturnError:">&ndash; rebuildIndexesAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/rebuildIndexesAndReturnError:">&ndash; rebuildIndexesAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/beginTransactionAndReturnError:">&ndash; beginTransactionAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/beginTransactionAndReturnError:">&ndash; beginTransactionAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/commitTransactionAndReturnError:">&ndash; commitTransactionAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/commitTransactionAndReturnError:">&ndash; commitTransactionAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveStoreAndReturnError:" title="saveStoreAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">saveStoreAndReturnError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves the uncommitted changes to the document store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)saveStoreAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Saves the uncommitted changes to the document store.</p><div class="note"><p><strong>Note:</strong> After storing several objects and depending on the save interval, some objects could be left in the cache in an unsaved state.
+Therefore, it&rsquo;s always a good idea to call \link saveStoreAndReturnError: &ndash; (BOOL)saveStoreAndReturnError:(out NSError **)outError \endlink</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/discardUnsavedChanges">&ndash; discardUnsavedChanges</a> &ndash; (void)<a href="#//api/name/discardUnsavedChanges">&ndash; discardUnsavedChanges</a> \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveStoreToDirectoryAtPath:compactDatabase:error:" title="saveStoreToDirectoryAtPath:compactDatabase:error:"></a>
+	<h3 class="subsubtitle method-title">saveStoreToDirectoryAtPath:compactDatabase:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Makes a copy of the document store to a different location and optionally compacts it to its minimum size.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)saveStoreToDirectoryAtPath:(NSString *)<em>thePath</em> compactDatabase:(BOOL)<em>shouldCompact</em> error:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>thePath</em></dt>
+			<dd><p>is the location where the document store should be copied to.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shouldCompact</em></dt>
+			<dd><p>is used to flag whether the document store should be compacted.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Makes a copy of the document store to a different location and optionally compacts it to its minimum size.</p><div class="note"><p><strong>Note:</strong> Works with both, file-based and memory-backed document stores.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/clearIndexesAndReturnError:">&ndash; clearIndexesAndReturnError:</a> &ndash; (BOOL)<a href="#//api/name/clearIndexesAndReturnError:">&ndash; clearIndexesAndReturnError:</a>(out NSError **)outError \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Tito Ciuro. All rights reserved. (Last updated: 2013-01-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

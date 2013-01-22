@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleIdentifier</key>
+	<string>org.cocoapods.NanoStore-2.5.7</string>
+	<key>CFBundleName</key>
+	<string>NanoStore 2.5.7 Documentation</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	
+	
+	<key>DocSetDescription</key>
+	<string>NanoStore is an open source, lightweight schema-less local key-value document store written in Objective-C for Mac OS X and iOS.</string>
+	
+	<key>DocSetFeedName</key>
+	<string>NanoStore 2.5.7 Documentation</string>
+	
+	<key>DocSetMinimumXcodeVersion</key>
+	<string>3.0</string>
+	
+	<key>DocSetPublisherIdentifier</key>
+	<string>org.cocoapods.documentation</string>
+	<key>DocSetPublisherName</key>
+	<string>Tito Ciuro</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Tito Ciuro</string>
+</dict>
+</plist>

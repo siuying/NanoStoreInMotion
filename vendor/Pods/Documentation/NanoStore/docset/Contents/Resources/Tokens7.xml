@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NSFNanoSearch.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NSFNanoSearch</TokenIdentifier>
+			<Abstract type="html">@class NSFNanoSearch
+* A unit that provides an API to retrieve data from the document store.
+*
+* The search can be conducted in two ways: programatically via setters or by providing a SQL statement. In both cases,
+* it&apos;s necessary to indicate which object type should be returned. The type \link Globals::NSFReturnType NSFReturnType \endlink provides two options: \link Globals::NSFReturnObjects NSFReturnObjects \endlink and \link Globals::NSFReturnKeys NSFReturnKeys \endlink.
+*
+*           -  \link Globals::NSFReturnObjects NSFReturnObjects \endlink will return a dictionary with the key of the NanoObject (key and the NanoObject itself (value.
+*           -  \link Globals::NSFReturnKeys NSFReturnKeys \endlink will return an array of NanoObjects.
+*
+* @par &lt;b&gt;Some observations about retrieving data&lt;/b&gt;&lt;br&gt;
+*
+* Given the following data set:
+*
+*           - Number of dictionaries:    3.956
+*           - Number of attributes:    593.862
+*
+* The table describing different timings to perform a simple value search (i.e. &apos;Barcelona&apos;) is included below, ordered from fastest to slowest:
+*
+*&lt;table border=&quot;1&quot; cellpadding=&quot;5&quot;&gt;
+*&lt;tr&gt;
+*&lt;th&gt;Match type&lt;/th&gt;
+*&lt;th&gt;Seconds&lt;/th&gt;
+*&lt;/tr&gt;
+*&lt;tr&gt;&lt;td&gt;Equal to&lt;/td&gt;&lt;td&gt;0.295&lt;/td&gt;&lt;/tr&gt;
+*&lt;tr&gt;&lt;td&gt;Begins with&lt;/td&gt;&lt;td&gt;0.295&lt;/td&gt;&lt;/tr&gt;
+*&lt;tr&gt;&lt;td&gt;Contains&lt;/td&gt;&lt;td&gt;1.295&lt;/td&gt;&lt;/tr&gt;
+*&lt;tr&gt;&lt;td&gt;Contains (insensitive)&lt;/td&gt;&lt;td&gt;1.339&lt;/td&gt;&lt;/tr&gt;
+*&lt;tr&gt;&lt;td&gt;Ends with (insensitive)&lt;/td&gt;&lt;td&gt;1.341&lt;/td&gt;&lt;/tr&gt;
+*&lt;tr&gt;&lt;td&gt;Ends with&lt;/td&gt;&lt;td&gt;1.351&lt;/td&gt;&lt;/tr&gt;
+*&lt;tr&gt;&lt;td&gt;Equal to (insensitive)&lt;/td&gt;&lt;td&gt;1.890&lt;/td&gt;&lt;/tr&gt;
+*&lt;tr&gt;&lt;td&gt;Begins with (insensitive)&lt;/td&gt;&lt;td&gt;2.412&lt;/td&gt;&lt;/tr&gt;
+*&lt;tr&gt;&lt;td&gt;Greater than&lt;/td&gt;&lt;td&gt;18.246&lt;/td&gt;&lt;/tr&gt;
+*&lt;tr&gt;&lt;td&gt;Less than&lt;/td&gt;&lt;td&gt;27.677&lt;/td&gt;&lt;/tr&gt;
+*&lt;/table&gt;</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setNanoStore:</TokenIdentifier>
+			<Abstract type="html">* The document store used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readonly) NSFNanoStore *nanoStore</Declaration>
+			
+			
+			<Anchor>//api/name/nanoStore</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/nanoStore</TokenIdentifier>
+			<Abstract type="html">* The document store used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readonly) NSFNanoStore *nanoStore</Declaration>
+			
+			
+			<Anchor>//api/name/nanoStore</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setAttributesToBeReturned:</TokenIdentifier>
+			<Abstract type="html">* The set of attributes to be returned on matching objects.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSArray *attributesToBeReturned</Declaration>
+			
+			
+			<Anchor>//api/name/attributesToBeReturned</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/attributesToBeReturned</TokenIdentifier>
+			<Abstract type="html">* The set of attributes to be returned on matching objects.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSArray *attributesToBeReturned</Declaration>
+			
+			
+			<Anchor>//api/name/attributesToBeReturned</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setKey:</TokenIdentifier>
+			<Abstract type="html">* The key used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readwrite) NSString *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/key</TokenIdentifier>
+			<Abstract type="html">* The key used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readwrite) NSString *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setAttribute:</TokenIdentifier>
+			<Abstract type="html">* The attribute used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readwrite) NSString *attribute</Declaration>
+			
+			
+			<Anchor>//api/name/attribute</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/attribute</TokenIdentifier>
+			<Abstract type="html">* The attribute used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readwrite) NSString *attribute</Declaration>
+			
+			
+			<Anchor>//api/name/attribute</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setValue:</TokenIdentifier>
+			<Abstract type="html">* The value used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readwrite) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/value</TokenIdentifier>
+			<Abstract type="html">* The value used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readwrite) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setMatch:</TokenIdentifier>
+			<Abstract type="html">* The comparison operator used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSFMatchType match</Declaration>
+			
+			
+			<Anchor>//api/name/match</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/match</TokenIdentifier>
+			<Abstract type="html">* The comparison operator used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSFMatchType match</Declaration>
+			
+			
+			<Anchor>//api/name/match</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setExpressions:</TokenIdentifier>
+			<Abstract type="html">* The list of NSFNanoExpression objects used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSArray *expressions</Declaration>
+			
+			
+			<Anchor>//api/name/expressions</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/expressions</TokenIdentifier>
+			<Abstract type="html">* The list of NSFNanoExpression objects used for searching.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSArray *expressions</Declaration>
+			
+			
+			<Anchor>//api/name/expressions</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setGroupValues:</TokenIdentifier>
+			<Abstract type="html">* If set to YES, specifying NSFReturnKeys applies the DISTINCT function and groups the values.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL groupValues</Declaration>
+			
+			
+			<Anchor>//api/name/groupValues</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/groupValues</TokenIdentifier>
+			<Abstract type="html">* If set to YES, specifying NSFReturnKeys applies the DISTINCT function and groups the values.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL groupValues</Declaration>
+			
+			
+			<Anchor>//api/name/groupValues</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setSql:</TokenIdentifier>
+			<Abstract type="html">* The SQL statement used for searching. Set when executeSQL: is invoked.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *sql</Declaration>
+			
+			
+			<Anchor>//api/name/sql</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/sql</TokenIdentifier>
+			<Abstract type="html">* The SQL statement used for searching. Set when executeSQL: is invoked.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *sql</Declaration>
+			
+			
+			<Anchor>//api/name/sql</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setSort:</TokenIdentifier>
+			<Abstract type="html">* The sort holds an array of one or more sort descriptors of type \link NSFNanoSortDescriptor NSFNanoSortDescriptor \endlink.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSArray *sort</Declaration>
+			
+			
+			<Anchor>//api/name/sort</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/sort</TokenIdentifier>
+			<Abstract type="html">* The sort holds an array of one or more sort descriptors of type \link NSFNanoSortDescriptor NSFNanoSortDescriptor \endlink.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSArray *sort</Declaration>
+			
+			
+			<Anchor>//api/name/sort</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setFilterClass:</TokenIdentifier>
+			<Abstract type="html">* The filterClass allows to filter the results based on a specific object class.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readwrite) NSString *filterClass</Declaration>
+			
+			
+			<Anchor>//api/name/filterClass</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/filterClass</TokenIdentifier>
+			<Abstract type="html">* The filterClass allows to filter the results based on a specific object class.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy, readwrite) NSString *filterClass</Declaration>
+			
+			
+			<Anchor>//api/name/filterClass</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setOffset:</TokenIdentifier>
+			<Abstract type="html">* If an expression has an offset clause, then the first M rows are omitted from the result set returned by the search operation and the next N rows are returned, where M and N are the values that the offset and limit clauses evaluate to, respectively. Or, if the search would return less than M+N rows if it did not have a limit clause, then the first M rows are skipped and the remaining rows (if any) are returned.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSUInteger offset</Declaration>
+			
+			
+			<Anchor>//api/name/offset</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/offset</TokenIdentifier>
+			<Abstract type="html">* If an expression has an offset clause, then the first M rows are omitted from the result set returned by the search operation and the next N rows are returned, where M and N are the values that the offset and limit clauses evaluate to, respectively. Or, if the search would return less than M+N rows if it did not have a limit clause, then the first M rows are skipped and the remaining rows (if any) are returned.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSUInteger offset</Declaration>
+			
+			
+			<Anchor>//api/name/offset</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setLimit:</TokenIdentifier>
+			<Abstract type="html">* The limit clause is used to place an upper bound on the number of rows returned by a Search operation.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSUInteger limit</Declaration>
+			
+			
+			<Anchor>//api/name/limit</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/limit</TokenIdentifier>
+			<Abstract type="html">* The limit clause is used to place an upper bound on the number of rows returned by a Search operation.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSUInteger limit</Declaration>
+			
+			
+			<Anchor>//api/name/limit</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/setBag:</TokenIdentifier>
+			<Abstract type="html">* limit a Search to a particular bag.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSFNanoBag *bag</Declaration>
+			
+			
+			<Anchor>//api/name/bag</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NSFNanoSearch/bag</TokenIdentifier>
+			<Abstract type="html">* limit a Search to a particular bag.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) NSFNanoBag *bag</Declaration>
+			
+			
+			<Anchor>//api/name/bag</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoSearch/searchWithStore:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a search element for a given document store.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/NSFNanoStore</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSFNanoSearch *)searchWithStore:(NSFNanoStore *)theNanoStore</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theNanoStore</Name>
+					<Abstract type="html">the document store where the search will be performed. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An search element upon success, nil otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/searchWithStore:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/initWithStore:</TokenIdentifier>
+			<Abstract type="html">Initializes a newly allocated search element for a given document store.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/NSFNanoStore</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (id)initWithStore:(NSFNanoStore *)theNanoStore</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theNanoStore</Name>
+					<Abstract type="html">the document store where the search will be performed. Must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An search element upon success, nil otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithStore:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/searchObjectsWithReturnType:error:</TokenIdentifier>
+			<Abstract type="html">Performs a search using the values of the properties.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/searchObjectsAdded:date:returnType:error:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (id)searchObjectsWithReturnType:(NSFReturnType)theReturnType error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theReturnType</Name>
+					<Abstract type="html">the type of object to be returned. Can be \link Globals::NSFReturnObjects NSFReturnObjects \endlink or \link Globals::NSFReturnKeys NSFReturnKeys \endlink.</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array is returned if: 1) the sort has been specified or 2) the return type is \link Globals::NSFReturnKeys NSFReturnKeys \endlink. Otherwise, a dictionary is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/searchObjectsWithReturnType:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/searchObjectsAdded:date:returnType:error:</TokenIdentifier>
+			<Abstract type="html">Performs a search using the values of the properties before, on or after a given date.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/searchObjectsWithReturnType:error:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (id)searchObjectsAdded:(NSFDateMatchType)theDateMatch date:(NSDate *)theDate returnType:(NSFReturnType)theReturnType error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theDateMatch</Name>
+					<Abstract type="html">the type of date comparison. Can be \link Globals::NSFBeforeDate NSFBeforeDate \endlink, \link Globals::NSFOnDate NSFOnDate \endlink or \link Globals::NSFAfterDate NSFAfterDate \endlink.</Abstract>
+				</Parameter><Parameter>
+					<Name>theDate</Name>
+					<Abstract type="html">the date to use as a pivot during the search.</Abstract>
+				</Parameter><Parameter>
+					<Name>theReturnType</Name>
+					<Abstract type="html">the type of object to be returned. Can be \link Globals::NSFReturnObjects NSFReturnObjects \endlink or \link Globals::NSFReturnKeys NSFReturnKeys \endlink.</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If theReturnType is \link Globals::NSFReturnObjects NSFReturnObjects \endlink, a dictionary is returned. Otherwise, an array is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/searchObjectsAdded:date:returnType:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/aggregateOperation:onAttribute:</TokenIdentifier>
+			<Abstract type="html">* Returns the result of the aggregate function.
+* @param theFunctionType is the function type to be applied.
+* @param theAttribute is the attribute used in the function.
+* @returns An NSNumber containing the result of the aggregate function.
+* @details &lt;b&gt;Example:&lt;/b&gt;
+@code
+ NSFNanoStore nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];
+*
+* // Assume we have saved data to the document store
+* ...
+* ...
+*
+* // Get the average for the attribute named &apos;SomeNumber&apos;
+ NSFNanoSearch search = [NSFNanoSearch searchWithStore:nanoStore];
+ NSNumber result = [search aggregateOperation:NSFAverage onAttribute:@&quot;SomeNumber&quot;];
+@endcode</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>- (NSNumber *)aggregateOperation:(NSFAggregateFunctionType)theFunctionType onAttribute:(NSString *)theAttribute</Declaration>
+			
+			
+			<Anchor>//api/name/aggregateOperation:onAttribute:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/executeSQL:returnType:error:</TokenIdentifier>
+			<Abstract type="html">Performs a search with a given SQL statement.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/executeSQL:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (id)executeSQL:(NSString *)theSQLStatement returnType:(NSFReturnType)theReturnType error:(out NSError **)outError</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theSQLStatement</Name>
+					<Abstract type="html">is the SQL statement to be executed. Must not be nil or an empty string.</Abstract>
+				</Parameter><Parameter>
+					<Name>theReturnType</Name>
+					<Abstract type="html">the type of object to be returned. Can be \link Globals::NSFReturnObjects NSFReturnObjects \endlink or \link Globals::NSFReturnKeys NSFReturnKeys \endlink.</Abstract>
+				</Parameter><Parameter>
+					<Name>outError</Name>
+					<Abstract type="html">is used if an error occurs. May be NULL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If theReturnType is \link Globals::NSFReturnObjects NSFReturnObjects \endlink, a dictionary is returned. Otherwise, an array is returned.
+@note
+Use this method when performing search on NanoObjects. If you need to perform more advanced SQL statements, you may want to use
+\link executeSQL: - (NSFNanoResult )executeSQL:(NSString )theSQLStatement \endlink instead.
+@par
+The key difference between this method and \link executeSQL: - (NSFNanoResult )executeSQL:(NSString )theSQLStatement \endlink is that this method performs
+a check to make sure the columns specified match the ones required by the \link Globals::NSFReturnType NSFReturnType \endlink type selected. If the column selection is wrong,
+NanoStore rewrites the query by specifying the right set of columns while honoring the rest of the query.
+@details &lt;b&gt;Example:&lt;/b&gt;
+@code
+// Prepare a document store
+NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];
+
+// Prepare some data and wrap it in a NanoObject
+NSString *key = @&quot;ABC-123&quot;;
+NSDictionary *info = ...;
+NSFNanoObject *nanoObject = [NSFNanoObject nanoObjectWithDictionary:info];
+
+// Add it to the document store
+[nanoStore addObjectsFromArray:[NSArray arrayWithObject:nanoObject] error:nil];
+
+// Instantiate a search and specify the attribute we want to search for
+NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];
+
+// Perform the search
+// The query will be rewritten as @&quot;SELECT NSFKey, NSFKeyedArchive, NSFObjectClass FROM NSFKeys&quot;
+NSDictionary *results = [search executeSQL:@&quot;SELECT foo, bar FROM NSFKeys&quot; returnType:NSFReturnObjects error:nil];
+@endcode</Abstract></ReturnValue>
+			<Anchor>//api/name/executeSQL:returnType:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/executeSQL:</TokenIdentifier>
+			<Abstract type="html">Performs a search with a given SQL statement.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/executeSQL:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSFNanoResult *)executeSQL:(NSString *)theSQLStatement</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theSQLStatement</Name>
+					<Abstract type="html">is the SQL statement to be executed. Must not be nil or an empty string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a NSFNanoResult.
+@note
+Use this method when you need to perform more advanced SQL statements. If you just want to query NanoObjects using your own SQL statement,
+you may want to use \link executeSQL:returnType:error: - (id)executeSQL:(NSString )theSQLStatement returnType:(NSFReturnType)theReturnType error:(out NSError *)outError \endlink instead.
+@par
+The key difference between this method and \link executeSQL:returnType:error: - (id)executeSQL:(NSString )theSQLStatement returnType:(NSFReturnType)theReturnType error:(out NSError *)outError \endlink
+is that this method doesn&apos;t perform any check at all. The SQL statement will be sent verbatim to SQLite.
+@details &lt;b&gt;Example:&lt;/b&gt;
+@code
+// Prepare a document store
+NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];
+
+// Prepare some data and wrap it in a NanoObject
+NSString *key = @&quot;ABC-123&quot;;
+NSDictionary *info = ...;
+NSFNanoObject *nanoObject = [NSFNanoObject nanoObjectWithDictionary:info];
+
+// Add it to the document store
+[nanoStore addObjectsFromArray:[NSArray arrayWithObject:nanoObject] error:nil];
+
+// Instantiate a search and specify the attribute we want to search for
+NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];
+
+// Perform the search
+NSFNanoResult result = [search executeSQL:@&quot;SELECT COUNT() FROM NSFKEYS&quot;];
+@endcode</Abstract></ReturnValue>
+			<Anchor>//api/name/executeSQL:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/explainSQL:</TokenIdentifier>
+			<Abstract type="html">Performs an analysis of the given SQL statement.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/executeSQL:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/executeSQL:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSFNanoResult *)explainSQL:(NSString *)theSQLStatement</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theSQLStatement</Name>
+					<Abstract type="html">is the SQL statement to be analyzed. Must not be nil or an empty string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a NSFNanoResult.
+@note
+Returns the sequence of virtual machine instructions with high-level information about what indices would have been used if the SQL statement had
+been executed.
+
+@warning
+The analysis generated by this method is intended for interactive analysis and troubleshooting only. The details of the output format
+are subject to change from one release of SQLite to the next. Applications should not use this method in production code since the exact behavior
+is undocumented, unspecified, and variable.
+
+For additional information about SQLite&apos;s Virtual Machine Opcodes, see http://www.sqlite.org/opcode.html
+
+The tutorial Virtual Database Engine of SQLite is available here: http://www.sqlite.org/vdbe.html
+
+@details &lt;b&gt;Example:&lt;/b&gt;
+@code
+// Prepare a document store
+NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStoreType path:nil error:nil];
+
+// Instantiate a search object
+NSFNanoSearch *search = [NSFNanoSearch searchWithStore:nanoStore];
+
+// Perform the analysis
+NSFNanoResult results = [search explainSQL:@&quot;SELECT  FROM NSFValues&quot;];
+@endcode</Abstract></ReturnValue>
+			<Anchor>//api/name/explainSQL:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/reset</TokenIdentifier>
+			<Abstract type="html">Resets the values to a know, default state.
+- key                 = nil;
+- attribute           = nil;
+- value               = nil;
+- match               = NSFContains;
+- object type         = NSFReturnObjects;
+- groupValues         = NO;
+- attributesReturned  = nil;
+- type returned       = NSFReturnObjects;
+- sql                 = nil;
+- sort                = nil;</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>- (void)reset</Declaration>
+			
+			
+			<Anchor>//api/name/reset</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/description</TokenIdentifier>
+			<Abstract type="html">Returns a string representation of the search.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/JSONDescription</TokenIdentifier>
+			<Abstract type="html">Returns a JSON representation of the search.</Abstract>
+			<DeclaredIn>NSFNanoSearch.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)JSONDescription</Declaration>
+			
+			
+			<Anchor>//api/name/JSONDescription</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/_retrieveDataWithError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSDictionary *)_retrieveDataWithError:(out NSError **)outError</Declaration>
+			
+			
+			<Anchor>//api/name/_retrieveDataWithError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/_dataWithKey:attribute:value:matching:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)_dataWithKey:(NSString *)aKey attribute:(NSString *)anAttribute value:(NSString *)aValue matching:(NSFMatchType)match</Declaration>
+			
+			
+			<Anchor>//api/name/_dataWithKey:attribute:value:matching:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/_dataWithKey:attribute:value:matching:returning:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)_dataWithKey:(NSString *)aKey attribute:(NSString *)anAttribute value:(NSString *)aValue matching:(NSFMatchType)match returning:(NSFReturnType)returnedObjectType</Declaration>
+			
+			
+			<Anchor>//api/name/_dataWithKey:attribute:value:matching:returning:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/_retrieveDataAdded:calendarDate:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSDictionary *)_retrieveDataAdded:(NSFDateMatchType)aDateMatch calendarDate:(NSDate *)aDate error:(out NSError **)outError</Declaration>
+			
+			
+			<Anchor>//api/name/_retrieveDataAdded:calendarDate:error:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/_preparedSQL</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)_preparedSQL</Declaration>
+			
+			
+			<Anchor>//api/name/_preparedSQL</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/_prepareSQLQueryStringWithKey:attribute:value:matching:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)_prepareSQLQueryStringWithKey:(NSString *)aKey attribute:(NSString *)anAttribute value:(id)aValue matching:(NSFMatchType)match</Declaration>
+			
+			
+			<Anchor>//api/name/_prepareSQLQueryStringWithKey:attribute:value:matching:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/_prepareSQLQueryStringWithExpressions:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)_prepareSQLQueryStringWithExpressions:(NSArray *)someExpressions</Declaration>
+			
+			
+			<Anchor>//api/name/_prepareSQLQueryStringWithExpressions:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/_resultsFromSQLQuery:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)_resultsFromSQLQuery:(NSString *)theSQLStatement</Declaration>
+			
+			
+			<Anchor>//api/name/_resultsFromSQLQuery:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoSearch/_prepareSQLQueryStringWithKeys:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)_prepareSQLQueryStringWithKeys:(NSArray *)someKeys</Declaration>
+			
+			
+			<Anchor>//api/name/_prepareSQLQueryStringWithKeys:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoSearch/_querySegmentForColumn:value:matching:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)_querySegmentForColumn:(NSString *)aColumn value:(id)aValue matching:(NSFMatchType)match</Declaration>
+			
+			
+			<Anchor>//api/name/_querySegmentForColumn:value:matching:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoSearch/_querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)_querySegmentForAttributeColumnWithValue:(id)anAttributeValue matching:(NSFMatchType)match valueColumnWithValue:(id)aValue</Declaration>
+			
+			
+			<Anchor>//api/name/_querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/_dictionaryForKeyPath:value:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>- (NSDictionary *)_dictionaryForKeyPath:(NSString *)keyPath value:(id)value</Declaration>
+			
+			
+			<Anchor>//api/name/_dictionaryForKeyPath:value:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NSFNanoSearch/_quoteStrings:joiningWithDelimiter:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)_quoteStrings:(NSArray *)strings joiningWithDelimiter:(NSString *)delimiter</Declaration>
+			
+			
+			<Anchor>//api/name/_quoteStrings:joiningWithDelimiter:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSFNanoSearch/_sortResultsIfApplicable:returnType:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSFNanoSearch_Private.h</DeclaredIn>			
+			
+			<Declaration>- (id)_sortResultsIfApplicable:(NSDictionary *)results returnType:(NSFReturnType)theReturnType</Declaration>
+			
+			
+			<Anchor>//api/name/_sortResultsIfApplicable:returnType:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

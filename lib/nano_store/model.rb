@@ -84,12 +84,12 @@ module NanoStore
   end
 
   class Model < NSFNanoObject
-    include ModelInstanceMethods
-    extend ModelClassMethods
-    extend FinderMethods
+    include NanoStore::ModelInstanceMethods
+    extend NanoStore::ModelClassMethods
+    extend NanoStore::FinderMethods
 
-    include AssociationInstanceMethods
-    extend AssociationClassMethods
+    include NanoStore::AssociationInstanceMethods
+    extend NanoStore::AssociationClassMethods
   end
 
 end

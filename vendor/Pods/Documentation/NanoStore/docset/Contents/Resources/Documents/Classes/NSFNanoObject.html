@@ -1,0 +1,1781 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSFNanoObject Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">NanoStore 2.5.7 </a></h1>
+				<a id="developerHome" href="../index.html">Tito Ciuro</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSFNanoObject Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/info">&nbsp;&nbsp;&nbsp;&nbsp;info</option>
+	
+	<option value="//api/name/key">&nbsp;&nbsp;&nbsp;&nbsp;key</option>
+	
+	<option value="//api/name/originalClassString">&nbsp;&nbsp;&nbsp;&nbsp;originalClassString</option>
+	
+	<option value="//api/name/store">&nbsp;&nbsp;&nbsp;&nbsp;store</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/_NSObjectToJSONString:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ _NSObjectToJSONString:error:</option>
+	
+	<option value="//api/name/_safeArrayFromArray:">&nbsp;&nbsp;&nbsp;&nbsp;+ _safeArrayFromArray:</option>
+	
+	<option value="//api/name/_safeDictionaryFromDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;+ _safeDictionaryFromDictionary:</option>
+	
+	<option value="//api/name/_safeObjectFromObject:">&nbsp;&nbsp;&nbsp;&nbsp;+ _safeObjectFromObject:</option>
+	
+	<option value="//api/name/nanoObject">&nbsp;&nbsp;&nbsp;&nbsp;+ nanoObject</option>
+	
+	<option value="//api/name/nanoObjectWithDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;+ nanoObjectWithDictionary:</option>
+	
+	<option value="//api/name/nanoObjectWithDictionary:key:">&nbsp;&nbsp;&nbsp;&nbsp;+ nanoObjectWithDictionary:key:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/JSONDescription">&nbsp;&nbsp;&nbsp;&nbsp;- JSONDescription</option>
+	
+	<option value="//api/name/_setOriginalClassString:">&nbsp;&nbsp;&nbsp;&nbsp;- _setOriginalClassString:</option>
+	
+	<option value="//api/name/addEntriesFromDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;- addEntriesFromDictionary:</option>
+	
+	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;- description</option>
+	
+	<option value="//api/name/dictionaryRepresentation">&nbsp;&nbsp;&nbsp;&nbsp;- dictionaryRepresentation</option>
+	
+	<option value="//api/name/initFromDictionaryRepresentation:">&nbsp;&nbsp;&nbsp;&nbsp;- initFromDictionaryRepresentation:</option>
+	
+	<option value="//api/name/initFromDictionaryRepresentation:key:">&nbsp;&nbsp;&nbsp;&nbsp;- initFromDictionaryRepresentation:key:</option>
+	
+	<option value="//api/name/isEqualToNanoObject:">&nbsp;&nbsp;&nbsp;&nbsp;- isEqualToNanoObject:</option>
+	
+	<option value="//api/name/objectForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- objectForKey:</option>
+	
+	<option value="//api/name/removeAllObjects">&nbsp;&nbsp;&nbsp;&nbsp;- removeAllObjects</option>
+	
+	<option value="//api/name/removeObjectForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObjectForKey:</option>
+	
+	<option value="//api/name/removeObjectsForKeys:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObjectsForKeys:</option>
+	
+	<option value="//api/name/saveStoreAndReturnError:">&nbsp;&nbsp;&nbsp;&nbsp;- saveStoreAndReturnError:</option>
+	
+	<option value="//api/name/setObject:forKey:">&nbsp;&nbsp;&nbsp;&nbsp;- setObject:forKey:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating and Initializing a NanoObject">Creating and Initializing a NanoObject</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Setting and Removing Contents">Setting and Removing Contents</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Miscellaneous">Miscellaneous</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Private Methods">Private Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/info">info</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/key">key</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/originalClassString">originalClassString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/store">store</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_NSObjectToJSONString:error:">_NSObjectToJSONString:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_safeArrayFromArray:">_safeArrayFromArray:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_safeDictionaryFromDictionary:">_safeDictionaryFromDictionary:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_safeObjectFromObject:">_safeObjectFromObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nanoObject">nanoObject</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nanoObjectWithDictionary:">nanoObjectWithDictionary:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nanoObjectWithDictionary:key:">nanoObjectWithDictionary:key:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/JSONDescription">JSONDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_setOriginalClassString:">_setOriginalClassString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addEntriesFromDictionary:">addEntriesFromDictionary:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dictionaryRepresentation">dictionaryRepresentation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initFromDictionaryRepresentation:">initFromDictionaryRepresentation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initFromDictionaryRepresentation:key:">initFromDictionaryRepresentation:key:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isEqualToNanoObject:">isEqualToNanoObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectForKey:">objectForKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllObjects">removeAllObjects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObjectForKey:">removeObjectForKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObjectsForKeys:">removeObjectsForKeys:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveStoreAndReturnError:">saveStoreAndReturnError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setObject:forKey:">setObject:forKey:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSFNanoObject Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSFNanoObject Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSCopying<br /><a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a></td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSFNanoObject.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class NSFNanoObject
+The basic unit of data in NanoStore is called NanoObject. A NanoObject is any object which conforms to the <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a> protocol.</p>
+
+<p>@section notaflatworld_sec It&rsquo;s not a flat World</p>
+
+<p>Most database solutions force the developer to think in a two-dimensional space (rows and columns), forcing the developer to plan the schema ahead of
+time. This situation is not ideal because in most cases schema refinements could be required, oftentimes impacting the code as well.</p>
+
+<p>NanoStore goes beyond that allowing the developer to <a href="#//api/name/store">store</a> objects in their natural form. These objects must conform to the <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a>
+protocol, providing NanoStore with the NSDictionary that will be stored. By using a dictionary data can be inspected very quickly, and it also allows the
+structure to be defined in a hierarchical fashion as well, due to the fact that it includes support for nested collections (of type NSDictionary and NSArray.)
+Each inner-object is indexed automatically, thus allowing to quickly find objects which contain a specific <a href="#//api/name/key">key</a> and/or value.</p>
+
+<p>By default, NanoStore allows objects to be stored without any sense of relationship to other objects. This simple format, while powerful, is limited because
+the developer has to keep track of the relationships among objects. Some applications may need to relate objects, some of them perhaps of different nature or class
+type. This is exactly what NanoBag (represented by the <a href="../Classes/NSFNanoBag.html">NSFNanoBag</a> class) does: it allows any object conforming to the <a href="../Protocols/NSFNanoObjectProtocol.html">NSFNanoObjectProtocol</a> protocol to be
+added to the bag. By saving the bag with one single call, the new and/or modified are taken care of seamlessly.</p>
+
+<p>The <a href="../Classes/NSFNanoBag.html">NSFNanoBag</a> API is rich, allowing the developer to add, remove, reload and undo its changes, deflate it (thus saving memory) and inflate it whenever it&rsquo;s
+required. In addition, it provides methods to obtain all bags, specific bags matching some keys, and bags containing a specific object</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/store">&nbsp;&nbsp;store</a></code>
+		<span class="tooltip"><ul>
+<li>The store where the object is saved.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/key">&nbsp;&nbsp;key</a></code>
+		<span class="tooltip"><ul>
+<li>The UUID of the NanoObject.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/info">&nbsp;&nbsp;info</a></code>
+		<span class="tooltip"><ul>
+<li>The user-supplied information of the NanoObject.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/originalClassString">&nbsp;&nbsp;originalClassString</a></code>
+		<span class="tooltip"><ul>
+<li>The class name used to <a href="#//api/name/store">store</a> the NanoObject.</li>
+</ul>
+</span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating and Initializing a NanoObject" name="task_Creating and Initializing a NanoObject"></a>
+						<h3 class="subsubtitle task-title">Creating and Initializing a NanoObject</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nanoObject">+&nbsp;nanoObject</a></code>
+		<span class="tooltip"><p>Creates and returns an empty NanoObject.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nanoObjectWithDictionary:">+&nbsp;nanoObjectWithDictionary:</a></code>
+		<span class="tooltip"><p>Creates and returns a NanoObject with the given dictionary.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nanoObjectWithDictionary:key:">+&nbsp;nanoObjectWithDictionary:key:</a></code>
+		<span class="tooltip"><p>Creates and returns a NanoObject with the given dictionary and <a href="#//api/name/key">key</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initFromDictionaryRepresentation:">&ndash;&nbsp;initFromDictionaryRepresentation:</a></code>
+		<span class="tooltip"><p>Initializes a newly allocated NanoObject with the given dictionary.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initFromDictionaryRepresentation:key:">&ndash;&nbsp;initFromDictionaryRepresentation:key:</a></code>
+		<span class="tooltip"><p>Initializes a newly allocated NanoObject with the given dictionary and <a href="#//api/name/key">key</a>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Setting and Removing Contents" name="task_Setting and Removing Contents"></a>
+						<h3 class="subsubtitle task-title">Setting and Removing Contents</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addEntriesFromDictionary:">&ndash;&nbsp;addEntriesFromDictionary:</a></code>
+		<span class="tooltip"><p>Adds the entries from a dictionary to the NanoObject.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setObject:forKey:">&ndash;&nbsp;setObject:forKey:</a></code>
+		<span class="tooltip"><p>Adds a given key-value pair to the NanoObject.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectForKey:">&ndash;&nbsp;objectForKey:</a></code>
+		<span class="tooltip"><p>Returns the value associated with a given <a href="#//api/name/key">key</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObjectForKey:">&ndash;&nbsp;removeObjectForKey:</a></code>
+		<span class="tooltip"><p>Removes a given <a href="#//api/name/key">key</a> and its associated value from the NanoObject.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAllObjects">&ndash;&nbsp;removeAllObjects</a></code>
+		<span class="tooltip"><p>Empties the NanoObject of its entries.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObjectsForKeys:">&ndash;&nbsp;removeObjectsForKeys:</a></code>
+		<span class="tooltip"><p>Removes from the NanoObject entries specified by elements in a given array.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Miscellaneous" name="task_Miscellaneous"></a>
+						<h3 class="subsubtitle task-title">Miscellaneous</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isEqualToNanoObject:">&ndash;&nbsp;isEqualToNanoObject:</a></code>
+		<span class="tooltip"><p>Compares the receiving NanoObject to another NanoObject.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveStoreAndReturnError:">&ndash;&nbsp;saveStoreAndReturnError:</a></code>
+		<span class="tooltip"><p>Saves the uncommitted changes to the document <a href="#//api/name/store">store</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dictionaryRepresentation">&ndash;&nbsp;dictionaryRepresentation</a></code>
+		<span class="tooltip"><p>Returns a dictionary that contains the information stored in the object.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+		<span class="tooltip"><p>Returns a string representation of the nano object.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/JSONDescription">&ndash;&nbsp;JSONDescription</a></code>
+		<span class="tooltip"><p>Returns a JSON representation of the nano object.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Private Methods" name="task_Private Methods"></a>
+						<h3 class="subsubtitle task-title">Private Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_setOriginalClassString:">&ndash;&nbsp;_setOriginalClassString:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_NSObjectToJSONString:error:">+&nbsp;_NSObjectToJSONString:error:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_safeDictionaryFromDictionary:">+&nbsp;_safeDictionaryFromDictionary:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_safeArrayFromArray:">+&nbsp;_safeArrayFromArray:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_safeObjectFromObject:">+&nbsp;_safeObjectFromObject:</a></code>
+		
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/info" title="info"></a>
+	<h3 class="subsubtitle method-title">info</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The user-supplied information of the NanoObject.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSDictionary *info</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The user-supplied information of the NanoObject.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/key" title="key"></a>
+	<h3 class="subsubtitle method-title">key</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The UUID of the NanoObject.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *key</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The UUID of the NanoObject.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/originalClassString" title="originalClassString"></a>
+	<h3 class="subsubtitle method-title">originalClassString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The class name used to <a href="#//api/name/store">store</a> the NanoObject.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *originalClassString</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The class name used to <a href="#//api/name/store">store</a> the NanoObject.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/store" title="store"></a>
+	<h3 class="subsubtitle method-title">store</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>The store where the object is saved.</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak, readonly) NSFNanoStore *store</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>The store where the object is saved.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/_NSObjectToJSONString:error:" title="_NSObjectToJSONString:error:"></a>
+	<h3 class="subsubtitle method-title">_NSObjectToJSONString:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)_NSObjectToJSONString:(id)<em>object</em> error:(NSError **)<em>error</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_safeArrayFromArray:" title="_safeArrayFromArray:"></a>
+	<h3 class="subsubtitle method-title">_safeArrayFromArray:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)_safeArrayFromArray:(NSArray *)<em>array</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_safeDictionaryFromDictionary:" title="_safeDictionaryFromDictionary:"></a>
+	<h3 class="subsubtitle method-title">_safeDictionaryFromDictionary:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)_safeDictionaryFromDictionary:(NSDictionary *)<em>dictionary</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_safeObjectFromObject:" title="_safeObjectFromObject:"></a>
+	<h3 class="subsubtitle method-title">_safeObjectFromObject:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)_safeObjectFromObject:(id)<em>object</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/nanoObject" title="nanoObject"></a>
+	<h3 class="subsubtitle method-title">nanoObject</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns an empty NanoObject.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoObject *)nanoObject</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An empty NanoObject upon success, nil otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns an empty NanoObject.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/nanoObjectWithDictionary:" title="nanoObjectWithDictionary:"></a>
+	<h3 class="subsubtitle method-title">nanoObjectWithDictionary:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a NanoObject with the given dictionary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoObject *)nanoObjectWithDictionary:(NSDictionary *)<em>theDictionary</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theDictionary</em></dt>
+			<dd><p>the information associated with the object. Must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initialized object upon success, nil otherwise.
+@attention The dictionary must be serializable. For more information, please read the Property List Programming Guide.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a NanoObject with the given dictionary.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/initFromDictionaryRepresentation:">&ndash; initFromDictionaryRepresentation:</a> &ndash; (id)<a href="#//api/name/initFromDictionaryRepresentation:">&ndash; initFromDictionaryRepresentation:</a>(NSDictionary *)theDictionary \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/nanoObjectWithDictionary:key:" title="nanoObjectWithDictionary:key:"></a>
+	<h3 class="subsubtitle method-title">nanoObjectWithDictionary:key:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a NanoObject with the given dictionary and <a href="#//api/name/key">key</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFNanoObject *)nanoObjectWithDictionary:(NSDictionary *)<em>theDictionary</em> key:(NSString *)<em>theKey</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theDictionary</em></dt>
+			<dd><p>the information associated with the object. Must not be nil.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theKey</em></dt>
+			<dd><p>the object <a href="#//api/name/key">key</a> associated with the object. If nil, a new <a href="#//api/name/key">key</a> will be assigned.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initialized object upon success, nil otherwise.
+@attention The dictionary must be serializable. For more information, please read the Property List Programming Guide.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a NanoObject with the given dictionary and <a href="#//api/name/key">key</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/initFromDictionaryRepresentation:">&ndash; initFromDictionaryRepresentation:</a> &ndash; (id)<a href="#//api/name/initFromDictionaryRepresentation:">&ndash; initFromDictionaryRepresentation:</a>(NSDictionary *)theDictionary \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/JSONDescription" title="JSONDescription"></a>
+	<h3 class="subsubtitle method-title">JSONDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a JSON representation of the nano object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)JSONDescription</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a JSON representation of the nano object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_setOriginalClassString:" title="_setOriginalClassString:"></a>
+	<h3 class="subsubtitle method-title">_setOriginalClassString:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)_setOriginalClassString:(NSString *)<em>theClassString</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addEntriesFromDictionary:" title="addEntriesFromDictionary:"></a>
+	<h3 class="subsubtitle method-title">addEntriesFromDictionary:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds the entries from a dictionary to the NanoObject.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addEntriesFromDictionary:(NSDictionary *)<em>otherDictionary</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>otherDictionary</em></dt>
+			<dd><p>The dictionary from which to add entries.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds the entries from a dictionary to the NanoObject.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/description" title="description"></a>
+	<h3 class="subsubtitle method-title">description</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representation of the nano object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a string representation of the nano object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dictionaryRepresentation" title="dictionaryRepresentation"></a>
+	<h3 class="subsubtitle method-title">dictionaryRepresentation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a dictionary that contains the information stored in the object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)dictionaryRepresentation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a dictionary that contains the information stored in the object.</p><div class="note"><p><strong>Note:</strong> Check properties <a href="#//api/name/info">info</a> and <a href="#//api/name/key">key</a> to find out the current state of the object.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/description">&ndash; description</a> &ndash; (NSString *)<a href="#//api/name/description">&ndash; description</a> \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initFromDictionaryRepresentation:" title="initFromDictionaryRepresentation:"></a>
+	<h3 class="subsubtitle method-title">initFromDictionaryRepresentation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a newly allocated NanoObject with the given dictionary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initFromDictionaryRepresentation:(NSDictionary *)<em>theDictionary</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theDictionary</em></dt>
+			<dd><p>the information associated with the object. Must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initialized object upon success, nil otherwise.
+@attention The dictionary must be serializable. For more information, please read the Property List Programming Guide.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes a newly allocated NanoObject with the given dictionary.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/nanoObjectWithDictionary:">+ nanoObjectWithDictionary:</a> + (NSFNanoObject<em>)<a href="#//api/name/nanoObjectWithDictionary:">+ nanoObjectWithDictionary:</a>(NSDictionary </em>)theDictionary \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initFromDictionaryRepresentation:key:" title="initFromDictionaryRepresentation:key:"></a>
+	<h3 class="subsubtitle method-title">initFromDictionaryRepresentation:key:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a newly allocated NanoObject with the given dictionary and <a href="#//api/name/key">key</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initFromDictionaryRepresentation:(NSDictionary *)<em>theDictionary</em> key:(NSString *)<em>theKey</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theDictionary</em></dt>
+			<dd><p>the information associated with the object. Must not be nil.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theKey</em></dt>
+			<dd><p>the object <a href="#//api/name/key">key</a> associated with the object. If nil, a new <a href="#//api/name/key">key</a> will be assigned.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initialized object upon success, nil otherwise.
+@attention The dictionary must be serializable. For more information, please read the Property List Programming Guide.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes a newly allocated NanoObject with the given dictionary and <a href="#//api/name/key">key</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isEqualToNanoObject:" title="isEqualToNanoObject:"></a>
+	<h3 class="subsubtitle method-title">isEqualToNanoObject:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Compares the receiving NanoObject to another NanoObject.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToNanoObject:(NSFNanoObject *)<em>otherNanoObject</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>otherNanoObject</em></dt>
+			<dd><p>is a NanoObject.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the contents of otherNanoObject are equal to the contents of the receiving NanoObject, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Compares the receiving NanoObject to another NanoObject.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectForKey:" title="objectForKey:"></a>
+	<h3 class="subsubtitle method-title">objectForKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the value associated with a given <a href="#//api/name/key">key</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)objectForKey:(NSString *)<em>aKey</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aKey</em></dt>
+			<dd><p>the <a href="#//api/name/key">key</a> for value. Must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the value associated with a given <a href="#//api/name/key">key</a>.</p><div class="note"><p><strong>Note:</strong> Raises an NSInvalidArgumentException if <i>aKey</i> or <i>anObject</i> is nil. If you need to represent a nil value in the dictionary, use NSNull.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/setObject:forKey:">&ndash; setObject:forKey:</a> &ndash; (void)setObject:(id)anObject forKey:(NSString *)aKey \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeAllObjects" title="removeAllObjects"></a>
+	<h3 class="subsubtitle method-title">removeAllObjects</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Empties the NanoObject of its entries.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeAllObjects</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Empties the NanoObject of its entries.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectForKey:">&ndash; removeObjectForKey:</a> &ndash; (void)<a href="#//api/name/removeObjectForKey:">&ndash; removeObjectForKey:</a>(NSString *)aKey \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectsForKeys:">&ndash; removeObjectsForKeys:</a> &ndash; (void)<a href="#//api/name/removeObjectsForKeys:">&ndash; removeObjectsForKeys:</a>(NSArray *)keyArray \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObjectForKey:" title="removeObjectForKey:"></a>
+	<h3 class="subsubtitle method-title">removeObjectForKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes a given <a href="#//api/name/key">key</a> and its associated value from the NanoObject.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeObjectForKey:(NSString *)<em>aKey</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aKey</em></dt>
+			<dd><p>the <a href="#//api/name/key">key</a> to remove. Must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes a given <a href="#//api/name/key">key</a> and its associated value from the NanoObject.</p><div class="note"><p><strong>Note:</strong> Does nothing if <i>aKey</i> does not exist.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/setObject:forKey:">&ndash; setObject:forKey:</a> &ndash; (void)setObject:(id)anObject forKey:(NSString *)aKey \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObjectsForKeys:" title="removeObjectsForKeys:"></a>
+	<h3 class="subsubtitle method-title">removeObjectsForKeys:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes from the NanoObject entries specified by elements in a given array.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeObjectsForKeys:(NSArray *)<em>keyArray</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>keyArray</em></dt>
+			<dd><p>An array of objects specifying the keys to remove.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes from the NanoObject entries specified by elements in a given array.</p><div class="note"><p><strong>Note:</strong> If a <a href="#//api/name/key">key</a> in <i>keyArray</i> does not exist, the entry is ignored.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeAllObjects">&ndash; removeAllObjects</a> &ndash; (void)<a href="#//api/name/removeAllObjects">&ndash; removeAllObjects</a> \endlink</p></code></li>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectForKey:">&ndash; removeObjectForKey:</a> &ndash; (void)<a href="#//api/name/removeObjectForKey:">&ndash; removeObjectForKey:</a>(NSString *)aKey \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveStoreAndReturnError:" title="saveStoreAndReturnError:"></a>
+	<h3 class="subsubtitle method-title">saveStoreAndReturnError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves the uncommitted changes to the document <a href="#//api/name/store">store</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)saveStoreAndReturnError:(out NSError **)<em>outError</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outError</em></dt>
+			<dd><p>is used if an error occurs. May be NULL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES upon success, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Saves the uncommitted changes to the document <a href="#//api/name/store">store</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setObject:forKey:" title="setObject:forKey:"></a>
+	<h3 class="subsubtitle method-title">setObject:forKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a given key-value pair to the NanoObject.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setObject:(id)<em>anObject</em> forKey:(NSString *)<em>aKey</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>anObject</em></dt>
+			<dd><p>the value for <a href="#//api/name/key">key</a>. Must not be nil.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aKey</em></dt>
+			<dd><p>the <a href="#//api/name/key">key</a> for value. Must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a given key-value pair to the NanoObject.</p><div class="note"><p><strong>Note:</strong> Raises an NSInvalidArgumentException if <i>aKey</i> or <i>anObject</i> is nil. If you need to represent a nil value in the dictionary, use NSNull.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p>\link <a href="#//api/name/removeObjectForKey:">&ndash; removeObjectForKey:</a> &ndash; (void)<a href="#//api/name/removeObjectForKey:">&ndash; removeObjectForKey:</a>(NSString *)aKey \endlink</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFNanoObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Tito Ciuro. All rights reserved. (Last updated: 2013-01-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
