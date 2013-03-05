@@ -12,3 +12,7 @@ end
 class Listing < NanoStore::Model
   attribute :name
 end
+
+def documents_path
+  NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0]
+end

@@ -50,6 +50,8 @@ If you are upgrading from an older version of nano-store gem, make sure you run 
 
 ````ruby
 NanoStore.shared_store = NanoStore.store(:memory) # memory only db
+
+documents_path         = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0]
 NanoStore.shared_store = NanoStore.store(:file, documents_path + "/nano.db") # persist the data
 ````
 
