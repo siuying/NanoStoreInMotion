@@ -49,10 +49,12 @@ If you are upgrading from an older version of nano-store gem, make sure you run 
 ### Set default storage type
 
 ````ruby
-NanoStore.shared_store = NanoStore.store(:memory) # memory only db
+# memory only db
+NanoStore.shared_store = NanoStore.store(:memory)
 
+# file based db
 documents_path         = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0]
-NanoStore.shared_store = NanoStore.store(:file, documents_path + "/nano.db") # persist the data
+NanoStore.shared_store = NanoStore.store(:file, documents_path + "/nano.db")
 ````
 
 ### Define Model

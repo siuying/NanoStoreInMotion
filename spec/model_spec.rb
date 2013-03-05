@@ -114,6 +114,20 @@ describe NanoStore::Model do
       user1.name.should == "Bob"
       user1.created_at.should.be.nil
     end
+
+    it "create model in file store" do
+      path = documents_path + "/nano.db"
+      NanoStore.shared_store = NanoStore.store :persistent, path
+
+      user = stub_user("Bob", 10, nil)
+      user.save
+
+      user1 = User.find(:name, NSFEqualTo, "Bob").first
+      user1.name.should == "Bob"
+      user1.created_at.should.be.nil
+      
+      File.delete(path) rescue nil
+    end
   end
   
   describe "#delete" do
