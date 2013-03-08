@@ -35,62 +35,63 @@
 <constant const='true' type='@' name='NSF_Private_NSFValues_NSFKey' declared_type='NSString*'/>
 <constant const='true' type='@' name='NSF_Private_NSFValues_NSFValue' declared_type='NSString*'/>
 <constant const='true' type='@' name='NSF_Private_ToDeleteTableKey' declared_type='NSString*'/>
-<enum value='1' name='CacheAllData'/>
-<enum value='2' name='CacheDataOnDemand'/>
-<enum value='3' name='DoNotCacheData'/>
-<enum value='0' name='JournalModeDelete'/>
-<enum value='3' name='JournalModeMemory'/>
-<enum value='5' name='JournalModeOFF'/>
-<enum value='2' name='JournalModePersist'/>
-<enum value='1' name='JournalModeTruncate'/>
-<enum value='4' name='JournalModeWAL'/>
-<enum value='3' name='NSFAfterDate'/>
-<enum value='1' name='NSFAnd'/>
-<enum value='2' name='NSFAttributeColumn'/>
-<enum value='1' name='NSFAverage'/>
-<enum value='1' name='NSFBeforeDate'/>
-<enum value='1' name='NSFBeginsWith'/>
-<enum value='2' name='NSFContains'/>
-<enum value='2' name='NSFCount'/>
-<enum value='2' name='NSFEncodingUTF16'/>
-<enum value='1' name='NSFEncodingUTF8'/>
-<enum value='3' name='NSFEncodingUnknown'/>
-<enum value='3' name='NSFEndsWith'/>
-<enum value='1' name='NSFEngineProcessingDefaultMode'/>
-<enum value='2' name='NSFEngineProcessingFastMode'/>
-<enum value='0' name='NSFEqualTo'/>
-<enum value='8' name='NSFGreaterThan'/>
-<enum value='5' name='NSFInsensitiveBeginsWith'/>
-<enum value='6' name='NSFInsensitiveContains'/>
-<enum value='7' name='NSFInsensitiveEndsWith'/>
-<enum value='4' name='NSFInsensitiveEqualTo'/>
-<enum value='1' name='NSFKeyColumn'/>
-<enum value='9' name='NSFLessThan'/>
-<enum value='3' name='NSFMax'/>
-<enum value='1' name='NSFMemoryStoreType'/>
-<enum value='4' name='NSFMin'/>
-<enum value='1' name='NSFNanoTypeData'/>
-<enum value='3' name='NSFNanoTypeDate'/>
-<enum value='5' name='NSFNanoTypeNULL'/>
-<enum value='4' name='NSFNanoTypeNumber'/>
-<enum value='0' name='NSFNanoTypeRowUID'/>
-<enum value='2' name='NSFNanoTypeString'/>
-<enum value='6' name='NSFNanoTypeURL'/>
-<enum value='-1' name='NSFNanoTypeUnknown'/>
-<enum value='2' name='NSFOnDate'/>
-<enum value='2' name='NSFOr'/>
-<enum value='3' name='NSFPersistentStoreType'/>
-<enum value='2' name='NSFReturnKeys'/>
-<enum value='1' name='NSFReturnObjects'/>
-<enum value='2' name='NSFTemporaryStoreType'/>
-<enum value='5' name='NSFTotal'/>
-<enum value='3' name='NSFValueColumn'/>
-<enum value='2' name='SynchronousModeFull'/>
-<enum value='1' name='SynchronousModeNormal'/>
-<enum value='0' name='SynchronousModeOff'/>
-<enum value='0' name='TempStoreModeDefault'/>
-<enum value='1' name='TempStoreModeFile'/>
-<enum value='2' name='TempStoreModeMemory'/>
+<enum name='CacheAllData' value='1'/>
+<enum name='CacheDataOnDemand' value='2'/>
+<enum name='DoNotCacheData' value='3'/>
+<enum name='JournalModeDelete' value='0'/>
+<enum name='JournalModeMemory' value='3'/>
+<enum name='JournalModeOFF' value='5'/>
+<enum name='JournalModePersist' value='2'/>
+<enum name='JournalModeTruncate' value='1'/>
+<enum name='JournalModeWAL' value='4'/>
+<enum name='NSFAfterDate' value='3'/>
+<enum name='NSFAnd' value='1'/>
+<enum name='NSFAttributeColumn' value='2'/>
+<enum name='NSFAverage' value='1'/>
+<enum name='NSFBeforeDate' value='1'/>
+<enum name='NSFBeginsWith' value='1'/>
+<enum name='NSFContains' value='2'/>
+<enum name='NSFCount' value='2'/>
+<enum name='NSFEncodingUTF16' value='2'/>
+<enum name='NSFEncodingUTF8' value='1'/>
+<enum name='NSFEncodingUnknown' value='3'/>
+<enum name='NSFEndsWith' value='3'/>
+<enum name='NSFEngineProcessingDefaultMode' value='1'/>
+<enum name='NSFEngineProcessingFastMode' value='2'/>
+<enum name='NSFEqualTo' value='0'/>
+<enum name='NSFGreaterThan' value='8'/>
+<enum name='NSFInsensitiveBeginsWith' value='5'/>
+<enum name='NSFInsensitiveContains' value='6'/>
+<enum name='NSFInsensitiveEndsWith' value='7'/>
+<enum name='NSFInsensitiveEqualTo' value='4'/>
+<enum name='NSFKeyColumn' value='1'/>
+<enum name='NSFLessThan' value='9'/>
+<enum name='NSFMax' value='3'/>
+<enum name='NSFMemoryStoreType' value='1'/>
+<enum name='NSFMin' value='4'/>
+<enum name='NSFNanoTypeData' value='1'/>
+<enum name='NSFNanoTypeDate' value='3'/>
+<enum name='NSFNanoTypeNULL' value='5'/>
+<enum name='NSFNanoTypeNumber' value='4'/>
+<enum name='NSFNanoTypeRowUID' value='0'/>
+<enum name='NSFNanoTypeString' value='2'/>
+<enum name='NSFNanoTypeURL' value='6'/>
+<enum name='NSFNanoTypeUnknown' value='-1'/>
+<enum name='NSFNotEqualTo' value='10'/>
+<enum name='NSFOnDate' value='2'/>
+<enum name='NSFOr' value='2'/>
+<enum name='NSFPersistentStoreType' value='3'/>
+<enum name='NSFReturnKeys' value='2'/>
+<enum name='NSFReturnObjects' value='1'/>
+<enum name='NSFTemporaryStoreType' value='2'/>
+<enum name='NSFTotal' value='5'/>
+<enum name='NSFValueColumn' value='3'/>
+<enum name='SynchronousModeFull' value='2'/>
+<enum name='SynchronousModeNormal' value='1'/>
+<enum name='SynchronousModeOff' value='0'/>
+<enum name='TempStoreModeDefault' value='0'/>
+<enum name='TempStoreModeFile' value='1'/>
+<enum name='TempStoreModeMemory' value='2'/>
 <function name='NSFIsDebugOn'>
 <retval type='B' declared_type='BOOL'/>
 </function>
@@ -132,7 +133,7 @@
 </method>
 <method selector='_saveInStore:error:'>
 <arg index='0' type='@' name='someStore' declared_type='NSFNanoStore*'/>
-<arg index='1' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='1' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_setStore:'>
@@ -141,12 +142,12 @@
 </method>
 <method selector='addObject:error:'>
 <arg index='0' type='@' name='theObject' declared_type='id'/>
-<arg index='1' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='1' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='addObjectsFromArray:error:'>
 <arg index='0' type='@' name='theObjects' declared_type='NSArray*'/>
-<arg index='1' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='1' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='bag' class_method='true'>
@@ -199,7 +200,7 @@
 <retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='reloadBagWithError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='removeAllObjects'>
@@ -225,7 +226,7 @@
 <retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='saveAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='savedObjects'>
@@ -243,7 +244,7 @@
 <retval type='@' declared_type='NSFNanoStore*'/>
 </method>
 <method selector='undoChangesWithError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='unsavedObjects'>
@@ -288,7 +289,7 @@
 </method>
 <method selector='NSFP_decodeQuantum:andSource:' class_method='true'>
 <arg index='0' type='*' name='dest' declared_type='unsigned char*'/>
-<arg index='1' const='true' type='*' name='src' declared_type='char*'/>
+<arg const='true' index='1' type='*' name='src' declared_type='char*'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='NSFP_flattenAllTables'>
@@ -473,7 +474,7 @@
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='journalModeAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='i' declared_type='NSFJournalModeMode'/>
 </method>
 <method selector='maxRowUIDForTable:'>
@@ -675,7 +676,7 @@
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='saveStoreAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setObject:forKey:'>
@@ -704,7 +705,7 @@
 <method selector='initWithColumn:matching:value:'>
 <arg index='0' type='i' name='theType' declared_type='NSFTableColumnType'/>
 <arg index='1' type='i' name='theMatch' declared_type='NSFMatchType'/>
-<arg index='2' type='@' name='theValue' declared_type='NSString*'/>
+<arg index='2' type='@' name='theValue' declared_type='id'/>
 <retval type='@' declared_type='id'/>
 </method>
 <method selector='match'>
@@ -713,11 +714,11 @@
 <method selector='predicateWithColumn:matching:value:' class_method='true'>
 <arg index='0' type='i' name='theType' declared_type='NSFTableColumnType'/>
 <arg index='1' type='i' name='theMatch' declared_type='NSFMatchType'/>
-<arg index='2' type='@' name='theValue' declared_type='NSString*'/>
+<arg index='2' type='@' name='theValue' declared_type='id'/>
 <retval type='@' declared_type='NSFNanoPredicate*'/>
 </method>
 <method selector='value'>
-<retval type='@' declared_type='NSString*'/>
+<retval type='@' declared_type='id'/>
 </method>
 </class>
 <class name='NSFNanoResult'>
@@ -849,11 +850,11 @@
 <method selector='_retrieveDataAdded:calendarDate:error:'>
 <arg index='0' type='i' name='aDateMatch' declared_type='NSFDateMatchType'/>
 <arg index='1' type='@' name='aDate' declared_type='NSDate*'/>
-<arg index='2' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='2' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='_retrieveDataWithError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='_sortResultsIfApplicable:returnType:'>
@@ -872,6 +873,9 @@
 <method selector='attributesToBeReturned'>
 <retval type='@' declared_type='NSArray*'/>
 </method>
+<method selector='bag'>
+<retval type='@' declared_type='NSFNanoBag*'/>
+</method>
 <method selector='description'>
 <retval type='@' declared_type='NSString*'/>
 </method>
@@ -882,7 +886,7 @@
 <method selector='executeSQL:returnType:error:'>
 <arg index='0' type='@' name='theSQLStatement' declared_type='NSString*'/>
 <arg index='1' type='i' name='theReturnType' declared_type='NSFReturnType'/>
-<arg index='2' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='2' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='@' declared_type='id'/>
 </method>
 <method selector='explainSQL:'>
@@ -924,12 +928,12 @@
 <arg index='0' type='i' name='theDateMatch' declared_type='NSFDateMatchType'/>
 <arg index='1' type='@' name='theDate' declared_type='NSDate*'/>
 <arg index='2' type='i' name='theReturnType' declared_type='NSFReturnType'/>
-<arg index='3' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='3' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='@' declared_type='id'/>
 </method>
 <method selector='searchObjectsWithReturnType:error:'>
 <arg index='0' type='i' name='theReturnType' declared_type='NSFReturnType'/>
-<arg index='1' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='1' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='@' declared_type='id'/>
 </method>
 <method selector='searchWithStore:' class_method='true'>
@@ -942,6 +946,10 @@
 </method>
 <method selector='setAttributesToBeReturned:'>
 <arg index='0' type='@' name='attributesToBeReturned' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBag:'>
+<arg index='0' type='@' name='bag' declared_type='NSFNanoBag*'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setExpressions:'>
@@ -1029,27 +1037,27 @@
 <method selector='__storeDictionaries:forKeys:error:'>
 <arg index='0' type='@' name='someObjects' declared_type='NSArray*'/>
 <arg index='1' type='@' name='someKeys' declared_type='NSArray*'/>
-<arg index='2' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='2' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_addObjectsFromArray:forceSave:error:'>
 <arg index='0' type='@' name='someObjects' declared_type='NSArray*'/>
 <arg index='1' type='B' name='forceSave' declared_type='BOOL'/>
-<arg index='2' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='2' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_backupFileStoreToDirectoryAtPath:extension:compact:error:'>
 <arg index='0' type='@' name='aPath' declared_type='NSString*'/>
 <arg index='1' type='@' name='anExtension' declared_type='NSString*'/>
 <arg index='2' type='B' name='flag' declared_type='BOOL'/>
-<arg index='3' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='3' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_backupMemoryStoreToDirectoryAtPath:extension:compact:error:'>
 <arg index='0' type='@' name='aPath' declared_type='NSString*'/>
 <arg index='1' type='@' name='anExtension' declared_type='NSString*'/>
 <arg index='2' type='B' name='flag' declared_type='BOOL'/>
-<arg index='3' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='3' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:'>
@@ -1064,7 +1072,7 @@
 <retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='_checkNanoStoreIsReadyAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_createAndOpenDebugDatabase' class_method='true'>
@@ -1095,7 +1103,7 @@
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='_initializePreparedStatementsWithError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_isOurTransaction'>
@@ -1124,7 +1132,7 @@
 <arg index='0' type='@' name='someInfo' declared_type='NSDictionary*'/>
 <arg index='1' type='@' name='aKey' declared_type='NSString*'/>
 <arg index='2' type='@' name='classType' declared_type='NSString*'/>
-<arg index='3' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='3' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_stringFromValue:'>
@@ -1133,12 +1141,12 @@
 </method>
 <method selector='addObject:error:'>
 <arg index='0' type='@' name='theObject' declared_type='id'/>
-<arg index='1' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='1' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='addObjectsFromArray:error:'>
 <arg index='0' type='@' name='theObjects' declared_type='NSArray*'/>
-<arg index='1' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='1' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='allObjectClasses'>
@@ -1164,23 +1172,23 @@
 <retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='beginTransactionAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='clearIndexesAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='closeWithError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='commitTransactionAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='compactStoreAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='countOfObjectsOfClassNamed:'>
@@ -1190,7 +1198,7 @@
 <method selector='createAndOpenStoreWithType:path:error:' class_method='true'>
 <arg index='0' type='i' name='theType' declared_type='NSFNanoStoreType'/>
 <arg index='1' type='@' name='thePath' declared_type='NSString*'/>
-<arg index='2' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='2' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='@' declared_type='NSFNanoStore*'/>
 </method>
 <method selector='createStoreWithType:path:' class_method='true'>
@@ -1241,47 +1249,47 @@
 <retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='openWithError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='rebuildIndexesAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='removeAllObjectsFromStoreAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='removeObject:error:'>
 <arg index='0' type='@' name='theObject' declared_type='id'/>
-<arg index='1' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='1' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='removeObjectsInArray:error:'>
 <arg index='0' type='@' name='theObjects' declared_type='NSArray*'/>
-<arg index='1' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='1' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='removeObjectsWithKeysInArray:error:'>
 <arg index='0' type='@' name='theKeys' declared_type='NSArray*'/>
-<arg index='1' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='1' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='rollbackTransactionAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='saveInterval'>
 <retval type='I' declared_type='NSUInteger'/>
 </method>
 <method selector='saveStoreAndReturnError:'>
-<arg index='0' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='0' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='saveStoreToDirectoryAtPath:compactDatabase:error:'>
 <arg index='0' type='@' name='thePath' declared_type='NSString*'/>
 <arg index='1' type='B' name='shouldCompact' declared_type='BOOL'/>
-<arg index='2' type='^@' type_modifier='o' name='outError' declared_type='NSError**'/>
+<arg index='2' type='^@' name='outError' type_modifier='o' declared_type='NSError**'/>
 <retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setNanoEngineProcessingMode:'>
@@ -1330,19 +1338,19 @@
 </method>
 </class>
 <informal_protocol name='NSFNanoObjectProtocol'>
-<method selector='initNanoObjectFromDictionaryRepresentation:forKey:store:' type='@20@0:4@8@12@16'>
+<method type='@20@0:4@8@12@16' selector='initNanoObjectFromDictionaryRepresentation:forKey:store:'>
 <arg index='0' type='@' name='theDictionary' declared_type='NSDictionary*'/>
 <arg index='1' type='@' name='aKey' declared_type='NSString*'/>
 <arg index='2' type='@' name='theStore' declared_type='NSFNanoStore*'/>
 <retval type='@' declared_type='id'/>
 </method>
-<method selector='nanoObjectDictionaryRepresentation' type='@8@0:4'>
+<method type='@8@0:4' selector='nanoObjectDictionaryRepresentation'>
 <retval type='@' declared_type='NSDictionary*'/>
 </method>
-<method selector='nanoObjectKey' type='@8@0:4'>
+<method type='@8@0:4' selector='nanoObjectKey'>
 <retval type='@' declared_type='NSString*'/>
 </method>
-<method selector='rootObject' type='@8@0:4'>
+<method type='@8@0:4' selector='rootObject'>
 <retval type='@' declared_type='id'/>
 </method>
 </informal_protocol>

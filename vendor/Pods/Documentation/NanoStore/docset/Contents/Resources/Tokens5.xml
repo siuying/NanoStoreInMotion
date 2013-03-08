@@ -69,7 +69,7 @@ NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStor
 			<Abstract type="html">* The value to be used for comparison.</Abstract>
 			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *value</Declaration>
+			<Declaration>@property (nonatomic, readonly) id value</Declaration>
 			
 			
 			<Anchor>//api/name/value</Anchor>
@@ -80,7 +80,7 @@ NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStor
 			<Abstract type="html">* The value to be used for comparison.</Abstract>
 			<DeclaredIn>NSFNanoPredicate.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *value</Declaration>
+			<Declaration>@property (nonatomic, readonly) id value</Declaration>
 			
 			
 			<Anchor>//api/name/value</Anchor>
@@ -96,7 +96,7 @@ NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStor
 		
 	</RelatedTokens>
 	
-			<Declaration>+ (NSFNanoPredicate *)predicateWithColumn:(NSFTableColumnType)theType matching:(NSFMatchType)theMatch value:(NSString *)theValue</Declaration>
+			<Declaration>+ (NSFNanoPredicate *)predicateWithColumn:(NSFTableColumnType)theType matching:(NSFMatchType)theMatch value:(id)theValue</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>theType</Name>
@@ -106,7 +106,7 @@ NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStor
 					<Abstract type="html">is the match operator.</Abstract>
 				</Parameter><Parameter>
 					<Name>theValue</Name>
-					<Abstract type="html">is the value.</Abstract>
+					<Abstract type="html">can be an NSString or [NSNull null]</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">A predicate which can be used in an NSFNanoExpression.</Abstract></ReturnValue>
@@ -123,7 +123,7 @@ NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStor
 		
 	</RelatedTokens>
 	
-			<Declaration>- (id)initWithColumn:(NSFTableColumnType)theType matching:(NSFMatchType)theMatch value:(NSString *)theValue</Declaration>
+			<Declaration>- (id)initWithColumn:(NSFTableColumnType)theType matching:(NSFMatchType)theMatch value:(id)theValue</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>theType</Name>
@@ -133,7 +133,7 @@ NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStor
 					<Abstract type="html">is the match operator.</Abstract>
 				</Parameter><Parameter>
 					<Name>theValue</Name>
-					<Abstract type="html">is the value.</Abstract>
+					<Abstract type="html">can be an NSString or [NSNull null]</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">A predicate which can be used in an NSFNanoExpression.</Abstract></ReturnValue>

@@ -22,7 +22,7 @@ NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStor
 			<Abstract type="html">* The property key to use when performing a comparison</Abstract>
 			<DeclaredIn>NSFNanoSortDescriptor.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSString *attribute</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *attribute</Declaration>
 			
 			
 			<Anchor>//api/name/attribute</Anchor>
@@ -33,7 +33,7 @@ NSFNanoStore *nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFMemoryStor
 			<Abstract type="html">* The property key to use when performing a comparison</Abstract>
 			<DeclaredIn>NSFNanoSortDescriptor.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSString *attribute</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *attribute</Declaration>
 			
 			
 			<Anchor>//api/name/attribute</Anchor>

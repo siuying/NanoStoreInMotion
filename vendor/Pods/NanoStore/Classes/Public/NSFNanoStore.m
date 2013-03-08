@@ -6,7 +6,7 @@
      
      Redistribution and use in source and binary forms, with or without modification, are permitted
      provided that the following conditions are met:
-     
+ 
      * Redistributions of source code must retain the above copyright notice, this list of conditions
      and the following disclaimer.
      * Redistributions in binary form must reproduce the above copyright notice, this list of conditions
@@ -33,20 +33,21 @@
 
 #include <stdlib.h>
 
+@interface NSFNanoStore ()
+
+/** \cond */
+@property (nonatomic, strong, readwrite) NSFNanoEngine *nanoStoreEngine;
+@property (nonatomic, readwrite) BOOL hasUnsavedChanges;
+@property (nonatomic) NSMutableArray *addedObjects;
+@property (nonatomic) BOOL isOurTransaction;
+@property (nonatomic, assign) sqlite3_stmt *insertDeleteKeysStatement;
+@property (nonatomic, assign) sqlite3_stmt *storeValuesStatement;
+@property (nonatomic, assign) sqlite3_stmt *storeKeysStatement;
+/** \endcond */
+
+@end
+
 @implementation NSFNanoStore
-{
-@protected
-    NSFNanoEngine               *nanoStoreEngine;
-    NSFEngineProcessingMode     nanoEngineProcessingMode;
-    NSUInteger                  saveInterval;
-    
-    /** \cond */
-    NSMutableArray              *addedObjects;
-    BOOL                        _isOurTransaction;
-    sqlite3_stmt                *_storeValuesStatement;
-    sqlite3_stmt                *_storeKeysStatement;
-    /** \endcond */
-}
 
 @synthesize nanoStoreEngine;
 @synthesize nanoEngineProcessingMode;
@@ -101,10 +102,11 @@
         _isOurTransaction = NO;
         saveInterval = 1;
         
+        _insertDeleteKeysStatement = NULL;
         _storeValuesStatement = NULL;
         _storeKeysStatement = NULL;
         
-        addedObjects = [[NSMutableArray alloc]initWithCapacity:saveInterval];
+        _addedObjects = [[NSMutableArray alloc]initWithCapacity:saveInterval];
     }
     
     return self;
@@ -113,8 +115,6 @@
 - (void)dealloc
 {
     [self closeWithError:nil];
-    
-    
 }
 
 - (NSString *)filePath
@@ -204,7 +204,7 @@
 
 - (BOOL)hasUnsavedChanges
 {
-    return ([addedObjects count] > 0);
+    return ([_addedObjects count] > 0);
 }
 
 #pragma mark -
@@ -225,11 +225,12 @@
     }
     
     if ([someObjects count] == 0) {
-        if (nil != outError)
+        if (nil != outError) {
             *outError = [NSError errorWithDomain:NSFDomainKey
                                             code:NSFNanoStoreErrorKey
                                         userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: ([someObjects count] == 0)", [self class], NSStringFromSelector(_cmd)]
                                                                              forKey:NSLocalizedFailureReasonErrorKey]];
+        }
         return NO;
     }
     
@@ -240,32 +241,17 @@
         // If it's a bag, make sure the name is unique
         if (YES == [object isKindOfClass:[NSFNanoBag class]]) {
             NSFNanoBag *bag = (NSFNanoBag *)object;
-            NSString *bagName = bag.name;
-            if (bagName.length > 0) {
-                NSFNanoBag *bagWithSameName = [self bagWithName:bagName];
-                if (nil != bagWithSameName) {
-                    if (nil != outError) {
-                        *outError = [NSError errorWithDomain:NSFDomainKey
-                                                        code:NSFNanoStoreErrorKey
-                                                    userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: a bag named '%@' already exists.", [self class], NSStringFromSelector(_cmd), bagName]
-                                                                                         forKey:NSLocalizedFailureReasonErrorKey]];
-                        
-                        return NO;
-                    }
-                }
-            }
-            
             
             // If it's a bag, process it first by gathering. If it's not dirty, there's no need to save...
-            if (YES == [object hasUnsavedChanges]) {
+            if (YES == [bag hasUnsavedChanges]) {
                 NSError *error = nil;
                 
                 // Associate the bag to this store
-                if (nil == [object store]) {
+                if (nil == [bag store]) {
                     [object _setStore:self];
                 }
                 
-                if (NO == [object _saveInStore:self error:&error]) {
+                if (NO == [bag _saveInStore:self error:&error]) {
                     [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
                                              reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), [error localizedDescription]]
                                            userInfo:nil]raise];
@@ -289,7 +275,6 @@
     }
     
     BOOL success = [self _addObjectsFromArray:nonBagObjects forceSave:NO error:outError];
-    
     
     return success;
 }
@@ -321,31 +306,38 @@
     NSString *theSQLStatement = [[NSString alloc]initWithFormat:@"CREATE TEMP TABLE %@(x);", NSF_Private_ToDeleteTableKey];
     [nanoStoreEngine executeSQL:theSQLStatement];
     
-    sqlite3_stmt *statement;
-    theSQLStatement = [[NSString alloc]initWithFormat:@"INSERT INTO %@ VALUES (?);", NSF_Private_ToDeleteTableKey];
-    BOOL success = [self _prepareSQLite3Statement:&statement theSQLStatement:theSQLStatement];
-    
-    if (success) {
-        for (NSString *key in someKeys) {
-            int status = sqlite3_reset (statement);
-            if (SQLITE_OK != status) {
-                break;
+    if (NULL == _insertDeleteKeysStatement) {
+        theSQLStatement = [[NSString alloc]initWithFormat:@"INSERT INTO %@ VALUES (?);", NSF_Private_ToDeleteTableKey];
+        BOOL success = [self _prepareSQLite3Statement:&_insertDeleteKeysStatement theSQLStatement:theSQLStatement];
+        if (NO == success) {
+            if (nil != outError) {
+                *outError = [NSError errorWithDomain:NSFDomainKey
+                                                code:NSFNanoStoreErrorKey
+                                            userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: failed to prepare _insertDeleteKeysStatement.", [self class], NSStringFromSelector(_cmd)]
+                                                                                 forKey:NSLocalizedFailureReasonErrorKey]];
             }
-            
-            // Bind and execute the statement...
-            status = sqlite3_bind_text ( statement, 1, [key UTF8String], -1, SQLITE_STATIC);
-            
-            // Since we're operating with extended result code support, extract the bits
-            // and obtain the regular result code
-            // For more info check: http://www.sqlite.org/c3ref/c_ioerr_access.html
-            
-            status = [NSFNanoEngine NSFP_stripBitsFromExtendedResultCode:status];
-            
-            if (SQLITE_OK == status) {
-                [self _executeSQLite3StepUsingSQLite3Statement:statement];
-            }
+            return NO;
         }
-        sqlite3_finalize(statement);
+    }
+    
+    for (NSString *key in someKeys) {
+        int status = sqlite3_reset (_insertDeleteKeysStatement);
+        if (SQLITE_OK != status) {
+            break;
+        }
+        
+        // Bind and execute the statement...
+        status = sqlite3_bind_text ( _insertDeleteKeysStatement, 1, [key UTF8String], -1, SQLITE_STATIC);
+        
+        // Since we're operating with extended result code support, extract the bits
+        // and obtain the regular result code
+        // For more info check: http://www.sqlite.org/c3ref/c_ioerr_access.html
+        
+        status = [NSFNanoEngine NSFP_stripBitsFromExtendedResultCode:status];
+        
+        if (SQLITE_OK == status) {
+            [self _executeSQLite3StepUsingSQLite3Statement:_insertDeleteKeysStatement];
+        }
     }
     
     _NSFLog(@"          Before removing the keys to be stored from NSFKeys...");
@@ -575,7 +567,7 @@
 
 - (void)discardUnsavedChanges
 {
-    [addedObjects removeAllObjects];
+    [_addedObjects removeAllObjects];
 }
 
 // ----------------------------------------------
@@ -677,11 +669,12 @@
         return NO;
     
     if ([[self nanoStoreEngine]isTransactionActive]) {
-        if (nil != outError)
+        if (nil != outError) {
             *outError = [NSError errorWithDomain:NSFDomainKey
                                             code:NSFNanoStoreErrorKey
                                         userInfo:[NSDictionary dictionaryWithObject:@"Cannot backup store. A transaction is still open."
                                                                              forKey:NSLocalizedDescriptionKey]];
+        }
         return NO;
     }
     
@@ -729,31 +722,38 @@
         NSString *theSQLStatement = [[NSString alloc]initWithFormat:@"INSERT INTO %@(%@, %@, %@, %@) VALUES (?,?,?,?);", NSFValues, NSFKey, NSFAttribute, NSFValue, NSFDatatype];
         hasInitializationSucceeded = [self _prepareSQLite3Statement:&_storeValuesStatement theSQLStatement:theSQLStatement];
         
-        if ((nil != outError) && (NO == hasInitializationSucceeded)) {
-            *outError = [NSError errorWithDomain:NSFDomainKey
-                                            code:NSFNanoStoreErrorKey
-                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: failed to prepare _storeValuesStatement.", [self class], NSStringFromSelector(_cmd)]
-                                                                             forKey:NSLocalizedFailureReasonErrorKey]];
+        if (NO == hasInitializationSucceeded) {
+            if (nil != outError) {
+                *outError = [NSError errorWithDomain:NSFDomainKey
+                                                code:NSFNanoStoreErrorKey
+                                            userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: failed to prepare _storeValuesStatement.", [self class], NSStringFromSelector(_cmd)]
+                                                                                 forKey:NSLocalizedFailureReasonErrorKey]];
+            }
+            return NO;
         }
     }
     
-    if ((NULL == _storeKeysStatement) && (YES == hasInitializationSucceeded)) {
+    if (NULL == _storeKeysStatement) {
         NSString *theSQLStatement = [[NSString alloc]initWithFormat:@"INSERT INTO %@(%@, %@, %@, %@) VALUES (?,?,?,?);", NSFKeys, NSFKey, NSFKeyedArchive, NSFCalendarDate, NSFObjectClass];
         hasInitializationSucceeded = [self _prepareSQLite3Statement:&_storeKeysStatement theSQLStatement:theSQLStatement];
         
-        if ((nil != outError) && (NO == hasInitializationSucceeded)) {
-            *outError = [NSError errorWithDomain:NSFDomainKey
-                                            code:NSFNanoStoreErrorKey
-                                        userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: failed to prepare _storeKeysStatement.", [self class], NSStringFromSelector(_cmd)]
-                                                                             forKey:NSLocalizedFailureReasonErrorKey]];
+        if (NO == hasInitializationSucceeded) {
+            if (nil != outError) {
+                *outError = [NSError errorWithDomain:NSFDomainKey
+                                                code:NSFNanoStoreErrorKey
+                                            userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"*** -[%@ %@]: failed to prepare _storeKeysStatement.", [self class], NSStringFromSelector(_cmd)]
+                                                                                 forKey:NSLocalizedFailureReasonErrorKey]];
+            }
+            return NO;
         }
     }
     
-    return hasInitializationSucceeded;
+    return YES;
 }
 
 - (void)_releasePreparedStatements
 {
+    if (_insertDeleteKeysStatement != NULL) { sqlite3_finalize(_insertDeleteKeysStatement);_insertDeleteKeysStatement = NULL; }
     if (_storeValuesStatement != NULL) { sqlite3_finalize(_storeValuesStatement);_storeValuesStatement = NULL; }
     if (_storeKeysStatement != NULL) { sqlite3_finalize(_storeKeysStatement);_storeKeysStatement = NULL; }
 }
@@ -1120,10 +1120,10 @@
 - (BOOL)_addObjectsFromArray:(NSArray *)someObjects forceSave:(BOOL)forceSave error:(out NSError **)outError
 {
     // Collect the objects
-    [addedObjects addObjectsFromArray:someObjects];
+    [_addedObjects addObjectsFromArray:someObjects];
     
     // No need to continue if there's nothing to be saved
-    NSUInteger unsavedObjectsCount = [addedObjects count];
+    NSUInteger unsavedObjectsCount = [_addedObjects count];
     if (0 == unsavedObjectsCount) {
         return YES;
     }
@@ -1138,9 +1138,9 @@
         
         // Remove all objects non conforming with the NSFNanoObjectProtocol
         while ( i-- ) {
-            id object = [addedObjects objectAtIndex:i];
+            id object = [_addedObjects objectAtIndex:i];
             if (NO == [object conformsToProtocol:@protocol(NSFNanoObjectProtocol)]) {
-                [addedObjects removeObjectAtIndex:i];
+                [_addedObjects removeObjectAtIndex:i];
                 i--;
                 continue;
             }
@@ -1155,7 +1155,7 @@
         }
         
         // Recalculate how many elements we have left
-        unsavedObjectsCount = [addedObjects count];
+        unsavedObjectsCount = [_addedObjects count];
         
         if (unsavedObjectsCount > 0) {
             NSError *localOutError = nil;
@@ -1179,7 +1179,9 @@
             self.saveInterval = 1;
         }
         
-        for (id object in addedObjects) {
+        NSString *errorMessage = @"<error reason unknown>";
+        
+        for (id object in _addedObjects) {
             @autoreleasepool {
                 // If the object was originally created by storing a class not recognized by this process, honor it and store it with the right class string.
                 NSString *className = nil;
@@ -1193,8 +1195,9 @@
                 }
                 
                 if (NO == [self _storeDictionary:[object nanoObjectDictionaryRepresentation] forKey:[(id)object nanoObjectKey] forClassNamed:className error:outError]) {
+                    if (nil != outError) errorMessage = [*outError localizedDescription];
                     [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
-                                             reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), [*outError localizedDescription]]
+                                             reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), errorMessage]
                                            userInfo:nil]raise];
                 } else {
                     SEL setStoreSelector = @selector(setStore:);
@@ -1211,16 +1214,18 @@
                 // Commit every 'saveInterval' interations...
                 if ((0 == i % self.saveInterval) && transactionStartedHere) {
                     if (NO == [self commitTransactionAndReturnError:outError]) {
+                        if (nil != outError) errorMessage = [*outError localizedDescription];
                         [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
-                                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), [*outError localizedDescription]]
+                                                 reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), errorMessage]
                                                userInfo:nil]raise];
                     }
                     
                     if (YES == transactionStartedHere) {
                         transactionStartedHere = [self beginTransactionAndReturnError:outError];
                         if (NO == transactionStartedHere) {
+                            if (nil != outError) errorMessage = [*outError localizedDescription];
                             [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
-                                                     reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), [*outError localizedDescription]]
+                                                     reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), errorMessage]
                                                    userInfo:nil]raise];
                         }
                     }
@@ -1231,8 +1236,9 @@
         // Commit the changes
         if (transactionStartedHere) {
             if (NO == [self commitTransactionAndReturnError:outError]) {
+                if (nil != outError) errorMessage = [*outError localizedDescription];
                 [[NSException exceptionWithName:NSFNanoStoreUnableToManipulateStoreException
-                                         reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), [*outError localizedDescription]]
+                                         reason:[NSString stringWithFormat:@"*** -[%@ %@]: %@", [self class], NSStringFromSelector(_cmd), errorMessage]
                                        userInfo:nil]raise];
             }
         }
@@ -1241,7 +1247,7 @@
         double ratio = unsavedObjectsCount/secondsStoring;
         _NSFLog(@"     Done. Storing the objects took %.3f seconds (%.0f keys/sec.)", secondsStoring, ratio);
         
-        [addedObjects removeAllObjects];
+        [_addedObjects removeAllObjects];
     }
     
     return YES;

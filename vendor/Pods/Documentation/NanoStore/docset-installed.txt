@@ -1,4 +1,4 @@
 Documentation set was installed to Xcode!
 
-Path: /Users/siuying/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.NanoStore-2.5.2.docset
-Time: 2013-01-22 09:31:56 +0000
+Path: /Users/siuying/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.NanoStore-2.6.4.docset
+Time: 2013-03-08 15:06:48 +0000
