@@ -1,6 +1,6 @@
 require "bundler/gem_tasks"
 $:.unshift("/Library/RubyMotion/lib")
-require 'motion/project'
+require 'motion/project/template/ios'
 require 'motion-cocoapods'
 require 'motion-redgreen'
 
