@@ -209,6 +209,28 @@ user.save
 user.cars # => #<NanoStore::Bag:0x7411410> 
 ````
 
+## KVO
+
+If you are using NanoStoreInMotion with KVO, aware that ``NanoStore::Model`` actually store data in a field ``info`` and create methods dynamically. Instead of listening on the field name ``field_name``, you should listen on key path ``info.field_name``.
+
+For example, instead of following code:
+
+```
+class Radio < NanoStore::Model
+  attribute :name
+end
+
+radio = Radio.new
+radio.addObserver(observer, forKeyPath:"name", options: NSKeyValueObservingOptionNew, context: nil)
+```
+
+You should do:
+
+```
+radio = Radio.new
+radio.addObserver(observer, forKeyPath:"info.name", options: NSKeyValueObservingOptionNew, context: nil)
+```
+
 ## Performance Tips
 
 NanoStore by defaults saves every object to disk one by one. To speed up inserts and edited objects, increase NSFNanoStore's ```saveInterval``` property.
